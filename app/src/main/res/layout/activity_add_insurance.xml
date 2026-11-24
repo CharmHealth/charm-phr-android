@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addInsuranceRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.insurance.add.AddInsuranceActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/addInsuranceToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/addInsuranceBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/addInsuranceToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/insurance_add_str"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/addInsuranceDeleteBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete_white"
+            android:visibility="gone" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <include
+        android:id="@+id/addInsuranceProgress"
+        layout="@layout/progress_bar_for_white_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addInsuranceToolbar" />
+
+    <include
+        android:id="@+id/addInsuranceErrorPage"
+        layout="@layout/layout_error_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addInsuranceToolbar" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addInsuranceMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addInsuranceToolbar">
+
+        <ScrollView
+            android:id="@+id/addInsuranceScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/button_margin"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/insuranceRoot"
+                layout="@layout/layout_patient_insurance" />
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/addInsuranceBtn"
+            style="@style/mdButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/add_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/item_button_bg"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/insurance_add_str"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tourpage.TourPageActivity">
+
+    <!-- <LinearLayout
+         android:id="@+id/tpBgLayout"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:layout_marginBottom="8dp"
+         android:background="@drawable/curve_style_drawable"
+         android:orientation="vertical"
+         app:layout_constraintBottom_toTopOf="@+id/tpMainGuideLine50"
+         app:layout_constraintEnd_toEndOf="@drawable/and_more_features"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent">
+
+     </LinearLayout>-->
+
+    <!--<com.google.android.material.tabs.TabLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="@dimen/tp_bottom_margin_for_viewpager"
+        app:layout_constraintBottom_toTopOf="@id/tourPageBtnContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabBackground="@drawable/tp_tab_drawable"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp" />-->
+
+    <com.charm.phr.mphr.ui.components.MDViewPagerCustomDuration
+        android:id="@+id/tourViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tourPageTabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+    </com.charm.phr.mphr.ui.components.MDViewPagerCustomDuration>
+
+    <com.charm.phr.mphr.ui.components.dotIndicator.MDDotsIndicator
+        android:id="@+id/tourPageTabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:paddingTop="8dp"
+        app:dotsColor="#CFCFCF"
+        app:dotsCornerRadius="8dp"
+        app:dotsSize="7dp"
+        app:dotsSpacing="6dp"
+        app:dotsWidthFactor="2"
+        app:layout_constraintBottom_toTopOf="@id/tourPageBtnContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:progressMode="true"
+        app:selectedDotColor="@color/colorTourpage" />
+
+    <LinearLayout
+        android:id="@+id/tourPageBtnContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/tourPageSignInBtn"
+            style="@style/mdButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tp_button_height"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/tp_sign_in_str"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/x_medium" />
+
+        <Button
+            android:id="@+id/tourPageJoinBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tp_button_height"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/item_ripple_dashboard_navigation_background"
+            android:fontFamily="@font/open_sans_medium"
+            android:padding="10dp"
+            android:text="@string/tp_join_meeting_str"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTourpage"
+            android:textSize="@dimen/tp_sign_in_bt_size"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tpMainGuideLine50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5" />
+
+    <TextView
+        android:id="@+id/buildIndicatorTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:padding="5dp"
+        android:text=" -------- Debug Build -------- "
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/large"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/tpFailureLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/commonBgColor"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--        android:background="@drawable/bg"-->
+
+
+        <ImageView
+            android:id="@+id/tpNotSubscribedImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_not_subscribed"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/tpErrorMsgTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tpErrorMsgTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/open_sans"
+            android:gravity="center"
+            android:lineSpacingExtra="8dp"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/x_medium"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".4"
+            tools:text="error messagesdklas asadskssssssssssssssssssssssssssssssss" />
+
+        <Button
+            android:id="@+id/tpRetryBtn"
+            style="@style/mdButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/add_button_height"
+            android:layout_margin="20dp"
+            android:paddingStart="42dp"
+            android:paddingEnd="42dp"
+            android:background="@drawable/item_button_bg"
+            android:elevation="2dp"
+            android:textSize="@dimen/large"
+            android:text="@string/retry_str"
+            android:textColor="@android:color/white"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tpErrorMsgTV"
+            app:layout_constraintVertical_bias=".05" />
+        <!--            android:background="@drawable/pink_round_corner_button"/>-->
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tpProgressView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:visibility="gone">
+
+        <include
+
+            layout="@layout/progress_bar_for_white_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".45" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/tpError"
+        layout="@layout/layout_error_page"
+        android:visibility="gone" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MaterialAppTheme"
+    android:id="@+id/supportMainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.support.SupportActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/supportToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/supportBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/supportToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:text="@string/app_feedback"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/supportAttachmentBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_attach_file_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <HorizontalScrollView
+        android:id="@+id/supportTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_tab_layout_height"
+        android:elevation="0dp"
+        android:paddingStart="@dimen/card_margin_horizontal"
+        android:paddingEnd="@dimen/card_margin_horizontal"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/supportScrollview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/supportToolbar">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:chipSpacingHorizontal="@dimen/list_tab_txt_side_margin"
+            app:singleLine="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/suportAppreciateTabBtnChip"
+                style="@style/MaterialComponentsChipUnSelectStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/list_tab_height"
+                android:text="@string/appreciate_str"
+                app:checkedIconEnabled="false"
+                app:chipIconEnabled="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/supportReportTabBtnChip"
+                style="@style/MaterialComponentsChipUnSelectStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/list_tab_height"
+                android:text="@string/report_str"
+                app:checkedIconEnabled="false"
+                app:chipIconEnabled="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/supportSuggestTabBtnChip"
+                style="@style/MaterialComponentsChipUnSelectStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/list_tab_height"
+                android:text="@string/suggest_str"
+                app:checkedIconEnabled="false"
+                app:chipIconEnabled="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/supportAskQuestionTabBtnChip"
+                style="@style/MaterialComponentsChipUnSelectStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/list_tab_height"
+                android:text="@string/ask_question_str"
+                app:checkedIconEnabled="false"
+                app:chipIconEnabled="false" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/supportScrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/supportAttachmentLL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/supportTabLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/supportConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/supportSeverityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/supportSeverityTV"
+                    style="@style/itemEdittextHeadingTheme"
+                    android:text="@string/choose_severity" />
+
+                <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                    android:id="@+id/supportSeverityET"
+                    style="@style/itemEdittextTheme"
+                    android:hint="@string/select_str"
+                    android:inputType="textCapWords"
+                    app:showIcon="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/supportSubjectLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/supportSeverityLayout">
+
+                <TextView
+                    android:id="@+id/supportSubjectTV"
+                    style="@style/itemEdittextHeadingTheme"
+                    android:text="@string/subject_str" />
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/supportSubjectET"
+                    style="@style/itemEdittextMultiLineTheme"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/edittext_height"
+                    app:setBgTransparent="false" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/supportAppreciationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/supportSubjectLayout">
+
+                <TextView
+                    android:id="@+id/supportAppreciationTV"
+                    style="@style/itemEdittextHeadingTheme"
+                    android:text="@string/what_do_you_like_about_charm_phr"
+                    android:textSize="@dimen/large"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/supportAppreciationChipGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingStart="@dimen/card_margin_horizontal"
+                    android:paddingEnd="@dimen/card_margin_horizontal"
+                    app:chipSpacingHorizontal="@dimen/list_tab_txt_side_margin">
+
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/supportAppreciationProductiveChip"
+                        style="@style/MaterialComponentsChipUnSelectStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/list_tab_height"
+                        android:text="@string/productive_str"
+                        app:checkedIconEnabled="false"
+                        app:chipIconEnabled="false" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/supportAppreciationGoodChip"
+                        style="@style/MaterialComponentsChipUnSelectStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/list_tab_height"
+                        android:text="@string/good_in_support"
+                        app:checkedIconEnabled="false"
+                        app:chipIconEnabled="false" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/supportAppreciationCustomiseChip"
+                        style="@style/MaterialComponentsChipUnSelectStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/list_tab_height"
+                        android:text="@string/easy_to_customise"
+                        app:checkedIconEnabled="false"
+                        app:chipIconEnabled="false" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/supportAppreciationIntegratedChip"
+                        style="@style/MaterialComponentsChipUnSelectStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/list_tab_height"
+                        android:text="@string/well_integrated"
+                        app:checkedIconEnabled="false"
+                        app:chipIconEnabled="false" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/supportAppreciationUseChip"
+                        style="@style/MaterialComponentsChipUnSelectStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/list_tab_height"
+                        android:text="@string/easy_to_use"
+                        app:checkedIconEnabled="false"
+                        app:chipIconEnabled="false">
+
+                    </com.google.android.material.chip.Chip>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/supportAppreciationAffordableChip"
+                        style="@style/MaterialComponentsChipUnSelectStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/list_tab_height"
+                        android:text="@string/affordable"
+                        app:checkedIconEnabled="false"
+                        app:chipIconEnabled="false" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/supportAppreciationRobustChip"
+                        style="@style/MaterialComponentsChipUnSelectStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/list_tab_height"
+                        android:text="@string/robust"
+                        app:checkedIconEnabled="false"
+                        app:chipIconEnabled="false" />
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/supportdescriptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/supportAppreciationLayout">
+
+                <TextView
+                    android:id="@+id/supportDescriptionTV"
+                    style="@style/itemEdittextHeadingTheme"
+                    android:text="@string/describe_your_problem" />
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/supportdescriptionET"
+                    style="@style/itemEdittextMultiLineTheme"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/edittext_height"
+                    app:setBgTransparent="false" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/supportAttachmentLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/supportSubmitBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/supportAttachmentRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/supportSubmitBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/supportScrollview" />
+    </LinearLayout>
+
+
+    <Button
+        style="@style/mdButtonStyle"
+        android:id="@+id/supportSubmitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/add_button_height"
+        android:layout_margin="@dimen/button_margin"
+        android:background="@drawable/item_button_bg"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/submit_str"
+        android:textColor="@color/textColorForColorPrimaryBg"
+        android:textSize="@dimen/large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

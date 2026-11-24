@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/tpItemImg"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_tourpage_appointment"
+        app:layout_constraintBottom_toTopOf="@id/tp1TextViewContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!--    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/tp1GuideLine50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".5" />-->
+
+
+    <LinearLayout
+        android:id="@+id/tp1TextViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/tp_text_margin_start"
+        android:layout_marginEnd="@dimen/tp_text_margin_end"
+        android:layout_marginBottom="@dimen/tp_text_margin_start"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tpItemHeading"
+            style="@style/tpHeadingTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tp_heading_top_margin"
+            tools:text="@string/thank_you_str" />
+
+        <TextView
+            android:id="@+id/tpItemContent"
+            style="@style/tpContentTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tp_content_top_margin"
+            tools:text="@string/thank_you_str" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

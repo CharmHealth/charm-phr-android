@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/usefulInfoDetailMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.useful_info.UsefulInfoDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/usefulInfoDetailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/usefulInfoDetailBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+
+        <TextView
+            android:id="@+id/usefulInfoDetailToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/useful_info_str"
+            android:textAppearance="@style/toolbarText" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/usefulInfoDetailSwipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usefulInfoDetailToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/usefulInfoDetailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_margin_horizontal"
+                    android:layout_marginTop="@dimen/card_margin_horizontal"
+                    android:layout_marginEnd="@dimen/card_margin_horizontal"
+                    android:layout_marginBottom="@dimen/card_margin_horizontal"
+                    android:animateLayoutChanges="true"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="@dimen/common_card_radius"
+                    app:cardElevation="@dimen/common_card_elevation">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/usefulInfoDetailConstraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/item_ripple_white_bg"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingBottom="@dimen/card_padding">
+
+
+                        <TextView
+                            android:id="@+id/usefulInfoDetailDateTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/card_padding"
+                            android:paddingEnd="@dimen/card_padding"
+                            android:textAppearance="@style/dateDisplayTxtAppearance"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Jun 11, 2000" />
+
+                        <TextView
+                            android:id="@+id/usefulInfoDetailSubjectTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:paddingStart="@dimen/card_padding"
+                            android:paddingEnd="@dimen/card_padding"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/x_medium"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/usefulInfoDetailDateTV"
+                            tools:text="Tuesday, September 24" />
+
+                        <WebView
+                            android:id="@+id/usefulInfoDetailContentTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                            android:fontFamily="@font/open_sans"
+                            android:paddingStart="@dimen/card_padding"
+                            android:paddingEnd="@dimen/card_padding"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/xx_small"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/usefulInfoDetailSubjectTV"
+                            tools:text="Reason for usefulInfo" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <include
+                android:id="@+id/usefulInfoDetailProgress"
+                layout="@layout/layout_progress_bar"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="gone" />
+
+
+            <include
+                android:id="@+id/usefulInfoDetailErrorPage"
+                layout="@layout/layout_error_page"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

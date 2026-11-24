@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/questionnaireDetailAllergyDrugMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:id="@+id/questionnaireDetailAllergyDrugAddMore"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/open_sans_medium"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_margin_horizontal"
+        android:text="@string/questionnaire_detail_add_more_drug_allergy"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/medium" />
+
+    <LinearLayout
+        android:id="@+id/questionnaireDetailAllergyFoodMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:id="@+id/questionnaireDetailAllergyFoodAddMore"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/open_sans_medium"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_margin_horizontal"
+        android:text="@string/questionnaire_detail_add_more_food_allergy"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/medium" />
+
+    <LinearLayout
+        android:id="@+id/questionnaireDetailAllergyEnvironmentMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:id="@+id/questionnaireDetailAllergyEnvironmentAddMore"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/open_sans_medium"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_margin_horizontal"
+        android:text="@string/questionnaire_detail_add_more_environment_allergy"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/medium" />
+
+</LinearLayout>

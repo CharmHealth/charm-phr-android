@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/card_margin_horizontal"
+    android:layout_marginTop="@dimen/card_margin_vertical"
+    android:layout_marginEnd="@dimen/card_margin_horizontal"
+    android:layout_marginBottom="@dimen/card_margin_vertical"
+    android:animateLayoutChanges="true"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="@dimen/common_card_radius"
+    app:cardElevation="@dimen/common_card_elevation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/insuranceListConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_ripple_white_bg"
+        android:padding="@dimen/card_padding">
+
+        <TextView
+            android:id="@+id/insuranceListNameTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_medium"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Primary - Alabama Medicare" />
+
+        <TextView
+            android:id="@+id/insuranceListMemberLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/insurance_list_member_label"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/insuranceListNameTV" />
+
+        <TextView
+            android:id="@+id/insuranceListMemberValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_padding"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans_medium"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toEndOf="@id/insuranceListMemberLabel"
+            app:layout_constraintTop_toBottomOf="@id/insuranceListNameTV"
+            tools:text="@string/insurance_list_member_label" />
+
+        <TextView
+            android:id="@+id/insuranceListPlanLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/insurance_list_plan_label"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/insuranceListMemberValueTV" />
+
+        <TextView
+            android:id="@+id/insuranceListPlanValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_padding"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans_medium"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toEndOf="@id/insuranceListPlanLabel"
+            app:layout_constraintTop_toBottomOf="@id/insuranceListMemberValueTV"
+            tools:text="@string/insurance_list_member_label" />
+
+        <TextView
+            android:id="@+id/insuranceListPolicyGrpNumLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/insurance_list_policy_grp_num_label"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/insuranceListPlanValueTV" />
+
+        <TextView
+            android:id="@+id/insuranceListPolicyGrpNumValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_padding"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans_medium"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toEndOf="@id/insuranceListPolicyGrpNumLabel"
+            app:layout_constraintTop_toBottomOf="@id/insuranceListPlanValueTV"
+            tools:text="@string/insurance_list_member_label" />
+
+
+        <TextView
+            android:id="@+id/insuranceListInsuredPersonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/insurance_list_insured_person_label"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/insuranceListPolicyGrpNumValueTV" />
+
+        <TextView
+            android:id="@+id/insuranceListInsuredPersonValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_padding"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans_medium"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toEndOf="@id/insuranceListInsuredPersonLabel"
+            app:layout_constraintTop_toBottomOf="@id/insuranceListPolicyGrpNumValueTV"
+            tools:text="@string/insurance_list_member_label" />
+
+
+        <TextView
+            android:id="@+id/insuranceListDateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/insurance_list_insured_person_label"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/insuranceListInsuredPersonValueTV" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

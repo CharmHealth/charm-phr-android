@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/questionnaire_card_margin_vertical">
+
+
+    <TextView
+        android:id="@+id/patDetailHeadingTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_padding_half"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/add_insurance_personal_details_txt"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/medium"
+        app:layout_constraintBottom_toTopOf="@id/patDetailFirstNameLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patDetailFirstNameLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailLastNameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailHeadingTV">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patDetailFirstNameET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_first_name_str"
+            android:maxLength="@integer/savePatientNameMaxLength"
+            app:filterRegex="alphabetsNumbersAndSplChar" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patDetailLastNameLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailDOBLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailFirstNameLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patDetailLastNameET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_last_name_str"
+            android:maxLength="@integer/savePatientNameMaxLength"
+            app:filterRegex="alphabetsNumbersAndSplChar" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patDetailDOBLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailGenderLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailLastNameLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patDetailDOBET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_dob_str"
+            android:maxLength="@integer/savePatientNameMaxLength"
+            app:filterRegex="alphabetsNumbersAndSplChar" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patDetailGenderLayout"
+        style="@style/itemTextInputLayoutTheme"
+        android:layout_width="0dp"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailGenderIdLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailDOBLayout">
+
+        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+            android:id="@+id/patDetailGenderET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_gender_str"
+            app:filterRegex="alphabets" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patDetailGenderIdLayout"
+        style="@style/itemTextInputLayoutTheme"
+        android:layout_width="0dp"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailGenderOtherLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailGenderLayout"
+
+
+        >
+
+        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+            android:id="@+id/patDetailGenderIdET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_gender_identity_hint" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patDetailGenderOtherLayout"
+        style="@style/itemTextInputLayoutTheme"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailBloodGrpLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailGenderIdLayout"
+
+
+        >
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patDetailGenderOtherET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_gender_identity_other_hint"
+            android:maxLength="@integer/savePatientNameMaxLength"
+            app:filterRegex="alphabetsNumbersAndSplChar" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patDetailBloodGrpLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailLanguageLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailGenderOtherLayout"
+
+
+        >
+
+        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+            android:id="@+id/patDetailBloodGrpET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_blood_grp_str"
+            app:showEmptyField="true" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patDetailLanguageLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailRaceLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailBloodGrpLayout"
+        app:mdShowDropdown="false"
+        app:mdShowLine="false"
+
+        >
+
+        <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+            android:id="@+id/patDetailLanguageET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_language_hint" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patDetailRaceLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailEthnicityLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailLanguageLayout"
+
+
+        >
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patDetailRaceET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_race_hint"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/race_end_padding"
+            tools:text="apple" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patDetailEthnicityLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailMStatusLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailRaceLayout"
+
+        >
+
+        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+            android:id="@+id/patDetailEthnicityET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_ethnicity_hint"
+            app:showEmptyField="true" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patDetailMStatusLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailEStatusLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailEthnicityLayout"
+
+        >
+
+        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+            android:id="@+id/patDetailMStatusET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_m_status_hint"
+            app:allowAutoSelect="true"
+            app:showEmptyField="true" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patDetailEStatusLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patDetailSStatusLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailMStatusLayout"
+
+
+        >
+
+        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+            android:id="@+id/patDetailEStatusET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_e_status_hint"
+            app:allowAutoSelect="true"
+            app:showEmptyField="true" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patDetailSStatusLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDetailEStatusLayout">
+
+        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+            android:id="@+id/patDetailSStatusET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_s_status_hint"
+            app:allowAutoSelect="true"
+            app:showEmptyField="true" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

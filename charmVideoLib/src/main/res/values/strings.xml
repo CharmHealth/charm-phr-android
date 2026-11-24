@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="cvl_app_name">Charm video lib</string>
+    <string name="this_app_name">Zoom SDK Demo</string>
+
+    <string name="invite_acitivity_name">Meeting Invite Example</string>
+
+    <string name="cvl_rc_using_fingers_for_remote_control">Remotely control a desktop using gestures</string>
+    <string name="cvl_rc_one_finger_tap">Tap with one finger</string>
+    <string name="cvl_rc_one_finger_tap_description">Tap the screen with one finger to click the mouse</string>
+    <string name="cvl_rc_one_finger_double_taps">Double tap with one finger</string>
+    <string name="cvl_rc_one_finger_double_taps_description">Double tap with one finger to double click the mouse</string>
+    <string name="cvl_rc_one_long_tap">Long press with one finger</string>
+    <string name="cvl_rc_one_long_tap_description">Press the screen with one finger to right-click the mouse</string>
+    <string name="cvl_rc_two_fingers_scroll">Swipe with two fingers</string>
+    <string name="cvl_rc_two_fingers_scroll_description">Swipe with two fingers to scroll up and down</string>
+    <string name="cvl_rc_two_fingers_pinch">Pinch with two fingers</string>
+    <string name="cvl_rc_two_fingers_pinch_description">Pinch in and out with two fingers to zoom in and out</string>
+    <string name="cvl_rc_mouse_icon">Mouse icon</string>
+    <string name="cvl_rc_mouse_icon_description">Drag the mouse icon to move the remote mouse pointer</string>
+    <string name="cvl_rc_tap_notice">Tap here to control %s\'s screen remotely</string>
+
+    <string name="cvl_alert_other_is_sharing">You cannot start screen share while the other participant is sharing.</string>
+
+    <string name="cvl_settings_custom_ui">Customized UI</string>
+    <string name="cvl_settings_video_source">External Video Source</string>
+    <string name="cvl_settings_switch_domain">Switch domain</string>
+    <string name="cvl_settings_hide_screen_share_toolbar_annotation">Hide annotation button in screen share</string>
+    <string name="cvl_settings_hide_screen_share_toolbar_stopshare">Hide stopshare button in screen share</string>
+
+
+    <string name="cvl_msg_interpreter">You have been assigned an interpreter.</string>
+
+
+
+    <!--<editor-fold desc="Newly added">-->
+
+    <!--</editor-fold>-->
+    <string name="cvl_topic_value">Topic: %1$s</string>
+    <string name="cvl_meeting_value">Meeting Id: %1$s</string>
+    <string name="cvl_meeting_number_value">Meeting Number: %1$s</string>
+
+    <string name="cvl_url_value">URL: %1$s</string>
+    <string name="cvl_subject_value">Subject: %1$s</string>
+    <string name="cvl_password_value">Password: %1$s</string>
+    <string name="cvl_raw_password_value">Raw Password: %1$s</string>
+
+    <string name="cvl_time_value">Time: %1$s</string>
+    <string name="cvl_date_value">Date: %1$s</string>
+    <string name="cvl_is_repeat_meeting_value">Is Repeat Meeting: %1$s</string>
+
+    <string name="cvl_topic_empty_msg">Topic can not be empty</string>
+    <string name="cvl_third_party_audio_empty_msg">Third party audio can not be empty</string>
+    <string name="cvl_user_not_logged_in_msg">User not login.</string>
+    <string name="cvl_schedule_success_msg">Schedule successfully. Meeting\'s unique id is %1$s</string>
+    <string name="cvl_schedule_failure_msg">Schedule failed result code = %1$s</string>
+
+    <string name="cvl_personal_meeting_id_hint">Personal meeting id(PMI)</string>
+
+    <string name="cvl_enter_sso_token_msg">You need to enter sso token.</string>
+    <string name="cvl_sdk_init_first_msg">Init SDK First</string>
+    <string name="cvl_sdk_init_success_msg">Initialize Zoom SDK successfully.</string>
+    <string name="cvl_sdk_init_failed_msg">ZoomSDK has not been initialized successfully.</string>
+    <string name="cvl_sdk_init_failed_or_logging_msg">ZoomSDK has not been initialized successfully or sdk is logging in.</string>
+    <string name="cvl_login_success_msg">Login successfully</string>
+    <string name="cvl_login_failure_msg">Login failed result code = %1$s</string>
+
+    <string name="cvl_logout_success_msg">Logout successfully</string>
+    <string name="cvl_logout_failure_msg">Logout failed result code = %1$s</string>
+
+    <string name="cvl_meeting_and_vanity_empty_hint">You need to enter a meeting number/ vanity id which you want to join.</string>
+    <string name="cvl_meeting_or_vanity_filled_hint">Both meeting number and vanity id have value, just set one of them.</string>
+
+    <string name="cvl_invalid_meeting_num_msg">Invalid meeting number: %1$s</string>
+
+    <string name="cvl_start_another_meeting_msg">Do you want to leave current meeting and start another?</string>
+
+    <string name="cvl_yes_str">Yes</string>
+    <string name="cvl_no_str">No</string>
+    <string name="cvl_ok_str">OK</string>
+    <string name="cvl_share_str">Share</string>
+    <string name="cvl_stop_share_str">Stop Share</string>
+    <string name="cvl_version_low_msg">Version of ZoomSDK is too low!</string>
+
+    <string name="cvl_move_success_msg">Move successfully</string>
+    <string name="cvl_move_failure_msg">Move failed</string>
+
+    <string name="cvl_zak_empty_msg">You need to enter zoom access token(zak)</string>
+    <string name="cvl_user_id_empty_msg">You need to enter user id</string>
+    <string name="cvl_in_waiting_room_msg">In waiting room</string>
+    <string name="cvl_need_pwd_or_display_name">Need password or displayName</string>
+
+    <string name="cvl_meeting_failure_msg">OnMeetingFail: %1$s</string>
+
+    <string name="cvl_action_str">Action</string>
+    <string name="cvl_action_public_str">Answer public</string>
+    <string name="cvl_answer_private_msg">Answer private</string>
+    <string name="cvl_attender_answer_msg">Attender Answer</string>
+    <string name="cvl_upvote_msg">UpVote</string>
+    <string name="cvl_downvote_msg">DownVote</string>
+    <string name="cvl_reopen_str">reopen</string>
+    <string name="cvl_dismiss_str">Dismiss</string>
+    <string name="cvl_start_live_answer_str">StartLiveAnswer</string>
+    <string name="cvl_end_live_answer_str">EndLiveAnswer</string>
+    <string name="cvl_delete_question_str">DeleteQuestion</string>
+    <string name="cvl_delete_answer_str">DeleteAnswer</string>
+    <string name="cvl_action_value">action: %1$b</string>
+    <string name="cvl_answer_value">Answer: $1%i</string>
+
+    <string name="cvl_add_anonymous_success">Add success anonymously: %1$b</string>
+    <string name="cvl_add_anonymous_failure">Add failed anonymously: %1$b</string>
+
+    <string name="cvl_open_count">Open(%1$i)</string>
+    <string name="cvl_all_count">All(%1$i)</string>
+    <string name="cvl_answered_count">Answered(%1$i)</string>
+    <string name="cvl_dismissed_count">Dismissed(%1$i)</string>
+    <string name="cvl_my_count">My(%1$i)</string>
+
+    <string name="cvl_assign_success_msg">Assign successfully</string>
+    <string name="cvl_assign_failure_msg">Assign failed</string>
+
+    <string name="cvl_remove_success_msg">Remove successfully</string>
+    <string name="cvl_remove_failure_msg">Remove failed</string>
+
+    <string name="cvl_join_str">Join</string>
+
+    <string name="cvl_join_success_msg">Join successfully</string>
+    <string name="cvl_join_failure_msg">Join failed</string>
+    <string name="cvl_assign_str">Assign</string>
+
+    <string name="cvl_close_all_bo_str">Close All BO</string>
+    <string name="cvl_open_all_bo_str">Open All BO</string>
+
+    <string name="cvl_participants_assigned_to_br_room_str">All participants have been assigned to Breakout Rooms.</string>
+
+    <string name="cvl_empty_username_and_pwd_msg">You need to enter user name and password.</string>
+    <string name="cvl_account_disabled_msg">Account had disable email login</string>
+
+    <string name="cvl_later_str">Later</string>
+    <string name="cvl_lower_all_hands_success_msg">Lower all hands successfully</string>
+    <string name="cvl_reclaim_host_success_msg">Reclaim host successfully</string>
+    <string name="cvl_attendee_request_for_help_msg">The host is currently helping others. Please try again later.</string>
+    <string name="cvl_invite_to_breakout_room_msg">The host is inviting you to join Breakout Room: %1$s</string>
+    <string name="cvl_end_or_leave_meeting">End or leave video call</string>
+    <string name="cvl_end_str">End</string>
+    <string name="cvl_leave_str">Leave</string>
+    <string name="cvl_leave_meeting_msg">Leave video call</string>
+    <string name="cvl_cancel_str">Cancel</string>
+    <string name="cvl_leave_bo_str">Leave BO</string>
+    <string name="cvl_meeting_fail_msg">Meeting Fail</string>
+    <string name="cvl_error_value">Error: %1$i</string>
+    <string name="cvl_reegister_join_msg">Need register to join this webinar meeting</string>
+    <string name="cvl_meeting_alert_msg">Meeting Alert</string>
+    <string name="cvl_meeting_in_progress_end_current_msg">You have a meeting that is currently in-progress. Please end it to start a new meeting.</string>
+    <string name="cvl_end_other_meeting_msg">End Other Meeting</string>
+    <string name="cvl_join_breakout_room_msg">Join Breakout Room</string>
+    <string name="cvl_invite_host_to_breakout_msg">You can invite the host to this Breakout Room for assistance.</string>
+    <string name="cvl_ask_for_help_msg">Ask for Help</string>
+    <string name="cvl_success_str">success</string>
+    <string name="cvl_fail_str">fail</string>
+
+    <string name="cvl_loading_str">Loading…</string>
+    <string name="cvl_another_user_needs_to_join_to_minimise">Another user needs to join to minimise</string>
+    <string name="cvl_waiting_room_message">%1$s has entered the waiting room for this meeting</string>
+    <string name="cvl_see_waiting_room">See waiting room</string>
+    <string name="cvl_admit">Admit</string>
+
+    <string name="cvl_waiting_join_info_str">Waiting for the host to start this meeting</string>
+    <string name="cvl_waiting_room_info_str">Please wait, the meeting host will let you in soon.</string>
+    <string name="cvl_connecting">Connecting…</string>
+    <string name="cvl_date_time_str">Date &amp; Time</string>
+
+    <string name="cvl_meeting_separator_str">-</string>
+
+    <string name="cvl_video_call_str">"Video Call"</string>
+    <string name="cvl_join_video_consultation_str">"Join Video Consultation"</string>
+
+
+
+</resources>

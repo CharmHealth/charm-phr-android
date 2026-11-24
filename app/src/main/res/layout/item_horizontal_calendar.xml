@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/horizontalCalendarLayout"
+    android:layout_width="@dimen/hcItemWidth"
+    android:layout_height="@dimen/hcItemHeight"
+    android:layout_marginStart="2.5dp"
+    android:layout_marginEnd="2.5dp"
+    android:background="@drawable/horizontal_calendar_unselected_item"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/horizontalCalendarDayTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_medium"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/horizontalCalendarDayTvText"
+            tools:text="Tues" />
+
+        <TextView
+            android:id="@+id/horizontalCalendarDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/horizontalCalendarDateTvText"
+            tools:text="25 Jan" />
+    </LinearLayout>
+
+
+    <!--Reference Tv to get month and Year-->
+    <TextView
+        android:id="@+id/horizontalCalendarMonthAndYearTv"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:textColor="@android:color/transparent"
+        android:textSize="@dimen/x_small"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

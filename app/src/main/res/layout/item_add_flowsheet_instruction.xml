@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/questionnaire_card_margin_horizontal"
+    android:layout_marginTop="@dimen/questionnaire_card_margin_vertical"
+    android:layout_marginBottom="@dimen/questionnaire_card_margin_vertical"
+    android:layout_marginEnd="@dimen/questionnaire_card_margin_horizontal"
+    app:cardCornerRadius="@dimen/common_card_radius"
+    app:cardElevation="@dimen/common_card_elevation">
+
+    <TextView
+        android:id="@+id/addFlowsheetDataInstructionTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_padding"
+        android:fontFamily="@font/open_sans"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small" />
+</androidx.cardview.widget.CardView>

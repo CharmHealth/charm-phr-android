@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/patientDemographicsRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.demographics.PatientDemographicsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/patDemographicsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/patDemographicsBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/patDemographicsToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/health_passport_str"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/patDemographicsDeleteBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete_white"
+            android:visibility="gone" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patDemographicsToolbar">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/patDemographicsMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/patDemographicsCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_margin"
+                    android:layout_marginTop="@dimen/dashboard_card_margin"
+                    android:layout_marginEnd="@dimen/dashboard_card_margin"
+                    android:layout_marginBottom="@dimen/dashboard_health_vertical_margin"
+                    app:cardCornerRadius="@dimen/pat_demo_card_radius"
+                    app:cardElevation="@dimen/common_card_elevation">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/patDemographicsHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="@dimen/dashboard_card_margin"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:text="@string/my_health_card_txt"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/small"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/patDemographicsImgLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/hp_margin_side"
+                            android:layout_marginBottom="16dp"
+                            android:elevation="0dp"
+                            android:visibility="invisible"
+                            app:cardCornerRadius="5dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toBottomOf="@+id/patDemographicsHeading">
+
+                            <ImageView
+                                android:id="@+id/patDemographicsImg"
+                                android:layout_width="@dimen/pat_demo_img_size"
+                                android:layout_height="@dimen/pat_demo_img_height"
+                                android:scaleType="fitXY" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/patDemographicsImgDummyTV"
+                            style="@style/genderOtherTxtStyle"
+                            android:layout_width="@dimen/pat_demo_img_size"
+                            android:layout_height="@dimen/pat_demo_img_height"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="@dimen/hp_margin_side"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/item_pat_demo_dummy_bg"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="30sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/patDemographicsHeading"
+                            tools:text="D M" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsNameTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginEnd="16dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:maxLines="1"
+                            android:textColor="@color/patDemoPatNameTxtColor"
+                            android:textSize="@dimen/x_medium"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toEndOf="@id/patDemographicsImgLayout"
+                            app:layout_constraintTop_toBottomOf="@+id/patDemographicsHeading"
+                            tools:text="Derrick Man" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/open_sans"
+                            android:maxLines="1"
+                            android:textColor="@color/patDemoPatGenderAndDOBTxtColor"
+                            android:textSize="@dimen/small"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="@+id/patDemographicsNameTV"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsNameTV"
+                            tools:text="Male" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsDetailSeparator1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:maxLines="1"
+                            android:text="|"
+                            android:textColor="@color/patDemoPatGenderAndDOBSeparatorColor"
+                            android:textSize="@dimen/small"
+                            app:layout_constraintEnd_toStartOf="@id/patDemographicsDOB"
+                            app:layout_constraintStart_toEndOf="@+id/patDemographicsGender"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsNameTV" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsDOB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/open_sans"
+                            android:maxLines="1"
+                            android:textColor="@color/patDemoPatGenderAndDOBTxtColor"
+                            android:textSize="@dimen/small"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toEndOf="@+id/patDemographicsDetailSeparator1"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsNameTV"
+                            tools:text="Jun 18, 1998" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsDetailSeparator2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:maxLines="1"
+                            android:text="|"
+                            android:textColor="@color/patDemoPatGenderAndDOBSeparatorColor"
+                            android:textSize="@dimen/small"
+                            app:layout_constraintEnd_toStartOf="@id/patDemographicsBloodGrpTV"
+                            app:layout_constraintStart_toEndOf="@+id/patDemographicsDOB"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsNameTV" />
+
+
+                        <TextView
+                            android:id="@+id/patDemographicsBloodGrpTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/open_sans"
+                            android:maxLines="1"
+                            android:textColor="@color/patDemoBloodGrpColor"
+                            android:textSize="@dimen/small"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toEndOf="@id/patDemographicsDetailSeparator2"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsNameTV"
+                            tools:text="B+" />
+
+
+                        <TextView
+                            android:id="@+id/patDemographicsAddressLine1TV"
+                            style="@style/patDemoOuterTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:ellipsize="end"
+                            android:lineSpacingExtra="1dp"
+                            android:maxLines="3"
+                            android:textSize="@dimen/xx_small"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="@id/patDemographicsNameTV"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsGender"
+                            tools:text="15 Washington Street , New Mexico City , Jefferson" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsContactTV"
+                            style="@style/patDemoOuterTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="@id/patDemographicsNameTV"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsImgLayout"
+                            tools:text="987654321" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsContactLabel"
+                            style="@style/patDemoOuterLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/pat_demo_contact_no"
+                            app:layout_constraintEnd_toStartOf="@id/patDemographicsNameTV"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsImgLayout" />
+                        <!--<TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/patDemographicsAddressTV"
+                            style="@style/patDemoOuterTV"
+                            android:maxLines="3"
+                            android:ellipsize="end"
+                            android:text="@string/pat_demo_address_txt"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsInnerCardLayout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/patDemographicsOuterGuideline40"
+                            app:layout_constraintHorizontal_bias="0"/>-->
+
+                        <TextView
+                            android:id="@+id/patDemographicsCaregiverNameLabel"
+                            style="@style/patDemoOuterLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pat_demo_caregiver_name_txt"
+                            app:layout_constraintEnd_toStartOf="@id/patDemographicsNameTV"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsContactTV" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsCaregiverNameTV"
+                            style="@style/patDemoOuterTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="@id/patDemographicsNameTV"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsContactTV"
+                            tools:text="@string/pat_demo_address_txt" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsCaregiverNumberLabel"
+                            style="@style/patDemoOuterLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/pat_demo_caregiver_number_txt"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/patDemographicsNameTV"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsCaregiverNameTV" />
+
+                        <TextView
+                            android:id="@+id/patDemographicsCaregiverNumberTV"
+                            style="@style/patDemoOuterTV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="@id/patDemographicsNameTV"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsCaregiverNameTV"
+                            tools:text="@string/pat_demo_address_txt" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_margin"
+                    android:layout_marginTop="@dimen/dashboard_card_margin"
+                    android:layout_marginEnd="@dimen/dashboard_card_margin"
+                    android:layout_marginBottom="@dimen/dashboard_health_vertical_margin"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="@dimen/common_card_radius"
+                    app:cardElevation="@dimen/common_card_elevation">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/patientDemographicsHealthURLConstraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/patientDemographicsHealthURLHint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/hp_margin_side"
+                            android:layout_marginTop="@dimen/hp_margin_side"
+                            android:layout_marginEnd="@dimen/hp_margin_side"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:gravity="center_vertical"
+                            android:text="@string/pat_demo_url_txt"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/small"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/patDemographicsURLLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/hp_margin_side"
+                            android:layout_marginTop="@dimen/hp_url_bg_top_margin"
+                            android:layout_marginEnd="@dimen/hp_margin_side"
+                            android:background="@drawable/item_hp_url_bg"
+                            app:layout_constraintTop_toBottomOf="@id/patientDemographicsHealthURLHint">
+
+                            <TextView
+                                android:id="@+id/patDemographicsURLTV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/hp_margin_side"
+                                android:layout_marginTop="@dimen/card_padding"
+                                android:layout_marginBottom="@dimen/card_padding"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:maxLines="1"
+                                android:textSize="@dimen/xx_small"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/patDemographicsHealthURLShareImg"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="https://chm.link/lVU" />
+
+                            <ImageView
+                                android:id="@+id/patDemographicsHealthURLShareImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="@dimen/hp_margin_side"
+                                android:paddingEnd="@dimen/hp_margin_side"
+                                android:src="@drawable/ic_share_primary"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/patDemographicsHealthURLShareTV"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/patDemographicsHealthURLShareTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="@dimen/hp_margin_side"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:gravity="center_vertical"
+                                android:text="@string/share_str"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/xx_small"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/patDemographicsPasscodeBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_padding"
+                            android:layout_marginBottom="@dimen/card_padding"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:paddingTop="@dimen/card_padding_half"
+                            android:paddingBottom="@dimen/card_padding_half"
+                            android:text="@string/view_passcode_str"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/xx_small"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/patDemographicsURLLayout" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_margin"
+                    android:layout_marginTop="@dimen/dashboard_card_margin"
+                    android:layout_marginEnd="@dimen/dashboard_card_margin"
+                    android:layout_marginBottom="@dimen/dashboard_health_vertical_margin"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="@dimen/common_card_radius"
+                    app:cardElevation="@dimen/common_card_elevation">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/patientDemographicsPDFConstraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@drawable/item_ripple_white_bg">
+
+
+                        <TextView
+                            android:id="@+id/patientDemographicsPDFName"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/hp_margin_side"
+                            android:layout_marginEnd="@dimen/hp_margin_side"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:gravity="center_vertical"
+                            android:text="@string/pat_demographics_passport_view_str"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/medium"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/patientDemographicsPDFNxtBtn"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <ImageView
+                            android:id="@+id/patientDemographicsPDFNxtBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dashboard_card_padding"
+                            android:src="@drawable/ic_hp_nav_next"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/patDemographicsProgress"
+            layout="@layout/layout_progress_bar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <include
+            android:id="@+id/patDemographicsErrorPage"
+            layout="@layout/layout_error_page"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

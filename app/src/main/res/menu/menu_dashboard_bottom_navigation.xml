@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuHome"
+        android:title="@string/dashboard_menu_str_1"
+        android:icon="@drawable/ic_dashboard"
+        />
+
+    <item
+        android:id="@+id/menuHealthData"
+        android:title="@string/dashboard_menu_str_2"
+        android:icon="@drawable/ic_wellness_2"/>
+
+</menu>

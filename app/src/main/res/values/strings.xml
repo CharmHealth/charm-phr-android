@@ -1,0 +1,1490 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!--Strings key naming -->
+    <string name="app_name" translatable="false">Charm mPHR</string>
+
+    <string name="press_once_again_to_exit">Press back again to exit</string>
+
+    <string name="alert_sign_out">Are you sure you want to sign out?</string>
+
+    <string name="content_provider_authority" translatable="false">com.charm.phr.mphr.provider</string>
+
+
+    <string name="iam_server_url" translatable="false">https://accounts.charmtracker.com</string>
+    <string name="iam_portal_url" translatable="false">https://accounts.charmtracker.com</string>
+    <string name="accounts_url" translatable="false">https://accounts.charmtracker.com</string>
+    <string name="profile_url" translatable="false">https://accounts.charmtracker.com/home#profile/personal</string>
+
+    <string name="mphr_dialog_session_exceeded" translatable="false">Hey there, you have reached the maximum number of device sessions allowed.\n\nDelete old sessions for  %1$s Android  in Charm Accounts > Sessions > App Logins, to sign-in to %2$s.</string>
+
+    <string name="charm_auth_account_cannot_sign_in">This account can\u2019t sign in. Please contact your practice.</string>
+    <string name="mphr_dialog_scope_access_denied" translatable="false">To sign in to %1$s, please accept the requested permissions on the consent screen and try again.</string>
+
+    <!--common font Strings-->
+    <!--   <string name="font_sans_serif_normal">sans-serif</string>1002.E9QUIKPBC9HRNN9YHJCH39KGKJ8PEH
+    <string name="font_sans_serif_light">sans-serif-light</string>
+    <string name="font_sans_serif_medium">sans-serif-medium</string>
+    <string name="font_sans_serif_thin">sans-serif-thin</string>-->
+    <!--/common font Strings-->
+
+    <string name="auth_logout_msg">Hey!! We have brought new features. Please log in again to make use of it.</string>
+    <string name="session_expired_login_again">Your session has expired. Please log in again to continue.</string>
+
+    <!--exceptions-->
+    <string name="io_exception">Network Error</string>
+    <string name="socket_timeout_exception">Timeout Error</string>
+    <string name="conversion_error">Conversion Error</string>
+    <string name="error_facility_id_not_found">Facility Id not found </string>
+    <string name="error_patient_id_not_found">Patient Id not found </string>
+    <string name="error_transaction_info_not_found">Transaction Info not found </string>
+    <string name="error_practice_id_not_found">Practice Id not found </string>
+    <string name="error_no_valid_user_found">No valid user found</string>
+    <!--/exceptions-->
+
+    <string name="internet_connection_error">No internet connection</string>
+    <string name="connected_to_internet">Connected</string>
+
+    <string name="no_app_to_perform_call">No phone app found</string>
+    <string name="no_app_found_to_open_file">No app found to open this file</string>
+
+
+    <string name="no_data_available">No Data Available</string>
+    <string name="other_type_hint">Specify Other Type</string>
+
+    <string name="discard_changes_confirmation_string">Are you sure you want to discard the changes?</string>
+    <string name="are_you_sure_to_exit">Are you sure you want to exit?</string>
+
+    <string name="payment_under_process">Payment in process. Click retry. Do not exit</string>
+
+    <string name="guide_for_permission_str">Open settings, then tap Permissions and turn on&#160;</string>
+    <string name="storage_str">Storage</string>
+    <string name="record_audio_str">Record Audio</string>
+    <string name="camera_str">Camera</string>
+    <string name="notification_str">Notification</string>
+    <string name="microphone_str">Microphone</string>
+    <string name="pdf_str">PDF</string>
+    <string name="edit_str">Edit</string>
+
+    <string name="unregistering_your_device">Unregistering your device</string>
+    <string name="registering_your_device">Registering your device</string>
+    <string name="this_process_may_take_few_moments">This process may take a few moments</string>
+
+
+    <string name="storage_error">Permission denied. Unable to access storage</string>
+    <string name="camera_error">Permission denied. Unable to access camera</string>
+    <string name="record_audio_error">Permission denied. Unable to access record audio</string>
+
+    <string name="error_occurred_while_handling_photo">Error occurred in photo. Please try again</string>
+
+    <string name="error_occurred_while_handling_file">Error occurred in file. Please try again</string>
+
+    <string name="update_str">Update</string>
+    <string name="delete_str">Delete</string>
+    <string name="add_str">Add</string>
+    <string name="more_str">More…</string>
+
+    <string name="two_string_template">%1$s - %2$s</string>
+    <string name="reason_string_template">Reason %1$s</string>
+    <string name="practice_name_str">Practice Name</string>
+    <string name="member_name_str">Provider Name</string>
+    <string name="facility_name_str">Facility Name</string>
+    <string name="member_str">Provider</string>
+    <string name="facility_str">Facility name</string>
+    <string name="select_str">Select</string>
+    <string name="today_str">Today</string>
+
+    <string name="Others_no_i18n">Others</string>
+    <string name="date_str">Date</string>
+    <string name="value_str">Value</string>
+    <!--Progress Dialog-->
+    <string name="loading_data">Loading…</string>
+    <string name="sending_data_str">Sending…</string>
+    <string name="adding_data_str">Adding…</string>
+    <string name="update_data_str">Updating…</string>
+    <string name="verifying_str">Verifying…</string>
+
+    <!--/Progress Dialog-->
+
+
+    <!--Alert Dialog-->
+    <string name="retry_str">Retry</string>
+    <string name="cancel_str">Cancel</string>
+    <string name="yes_str">Yes</string>
+    <string name="no_str">No</string>
+    <string name="ok_str">Ok</string>
+    <string name="clear_all_str">Clear All</string>
+    <!--/Alert Dialog-->
+
+
+    <!--Login Activity-->
+
+    <string name="login_text_fetch">Fetch %1$s operation failed.</string>
+    <string name="patients_str">Patients</string>
+    <string name="menu_list_str">Menu list</string>
+    <string name="Login_failed">Login Failed</string>
+    <string name="deleted_authtoken_string">Session Expired</string>
+    <!--/Login Activity-->
+
+    <!--Passcode Activity-->
+    <string name="passcode">Lock Screen</string>
+    <string name="enter_old_passcode">Enter old PIN</string>
+    <string name="enter_new_passcode">Enter new PIN </string>
+    <string name="create_new_passcode">Create a new 5 digit lock screen PIN. This ensures your app\s security.</string>
+    <string name="re_enter_new_passcode">Re-enter PIN</string>
+    <string name="passcode_did_not_match">PIN does not match</string>
+    <string name="passcode_is_correct">PIN is correct</string>
+    <string name="enter_passcode">Enter PIN</string>
+    <string name="passcode_changed_successfully">Lock Screen PIN changed successfully</string>
+    <string name="passcode_created_successfully">Lock Screen PIN configured successfully</string> <!--Used while verifying security question-->
+    <plurals name="wrong_passcode_attempts_remaining">
+        <item quantity="one">Wrong PIN. %d attempt remaining before sign out.</item>
+        <item quantity="other">Wrong PIN. %d attempts remaining before sign out.</item>
+    </plurals>
+    <string name="max_incorrect_passcode_attempts_reached">Maximum incorrect attempts reached. You will be logged out.</string>
+
+
+    <!--/Passcode Activity-->
+
+    <!--PatientList Activity-->
+    <string name="patient_list_heading_txt">Members</string>
+
+    <!--/PatientList Activity-->
+
+
+    <!--Dashboard Activity-->
+    <string name="dashboard_toolbar_heading">Hi %1$s</string>
+    <string name="dashboard_today_appointments_heading">Today\'s Appointment</string>
+    <string name="dashboard_upcoming_appointments_heading">Upcoming Appointments</string>
+    <string name="dashboard_active_medications_heading">Active Medications</string>
+    <string name="show_more_txt">Show More</string>
+    <string name="dashboard_invoice_heading">Active Invoices</string>
+    <string name="dashboard_message_heading">Recent Messages</string>
+    <string name="dashboard_questionnaire_heading">Shared Questionnaires</string>
+
+
+    <string name="dashboard_menu_str_1">Dashboard</string>
+    <string name="dashboard_menu_str_2">My Health</string>
+    <string name="dashboard_menu_str_3">More</string>
+
+    <string name="dashboard_settings_str">Settings</string>
+    <string name="log_out">Log out</string>
+    <string name="dashboard_my_info_str">My Info</string>
+    <string name="dashboard_personal_details_txt">Personal Details</string>
+    <string name="dashboard_primary_contact_details_txt">Primary Contact Details</string>
+    <string name="dashboard_insurance_details">Insurance Details</string>
+
+    <string name="dashboard_active_medication_no_data_str">No Active Medications</string>
+
+    <string name="dashboard_compose_msg_fab">Compose Message</string>
+
+    <string name="show_all">Show All</string>
+    <!--/Dashboard Activity-->
+
+
+    <!--Billing Activity-->
+    <string name="billing_str">Billing</string>
+    <string name="billing_invoices_str">Invoice</string>
+    <string name="billing_statement_str">Statement</string>
+    <string name="billing_receipts_str">Receipt</string>
+
+    <string name="payment_requested">Payment requested</string>
+    <string name="due_at_present">Due at present</string>
+    <string name="invoice_bill_amt_info_str">Invoice amount</string>
+
+    <string name="receipt_amount_paid_str">Amount paid</string>
+
+    <string name="billing_detail_toolbar_txt">%1$s details</string>
+
+    <string name="error_pdf_fetch_failed">%1$s PDF fetch failed</string>
+
+    <!--PDF Password Protection-->
+    <string name="password_protected_pdf_title">Password Protected PDF</string>
+    <string name="password_protected_pdf_message_with_app">This PDF is password protected and cannot be displayed in the app. Would you like to open it in an external PDF viewer?</string>
+    <string name="password_protected_pdf_message_no_app">This PDF is password protected and cannot be displayed. Please install a PDF viewer app to view password protected PDFs.</string>
+    <string name="password_protected_pdf_error">Unable to handle password protected PDF</string>
+    <string name="error_loading_pdf">Error loading PDF</string>
+    <string name="error_loading_pdf_title">PDF Loading Error</string>
+    <string name="open_externally">Open Externally</string>
+    <string name="open_pdf_with">Open PDF with</string>
+    <string name="no_pdf_app_available">No PDF viewer app available</string>
+    <!--/PDF Password Protection-->
+
+    <!--/Billing Activity-->
+
+    <!--Message Activity-->
+    <string name="message_str">Messages</string>
+    <string name="message_sent_str">Sent</string>
+    <string name="message_inbox_str">Inbox</string>
+
+    <string name="message_yesterday_str">Yesterday</string>
+
+    <string name="message_detail_to_str">To: %1$s</string>
+
+    <string name="message_add_hint">Tap + to compose Message</string>
+
+    <string name="message_delete_success_msg">Message deleted successfully</string>
+    <string name="error_message_delete__msg">Delete message is unsuccessful</string>
+    <string name="message_delete_confirmation_msg">Do you want to delete this message?</string>
+    <string name="error_message_restriction_failed">Message restriction operation failed.</string>
+    <string name="error_message_id_not_found">Message Id not found </string>
+    <string name="error_attachment_id_not_found">Attachment Id not found </string>
+
+
+    <string name="message_empty_subject_msg">Do you want to proceed without Subject?</string>
+
+    <string name="compose_message_char_count_str">%1$s of %2$s Characters</string>
+
+    <string name="compose_message_max_char_reached">You have reached the maximum character limit of %1$d</string>
+
+    <string name="compose_message_attachment_remove_str">Do you want to remove this attachment?</string>
+    <!--Transition names-->
+    <string name="message_transition_subject">Message Transition Subject</string>
+    <string name="message_transition_back_btn">Message Transition Back btn</string>
+
+    <!--/Message Activity-->
+
+    <!--Lab Activity-->
+    <string name="lab_str">Lab Results</string>
+    <string name="labs_str">Labs</string>
+    <string name="lab_result_str">Results</string>
+    <string name="lab_order_str">Orders</string>
+    <string name="lab_result_show_more">Show more…</string>
+    <string name="lab_result_status_label">Result Status</string>
+    <string name="lab_result_interpretation_low">Low</string>
+    <string name="lab_result_interpretation_high">High</string>
+    <string name="lab_result_interpretation_abnormal">Abnormal</string>
+    <string name="lab_result_interpretation_normal">Normal</string>
+    <string name="lab_result_interpretation_unknown">Unknown</string>
+    <string name="lab_result_full_str">Lab Result</string>
+    <string name="lab_result_message_to_patient_label">Physician advice</string>
+    <string name="lab_result_view_full_report_txt">View Full Report</string>
+    <string name="lab_report_str">Lab Report</string>
+    <string name="lab_order_full_str">Lab Order</string>
+    <string name="error_order_id_not_found">Lab Order Id not found </string>
+
+    <string name="error_group_id_not_found">Group Id not found </string>
+    <string name="lab_result_reference_txt">Reference   %1$s-%2$s %3$s</string>
+    <string name="lab_result_reference_max_txt">Reference  &lt;=%1$s %2$s</string>
+    <string name="lab_result_reference_min_txt">Reference  &gt;=%1$s %2$s</string>
+
+    <string name="allergy_str">Allergies</string>
+    <string name="allergy_severity_severe_str">Severe</string>
+    <string name="allergy_severity_moderate_str">Moderate</string>
+    <string name="allergy_severity_mild_str">Mild</string>
+    <string name="allergy_name_and_type_template_str">%1$s - %2$s</string>
+    <string name="allergy_status_active_str">Active</string>
+    <string name="allergy_status_inactive_str">Inactive</string>
+    <string name="allergy_previous_severity_label">Previous Severity</string>
+    <string name="allergy_add_toolbar_str">Add Allergy</string>
+    <string name="allergy_add_allergen_hint">Allergen Name</string>
+    <string name="allergy_add_type_hint">Allergen Type</string>
+    <string name="allergy_add_other_type_hint">@string/other_type_hint</string>
+    <string name="allergy_add_severity_hint">Severity</string>
+    <string name="allergy_add_status_hint">Status</string>
+    <string name="allergy_add_observed_on_hint">Observed On</string>
+    <string name="resolved_on_hint">Resolved On</string>
+    <string name="allergy_add_reactions_hint">Any Reactions</string>
+
+    <string name="allergy_health_passport_str">My Allergies</string>
+
+    <string name="allergy_delete_success_msg">Allergy deleted successfully</string>
+    <string name="error_allergy_delete__msg">Delete allergy is unsuccessful</string>
+    <string name="allergy_delete_confirmation_msg">Do you want to delete this allergy?</string>
+
+
+    <string name="allergy_add_hint">Tap + to add Allergy</string>
+
+    <string name="allergy_edit_toolbar_str">Edit Allergy</string>
+    <string name="add_allergy_btn_txt">Add Allergy</string>
+
+    <string name="error_add_allergy_req_failed">Add Allergy operation failed</string>
+    <string name="error_edit_allergy_req_failed">Edit Allergy operation failed</string>
+    <string name="error_allergen_already_exist">Allergen already exist</string>
+    <string name="error_empty_severity">Please select Severity</string>
+    <string name="error_empty_allergen_name">Please enter Allergen Name</string>
+    <string name="error_invalid_allergen_name">Please enter at least one alphabet in allergen name</string>
+    <string name="error_invalid_reaction_name">Please enter at least one alphabet in reaction</string>
+
+    <string name="prescription_start_date_label">Start Date</string>
+    <string name="prescription_stop_date_label">Stop Date</string>
+    <string name="prescription_prescribed_by_label">Prescribed by</string>
+    <string name="prescription_refill_label">Refill</string>
+    <string name="prescription_refills_label">Refills</string>
+    <string name="prescription_dispense_label">Dispense</string>
+
+    <string name="prescription_status_template">%1$s %2$s</string>
+
+
+    <string name="prescription_str">Prescriptions</string>
+    <string name="medications_str">Medications</string>
+    <string name="supplements_str">Supplements</string>
+
+
+    <string name="medications_health_passport_str">Current Medications</string>
+
+    <string name="medication_add_hint">Tap + to add Medication</string>
+    <string name="supplement_add_hint">Tap + to add Supplement</string>
+
+    <string name="medication_name_in_list">%1$s [%2$s]</string>
+
+    <string name="prescription_status_all">All</string>
+    <string name="prescription_status_active">Active</string>
+    <string name="prescription_status_inactive">Inactive</string>
+
+    <string name="medication_refill_request_success">Refill request submitted successfully</string>
+    <string name="error_medication_refill_request">Refill request operation failed</string>
+
+    <string name="medications_add_str">Add Medication</string>
+
+    <string name="medication_drug_name_str">Drug Name</string>
+    <string name="medication_intake_details_str">Intake Details</string>
+    <string name="medication_no_of_intake_string">Strength</string>
+    <string name="medication_no_of_intake_unit_string">Unit</string>
+    <string name="medication_dosage_string">Dose</string>
+    <string name="medication_dosage_unit_string">Unit</string>
+    <string name="medication_intake_route_string">How to take?</string>
+    <string name="medication_intake_string">Frequency</string>
+    <string name="medication_intake_when_string">Intake When</string>
+    <string name="medication_start_date_string">Start Date</string>
+    <string name="medication_end_date_string">End Date</string>
+    <string name="medication_provider_string">Prescribed by</string>
+    <string name="medication_refills_string">Refills</string>
+    <string name="medication_med_condition_string">Reason for taking</string>
+    <string name="medication_update_str">Edit Medication</string>
+
+    <string name="medication_delete_success_msg">Medication deleted successfully</string>
+    <string name="error_medication_delete__msg">Delete medication is unsuccessful</string>
+    <string name="medication_delete_confirmation_msg">Do you want to delete this medication?</string>
+
+
+    <string name="error_empty_drug_name">Please enter Drug name</string>
+    <string name="error_invalid_drug_name">Please enter at least one alphabet in drug name</string>
+    <string name="error_invalid_comments">Please enter at least one alphabet in comments</string>
+
+    <string name="error_invalid_period">End date should not be before start date</string>
+    <string name="error_empty_med_condition">Please enter Reason for taking</string>
+
+    <string name="supplement_add_str">Add Supplement</string>
+    <string name="supplement_name_str">Supplement Name</string>
+    <string name="supplement_manufacturer_str">Manufacturer</string>
+
+    <string name="supplement_update_str">Edit Supplement</string>
+
+    <string name="supplement_delete_success_msg">Supplement deleted successfully</string>
+    <string name="error_supplement_delete__msg">Delete supplement is unsuccessful</string>
+    <string name="supplement_delete_confirmation_msg">Do you want to delete this supplement?</string>
+    '
+    <string name="error_empty_supplement_name">Please enter Supplement name</string>
+    <string name="error_empty_manufacturer_name">Please enter Manufacturer name</string>
+    <string name="error_invalid_manufacturer_name">Please enter at least one alphabet in Manufacturer name</string>
+
+    <string name="error_invalid_supplement_name">Please enter at least one alphabet in supplement name</string>
+
+    <string name="error_add_medication_req_failed">Add Medication operation failed</string>
+    <string name="error_edit_medication_req_failed">Edit Medication operation failed</string>
+
+    <string name="error_add_supplement_req_failed">Add Supplement operation failed</string>
+    <string name="error_edit_supplement_req_failed">Edit Supplement operation failed</string>
+
+    <string name="cancelled_str">Cancelled</string>
+    <string name="appointments_str">Appointments</string>
+    <string name="appointment_requested_str">Requested</string>
+    <string name="appointment_denied_str">Denied</string>
+    <string name="appointment_waiting_list_str">Waiting list</string>
+    <string name="appointment_past_str">Past Appointments</string>
+    <string name="appointment_requested_appointment_str">Requested Appointments</string>
+    <string name="appointment_denied_appointment_str">Denied Appointments</string>
+    <string name="appointment_upcoming_no_data_str">No Upcoming Appointments</string>
+    <string name="appointment_requested_no_data_str">No Requested Appointments</string>
+    <string name="appointment_denied_no_dat_str">No Denied Appointments</string>
+    <string name="appointment_waiting_no_dat_list_str">No Waiting list</string>
+    <string name="appointment_add_hint">Tap + to book Appointment</string>
+    <string name="appointment_list_str_template">@string/two_string_template</string>
+
+
+    <string name="appointment_delete_confirmation_msg">Do you want to delete this appointment?</string>
+    <string name="appointment_wait_list_delete_confirmation_msg">Do you want to cancel this waiting list?</string>
+
+    <string name="appointment_delete_success_msg">Appointment deleted successfully</string>
+    <string name="appointment_cancel_success_msg">Appointment cancelled successfully</string>
+
+    <string name="error_appointment_delete_msg">Appointment delete is unsuccessful</string>
+    <string name="error_appointment_cancel_msg">Appointment cancel is unsuccessful</string>
+
+    <string name="visit_summary_str">Visit Summary</string>
+
+    <string name="procedure_str">Procedures</string>
+
+    <string name="procedure_add_str">Add Procedure</string>
+    <string name="procedure_edit_str">Edit Procedure</string>
+
+    <string name="procedure_health_passport_str">Hospitalizations</string>
+
+    <string name="procedure_health_passport_add_str">Add Hospitalization</string>
+    <string name="procedure_health_passport_edit_str">Edit Hospitalization</string>
+    <string name="dashboard_max_notification">99+</string>
+
+    <string name="procedure_name_hint">Name</string>
+    <string name="procedure_type_hint">Type</string>
+    <string name="procedure_date_hint">@string/date_str</string>
+    <string name="procedure_notes_hint">Notes</string>
+    <string name="procedure_other_type_hint">@string/other_type_hint</string>
+    <string name="procedure_add_hint">Tap + to add Procedure</string>
+
+    <string name="procedure_health_passport_name_hint">Hospitalized/Procedure</string>
+    <string name="procedure_health_passport_date_hint">On</string>
+    <string name="procedure_health_passport_notes_hint">Outcome</string>
+
+    <string name="procedure_add_health_passport__hint">Tap + to add Hospitalization</string>
+
+    <string name="procedure_health_passport_delete_success_msg">Hospitalization deleted successfully</string>
+    <string name="error_health_passport_procedure_delete__msg">Delete hospitalization is unsuccessful</string>
+    <string name="procedure_health_passport_delete_confirmation_msg">Do you want to delete this hospitalization?</string>
+
+    <string name="procedure_delete_success_msg">Procedure deleted successfully</string>
+    <string name="error_procedure_delete__msg">Delete procedure is unsuccessful</string>
+    <string name="procedure_delete_confirmation_msg">Do you want to delete this procedure?</string>
+
+
+    <string name="error_add_procedure_health_passport_req_failed">Add Hospitalization operation failed</string>
+    <string name="error_edit_procedure_health_passport_req_failed">Edit Hospitalization operation failed</string>
+
+    <string name="error_add_procedure_health_passport_data_exists">Hospitalization already exists</string>
+    <string name="error_add_procedure_data_exists">Procedure already exists</string>
+
+    <string name="error_add_procedure_req_failed">Add Procedure operation failed</string>
+    <string name="error_edit_procedure_req_failed">Edit Procedure operation failed</string>
+    <string name="error_invalid_notes">Please enter at least one alphabet in notes</string>
+    <string name="error_invalid_outcome">Please enter at least one alphabet in outcome</string>
+
+    <string name="book_appointment_str">Book Appointment</string>
+    <string name="book_appointment_request_str">Request</string>
+    <string name="book_appointment_book_str">Book</string>
+
+    <string name="book_appointment_slot_str_heading">Slot</string>
+    <string name="book_appointment_type_str">Appointment Type</string>
+    <string name="book_appointment_date_preference_str_heading">Date Preference</string>
+    <string name="book_appointment_date_str">@string/date_str</string>
+    <string name="book_appointment_date_preference_str">Select date preference</string>
+    <string name="book_appointment_time_str">Time Preference</string>
+    <string name="book_appointment_time_preference_str">Select time preference</string>
+    <string name="book_appointment_reason_for_appointment_str">Reason for appointment</string>
+    <string name="book_appointment_reason_str">Reason</string>
+    <string name="requested_for_str">Requested for</string>
+    <string name="instruction_str">Instruction</string>
+    <string name="book_appointment_card_detail_str">Card details</string>
+    <string name="book_appointment_visittype_str">Visit Type</string>
+    <string name="book_appointment_date_pref_any_str">Any Date</string>
+    <string name="book_appointment_date_pref_specific_str">Specific Date</string>
+    <string name="book_appointment_time_pref_any_str">Any Time</string>
+    <string name="book_appointment_time_pref_range_str">Time Range</string>
+    <string name="book_appointment_time_pref_range_start_time_str">From</string>
+    <string name="book_appointment_time_pref_range_end_time_str">To</string>
+    <string name="book_appointment_date_select_str">Select date</string>
+    <string name="book_appointment_time_select_str">Select time</string>
+    <string name="book_appointment_payment_amt_str">Amount</string>
+    <string name="payment_card_number_hint">Card number</string>
+    <string name="payment_card_name_hint">Card Holder Name</string>
+    <string name="payment_card_expiry_month_hint">Expiry MM</string>
+    <string name="payment_card_expiry_year_hint">Expiry YYYY</string>
+    <string name="payment_card_cvv_hint">Cvv</string>
+    <string name="payment_card_on_file">Card On File</string>
+
+    <string name="book_appointment_time_zone_str">Date &amp; Time are shown here as per the selected facility timezone (%1$s)</string>
+    <string name="book_appointment_patient_time_zone_str">Date &amp; Time shown here is based on the timezone fetched for your zipcode (%1$s)</string>
+
+    <string name="error_page_msg1">Something went wrong</string>
+    <string name="error_page_msg2">Check your connection and try again</string>
+
+    <string name="try_again_str">Try again</string>
+    <string name="book_appointment_practice_select_info">Select a practice</string>
+    <string name="book_appointment_facility_select_info">Select a facility</string>
+    <string name="book_appointment_provider_select_info">Select a provider</string>
+    <string name="book_appointment_visittype_select_info">Select visit type to book a slot</string>
+    <string name="book_appointment_slot_morning_str">Morning</string>
+    <string name="book_appointment_slot_noon_str">Afternoon</string>
+    <string name="book_appointment_slot_evening_str">Evening</string>
+
+    <string name="book_appointment_success_msg">Appointment %1$s successfully</string>
+    <string name="book_appointment_book_success_txt">booked</string>
+    <string name="book_appointment_request_success_txt">requested</string>
+    <string name="book_appointment_waitlist_success_txt">added</string>
+    <string name="no_slots_available">No Slots Available</string>
+    <string name="error_book_appointment_empty_practice">Please choose a practice</string>
+    <string name="error_book_appointment_empty_facility">Please choose a facility</string>
+    <string name="error_book_appointment_empty_provider">Please choose a provider</string>
+    <string name="error_book_appointment_empty_visit_type">Please choose visit type</string>
+    <string name="error_book_appointment_telehealth_not_enabled">Telehealth is not enabled. Please contact your provider</string>
+    <string name="error_book_appointment_feature_inavailability">Bluefin payment is not supported</string>
+    <string name="error_book_appointment_empty_date">Please choose a date</string>
+    <string name="error_book_appointment_empty_slot">Please select a slot to book appointment</string>
+
+    <string name="error_book_appointment_uncheck_waiting_list">Please check add waiting list to add a waiting list appointment</string>
+    <string name="error_book_appointment_incorrect_time">Selected time preference is not proper. Please select a proper time</string>
+    <string name="error_book_appointment_empty_reason">Please enter the reason for the appointment</string>
+    <string name="error_book_appointment_invalid_reason">Please enter at least one alphabet in the reason for the appointment</string>
+
+    <string name="error_book_appointment_empty_card_holder_name">Please enter the card holder name</string>
+    <string name="error_book_appointment_empty_card">Please Choose a Card</string>
+    <string name="error_book_appointment_invalid_card_number">Please enter a valid card number</string>
+    <string name="error_book_appointment_invalid_amount">Please enter a valid amount to pay</string>
+    <string name="error_min_invalid_amount">Minimum amount to pay %1$s</string>
+    <string name="error_max_invalid_amount">Maximum amount to pay %1$s</string>
+    <string name="error_book_appointment_empty_card_number">Please enter the card number</string>
+    <string name="error_book_appointment_empty_card_expiry_month">Please enter the card expiry month</string>
+    <string name="error_book_appointment_empty_card_expiry_year">Please enter the card expiry year</string>
+    <string name="error_book_appointment_empty_card_cvv">Please enter the card cvv</string>
+    <string name="error_book_appointment_invalid_card_cvv">Please enter a valid card cvv</string>
+    <string name="error_book_appointment_waitlist_failure">Add waitlist appointment operation failed</string>
+    <string name="error_book_appointment_failure">Book Appointment operation failed</string>
+    <string name="error_book_appointment_request_failure">Request Appointment operation failed</string>
+    <string name="medication_refill_heading">Reason For Refill</string>
+    <string name="message_compose_toolbar_txt">Compose</string>
+    <string name="message_compose_from_label">From</string>
+    <string name="message_compose_to_label">To</string>
+    <string name="message_compose_subject_label">Subject</string>
+    <string name="message_compose_content_hint">Enter your message content</string>
+    <string name="message_compose_empty_to_address">Please enter a recipient address</string>
+    <string name="message_compose_empty_content">Please enter the content of the message</string>
+    <string name="message_compose_success">Message sent successfully</string>
+    <string name="message_compose_failure">Message send operation failed</string>
+    <string name="message_detail_reply_all_txt">Reply All</string>
+    <string name="message_detail_forward_txt">Forward</string>
+    <string name="error_empty_procedure_name">Please enter Procedure Name</string>
+    <string name="error_invalid_procedure_name">Please enter at least one alphabet in procedure name</string>
+    <string name="message_list_no_subject_str">(No Subject)</string>
+    <string name="billing_payment_amount_str">Amount</string>
+    <string name="billing_detail_pay_str">Pay</string>
+    <string name="billing_payment_make_payment_str">Make Payment</string>
+
+    <string name="error_empty_procedure_health_passport_name">Please enter Hospitalized/Procedure Name</string>
+    <string name="error_invalid_procedure_health_passport_name">Please enter at least one alphabet in Hospitalized/Procedure name</string>
+
+    <string name="vaccine_str">Immunizations</string>
+    <string name="vaccine_provider_label">Administered by</string>
+    <string name="vaccine_prescribed_by_label">Prescribed by</string>
+    <string name="vaccine_manufacturer_label">Manufacturer</string>
+    <string name="vaccine_type_adolescent">Vaccine taken in adolescent</string>
+    <string name="vaccine_type_childhood">Vaccine taken in childhood</string>
+    <string name="vaccine_add_str">Add Vaccine</string>
+    <string name="vaccine_edit_str">Edit Vaccine</string>
+    <string name="vaccine_name_str">Vaccine Name</string>
+    <string name="vaccine_administered_list_str">How was it administered ?</string>
+    <string name="vaccine_comments_str">Comments</string>
+
+    <string name="vaccine_add_hint">Tap + to add Vaccine</string>
+
+
+    <string name="error_add_vaccine_req_failed">Add Vaccine operation failed</string>
+    <string name="error_edit_vaccine_req_failed">Edit Vaccine operation failed</string>
+    <string name="add_vaccine_type_childhood">Childhood</string>
+    <string name="add_vaccine_type_adolescent">Adolescent</string>
+    <string name="error_empty_vaccine_name">Please enter Vaccine Name</string>
+    <string name="error_invalid_vaccine_comments">Please enter at least one alphabet in comments</string>
+    <string name="error_invalid_vaccine_member_name">Please enter at least one alphabet in administered by name</string>
+    <string name="error_invalid_vaccine_name">Please enter at least one alphabet in vaccine name</string>
+    <string name="announcement_str">Announcements</string>
+    <string name="useful_info_str">Useful Info</string>
+
+    <string name="vaccine_delete_success_msg">Vaccine deleted successfully</string>
+    <string name="error_vaccine_delete__msg">Delete vaccine is unsuccessful</string>
+    <string name="vaccine_delete_confirmation_msg">Do you want to delete this vaccine?</string>
+
+    <!--/Lab Activity-->
+
+    <string name="video_call_str">Video Call</string>
+
+    <string name="video_call_already_in_meeting_str">You are already in a video consultation</string>
+
+    <string name="sdk_init_error">SDK has not been initialized successfully</string>
+    <string name="connecting">Connecting…</string>
+    <string name="request_failed_try_again">Request failed. Please try again</string>
+    <string name="error_occurred_try_again">Error occurred.Please try again</string>
+    <string name="something_went_wrong">Something went wrong. Please try again</string>
+    <string name="no_internet_connection_try_again">No internet connection. Please check your network and try again</string>
+    <string name="pls_check_metwork_msg">Please check your network and try again</string>
+
+    <string name="zoom_exit_msg">Are you sure want to exit?</string>
+    <string name="join_str">Join</string>
+
+    <string name="about_facilities_str">Facilities</string>
+    <string name="about_providers_str">Providers</string>
+
+    <string name="about_facility_phone_str">Phone: %1$s</string>
+    <string name="about_facility_address_str">%1$s, %2$s</string>
+
+    <string name="about_str">About</string>
+    <string name="message_restrict_msg">Sorry, you have exceeded number of messages allowed between office visits. Please contact your practice.</string>
+    <string name="error_no_patients_found">To access this application, you need a practice associated %1$s account</string>
+    <string name="error_practice_login">Practice member cannot access patient portal. Please use a patient portal account. You will be logged out shortly.</string>
+
+    <string name="questionnaire_str">Questionnaires</string>
+    <string name="questionnaire_member_label">Sender</string>
+    <string name="questionnaire_appointment_date_label">Appointment on</string>
+    <string name="questionnaire_list_date_filter_str">View Questionnaire list for</string>
+    <string name="questionnaire_list_date_filter_3_months_label">3 Months</string>
+    <string name="questionnaire_list_date_filter_6_months_label">6 Months</string>
+    <string name="questionnaire_list_date_filter_1_year_label">1 Year</string>
+    <string name="questionnaire_list_date_filter_custom_label">Custom</string>
+    <string name="questionnaire_filter_date_from_label">From</string>
+    <string name="questionnaire_filter_date_to_label">To</string>
+    <string name="to_str">To</string>
+    <string name="questionnaire_custom_filter_view_btn_strt">View</string>
+    <string name="questionnaire_current_label">Current</string>
+    <string name="questionnaire_past_label">Past</string>
+
+    <string name="questionnaire_status_submitted">Submitted</string>
+    <string name="questionnaire_status_not_submitted">Not Filled</string>
+    <string name="questionnaire_status_draft">Draft</string>
+    <string name="questionnaire_status_new">New</string>
+
+    <string name="error_questionnaire_incorrect_custom_filter_date">Selected dates are not proper. Please select a proper date</string>
+    <string name="error_questionnaire_from_date_empty">From date should not be empty</string>
+    <string name="error_questionnaire_to_date_empty">To date should not be empty</string>
+    <string name="questionnaire_detail_item_signature_clear_txt">Clear</string>
+
+    <string name="questionnaire_detail_mandatory_check_msg">Please fill the mandatory fields</string>
+    <string name="questionnaire_detail_others_text_not_given">Others is checked but value is not given</string>
+    <string name="questionnaire_detail_empty_msg">Please fill the questionnaire</string>
+    <string name="questionniare_detail_save_str">Save</string>
+    <string name="questionnaire_detail_submit_btn_txt">Submit</string>
+    <string name="questionnaire_detail_medication_intake_details">Intake detail</string>
+    <string name="questionnaire_detail_add_more_medication">Add more medication</string>
+    <string name="questionnaire_detail_add_more_supplement">Add more supplement</string>
+    <string name="questionnaire_detail_add_more_drug_allergy">Add more drug allergy</string>
+    <string name="questionnaire_detail_add_more_food_allergy">Add more food allergy</string>
+    <string name="questionnaire_detail_add_more_environment_allergy">Add more environment allergy</string>
+    <string name="questionnaire_detail_allergy_drug">Drug Allergy</string>
+    <string name="questionnaire_detail_allergy_food">Food Allergy</string>
+    <string name="questionnaire_detail_allergy_environment">Environmental Allergy</string>
+    <string name="book_appointment_add_wait_list_info_txt">Add wait list</string>
+    <string name="error_file_not_supported">This type of file is not supported</string>
+
+    <string name="error_questionnaire_save_failed">Save Questionnaire operation failed</string>
+    <string name="error_questionnaire_submit_failed">Submit Questionnaire operation failed</string>
+
+
+    <string name="tp_sign_in_str">Login</string>
+    <string name="tp_join_meeting_str">Join Video Consultation</string>
+
+    <string name="tp_appointment_heading">Appointments</string>
+    <string name="tp_lab_heading">Lab Results / Rx</string>
+    <string name="tp_messages_heading">Secure Messaging</string>
+    <string name="tp_health_passport_heading">Health Passport</string>
+    <string name="tp_app_icon_heading">Welcome to Charm Patient Portal</string>
+    <string name="tp_app_custom_icon_heading">Welcome to Patient Portal of Anand Hospital</string>
+
+    <string name="tp_appointment_content">Request or Schedule appointments with your Care team easily</string>
+    <string name="tp_lab_content">View Lab results and Prescriptions shared by your provider</string>
+    <string name="tp_messages_content">Communicate with your care team securely</string>
+    <string name="tp_documents_content">Share clinical documents with Care team</string>
+    <string name="tp_questionnaire_content">Fill pre-appointment questionnaires at your leisure before the visit</string>
+    <string name="tp_health_passport_content">Securely share health records with your providers in a single click.</string>
+    <string name="tp_app_icon_content">Securely access and manage your health data anytime, anywhere.</string>
+
+    <string name="video_call_toobar_txt">Join Video Consultation</string>
+    <string name="video_call_meeting_id_hint">Meeting Id</string>
+    <string name="video_call_meeting_pwd_hint">Password</string>
+    <string name="video_call_meeting_user_name_hint">Name</string>
+    <string name="video_call_join_btn_str">Join</string>
+    <string name="consent_form_info">Please fill the mandatory consent form to join the video call.</string>
+    <string name="consent_form">Consent Form</string>
+
+    <string name="error_empty_meeting_id">Please enter Meeting Id</string>
+    <string name="error_empty_password">Please enter Password</string>
+    <string name="error_empty_user_name">Please enter Name</string>
+
+    <string name="problem_list_str">Problem Lists</string>
+
+    <string name="problem_list_active_str">Active</string>
+    <string name="problem_list_history_str">History</string>
+
+    <string name="problem_list_health_passport_str">Medical Conditions</string>
+
+
+    <string name="problem_list_health_passport_add_str">Add Medical Condition</string>
+    <string name="problem_list_health_passport_edit_str">Edit Medical Condition</string>
+
+    <string name="problem_list_add_str">Add Condition</string>
+    <string name="problem_list_edit_str">Edit Condition</string>
+
+    <string name="problem_list_name_hint">Condition Name</string>
+    <string name="problem_list_type_hint">Type</string>
+    <string name="problem_list_date_hint">Onset Date</string>
+    <string name="problem_list_notes_hint">Notes</string>
+    <string name="problem_list_add_hint">Tap + to add Problem List</string>
+
+
+    <string name="problem_list_delete_success_msg">Condition deleted successfully</string>
+    <string name="error_problem_list_delete__msg">Delete condition is unsuccessful</string>
+    <string name="problem_list_delete_confirmation_msg">Do you want to delete this condition?</string>
+
+    <string name="problem_list_health_passport_delete_success_msg">Medical condition deleted successfully</string>
+    <string name="error_problem_list_health_passport_delete__msg">Delete medical condition is unsuccessful</string>
+    <string name="problem_list_health_passport_delete_confirmation_msg">Do you want to delete this medical condition?</string>
+
+
+    <string name="error_add_problem_list_req_failed">Add Condition operation failed</string>
+    <string name="error_edit_problem_list_req_failed">Edit Condition operation failed</string>
+
+
+    <string name="error_empty_problem_List_name">Please enter Condition Name</string>
+    <string name="error_invalid_problem_list_name">Please enter at least one alphabet in condition name</string>
+
+    <string name="error_add_problem_list_health_passport_req_failed">Add Medical condition operation failed</string>
+    <string name="error_edit_problem_list_health_passport_req_failed">Edit Medical condition operation failed</string>
+
+
+    <string name="physician_str">Treating Physicians</string>
+
+
+    <string name="physician_add_str">Add Physician</string>
+    <string name="physician_edit_str">Edit Physician</string>
+
+    <string name="physician_name_hint">Physician Name</string>
+    <string name="physician_mobile_hint">Mobile</string>
+
+    <string name="physician_add_hint">Tap + to add Physician</string>
+
+    <string name="error_empty_physician_name">Please enter Physician name</string>
+    <string name="error_invalid_physician_name">Please enter at least one alphabet in physician name</string>
+
+    <string name="error_empty_physician_mobile">Please enter mobile</string>
+
+
+    <string name="error_add_physician_req_failed">Add Physician operation failed</string>
+    <string name="error_edit_physician_req_failed">Edit Physician operation failed</string>
+
+
+    <string name="physician_delete_success_msg">Physician deleted successfully</string>
+    <string name="error_physician_delete__msg">Delete physician is unsuccessful</string>
+    <string name="physician_delete_confirmation_msg">Do you want to delete this physician?</string>
+
+    <string name="document_str">Documents</string>
+
+    <string name="document_single_str">Document</string>
+
+    <string name="document_list_delete_success_msg">Document deleted successfully</string>
+    <string name="error_document_delete__msg">Delete document is unsuccessful</string>
+    <string name="document_delete_confirmation_msg">Do you want to delete this document?</string>
+
+
+    <string name="document_add_hint">Tap + to add Document</string>
+
+    <string name="document_name_hint">Document Name</string>
+    <string name="document_type_hp_hint">File Type</string>
+    <string name="document_type_hint">Folder Name</string>
+
+    <string name="document_all_str">All</string>
+    <string name="document_folder_str">Folder</string>
+
+    <string name="document_add_str">Add Document</string>
+    <string name="document_upload_str">Upload</string>
+
+
+    <string name="error_empty_document_name">Please enter Document name</string>
+    <string name="error_empty_document_type">Please enter File type</string>
+
+    <string name="error_add_document_req_failed">Upload document operation failed</string>
+
+
+    <string name="health_passport_str">Health Passport</string>
+    <string name="health_passport_info_str">View all your health data at one place.</string>
+
+    <string name="health_passport_pdf_str">Health Passport PDF</string>
+
+    <string name="pat_demographic_toolbar_txt">Profile</string>
+    <string name="health_card_str">Health Card</string>
+    <string name="pat_demo_contact_no">Contact Number</string>
+    <string name="pat_demo_blood_grp_txt">Blood Group</string>
+    <string name="pat_demo_address_txt">Address</string>
+    <string name="pat_demo_caregiver_name_txt">Caregiver Name</string>
+    <string name="pat_demo_caregiver_number_txt">Caregiver Number</string>
+    <string name="pat_demo_url_txt">Health URL</string>
+    <string name="generate_pdf_str">Generate PDF</string>
+    <string name="demographics_str">Demographics</string>
+    <string name="save_str">Save</string>
+    <string name="discard">Discard</string>
+
+    <string name="save_pat_demo_first_name_str">First Name</string>
+    <string name="save_pat_demo_last_name_str">Last Name</string>
+    <string name="save_pat_demo_aadhaar_no_str">Aadhaar Number</string>
+    <string name="save_pat_demo_home_no_str">Home Phone</string>
+    <string name="save_pat_demo_mobile_no_str">Mobile Phone</string>
+    <string name="save_pat_demo_age_str">Age</string>
+    <string name="save_pat_demo_gender_str">Birth Sex</string>
+    <string name="save_pat_demo_nationality_str">Nationality</string>
+    <string name="save_pat_demo_blood_grp_str">Blood Group</string>
+
+    <string name="save_pat_demo_dob_str">Date of Birth</string>
+
+    <string name="save_pat_demo_country_str">Country</string>
+    <string name="save_pat_demo_state_str">State</string>
+    <string name="save_pat_demo_city_str">City</string>
+    <string name="save_pat_demo_pin_code_str">Pin Code</string>
+    <string name="save_pat_demo_zip_code_str">Zip Code</string>
+    <string name="save_pat_demo_postal_code_str">Postal Code</string>
+    <string name="save_pat_demo_address_str">Address</string>
+    <string name="save_pat_demo_email_address_str">Email</string>
+    <string name="save_pat_demo_passport_number_str">Passport Number</string>
+    <string name="save_pat_demo_address_line_1">Address Line 1</string>
+    <string name="save_pat_demo_address_line_2">Address Line 2</string>
+    <string name="save_pat_demo_caregiver_name_str">Caregiver Name</string>
+    <string name="save_pat_demo_caregiver_num_str">Caregiver Number</string>
+    <string name="save_pat_demo_emg_contact_name_str">Emergency Contact Name</string>
+    <string name="save_pat_demo_emg_contact_num_str">Emergency Contact Number</string>
+    <string name="save_pat_demo_success_add_patient_msg">registered successfully</string>
+
+
+    <string name="error_empty_first_name">Please enter first name</string>
+    <string name="error_empty_last_name">Please enter last name</string>
+    <string name="error_empty_mobile_num">Please enter mobile phone</string>
+    <string name="error_empty_country">Please enter country</string>
+    <string name="error_empty_city">Please enter city</string>
+    <string name="error_empty_state">Please enter state</string>
+
+    <string name="error_wrong_language">Please enter a valid language</string>
+
+    <string name="error_invalid_first_name">Please enter at least one alphabet in first name</string>
+    <string name="error_invalid_last_name">Please enter at least one alphabet in last name</string>
+    <string name="error_invalid_line_1">Please enter at least one alphabet in address line 1</string>
+    <string name="error_invalid_line_2">Please enter at least one alphabet in address line 2</string>
+    <string name="error_invalid_city">Please enter at least one alphabet in city</string>
+    <string name="error_invalid_state">Please enter at least one alphabet in state</string>
+    <string name="error_wrong_state">Please enter a valid state</string>
+    <string name="error_wrong_country">Please enter a valid country</string>
+    <string name="error_invalid_caregiver_name">Please enter at least one alphabet in caregiver name</string>
+    <string name="error_invalid_emg_contact_name">Please enter at least one alphabet in emergency contact name</string>
+
+    <string name="save_pat_success_msg">Patient demographics saved successfully</string>
+    <string name="error_save_pat_failed">Save patient demographics operation failed</string>
+    <string name="pat_demo_card_info">How to use this card during Medical Emergency?</string>
+
+    <string name="pat_demo_card_content1">Follow the instruction</string>
+    <string name="pat_demo_card_content2">Enter the passcode provided below</string>
+    <string name="pat_demo_card_content3">Access the Short URL from a web browser</string>
+    <string name="pass_code_str">Pass code</string>
+    <string name="view_passcode_str">View Passcode</string>
+    <string name="view_health_card_str">View Health Card</string>
+    <string name="passcode_copied_hint">Pass code copied to clipboard</string>
+    <string name="health_card_pdf_str">Health Card PDF</string>
+    <string name="demographics_pdf_str">demographics PDF</string>
+    <string name="demo_pdf_preview_failed">Unable to share %1$s</string>
+    <string name="demo_pdf_download_failed">Unable to download %1$s</string>
+    <string name="demo_pdf_download_success">%1$s downloaded</string>
+    <string name="demo_pdf_already_download">%1$s already downloaded</string>
+
+    <string name="document_preview_failed">Unable to share document</string>
+    <string name="document_download_failed">Unable to download document</string>
+    <string name="document_download_success">Document downloaded</string>
+    <string name="document_already_download">Document already downloaded</string>
+    <string name="permissions_str">Permissions</string>
+
+
+    <string name="done_str">Done</string>
+    <string name="vital_empty_txt">-</string>
+    <string name="chg_prof_pic_str">Change Profile Photo</string>
+
+    <string name="preview_document_invalid_file_str">No preview Available</string>
+    <string name="preview_document_invalid_file_hint">Preview is available only for PDF and image format</string>
+    <string name="error_map_app_not_found">No map apps are found</string>
+    <string name="pat_demographics_edit_str">Edit Demographics</string>
+    <string name="pat_demographics_passport_view_str">View as PDF</string>
+
+    <string name="pat_demographics_not_available_str">Not available</string>
+    <string name="document_new_folder_txt">New Folder</string>
+    <string name="document_create_txt">Create</string>
+    <string name="error_document_folder_name_empty">Please enter folder name</string>
+    <string name="document_folder_edit_txt">Edit folder Name</string>
+
+    <string name="document_folder_add_hint">Tap + to add Folder</string>
+
+    <string name="error_add_folder_failed">Add folder operation failed</string>
+    <string name="error_edit_folder_failed">Edit folder operation failed</string>
+
+    <string name="document_folder_list_delete_success_msg">Folder deleted successfully</string>
+    <string name="error_document_folder_delete__msg">Delete folder is unsuccessful</string>
+    <string name="document_delete_folder_confirmation_msg">Do you want to delete this folder?</string>
+    <string name="document_folder_shared_by_me_str">Shared By Me</string>
+    <string name="document_folder_shared_with_me_str">Shared With Me</string>
+    <string name="document_folder_shared_by_str">Shared By</string>
+    <string name="document_folder_shared_to_str">Shared To</string>
+    <string name="document_share_to_str">Share To</string>
+    <string name="document_share_str">Share Document</string>
+    <string name="share_str">Share</string>
+
+    <string name="practice_member_str">Practice Member</string>
+    <string name="reference_range_txt">Reference Range</string>
+
+    <string name="wellness_weight_txt">Weight</string>
+    <string name="wellness_weight_and_height_txt">Weight &amp; Height</string>
+
+    <string name="wellness_height_txt">Height</string>
+
+    <string name="wellness_bp_txt">Blood Pressure</string>
+    <string name="wellness_pulse_txt">Pulse Rate</string>
+    <string name="wellness_temperature_txt">Temperature</string>
+    <string name="wellness_blood_sugar_txt">Blood Sugar</string>
+    <string name="wellness_cholesterol_txt">Cholesterol</string>
+
+    <string name="wellness_bp_toolbar_txt">@string/wellness_bp_txt</string>
+    <string name="wellness_pulse_toolbar_txt">@string/wellness_pulse_txt</string>
+    <string name="wellness_temperature_toolbar_txt">@string/wellness_temperature_txt</string>
+    <string name="wellness_blood_sugar_toolbar_txt">@string/wellness_blood_sugar_txt</string>
+
+    <string name="wellness_bp_reference_txt">120/80 mmHg</string>
+
+    <string name="wellness_temperature_reference_txt">97.7–99.5 &#xb0;F</string>
+    <string name="wellness_degree_txt">&#xb0;%1$s</string>
+    <string name="wellness_data_vital_txt">Vitals</string>
+
+    <string name="wellness_pulse_reference_txt">120/80 mmHg</string>
+
+    <string name="wellness_list_toolbar_txt">Wellness</string>
+    <string name="error_no_apps_to_share">No apps available to share</string>
+    <string name="my_health_card_txt">My Health Card</string>
+    <string name="practice_str">From</string>
+    <string name="all_documents_str">All Documents</string>
+    <string name="logout_failed_msg">Log out failed. Please try again.</string>
+    <string name="logging_out_str">Logging out…</string>
+    <string name="document_share_others_label">Enter the Email address or the stored contact name of the recipient</string>
+    <string name="error_book_appointment_no_facility">No facility found to book an appointment</string>
+    <string name="error_book_appointment_member_empty">Members are not found to book an appointment</string>
+    <string name="view_history">View History</string>
+    <string name="record">Record</string>
+    <string name="add_wellness_toolbar_text">Record %1$s</string>
+
+    <string name="time_str">Time</string>
+    <string name="wellness_notes_hint">Notes</string>
+    <string name="error_add_wellness_failed">Record operation failed</string>
+    <string name="select_parameters_txt">Select Parameters</string>
+    <string name="bmi">BMI</string>
+    <string name="error_empty_weight">Please enter weight</string>
+    <string name="error_empty_height">Please enter height</string>
+    <string name="error_empty_value">Please enter %1$s</string>
+    <string name="error_empty_metric_list">Please select a metric to Add</string>
+
+    <string name="wellness_walking_txt">Walking</string>
+    <string name="wellness_cycling_txt">Cycling</string>
+    <string name="wellness_swimming_txt">Swimming</string>
+    <string name="wellness_jogging_txt">Jogging</string>
+    <string name="wellness_treadmill_txt">Treadmill</string>
+    <string name="wellness_aerobics_txt">Aerobics</string>
+    <string name="wellness_cal_burned_txt">Calories Burned</string>
+    <string name="wellness_cal_consumed_txt">Calories Consumed</string>
+    <string name="wellness_water_consumption_txt">Water Consumption</string>
+    <string name="wellness_sleep_txt">Sleep</string>
+    <string name="wellness_step_txt">Steps Count</string>
+    <string name="wellness_oxygen_saturation_txt">Blood oxygen saturation</string>
+    <string name="wellness_data_fitness_txt">Fitness &amp; Others</string>
+    <string name="wellness_add_alert_single_item_str">%1$s entry value is not normal. Are you sure want to continue?</string>
+    <string name="wellness_add_alert_multiple_item_str">Some entry values are not normal. Are you sure want to continue?</string>
+    <string name="vital_unit_system_update_heading">Please select your preferred unit of Measurement ?</string>
+    <string name="standard_txt">Imperial (Standard)</string>
+    <string name="wellness_standard_units">(Ft &amp; In / Lb / &#xb0;C)</string>
+    <string name="wellness_standard_units_eg">Eg: Weight:154lb, Height:5ft 9in, Temperature:98.6°F</string>
+    <string name="metric_txt">Metric</string>
+    <string name="wellness_metric_units">(cm / kg / &#xb0;F)</string>
+    <string name="wellness_metric_units_eg">Eg: Weight:70kg, Height:175cm, Temperature:37°C</string>
+    <string name="error_vital_unit_system_select">Please select a unit system to continue</string>
+    <string name="error_unit_system_update_failed">Unit system update operation failed</string>
+    <string name="error_wellness_unit_type_get_failed">Get Wellness unit system operation failed</string>
+    <string name="error_wellness_tracker_failed">Error Occurred. Please try again.</string>
+    <string name="submit_str">Submit</string>
+
+    <string name="swaasa_questionnaire_label_1">Frequent cough</string>
+    <string name="swaasa_questionnaire_label_2">Sputum</string>
+    <string name="swaasa_questionnaire_label_3">Cough at night</string>
+    <string name="swaasa_questionnaire_label_4">Wheezing</string>
+    <string name="swaasa_questionnaire_label_5">Pain in chest</string>
+    <string name="swaasa_questionnaire_label_6">Shortness of breath</string>
+
+    <string name="symptoms_heading">Have you experienced any of these symptoms ?</string>
+    <string name="record_your_cough">Record your cough</string>
+    <string name="record_desc">Please cough multiple times for up to 10 seconds</string>
+    <string name="tap_the_icon_to_record">Tap to Record</string>
+    <string name="new_recording_txt">New Recording</string>
+    <string name="swaasa_api_str">Swaasa Questionnaire</string>
+    <string name="error_swaasa_empty_file">Record audio to submit</string>
+    <string name="error_swaasa_file_not_found">File not found</string>
+    <string name="swaasa_success_msg">Your Swaasa questionnaire is successfully submitted</string>
+    <string name="swaasa_link_expired_msg">The link you followed has expired or no longer valid.</string>
+    <string name="swaasa_too_many_attempt_msg">Too many login attempt</string>
+    <string name="error_swaasa_failed_msg">Verify Passcode failed. Please try again</string>
+
+    <string name="swaasa_contact_practice_msg">Please contact your practice</string>
+
+    <string name="verify_otp">Verify Passcode</string>
+    <string name="please_enter_the_otp_sent_to_your_registered_mobile_number">Please, enter the Passcode shared with you via SMS to access the swaasa questionnaire</string>
+    <string name="otp_label">Enter Passcode</string>
+    <string name="verify_and_proceed_txt">Verify and Proceed</string>
+    <string name="thank_you_str">Thank You</string>
+    <string name="error_empty_otp">Please enter Passcode that is sent to your Mobile number</string>
+    <string name="error_invalid_otp">Please enter the 6 digit Passcode that is sent to your Mobile number</string>
+
+    <string name="swaasa_passcode_invalid_error">The Passcode you entered is incorrect</string>
+
+
+    <string name="flowsheet_list_frequency_msg">Data to be filled by patient - %1$s</string>
+
+    <string name="flowsheet_txt">Flowsheets</string>
+    <string name="add_flowsheet_entries_txt">Add Flowsheet Entries</string>
+    <string name="edit_flowsheet_entries_txt">Edit Flowsheet Entries</string>
+
+    <string name="add_flowsheet_vital_txt">@string/wellness_data_vital_txt</string>
+    <string name="add_flowsheet_lab_txt">Lab</string>
+    <string name="error_add_flowsheet_add_one_entry">Please add atleast one entry to add</string>
+    <string name="error_add_flowsheet_req_failed">Add Flowsheet Entry operation failed</string>
+    <string name="error_edit_flowsheet_req_failed">Edit Flowsheet Entry operation failed</string>
+
+    <string name="add_flowsheet_alert_single_item_str">%1$s vital entry value is not normal. Are you sure want to continue?</string>
+    <string name="add_flowsheet_alert_multiple_item_str">Some vital entry values are not normal. Are you sure want to continue?</string>
+
+    <string name="add_flowsheet_celsius">&#xb0;C</string>
+    <string name="add_flowsheet_farenheit">&#xb0;F</string>
+    <string name="insurance_str">Insurance</string>
+    <string name="insurance_list_member_label">Member ID</string>
+    <string name="insurance_list_plan_label">Plan Name/ Program Name</string>
+    <string name="insurance_list_policy_grp_num_label">Policy Group/ FECA Number</string>
+    <string name="insurance_list_insured_person_label">Insured Person</string>
+
+    <string name="insurance_type_primary">Primary</string>
+    <string name="insurance_type_secondary">Secondary</string>
+    <string name="insurance_name_value">%1$s - %2$s</string>
+    <string name="insurance_date_value">Valid from %1$s Valid Until %2$s</string>
+    <string name="insurance_add_hint">Tap + to add insurance</string>
+    <string name="insurance_delete_confirmation_msg">Do you want to delete this insurance?</string>
+    <string name="insurance_delete_success_msg">Insurance deleted successfully</string>
+    <string name="error_insurance_delete__msg">Delete insurance is unsuccessful</string>
+    <string name="insurance_add_str">Add Insurance</string>
+    <string name="insurance_edit_str">Edit Insurance</string>
+    <string name="add_insurance_payer_name_label">Payer Name / Insurance Company Name</string>
+    <string name="add_insurance_payer_id_label">Payer ID</string>
+    <string name="add_insurance_type_label">Insurance Type</string>
+    <string name="add_insurance_member_id_label">Member ID</string>
+    <string name="add_insurance_payer_address_label">Payer Address</string>
+    <string name="add_insurance_person_details_label">Insuranced Person Details</string>
+    <string name="add_insurance_relationship_label">Patient Relationship with Insured</string>
+    <string name="add_insurance_work_phone_label">Work Phone</string>
+    <string name="add_insurance_copay_label">Copay</string>
+    <string name="add_insurance_deductable_label">Deductable</string>
+    <string name="add_insurance_category_label">Insurance Category</string>
+
+    <string name="add_insurance_valid_from_label">Valid From</string>
+    <string name="add_insurance_valid_to_label">Valid To</string>
+
+    <string name="add_insurance_id_label_member">Member ID</string>
+    <string name="add_insurance_id_label_sponser">Sponsor\'s SSN</string>
+    <string name="add_insurance_id_label_ssn">SSN</string>
+    <string name="add_insurance_id_label_medicare_hash">MEDICARE #</string>
+    <string name="add_insurance_id_label_medicaid_hash">MEDICAID #</string>
+    <string name="add_insurance_id_label">ID</string>
+
+
+    <string name="error_add_insurance_get_pat_detail_failed">Patient demographics fetch operation failed, Please try again</string>
+    <string name="add_insuranc_same_as_account_s_address">Same as account\'s address</string>
+    <string name="insurance_list_emp_name_label">Employer/School Name</string>
+
+    <string name="error_empty_payer_name">Please enter Payer name</string>
+    <string name="error_invalid_payer_name">Please enter at least one alphabet in Payer name</string>
+    <string name="error_empty_payer_id">Please enter Payer ID</string>
+    <string name="error_empty_insurance_type">Please enter Insurance Type</string>
+    <string name="error_empty_practice_name">Please select Practice name</string>
+    <string name="error_empty_member_id">Please enter %1$s</string>
+    <string name="error_empty_plan_name">Please enter Plan Name/ Program Name</string>
+    <string name="error_empty_policy_grp_num">Please enter Policy Group/ FECA Number</string>
+    <string name="error_empty_emp_num">Please enter Employer/School Name</string>
+    <string name="error_empty_relationship">Please enter Patient Relationship with Insured</string>
+    <string name="error_empty_dob">Please enter Date of Birth</string>
+    <string name="error_empty_birth_sex">Please enter Birth Sex</string>
+    <string name="error_empty_pincode">Please enter Pincode</string>
+    <string name="error_empty_start_date">Please enter Start Date</string>
+    <string name="error_empty_end_date">Please enter End Date</string>
+
+    <string name="error_empty_gender_id_other">Please enter Gender identity</string>
+
+    <string name="error_invalid_pincode">Please enter a valid pincode</string>
+    <string name="error_add_insurance_msg">Add Insurance operation failed</string>
+    <string name="error_edit_insurance_msg">Edit Insurance operation failed</string>
+
+    <string name="error_add_insurance_end_date_before_dob">Valid to date should not be before Insured Person\'s Date of birth</string>
+    <string name="error_add_insurance_start_date_before_dob">Valid from date should not be before Insured Person\'s Date of birth</string>
+    <string name="error_add_insurance_invalid_period">Valid to date should not be before Valid from date</string>
+    <string name="add_insurance_gender_identity_hint">Gender Identity</string>
+    <string name="add_insurance_gender_identity_other_hint">Gender Identity Other</string>
+
+    <string name="add_insurance_language_hint">Language</string>
+    <string name="add_insurance_race_hint">Race</string>
+    <string name="add_insurance_ethnicity_hint">Ethnicity</string>
+    <string name="add_insurance_m_status_hint">Marital Status</string>
+    <string name="add_insurance_e_status_hint">Employment Status</string>
+    <string name="add_insurance_s_status_hint">Smoking Status</string>
+    <string name="add_insurance_personal_details_txt">Personal Details</string>
+    <string name="add_insurance_primary_contact_txt">Primary Contact Details</string>
+    <string name="add_insurance_contact_work_phone">Work Phone</string>
+    <string name="add_insurance_contact_extn">Extn</string>
+    <string name="add_insurance_contact_fax">Fax</string>
+    <string name="add_insurance_primary_phone_hint">Primary Phone</string>
+    <string name="add_insurance_post_box_hint">Post Box</string>
+    <string name="click_and_drag_to_sign_the_questionnaire">Tap to sign the questionnaire</string>
+    <string name="save_signature_txt">Save Sign</string>
+    <string name="edit_signature_txt">Edit Sign</string>
+    <string name="clear_signature_txt">Clear Sign</string>
+    <string name="questionnaire_signature_empty_msg">No signature found</string>
+    <string name="error_empty_signature">Signature should not be empty</string>
+    <string name="error_signature_failed">Signature save operation failed</string>
+    <string name="questionnaire_signature_success">Signature saved successfully</string>
+    <string name="questionnaire_save_success">Questionnaire saved successfully</string>
+    <string name="questionnaire_submit_success">Questionnaire submitted successfully</string>
+    <string name="consent_form_edit_msg">Consent form submitted once and not allowed to edit again</string>
+    <string name="questionnaire_form_edit_msg">Encounter signed and Questionnaire not allowed to edit again</string>
+    <string name="consent_form_submit_msg">Consent form will not be allowed to edit after submit.Do you want to submit?</string>
+
+    <string name="error_questionnaire_medication_empty_name">@string/error_empty_drug_name</string>
+    <string name="error_questionnaire_medication_empty_detail">Please enter Intake detail</string>
+
+    <string name="error_questionnaire_supplement_empty_name">@string/error_empty_supplement_name</string>
+    <string name="submit_again_txt">Submit Again</string>
+
+    <string name="error_empty_email">Please enter an Email</string>
+    <string name="error_empty_line1">Please enter address line 1</string>
+
+    <string name="error_invalid_email">Please enter a valid Email</string>
+    <string name="add_insurance_has_insurance_txt">Do you have insurance ?</string>
+    <string name="add_insurance_details_txt">Insurance Details</string>
+    <string name="fill_questionnaire_txt">Fill Questionnaire</string>
+
+    <string name="multi_clicktoselect_empty_field">Select Items</string>
+    <string name="clicktoselect_empty_field">--</string>
+    <string name="error_questionniare_feature_inavailability">The selected questionnaire is not supported</string>
+    <string name="error_empty_questionniare">This questionnaire doesn\'t have any questions</string>
+    <string name="select_race_heading">Select Race</string>
+    <string name="decline_to_specify">Declined to specify</string>
+    <string name="appointment_reminder_heading">Appointment Reminder</string>
+    <string name="appointment_reminder_msg">Notifies the patient when an appointment is scheduled for today</string>
+    <string name="home_book_appointment_btn_txt">Book Now</string>
+    <string name="appointment_select_valid_date">Can\'t book appointment for a past date. Please select a valid date.</string>
+    <string name="selected_slot">Selected Slot</string>
+    <string name="give_your_feedback">Give your Feedback</string>
+    <string name="report_str">Report</string>
+    <string name="critical_str">Critical</string>
+    <string name="major_str">Major</string>
+    <string name="minor_str">Minor</string>
+    <string name="none_str">None</string>
+    <string name="suggest_str">Suggest</string>
+    <string name="ask_question_str">Ask Question</string>
+    <string name="appreciate_str">Appreciate</string>
+    <string name="productive_str">Productive</string>
+    <string name="good_in_support">Good in Support</string>
+    <string name="easy_to_customise">Easy to Customise</string>
+    <string name="choose_severity">Choose Severity</string>
+    <string name="well_integrated">Well Integrated</string>
+    <string name="easy_to_use">Easy to Use</string>
+    <string name="affordable">Affordable</string>
+    <string name="robust">Robust</string>
+    <string name="subject_str">Subject</string>
+    <string name="describe_your_problem">Describe your problem</string>
+    <string name="describe_your_suggestion">Describe your suggestion</string>
+    <string name="describe_your_question">Describe your question</string>
+    <string name="appreciate_in_your_own_words">Appreciate in your own words</string>
+    <string name="contact_us">Contact us</string>
+    <string name="please_enter_subject">Please enter subject</string>
+    <string name="please_enter_subject_only_255_char">Please enter subject within character limit. Subject exceed by number of character </string>
+    <string name="please_describe_your_problem">Please describe your problem</string>
+    <string name="please_describe_your_question">Please describe your question</string>
+    <string name="please_describe_your_suggestion">Please describe your suggestion</string>
+    <string name="please_describe_your_appreciation">Please select or describe your appreciation </string>
+    <string name="please_enter_description_only_1000_char">Please enter Description within character limit. Description exceed by number of character</string>
+    <string name="please_enter_appreciation_only_1000_char">Please enter Appreciation within character limit. Appreciation exceed by number of character</string>
+    <string name="please_select_document_size_not_more_than_20MB">Please select document whose size not more than 20MB</string>
+    <string name="what_do_you_like_about_charm_phr">What do you like about %1$s?</string>
+    <string name="only_five_documents_are_allowed_to_attach">Only 5 documents are allowed to attach</string>
+    <string name="submitting_str">Submitting…</string>
+    <string name="uploading_documents">Uploading Documents…</string>
+    <string name="problem_str">Problem</string>
+    <string name="question_str">Question-</string>
+    <string name="suggestion_str">Suggestion-</string>
+    <string name="feedback_sent_successfully">Thank you for your valuable feedback</string>
+    <string name="requestFailedTryAgain">Request failed. Please try again</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="edit_reminder">Update Reminder</string>
+    <string name="reminder_str">Reminders</string>
+    <string name="once_str">Once</string>
+    <string name="minutes_str">Minutes</string>
+    <string name="hours_str">Hours</string>
+    <string name="day_str">Days</string>
+    <string name="week_str">Weeks</string>
+    <string name="month_str">Months</string>
+    <string name="year_str">Years</string>
+    <string name="every_str">Every</string>
+    <string name="reminder_timing">Reminder Timing</string>
+    <string name="reminder_time_str">Reminder Time</string>
+    <string name="enter_start_date">Select start date</string>
+    <string name="enter_end_date">Select end date</string>
+    <string name="enter_reminder_timing">Enter reminder timing</string>
+    <string name="select_week_day">Select atleast one week day</string>
+    <string name="enter_frequency">Enter Frequency</string>
+    <string name="reminder_delete_confirmation_msg">Do you want to delete this reminder?</string>
+    <string name="s">S</string>
+    <string name="m">M</string>
+    <string name="w">W</string>
+    <string name="t">T</string>
+    <string name="f">F</string>
+    <string name="select_module">Select Module</string>
+    <string name="adding_reminder">Adding Reminder…</string>
+    <string name="updating_reminder">Updating Reminder…</string>
+    <string name="deleting_reminder">Deleting Reminder…</string>
+    <string name="loading_reminder">Loading Reminders…</string>
+    <string name="notification_title">Hi %1$s!, You have an medication/supplement</string>
+    <string name="notification_title_medication">Hi %1$s!, You have an medication</string>
+    <string name="notification_title_supplements">Hi %1$s!, You have an supplement</string>
+    <string name="notification_title_medication_and_supplements">Hi %1$s!, You have an medication and supplement</string>
+    <string name="notification_message">Tap to view</string>
+    <string name="sync_with_google_fit">Sync With Google Fit</string>
+    <string name="google_sync">Google Sync</string>
+    <string name="schedule_str">Schedule</string>
+    <string name="one_time">One Time</string>
+    <string name="daily_str">Daily</string>
+    <string name="weekly_str">Weekly</string>
+    <string name="sun">SUN</string>
+    <string name="mon">MON</string>
+    <string name="tue">TUE</string>
+    <string name="wed">WED</string>
+    <string name="thu">THU</string>
+    <string name="fri">FRI</string>
+    <string name="sat">SAT</string>
+    <string name="all_str">All</string>
+    <string name="add_reminder_time">Add Reminder Time</string>
+    <string name="fetch_medication">fetching medications…</string>
+    <string name="fetch_supplement">fetching supplements…</string>
+    <string name="select_all_str">Select All</string>
+    <string name="scheduled_for_str">Scheduled for</string>
+    <string name="skip_str">Skip</string>
+    <string name="taken_str">Taken</string>
+    <string name="reminder_count">%1$s Reminders</string>
+    <string name="reminder_fill">%1$s Reminder</string>
+    <string name="all_reminder_str">All Reminders</string>
+    <string name="scheduled_str">Scheduled</string>
+    <string name="upcoming_str">Upcoming</string>
+    <string name="completed_str">Completed</string>
+    <string name="add_reminder_endDate_less_than_currentDate_error">Reminder end date should not be lesser than the current date</string>
+    <string name="reminder_delete_success_msg">Reminder deleted successfully</string>
+    <string name="reminder_load_error">The reminder does not exist.</string>
+    <string name="reminder_add_success_msg">Reminder Added successfully</string>
+    <string name="reminder_history_add_success_msg">Reminder History Added successfully</string>
+    <string name="reminder_update_success_msg">Reminder Updated successfully</string>
+    <string name="error_onetime_reminder">End date and Start date should be same for one time reminder</string>
+    <string name="doc_shared_to_parctice">Document(s) will be shared to Practice and selected members will be notified</string>
+    <string name="share_document_remove_str">Do you want to remove this Document?</string>
+    <string name="added_successfully_str">Added Successfully</string>
+    <string name="sharing_str">Sharing…</string>
+    <string name="sharing_successfully__str">Shared Successfully</string>
+    <string name="expiry_str">Expiry</string>
+    <string name="add_to_contacts">Add to Contacts</string>
+    <string name="email_name_not_available">The Email is not available</string>
+    <string name="add_contact_str">Add Contact</string>
+    <string name="full_name_str">Full Name</string>
+    <string name="dummy_id_str">dummyId</string>
+    <string name="email_address_template_str">emailAddress@gmail.com</string>
+    <string name="remove_str">Remove</string>
+    <string name="add_more_str">Add More</string>
+    <string name="select_one_doc_delete_multi_not_allowed">Select one document to delete. Multiple delete not allowed</string>
+    <string name="document_shared_by_practice_caanot_be_deleted">Document Shared by practice cannot be deleted</string>
+    <string name="error_in_loading_document">Error in Loading Document</string>
+    <string name="do_you_exit_sharing">Do you want to exit from sharing?</string>
+    <string name="add_contact_contrain">At least one contact should be present</string>
+    <string name="person_select_info">Please select a practice member to share</string>
+    <string name="error_empty_physician_email">Please enter email Id</string>
+    <string name="error_empty_full_name">Please enter full name</string>
+    <string name="error_invalid_full_name">Please enter at least one alphabet in full name</string>
+    <string name="error_invalid_subject">Please enter at least one alphabet in Subject</string>
+    <string name="error_invalid_description">Please enter at least one alphabet in description</string>
+    <string name="add_new_contacts">Add New Contacts</string>
+    <string name="no_member_available">No Member Available</string>
+    <string name="select_max_document_error">Select max of 10 documents to share at a time</string>
+    <string name="share_option_disabled_for_practice">Your practice has disabled document share option. Please contact your practice.</string>
+
+    <string name="placeQrCode">QR code inside</string>
+    <string name="adding_reminder_history">Adding Reminder History…</string>
+    <string name="updating_reminder_history">Updating Reminder History…</string>
+    <string name="loading_reminder_history">Loading Reminder History…</string>
+    <string name="card_nick_name">Card nick name</string>
+    <string name="expires">Expires</string>
+    <string name="card_add_str">Add Card</string>
+    <string name="edit_card_str">Edit Card</string>
+    <string name="choose_practice">Choose Practice</string>
+    <string name="practice_only_str">Practice</string>
+    <string name="card_display_format">xxxx xxxx xxxx %1$s</string>
+    <string name="practice_saved_card">Practice Saved Cards</string>
+    <string name="patient_saved_card">Patient Saved Cards</string>
+    <string name="make_this_as_primary_card">Make this as Primary Card</string>
+    <string name="card_delete_confirmation_msg">Do you want to delete this card?</string>
+    <string name="card_delete_success_msg">Card deleted successfully</string>
+    <string name="card_update_success_msg">Card Updated successfully</string>
+    <string name="card_update_error_msg">Error in Updating Card</string>
+    <string name="card_add_error_msg">Error in Adding Card</string>
+    <string name="card_added_success_msg">Card added successfully</string>
+    <string name="error_card_delete__msg">Delete card is unsuccessful</string>
+    <string name="no_card_available">No Cards available</string>
+    <string name="card_add_hint">Tap + to Add Cards</string>
+    <string name="charge_card_on_file">Charge Card on File</string>
+    <string name="choose_card">Choose Card</string>
+    <string name="choose_card_detail">Ending with %1$s | Expiry %2$s | %3$s</string>
+    <string name="error_invalid_card_holder_name">Please enter at least one alphabet in card holder name</string>
+    <string name="msg_to_practice_str">Send messages to your practice members</string>
+    <string name="msg_to_charm">Send technical questions, suggestions, complaints, and appreciation to %1$s technical support</string>
+    <string name="to_practice">Contact Practice</string>
+    <string name="to_charm_mphr">Technical Support </string>
+    <string name="proceed_str">Proceed</string>
+    <string name="mandatory_info_try_again">Mandatory Information Missing. Please try again later</string>
+    <string name="no_reminders_available">No %1$s Reminders available</string>
+    <string name="no_reminders_available_today">No Reminders available for Today</string>
+    <string name="reminders_add_hint">Tap + to add Reminder</string>
+    <string name="reminder_selection_error">Select atleast one item to proceed</string>
+    <string name="reminder_history_error">Reminder History for future time cannot be added</string>
+
+    <string name="rate_us">Rate us</string>
+    <string name="sure">Sure</string>
+    <string name="not_now">Not now</string>
+    <string name="do_you_like_mPHR">Do you like %1$s?</string>
+    <string name="mind_giving_feedback">Could you provide us some feedback?</string>
+    <string name="rate_in_play_store">Can you rate %1$s?</string>
+    <string name="error_message_restriction">Your practice has restricted messaging. Contact them through other means</string>
+
+    <string name="unlock_charm_mPHR">Unlock %1$s</string>
+    <string name="unlock_charm_mPHR_msg">Unlock to access %1$s</string>
+    <string name="unlock_charm_mPHR_description">Confirm your screen lock PIN, pattern, or password.</string>
+    <string name="no_system_lock_configured">No system lock has been configured; log out shortly.</string>
+    <string name="unlock">Unlock</string>
+    <string name="configure">Configure</string>
+    <string name="lock_screen_pin">Change PIN</string>
+    <string name="lock_custom_pin">Custom PIN</string>
+    <string name="system_lock_str">System lock</string>
+    <string name="system_lock">Use Phone lock</string>
+    <string name="app_specific_lock">Set app-specific PIN</string>
+    <string name="use_specific_lock">Use app-specific PIN</string>
+    <string name="reset_app_specific_lock">Reset the app-specific PIN.</string>
+    <string name="app_specific_lock_msg">If you forgot, you can reset it by signing out.</string>
+    <string name="app_lock">App lock</string>
+    <string name="verify">Verify</string>
+    <string name="forgot_passcode">Forgot PIN?</string>
+    <string name="same_pin_cannot_used">Old pin cannot be reused</string>
+    <string name="change_lock_screen_configuration">Lock Type</string>
+    <string name="logout_error_msg">It seems you have removed your built-in security options. Please log out and verify yourself using your PHR account password again.</string>
+    <string name="unlock_charm_mPHR_using_sys_lock">Unlock the app using your phone\'s built-in security options like Face ID, Touch ID, or PIN.</string>
+    <string name="charm_mPHR_locked">%1$s Locked</string>
+    <string name="charm_mPHR_lock_verification">Verify your identity</string>
+    <string name="charm_mPHR_lock_verification_lock_type">Verify your identity to change Lock type</string>
+    <string name="identity_verification">Identity Verification</string>
+    <string name="config_edit_info">You can modify the lock type later in \"Settings > App Lock Section\".</string>
+
+    <string name="do_you_like_harm_mPHR">Do you like %1$s ?</string>
+    <string name="feel_about_str">Your opinion matters to us</string>
+    <string name="can_provide_feedback">Can you provide some feedback?</string>
+    <string name="your_opinion_matters">We Value Your Feedback</string>
+    <string name="can_you_rate_our_app">Can you rate our app?</string>
+    <string name="help_us_improve_msg">It means a lot to us</string>
+
+    <string name="allow_access">Allow %1$s access</string>
+    <string name="turn_on_permission">Turn On %1$s permission</string>
+    <string name="allow_str">Allow</string>
+    <string name="allow_view_document">Allow access to view the documents</string>
+    <string name="allow_upload_document">Allow access to upload the documents</string>
+    <string name="allow_patient_profile">Allow access to capture and upload the profile picture</string>
+    <string name="allow_access_video_call">Allow access to camera and mike to make video call</string>
+    <string name="allow_record_audio">Allow access to record audio</string>
+    <string name="allow_camera">Allow access to capture videos and photos</string>
+    <string name="allow_notification">Allow access to send reminders for medications and supplements</string>
+    <string name="allow_notification_for_message">Allow notification access to receive messages instantly</string>
+
+    <string name="photos_str">Photos</string>
+    <string name="videos_str">Videos</string>
+    <string name="alarm_reminders_str">Alarms and reminders</string>
+    <string name="photo_videos_str">Photos and Videos</string>
+    <string name="file_media_str">Files and media</string>
+    <string name="error_empty_insurance_category">Please select Insurance category</string>
+    <string name="insurance_info_text">The insurance data will not be shared with your provider or practice.</string>
+    <string name="error_secondary_patient">Secondary account access is not supported on mobile app. Please use \"%1$s\" web portal to access your account.</string>
+    <string name="signature_str">Signature</string>
+    <string name="resignature_str">Re-sign</string>
+    <string name="error_empty_valid_from">Please enter Valid From date</string>
+    <string name="error_empty_valid_to">Please enter Valid To Date</string>
+    <string name="enter_comments">Enter your comments</string>
+    <string name="choose_one_option">Choose at least one option from the list below</string>
+    <string name="same_time_selected_error">Same time already selected</string>
+    <string name="reminder_date_str">Reminder Date</string>
+    <string name="add_reminder_date_less_than_currentDate_error">Reminder date should not be lesser than the current date for One Time reminder</string>
+    <string name="select_providers">Select Recipient</string>
+    <string name="video_consultation_str">Video Consultation</string>
+    <string name="cancel_appointment_heading_str">Cancel Appointment?</string>
+    <string name="cancel_appointment_str">Cancel Appointment</string>
+    <string name="reason_cancel_appointment_str">Reason for cancellation</string>
+    <string name="confirm_cancel_appointment_str">Confirm Cancellation</string>
+    <string name="cancel_appointment_msg_str">You’re about to cancel this appointment. Please review the details.</string>
+    <string name="error_empty_reason_cancel_appointment">Please enter Reason to cancel the appointment</string>
+    <string name="error_valid_character_reason_cancel_appointment">Please enter atleast 5 character in Reason for Cancellation</string>
+    <string name="appointment_cancel_error_msg">Your practice does not allow cancellations within %1$s day(s) of the appointment. Please contact them for assistance.</string>
+    <string name="message_restriction_msg">Messaging is disabled by your practice. Please contact them through another communication method.</string>
+    <string name="cancel_appointment_restriction_msg">You can\'t cancel this appointment. Please contact your practice for help.</string>
+    <string name="profile">Profile</string>
+    <string name="linked_members">Linked Members</string>
+    <string name="demographics">Demographics</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="other_settings">Other Settings</string>
+    <string name="my_info">My Info</string>
+    <string name="resources">Resources</string>
+    <string name="billing">Billing</string>
+    <string name="engagement">Engagement</string>
+    <string name="records">Records</string>
+    <string name="app_feedback">App Feedback</string>
+    <string name="contact_practice">Contact Practice</string>
+    <string name="prescribed_on_label">Prescribed On</string>
+    <string name="delete_appointment_str">Delete Appointment</string>
+    <string name="close_str">Close</string>
+    <string name="added_in_phr_str">Added in PHR</string>
+    <string name="error_invalid_date_period">Resolved date should not be before Observed date</string>
+    <string name="active_allergy_txt">Active Allergy</string>
+    <string name="inactive_allergy_txt">InActive Allergy</string>
+    <string name="resolved_allergy_txt">Resolved Allergy</string>
+    <string name="resolved_txt">Resolved</string>
+    <string name="new_card">New Card</string>
+    <string name="saved_card">Saved Cards</string>
+    <string name="enter_search_text">Enter Search Text</string>
+    <string name="select_practice">Select Practice</string>
+    <string name="groups">Groups</string>
+    <string name="no_result_found">No results found.\nPlease try a different search term.</string>
+    <string name="both_group_member_not_allowed">You are not allowed to send message to both group and practice members</string>
+    <string name="message_to_only_one_group">Message can be sent to only one group</string>
+    <string name="group_reply_restriction_msg">You cannot change the group while replying.</string>
+    <string name="reply_restricted_member_error">Messaging is not allowed for some members.</string>
+    <string name="reply_restricted_group_error">Messaging is not allowed for some Groups.</string>
+    <string name="discard_selection_msg">Do you want to save changes?</string>
+    <string name="new_message">New Message</string>
+    <string name="you_have_a_new_message_from_your_practice">You have received a new message</string>
+
+    <!-- Thalassemia Dashboard -->
+    <string name="next_transfusion_due">Next Transfusion Due</string>
+    <string name="not_scheduled">Not Scheduled</string>
+    <plurals name="number_days_to_go">
+        <item quantity="one">%1$d day to go</item>
+        <item quantity="other">%1$d days to go</item>
+    </plurals>
+    <string name="due_tomorrow">Tomorrow</string>
+    <string name="due_today">Today</string>
+    <plurals name="number_days_ago">
+        <item quantity="one">%1$d day ago</item>
+        <item quantity="other">%1$d days ago</item>
+    </plurals>
+    <string name="iron_trend_heading">Ferritin Trend</string>
+    <string name="iron_trend_no_data">No Ferritin data available</string>
+    <string name="hb_label">Hemoglobin (Hb)</string>
+    <string name="ferritin_str">Ferritin</string>
+    <string name="last_mri_result">Last MRI Results</string>
+    <string name="mri_lic_label">Liver Iron (LIC)</string>
+    <string name="mri_cardiac_t2_label">Cardiac T2*</string>
+    <string name="mri_no_data">No MRI data available</string>
+    <string name="warning">WARNING</string>
+    <string name="my_profile">My Profile</string>
+    <string name="no_result">No Result</string>
+
+</resources>
+

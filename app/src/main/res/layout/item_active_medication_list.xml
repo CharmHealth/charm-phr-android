@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/dashboard_card_padding"
+    android:paddingTop="@dimen/dashboard_card_padding"
+    android:paddingEnd="@dimen/dashboard_card_padding">
+
+    <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+        android:id="@+id/activeMedicationSeparator"
+        android:layout_width="4dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mdBackgroundColor="@color/activeMedicationSeparatorColor" />
+
+    <TextView
+        android:id="@+id/activeMedicationObservedOnTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="top"
+        android:paddingStart="@dimen/dashboard_card_padding"
+        android:paddingEnd="0dp"
+        android:textAppearance="@style/dateDisplayTxtAppearance"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="May 10 , 1990" />
+
+    <TextView
+        android:id="@+id/activeMedicationDrugNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans_medium"
+        android:maxLines="2"
+        android:paddingStart="@dimen/dashboard_card_padding"
+        android:paddingEnd="@dimen/dashboard_card_padding"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintEnd_toStartOf="@id/activeMedicationObservedOnTV"
+        app:layout_constraintStart_toEndOf="@id/activeMedicationSeparator"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Paracetemol 20mg" />
+
+    <TextView
+        android:id="@+id/activeMedicationDirectionsTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+        android:fontFamily="@font/open_sans"
+        android:letterSpacing="0.005"
+        android:paddingStart="@dimen/dashboard_card_padding"
+        android:paddingEnd="0dp"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/x_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/activeMedicationSeparator"
+        app:layout_constraintTop_toBottomOf="@id/activeMedicationDrugNameTV"
+        tools:text="1 tablet once a day at bedtime before meals" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

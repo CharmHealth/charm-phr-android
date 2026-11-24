@@ -1,0 +1,688 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@android:color/white</item>
+        <item name="android:textColorHint">@color/black78</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+    </style>
+
+    <style name="MaterialAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@android:color/white</item>
+    </style>
+
+    <style name="appointmentAlertDialog" parent="Theme.AppCompat.Dialog"></style>
+
+    <style name="mdAppticsUpdateTheme" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="reviewConsentBrandingTint">@color/colorPrimary</item>
+        <item name="reviewConsentButtonColor">@color/colorPrimary</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="appticsUpdateActionButtonColor">@color/colorPrimary</item>
+        <item name="appticsUpdateActionButtonTextColor">@color/white</item>
+        <item name="appticsRemindAndIgnoreActionButtonColor">@color/colorPrimary</item>
+        <item name="appticsTextColor">@color/black</item>
+        <item name="appticsAlertIconColor">@color/colorPrimary</item>
+        <item name="appticsSecondaryTextColor">@color/black70</item>
+    </style>
+
+
+    <style name="toolbarText">
+        <item name="android:textColor">@color/textColorForColorPrimaryBg</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textSize">@dimen/xx_large</item>
+    </style>
+
+    <style name="dashboardCardHeading">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/x_medium</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="appointmentCardHeading">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/x_medium</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="dashboardBottomSheetTxtActive">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/small</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="dashboardBottomSheetTxtInactive">
+        <item name="android:textColor">@color/black38</item>
+        <item name="android:textSize">@dimen/small</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="genderOtherTxtStyle">
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="fontFamily">@font/open_sans_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/item_gender_other_pic_bg</item>
+    </style>
+
+    <style name="tpHeadingTextStyle">
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/tp_heading_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">7dp</item>
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="tpContentTextStyle">
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textSize">@dimen/tp_content_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="Theme.App.BottomNavigation" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorSecondaryContainer">@color/icon_bg</item>
+        <item name="colorOnSecondaryContainer">@color/colorPrimary</item>
+        <item name="fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="tabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="dateDisplayTxtAppearance">
+        <item name="android:textColor">@color/displayDateTxtColor</item>
+        <item name="android:textSize">@dimen/small</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="dateHPDisplayTxtAppearance">
+        <item name="android:textColor">@color/displayDateTxtColor</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="nameHPDisplayTxtAppearance">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/x_medium</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="invoiceDueAmtTxtAppearance">
+        <item name="android:textColor">@color/invoiceDueAmtTxtColor</item>
+        <item name="android:textSize">@dimen/xx_medium</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="dashboardFabLabelStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="invoiceAmtTxtAppearance">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/xx_medium</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="itemIsRead">
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="itemIsNotRead">
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="dashboardNavigationSide1ItemTxtAppearance">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/x_medium</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="dashboardNavigationSide1ItemTheme">
+        <item name="android:layout_marginBottom">@dimen/dashboard_navigation_side1_item_margin_vertical</item>
+        <item name="android:layout_marginTop">@dimen/dashboard_navigation_side1_item_margin_vertical</item>
+        <item name="android:layout_marginStart">@dimen/dashboard_navigation_side1_item_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/dashboard_navigation_side1_item_margin_horizontal</item>
+
+    </style>
+
+    <style name="itemEditBtnTxtAppearance">
+        <item name="android:textColor">@color/itemEditTxtColor</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:text">@string/edit_str</item>
+        <item name="android:textAllCaps">true</item>
+
+    </style>
+
+    <style name="itemEdittextHintTxtAppearance" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/small</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="itemEdittextHelperTxtAppearance" parent="TextAppearance.Design.HelperText">
+        <item name="android:textSize">@dimen/small</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="itemTextInputLayoutTheme" parent="Widget.Design.TextInputLayout">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/textinput_edittext_height</item>
+        <item name="android:background">@drawable/item_edittext_bg</item>
+        <item name="android:layout_marginTop">@dimen/edittext_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/edittext_margin_vertical</item>
+        <item name="android:layout_marginStart">@dimen/edittext_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/edittext_margin_horizontal</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingStart">@dimen/card_padding</item>
+        <item name="android:paddingEnd">@dimen/card_padding</item>
+        <item name="android:paddingBottom">@dimen/card_padding</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColorHint">@color/edittext_hint_color</item>
+
+    </style>
+
+    <style name="itemQuestionnaireAllergyTextInputLayoutTheme" parent="Widget.Design.TextInputLayout">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/textinput_edittext_height</item>
+        <item name="android:background">@drawable/item_questionnaire_allergy_edittext_bg</item>
+        <item name="android:layout_marginTop">@dimen/edittext_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/edittext_margin_vertical</item>
+        <item name="android:layout_marginStart">@dimen/card_padding</item>
+        <item name="android:layout_marginEnd">@dimen/card_padding</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingStart">@dimen/card_padding</item>
+        <item name="android:paddingEnd">@dimen/card_padding</item>
+        <item name="android:paddingBottom">@dimen/card_padding</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColorHint">@color/edittext_hint_color</item>
+
+    </style>
+
+    <style name="wellnessInput">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColorHint">@color/black70</item>
+    </style>
+
+    <style name="itemEdittextTheme">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/edittext_height</item>
+        <item name="android:background">@drawable/item_edittext_bg</item>
+        <item name="android:layout_marginStart">@dimen/edittext_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/edittext_margin_horizontal</item>
+        <item name="android:paddingStart">@dimen/card_padding</item>
+        <item name="android:paddingEnd">@dimen/card_padding</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:textColorHint">@color/edittext_hint_color</item>
+        <item name="android:layout_marginBottom">@dimen/edittext_margin_vertical</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">@dimen/x_medium</item>
+        <item name="android:textColor">@color/edittext_txt_color</item>
+    </style>
+
+
+    <style name="itemEdittextMultiLineTheme" parent="itemEdittextTheme">
+        <item name="android:inputType">textNoSuggestions|textMultiLine|textCapSentences</item>
+    </style>
+
+    <style name="MDBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="bottomSheetStyle">@style/MDBottomSheet</item>
+    </style>
+
+    <style name="MDBottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/item_billing_payment_dialog_bg</item>
+    </style>
+
+    <style name="itemEdittextHeadingTheme">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/edittext_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/edittext_margin_horizontal</item>
+        <item name="android:layout_marginBottom">@dimen/edittext_heading_bottom_margin</item>
+        <item name="android:layout_marginTop">@dimen/edittext_margin_vertical</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:textColor">@color/edittext_txt_color</item>
+    </style>
+
+    <style name="itemCardDetailEdittextTheme">
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textColor">@color/edittext_txt_color</item>
+        <item name="android:background">@drawable/item_book_appointment_card_details_bg</item>
+        <item name="android:paddingEnd">@dimen/card_padding</item>
+        <item name="android:paddingStart">@dimen/card_padding</item>
+    </style>
+
+    <style name="itemTextInputEdittextTheme">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:inputType">textCapWords|textNoSuggestions|text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textColor">@color/edittext_txt_color</item>
+        <item name="android:dropDownVerticalOffset">10dp</item>
+    </style>
+
+    <style name="itemTextInputEdittextMultiLineTheme">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">textNoSuggestions|textMultiLine|textCapSentences</item>
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textColor">@color/edittext_txt_color</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="android:backgroundTint">@color/colorAccent</item>
+        <item name="android:textColor">@color/textColorForColorPrimaryBg</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="elevation">0dp</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="cornerRadius">@dimen/common_card_radius</item>
+
+    </style>
+
+    <style name="itemDatePickerStyle" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:yearListSelectorColor">@android:color/white</item>
+
+    </style>
+
+    <style name="prescriptionListMoreLabelTxtAppearance">
+        <item name="android:textColor">@color/medicationListMoreTemplateLabelTxtColor</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="prescriptionListMoreValueTxtAppearance">
+        <item name="android:textColor">@color/medicationListMoreTemplateValueTxtColor</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="questionnaireListMoreLabelTxtAppearance" parent="prescriptionListMoreLabelTxtAppearance">
+
+    </style>
+
+    <style name="questionnaireListMoreValueTxtAppearance" parent="prescriptionListMoreValueTxtAppearance" />
+
+    <style name="slotItemDateTvStyle">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">@dimen/large</item>
+        <item name="android:paddingStart">7dp</item>
+        <item name="android:paddingEnd">7dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+    </style>
+
+    <style name="chipTxtAppearance">
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/small</item>
+    </style>
+
+    <style name="composeMsgLabelTxtAppearance">
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="android:textColor">@color/messageComposeItemLabelTxtColor</item>
+    </style>
+
+    <style name="composeMsgValueTxtAppearance">
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textSize">@dimen/x_medium</item>
+        <item name="android:textColor">@color/messageComposeItemValueTxtColor</item>
+    </style>
+
+    <style name="PopupMenuMoreStart" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:dropDownHorizontalOffset">30dp</item>
+    </style>
+
+    <style name="questionnaireCustomFilterDateTV">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:drawableStart">@drawable/ic_calander</item>
+        <item name="android:paddingEnd">@dimen/questionnaire_filter_date_padding</item>
+        <item name="android:paddingStart">@dimen/questionnaire_filter_date_padding</item>
+        <item name="android:drawablePadding">@dimen/questionnaire_filter_date_inner_padding</item>
+        <item name="android:background">@drawable/item_questionnaire_filter_date_bg</item>
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="notificationItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">23dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/card_padding_half</item>
+        <item name="android:paddingEnd">@dimen/card_padding_half</item>
+        <item name="android:textSize">@dimen/small</item>
+        <item name="android:minWidth">23dp</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:background">@drawable/item_notification_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+
+    </style>
+
+    <style name="itemQuestionnaireHint">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/card_padding</item>
+        <item name="android:layout_marginStart">@dimen/card_padding</item>
+        <item name="android:layout_marginEnd">@dimen/card_padding</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textSize">@dimen/x_medium</item>
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="itemQuestionnaireET">
+
+        <item name="android:layout_marginTop">@dimen/questionnaire_detail_ques_ans_value_margin_top</item>
+        <item name="android:layout_marginStart">@dimen/card_padding</item>
+        <item name="android:layout_marginEnd">@dimen/card_padding</item>
+        <item name="android:layout_marginBottom">@dimen/card_padding</item>
+        <item name="android:gravity">start|top</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">@dimen/xx_medium</item>
+        <item name="android:textColor">@color/edittext_txt_color</item>
+        <item name="android:inputType">text|textNoSuggestions</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="itemQuestionnaireWidgetNotes">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textSize">@dimen/xx_medium</item>
+
+        <item name="android:layout_marginTop">@dimen/card_padding</item>
+        <item name="android:layout_marginStart">@dimen/card_padding</item>
+        <item name="android:layout_marginEnd">@dimen/card_padding</item>
+        <item name="android:paddingBottom">@dimen/card_padding</item>
+
+    </style>
+
+    <style name="patDemoLabel">
+        <item name="android:textColor">@color/patDemoLabelColor</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">@dimen/x_small</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_marginStart">7dp</item>
+    </style>
+
+
+    <style name="patDemoOuterLabel" parent="patDemoLabel">
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:layout_marginStart">15dp</item>
+    </style>
+
+
+    <style name="patDemoTV">
+        <item name="android:textColor">@color/patDemoLabelTV</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textSize">@dimen/x_small</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">7dp</item>
+    </style>
+
+    <style name="patDemoOuterTV" parent="patDemoTV">
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+
+    </style>
+
+    <style name="ThemeOverlay.PrimaryPalette.Red" parent="">
+        <item name="colorPrimary">#e53935</item>
+        <item name="colorPrimaryDark">#ab000d</item>
+    </style>
+
+    <style name="MDSliderStyle" parent="@style/Widget.MaterialComponents.Slider">
+        <item name="labelStyle">@style/MDSliderStyle.ToolTip</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Slider</item>
+    </style>
+
+    <style name="MDSliderStyle.ToolTip" parent="Widget.MaterialComponents.Tooltip">
+        <!-- background color of the Tooltip -->
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="android:textAppearance">@style/MDSliderStyle.Tooltip.TexxtAppearance</item>
+
+    </style>
+
+    <style name="MDSliderStyle.Tooltip.TexxtAppearance" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/open_sans_medium</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/medium</item>
+    </style>
+
+    <style name="ThemeOverlay.Slider" parent="">
+        <!-- color used by the text in the Tooltip -->
+        <item name="colorOnPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="homePageShowMoreStyle">
+
+        <item name="android:paddingTop">@dimen/card_padding</item>
+        <item name="android:paddingBottom">@dimen/hp_margin_side</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+
+    </style>
+
+    <style name="calendarTextViewStyle">
+        <item name="android:textColor">@color/black56</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="fontFamily">@font/open_sans_medium</item>
+
+    </style>
+
+    <style name="rippleButtonStyle">
+        <item name="android:background">@drawable/transparent_background_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="selectedSlotTextViewStyle">
+        <item name="android:textColor">@color/darkGrey</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="MaterialComponentsChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipStrokeColor">@color/appointmentUnSelectedTabTxtColor</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipCornerRadius">@dimen/appointment_chip_radius</item>
+        <item name="rippleColor">@android:color/transparent</item>
+        <item name="android:textSize">@dimen/medium</item>
+
+    </style>
+
+    <style name="MaterialComponentsChipUnSelectStyle" parent="MaterialComponentsChipStyle">
+        <item name="chipBackgroundColor">@color/appointmentUnSelectedTab</item>
+        <item name="android:textColor">@color/appointmentUnSelectedTabTxtColor</item>
+        <item name="fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="MaterialComponentsChipSelectStyle" parent="MaterialComponentsChipStyle">
+        <item name="chipBackgroundColor">@color/appointmentSelectedTab</item>
+        <item name="android:textColor">@color/appointmentSelectedTabTxtColor</item>
+        <item name="fontFamily">@font/open_sans_medium</item>
+    </style>
+
+    <style name="mediumTxtAppearance">
+        <item name="android:textColor">@color/displayDateTxtColor</item>
+        <item name="android:textSize">@dimen/x_medium</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="itemEdittextLabelTheme">
+
+        <item name="android:layout_marginEnd">@dimen/edittext_margin_horizontal</item>
+        <item name="android:layout_marginBottom">@dimen/edittext_heading_bottom_margin</item>
+        <item name="android:layout_marginTop">@dimen/edittext_margin_vertical</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:textColor">@color/edittext_txt_color</item>
+    </style>
+
+    <style name="itemInputTheme">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColorHint">@color/black70</item>
+    </style>
+
+    <style name="cardDescriptionText">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/xx_small</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="richTextEditorStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:minWidth">40dp</item>
+    </style>
+
+    <style name="mdButtonStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/x_large</item>
+        <item name="android:background">@drawable/item_button_bg</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="mdMiniButtonStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:background">@drawable/item_button_bg</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="mdButtonOutlineStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">32dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/x_large</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:strokeWidth">24</item>
+    </style>
+
+    <style name="mdDialogButtonOutlineStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/xx_large</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:strokeWidth">24</item>
+    </style>
+
+    <style name="mdDialogButtonStyle">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/xx_large</item>
+        <item name="android:background">@drawable/item_button_bg</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+
+    <style name="RatingHeading">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
+        <item name="android:textSize">@dimen/xx_large</item>
+    </style>
+
+
+    <style name="mdDialogSubHeadingTextAppearance">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/large</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+    </style>
+
+
+    <style name="CustomRatingBarStyle" parent="Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/ic_rating_bar</item>
+    </style>
+
+    <style name="ToggleButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/colorAccent</item>
+        <item name="backgroundTint">@color/material_toggle_button_color</item>
+        <item name="android:textColor">@color/material_toggle_text_color</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+
+</resources>

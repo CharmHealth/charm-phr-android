@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.charm.phr.mphr.ui.components.MDTextInputEdittext  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addFlowsheetDataDateTV"
+    style="@style/itemEdittextTheme"
+    android:layout_marginStart="@dimen/card_padding"
+    android:layout_marginTop="@dimen/card_padding"
+    android:layout_marginEnd="@dimen/card_padding"
+    android:layout_marginBottom="@dimen/card_padding"
+    android:drawableEnd="@drawable/ic_calander"
+    android:background="@drawable/item_add_flowsheet_et_bg"
+    android:hint="@string/select_str"
+    android:fontFamily="@font/open_sans"
+    android:padding="@dimen/questionnaire_detail_ques_ans_value_padding"
+    android:textColor="@color/edittext_txt_color"
+    android:textSize="@dimen/medium"
+    app:setBgTransparent="false" />

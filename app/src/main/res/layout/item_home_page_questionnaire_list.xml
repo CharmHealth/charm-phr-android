@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:paddingTop="@dimen/dashboard_card_padding">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_ripple_white_bg">
+
+        <TextView
+            android:id="@+id/questionnaireListNameTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_medium"
+            android:paddingStart="@dimen/card_padding"
+            android:paddingEnd="@dimen/card_padding"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/medium"
+            app:layout_constraintEnd_toStartOf="@id/questionnaireListStatusLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Normal Data" />
+
+        <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+            android:id="@+id/questionnaireListStatusLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7.5dp"
+            android:layout_marginEnd="@dimen/card_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:mdBackgroundColor="@color/questionnaireListStatusNewBg"
+            app:mdCornerRadius="3dp">
+
+            <TextView
+                android:id="@+id/questionnaireListStatusTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_medium"
+                android:padding="5dp"
+                android:text="@string/cancelled_str"
+                android:textColor="@color/questionnaireListStatusNewTxtColor"
+                android:textSize="@dimen/small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/questionnaireListMoreLayout1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_padding"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:layout_marginEnd="@dimen/card_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/questionnaireListNameTV">
+
+            <TextView
+                android:id="@+id/questionnaireListMoreLabel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/facility_name_str"
+                android:textAppearance="@style/questionnaireListMoreLabelTxtAppearance" />
+
+            <TextView
+                android:id="@+id/questionnaireListMoreValue1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/questionnaire_list_more_value_start_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/questionnaireListMoreValueTxtAppearance"
+                tools:text="Charm Clinic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/questionnaireListMoreLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_padding"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:layout_marginEnd="@dimen/card_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/questionnaireListMoreLayout1">
+
+            <TextView
+                android:id="@+id/questionnaireListMoreLabel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/questionnaire_member_label"
+                android:textAppearance="@style/questionnaireListMoreLabelTxtAppearance" />
+
+            <TextView
+                android:id="@+id/questionnaireListMoreValue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/questionnaire_list_more_value_start_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/questionnaireListMoreValueTxtAppearance"
+                tools:text="Dr. William Aberthnet" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/questionnaireListMoreLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_padding"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:layout_marginEnd="@dimen/card_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/questionnaireListMoreLayout2">
+
+            <TextView
+                android:id="@+id/questionnaireListMoreLabel3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/questionnaire_appointment_date_label"
+                android:textAppearance="@style/questionnaireListMoreLabelTxtAppearance" />
+
+            <TextView
+                android:id="@+id/questionnaireListMoreValue3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/questionnaire_list_more_value_start_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/questionnaireListMoreValueTxtAppearance"
+                tools:text="10 Jan, 1998" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

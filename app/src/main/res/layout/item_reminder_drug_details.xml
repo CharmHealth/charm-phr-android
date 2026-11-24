@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/reminderDrugDetailSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/practiceSeparator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/reminderDrugIcon"
+        android:layout_width="@dimen/item_start_icon_size"
+        android:layout_height="@dimen/item_start_icon_size"
+        android:layout_marginStart="@dimen/card_padding_half"
+        android:layout_marginTop="@dimen/card_padding"
+        android:src="@drawable/ic_tablet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reminderDrugDetailSeparator" />
+
+    <TextView
+        android:id="@+id/reminderModuleItemNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:fontFamily="@font/open_sans_medium"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/x_medium"
+        app:layout_constraintEnd_toStartOf="@+id/reminderStatusIcon"
+        app:layout_constraintStart_toEndOf="@+id/reminderDrugIcon"
+        app:layout_constraintTop_toBottomOf="@+id/reminderDrugDetailSeparator"
+        tools:text="Ranitidine 150mg" />
+
+    <TextView
+        android:id="@+id/reminderDrugDirectionTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+        android:fontFamily="@font/open_sans"
+        android:lineSpacingExtra="@dimen/common_line_height"
+        android:paddingEnd="@dimen/card_padding"
+        android:paddingBottom="@dimen/card_padding"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reminderStatusIcon"
+        app:layout_constraintStart_toStartOf="@+id/reminderModuleItemNameTV"
+        app:layout_constraintTop_toBottomOf="@+id/reminderModuleItemNameTV"
+        tools:text="1 tablet(s) 3 times a day before a meal for Everyday, oral route" />
+
+    <ImageView
+        android:id="@+id/reminderStatusIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="@dimen/card_padding"
+        android:src="@drawable/ic_taken"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/reminderDrugDirectionTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/reminderModuleItemNameTV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

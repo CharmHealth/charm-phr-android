@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reqPermissionDialogLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/reqPermissionHeading"
+            style="@style/RatingHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dialog_heading_margin"
+            android:layout_marginTop="@dimen/dialog_heading_half_margin"
+            android:layout_marginEnd="@dimen/dialog_heading_margin"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Enable permission" />
+
+        <TextView
+            android:id="@+id/reqPermissionText"
+            style="@style/mdDialogSubHeadingTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dialog_heading_margin"
+            android:layout_marginTop="@dimen/common_margin_vertical"
+            android:layout_marginEnd="@dimen/dialog_heading_margin"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reqPermissionHeading"
+            tools:text="Open setting and enable notification" />
+
+        <LinearLayout
+            android:id="@+id/reqPermissionLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin_vertical"
+            android:background="@color/transparent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reqPermissionText">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/reqPermissionNoBtn"
+                style="@style/mdDialogButtonOutlineStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_marginStart="@dimen/button_margin"
+                android:layout_marginTop="@dimen/button_margin"
+                android:layout_marginBottom="@dimen/button_margin"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/cancel_str"
+                android:theme="@style/Theme.MaterialComponents"
+                app:rippleColor="#80ffffff" />
+
+            <Button
+                android:id="@+id/reqPermissionYesBtn"
+                style="@style/mdDialogButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_marginStart="@dimen/button_margin"
+                android:layout_marginTop="@dimen/button_margin"
+                android:layout_marginEnd="@dimen/button_margin"
+                android:layout_marginBottom="@dimen/button_margin"
+                android:layout_weight="1"
+                android:background="@drawable/item_dialog_button_bg"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/dashboard_settings_str"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

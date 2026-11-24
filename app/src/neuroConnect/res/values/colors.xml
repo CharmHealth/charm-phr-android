@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#078C80</color>
+    <color name="colorPrimaryDark">#055F57</color>
+    <color name="colorAccent">#05A696</color>
+
+    <color name="textColorForColorPrimaryBg">@android:color/white</color>
+    <color name="colorTourpage">@color/colorPrimaryDark</color>
+
+
+    <color name="tabTxtColor">#B3ffffff</color>
+    <color name="tabSelectedTxtColor">@color/textColorForColorPrimaryBg</color>
+
+    <color name="iconLightBg">#C2E8E5</color>
+    <color name="cardSelectedBgColor">@color/iconLightBg</color>
+    <color name="itemRippleForWhiteBg">#80078C80</color>
+    <color name="card_bg">@color/iconLightBg</color>
+    <color name="addWellnessChipBgColor">@color/iconLightBg</color>
+    <color name="milky_green_light">#E3F4DC</color>
+    <color name="icon_bg">@color/milky_green_light</color>
+
+</resources>

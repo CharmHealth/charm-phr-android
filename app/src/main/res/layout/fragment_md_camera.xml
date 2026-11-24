@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragmentMdCameraSurfaceView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:fitsSystemWindows="true">
+
+    <com.charm.phr.mphr.ui.components.mdCamera.MdCameraTextureView
+        android:id="@+id/cameraFragmentTextureView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/black30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/cameraFlashBtn"
+        android:layout_width="@dimen/md_camera_flash_icon_size"
+        android:layout_height="@dimen/md_camera_flash_icon_size"
+        android:background="@drawable/item_transparent_background_white_ripple"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraCaptureButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cameraCaptureButton" />
+
+    <ImageView
+        android:id="@+id/cameraCaptureButton"
+        android:layout_width="@dimen/md_cameraI_icon_size"
+        android:layout_height="@dimen/md_cameraI_icon_size"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/item_transparent_background_white_ripple"
+        android:src="@drawable/ic_camera_capture_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/changeCameraButton"
+        android:layout_width="@dimen/md_camera_flash_icon_size"
+        android:layout_height="@dimen/md_camera_flash_icon_size"
+        android:background="@drawable/item_transparent_background_white_ripple"
+        android:src="@drawable/ic_switch_camera_white"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraCaptureButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.90"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cameraCaptureButton" />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/MdCameraSelectThumbnailRView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/black10"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toTopOf="@+id/cameraCaptureButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/captureCameraDoneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/MdCameraSelectThumbnailRView"
+        app:layout_constraintEnd_toEndOf="@+id/MdCameraSelectThumbnailRView"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@+id/MdCameraSelectThumbnailRView"
+        app:srcCompat="@drawable/ic_tick_white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

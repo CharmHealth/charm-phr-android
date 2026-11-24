@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/wellness_detail_grid_width"
+    android:layout_height="@dimen/wellness_detail_grid_heading_height"
+    android:fontFamily="@font/open_sans_medium"
+    android:gravity="center"
+    android:textColor="@color/black78"
+    android:textSize="@dimen/medium"
+    tools:text="@string/wellness_temperature_txt">
+
+</TextView>

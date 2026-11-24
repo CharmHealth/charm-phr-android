@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="200dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/addFlowsheetDataVitalLabLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_padding_half"
+        android:layout_marginTop="@dimen/card_padding"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans"
+        android:maxLines="1"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="fwgvhvhvh" />
+
+    <LinearLayout
+        android:id="@+id/addFlowsheetDataVitalLabETLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_padding_half"
+        android:layout_marginEnd="@dimen/card_padding_half"
+        android:layout_marginTop="@dimen/flowsheet_add_card_margin_vertical"
+        android:background="@drawable/item_add_flowsheet_vital_lab_et_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addFlowsheetDataVitalLabLabel">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/addFlowsheetDataVitalLabET"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/add_flowsheet_data_vital_lab_et_height"
+            android:layout_weight="1"
+            android:fontFamily="@font/open_sans_medium"
+            android:inputType="numberDecimal"
+            android:paddingStart="@dimen/flowsheet_add_card_margin_horizontal"
+            android:paddingEnd="@dimen/flowsheet_add_card_margin_horizontal"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/addFlowsheetDataVitalLabUnitTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="65" />
+
+        <TextView
+            android:id="@+id/addFlowsheetDataVitalLabUnitTV"
+            android:layout_width="@dimen/add_flowsheet_data_vital_lab_unit_width"
+            android:layout_height="@dimen/add_flowsheet_data_vital_lab_et_height"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/item_add_flowsheet_vital_lab_unit_bg"
+            android:fontFamily="@font/open_sans"
+            android:gravity="center"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="lbs" />
+    </LinearLayout>
+
+</LinearLayout>

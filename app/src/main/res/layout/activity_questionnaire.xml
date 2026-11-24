@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/questionnaireMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.questionnaire.QuestionnaireActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/questionnaireToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        android:elevation="@dimen/tab_elevation"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/questionnaireBackBtn"
+                android:layout_width="@dimen/toolBarBtnWd"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/questionnaireToolbarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/toolbar_text_left_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/questionnaire_str"
+                android:textAppearance="@style/toolbarText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/questionnaireBackBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <FrameLayout
+        android:id="@+id/questionnaireInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_info_bg"
+        android:layout_marginStart="@dimen/dashboard_card_margin"
+        android:layout_marginTop="@dimen/common_margin_vertical"
+        android:layout_marginEnd="@dimen/dashboard_card_margin"
+        android:layout_marginBottom="@dimen/common_margin_vertical_half"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/questionnaireToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_padding_half"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_info" />
+
+            <TextView
+                android:id="@+id/questionnaireInfoTextTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/consent_form_info"
+                android:textSize="@dimen/xx_small"
+                android:textAppearance="@style/dateDisplayTxtAppearance" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/questionnaireTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/tab_elevation"
+        android:textAlignment="center"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@id/questionnaireInfoLayout"
+        app:tabBackground="@drawable/item_ripple_color_primary_bg"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/tabIndicator"
+        app:tabIndicatorHeight="@dimen/tab_indicator_height"
+        app:tabMaxWidth="0dp"
+        app:tabMinWidth="0dp"
+        app:tabMode="fixed"
+        app:tabPaddingEnd="10dp"
+        app:tabPaddingStart="10dp"
+        app:tabRippleColor="@color/whiteRipple"
+        app:tabSelectedTextColor="@color/tabSelectedTxtColor"
+        app:tabTextAppearance="@style/tabText"
+        app:tabTextColor="@color/tabTxtColor" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/questionnaireViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/commonBgColor"
+        app:layout_constraintBottom_toTopOf="@id/questionnaireJoinVideoCallBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionnaireTabLayout" />
+
+    <Button
+        android:id="@+id/questionnaireJoinVideoCallBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/add_button_height"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/card_padding_half"
+        android:background="@drawable/item_button_bg"
+        android:enabled="false"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/tp_join_meeting_str"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/medium"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/questionnaireTabAndFilterCoordLayout"
+            android:background="@color/commonBgColor"
+            app:layout_constraintTop_toBottomOf="@id/questionnaireToolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/commonBgColor"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/commonBgColor"
+                app:contentInsetStart="0dp"
+
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/questionnaireTabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:textAlignment="center"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tabBackground="@drawable/item_ripple_color_primary_bg"
+                        app:tabGravity="fill"
+                        app:tabIndicatorColor="@color/tabIndicator"
+                        app:tabIndicatorHeight="@dimen/tab_indicator_height"
+                        app:tabMaxWidth="0dp"
+                        app:tabMinWidth="0dp"
+                        app:tabMode="fixed"
+                        app:tabPaddingEnd="10dp"
+                        app:tabPaddingStart="10dp"
+                        android:elevation="@dimen/tab_elevation"
+                        app:tabSelectedTextColor="@color/tabSelectedTxtColor"
+                        app:tabTextAppearance="@style/tabText"
+                        app:tabTextColor="@color/tabTxtColor"
+                        />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/questionnaireFilterLayout"
+                        android:layout_marginEnd="@dimen/card_margin_horizontal"
+                        android:layout_marginStart="@dimen/card_margin_horizontal"
+                        android:layout_marginTop="@dimen/questionnaire_filter_card_margin_vertical"
+                        app:cardElevation="@dimen/common_card_elevation"
+                        app:cardCornerRadius="@dimen/common_card_radius"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/questionnaireTabLayout">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            >
+                            <TextView
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:id="@+id/questionnaireFilterLabel"
+                                android:text="@string/questionnaire_list_date_filter_str"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/x_medium"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:layout_marginStart="@dimen/card_padding"
+                                android:layout_marginTop="@dimen/card_padding"
+                                android:layout_marginEnd="@dimen/card_padding"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/questionnaire_list_tab_layout_height"
+                                android:id="@+id/questionnaireListFilterTabLayout"
+                                app:layout_constraintTop_toBottomOf="@id/questionnaireFilterLabel"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:weightSum="5"
+                                android:layout_marginTop="@dimen/card_padding_half">
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"/>
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+
+                                    android:layout_height="@dimen/questionnaire_list_tab_height"
+                                    android:id="@+id/questionnaireList3MonthsTabBtn"
+                                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                                    android:text="@string/questionnaire_list_date_filter_3_months_label"
+                                    app:checkedIconEnabled="false"
+                                    app:chipIconEnabled="false"
+                                    android:textSize="@dimen/medium"
+                                    android:textColor="@color/questionnaireSelectedTabTxtColor"
+                                    app:chipBackgroundColor="@color/questionnaireSelectedTab"
+                                    app:chipCornerRadius="@dimen/questionnaire_chip_radius"
+                                    app:rippleColor="@android:color/transparent"
+                                    app:chipStrokeWidth="1dp"
+
+                                    />
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"/>
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/questionnaire_list_tab_height"
+                                    android:id="@+id/questionnaireList6MonthsTabBtn"
+                                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                                    android:text="@string/questionnaire_list_date_filter_6_months_label"
+                                    app:checkedIconEnabled="false"
+                                    app:chipIconEnabled="false"
+                                    android:textSize="@dimen/medium"
+                                    android:textColor="@color/questionnaireUnSelectedTabTxtColor"
+                                    app:chipBackgroundColor="@color/questionnaireUnSelectedTab"
+                                    app:chipCornerRadius="@dimen/questionnaire_chip_radius"
+                                    app:rippleColor="@android:color/transparent"
+                                    app:chipStrokeColor="@color/black38"
+                                    app:chipStrokeWidth="1dp"
+
+                                    />
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"/>
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/questionnaire_list_tab_height"
+                                    android:id="@+id/questionnaireList1YearTabBtn"
+                                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                                    android:text="@string/questionnaire_list_date_filter_1_year_label"
+                                    app:checkedIconEnabled="false"
+                                    app:chipIconEnabled="false"
+                                    android:textSize="@dimen/medium"
+                                    android:textColor="@color/questionnaireUnSelectedTabTxtColor"
+                                    app:chipBackgroundColor="@color/questionnaireUnSelectedTab"
+                                    app:chipCornerRadius="@dimen/questionnaire_chip_radius"
+                                    app:rippleColor="@android:color/transparent"
+                                    app:chipStrokeColor="@color/black38"
+                                    app:chipStrokeWidth="1dp"
+
+                                    />
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"/>
+                                <com.google.android.material.chip.Chip
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/questionnaire_list_tab_height"
+                                    android:id="@+id/questionnaireListCustomTabBtn"
+                                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                                    android:text="@string/questionnaire_list_date_filter_custom_label"
+                                    app:checkedIconEnabled="false"
+                                    app:chipIconEnabled="false"
+                                    android:textColor="@color/questionnaireUnSelectedTabTxtColor"
+                                    android:textSize="@dimen/medium"
+                                    app:chipBackgroundColor="@color/questionnaireUnSelectedTab"
+                                    app:chipStrokeWidth="1dp"
+                                    app:chipStrokeColor="@color/black38"
+                                    app:chipCornerRadius="@dimen/questionnaire_chip_radius"
+                                    app:rippleColor="@android:color/transparent"
+
+                                    />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"/>
+                            </LinearLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/questionnaireCustomFilterLayout"
+                                android:visibility="gone"
+                                android:layout_marginTop="@dimen/card_padding"
+                                app:layout_constraintTop_toBottomOf="@id/questionnaireListFilterTabLayout"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+
+                                >
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:id="@+id/questionnaireCustomFilterDateLayout"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    >
+                                    <TextView
+                                        android:id="@+id/questionnaireFilterFromTV"
+                                        style="@style/questionnaireCustomFilterDateTV"
+                                        android:hint="@string/questionnaire_filter_date_from_label"
+                                        android:layout_marginStart="@dimen/card_padding"
+                                        android:layout_marginEnd="@dimen/card_padding"
+                                        tools:text="10 Jun, 1998"/>
+
+                                    <TextView
+                                        android:id="@+id/questionnaireFilterToTV"
+                                        style="@style/questionnaireCustomFilterDateTV"
+                                        android:hint="@string/questionnaire_filter_date_to_label"
+                                        android:layout_marginEnd="@dimen/card_padding"/>
+                                </LinearLayout>
+
+                                <Button
+                                    android:layout_width="98dp"
+                                    android:layout_height="@dimen/add_button_height"
+                                    android:id="@+id/questionnaireCustomFilterViewBtn"
+                                    android:background="@drawable/item_button_bg"
+                                    app:layout_constraintTop_toBottomOf="@id/questionnaireCustomFilterDateLayout"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    android:text="@string/questionnaire_custom_filter_view_btn_strt"
+                                    android:padding="0dp"
+                                    android:layout_marginTop="@dimen/questionnaire_filter_card_margin_vertical"
+                                    android:layout_marginBottom="@dimen/questionnaire_filter_card_margin_vertical"
+                                    android:layout_marginEnd="@dimen/questionnaire_filter_card_margin_vertical"
+                                    android:textSize="@dimen/xx_small"
+                                    android:fontFamily="@font/open_sans_medium"
+                                    android:textColor="@color/textColorForColorPrimaryBg"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <androidx.viewpager.widget.ViewPager
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/questionnaireViewPager"
+                    android:background="@color/commonBgColor"
+                    />
+
+            </LinearLayout>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    -->

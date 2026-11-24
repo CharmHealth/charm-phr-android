@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.ClinicalDataFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/clinicalDataScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/clinicalDataCardLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/health_data_pat_card_margin_top"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                android:visibility="gone"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/my_health_card_txt"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/clinicalDataCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/health_data_pat_card_margin_top"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                app:cardCornerRadius="@dimen/pat_demo_card_radius"
+                app:cardElevation="@dimen/common_card_elevation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/clinicalDataImgLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:elevation="0dp"
+                        android:visibility="invisible"
+                        app:cardCornerRadius="5dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/clinicalDataImg"
+                            android:layout_width="@dimen/pat_demo_img_size"
+                            android:layout_height="@dimen/pat_demo_img_height"
+                            android:scaleType="fitXY" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/clinicalDataImgDummyTV"
+                        style="@style/genderOtherTxtStyle"
+                        android:layout_width="@dimen/pat_demo_img_size"
+                        android:layout_height="@dimen/pat_demo_img_height"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/item_pat_demo_dummy_bg"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="30sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="D M" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataNameTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:maxLines="1"
+                        android:textColor="@color/patDemoPatNameTxtColor"
+                        android:textSize="@dimen/x_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toEndOf="@id/clinicalDataImgLayout"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Derrick Man" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/open_sans"
+                        android:maxLines="1"
+                        android:textColor="@color/patDemoPatGenderAndDOBTxtColor"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/clinicalDataNameTV"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataNameTV"
+                        tools:text="Male" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataDetailSeparator1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:maxLines="1"
+                        android:text="|"
+                        android:textColor="@color/patDemoPatGenderAndDOBSeparatorColor"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintEnd_toStartOf="@id/clinicalDataDOB"
+                        app:layout_constraintStart_toEndOf="@+id/clinicalDataGender"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataNameTV" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataDOB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/open_sans"
+                        android:maxLines="1"
+                        android:textColor="@color/patDemoPatGenderAndDOBTxtColor"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toEndOf="@+id/clinicalDataDetailSeparator1"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataNameTV"
+                        tools:text="Jun 18, 1998" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataDetailSeparator2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:maxLines="1"
+                        android:text="|"
+                        android:textColor="@color/patDemoPatGenderAndDOBSeparatorColor"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintEnd_toStartOf="@id/clinicalDataBloodGrpTV"
+                        app:layout_constraintStart_toEndOf="@+id/clinicalDataDOB"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataNameTV" />
+
+
+                    <TextView
+                        android:id="@+id/clinicalDataBloodGrpTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/open_sans"
+                        android:maxLines="1"
+                        android:textColor="@color/patDemoBloodGrpColor"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toEndOf="@id/clinicalDataDetailSeparator2"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataNameTV"
+                        tools:text="B+" />
+
+
+                    <TextView
+                        android:id="@+id/clinicalDataAddressLine1TV"
+                        style="@style/patDemoOuterTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="1dp"
+                        android:maxLines="3"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@id/clinicalDataNameTV"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataGender"
+                        tools:text="15 Washington Street , New Mexico City , Jefferson" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataContactTV"
+                        style="@style/patDemoOuterTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@id/clinicalDataNameTV"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataImgLayout"
+                        tools:text="987654321" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataContactLabel"
+                        style="@style/patDemoOuterLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/pat_demo_contact_no"
+                        app:layout_constraintEnd_toStartOf="@id/clinicalDataNameTV"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataImgLayout" />
+                    <!--<TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/clinicalDataAddressTV"
+                        style="@style/patDemoOuterTV"
+                        android:maxLines="3"
+                        android:ellipsize="end"
+                        android:text="@string/pat_demo_address_txt"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataInnerCardLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/clinicalDataOuterGuideline40"
+                        app:layout_constraintHorizontal_bias="0"/>-->
+
+                    <TextView
+                        android:id="@+id/clinicalDataCaregiverNameLabel"
+                        style="@style/patDemoOuterLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pat_demo_caregiver_name_txt"
+                        app:layout_constraintEnd_toStartOf="@id/clinicalDataNameTV"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataContactTV" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataCaregiverNameTV"
+                        style="@style/patDemoOuterTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@id/clinicalDataNameTV"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataContactTV"
+                        tools:text="@string/pat_demo_address_txt" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataCaregiverNumberLabel"
+                        style="@style/patDemoOuterLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/pat_demo_caregiver_number_txt"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/clinicalDataNameTV"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataCaregiverNameTV" />
+
+                    <TextView
+                        android:id="@+id/clinicalDataCaregiverNumberTV"
+                        style="@style/patDemoOuterTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@id/clinicalDataNameTV"
+                        app:layout_constraintTop_toBottomOf="@id/clinicalDataCaregiverNameTV"
+                        tools:text="@string/pat_demo_address_txt" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/clinicalDataGridRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/clinicalDataListRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="@dimen/dashboard_health_rv_vertical_padding"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <include
+        android:id="@+id/clinicalDataProgress"
+        layout="@layout/progress_bar_for_white_bg"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/clinicalDataErrorPage"
+        layout="@layout/layout_error_page"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/clinicalDataNoDataLayout"
+        layout="@layout/layout_no_data"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

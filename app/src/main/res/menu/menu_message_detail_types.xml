@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/messageDetailReplyAllBtn"
+        android:title="@string/message_detail_reply_all_txt"/>
+    <item android:id="@+id/messageDetailForwardBtn"
+        android:title="@string/message_detail_forward_txt"/>
+</menu>

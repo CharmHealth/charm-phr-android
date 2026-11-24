@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/card_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_margin_vertical"
+        android:animateLayoutChanges="true"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/aboutFacilityListConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding">
+
+            <TextView
+                android:id="@+id/aboutFacilityListNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_medium"
+                android:maxLines="2"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toStartOf="@id/aboutFacilityListLocationImg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Charm Clinic" />
+
+            <TextView
+                android:id="@+id/aboutFacilityListDirectionTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutFacilityListNameTV"
+                tools:text="24 Blecker street, New York" />
+
+            <TextView
+                android:id="@+id/aboutFacilityListPhoneTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutFacilityListDirectionTV"
+                tools:text="Phone: 9988776655" />
+
+            <ImageView
+                android:id="@+id/aboutFacilityListLocationImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:src="@drawable/ic_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

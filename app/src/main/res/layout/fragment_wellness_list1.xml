@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.wellness.wellnessDetail.WellnessList1Fragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/wellnessTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vital_detail_tab_height"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/tab_elevation"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabContentStart="28dp"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/tabIndicator"
+        app:tabIndicatorHeight="@dimen/tab_indicator_height"
+        app:tabMaxWidth="0dp"
+        app:tabMinWidth="90dp"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="10dp"
+        app:tabPaddingStart="10dp"
+        app:tabSelectedTextColor="@color/tabSelectedTxtColor"
+        app:tabTextAppearance="@style/tabText"
+        app:tabTextColor="@color/tabTxtColor" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/wellnessScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wellnessTabLayout">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_margin_horizontal"
+            android:layout_marginTop="@dimen/card_margin_horizontal"
+            android:layout_marginEnd="@dimen/card_margin_horizontal"
+            android:layout_marginBottom="@dimen/card_margin_horizontal"
+            app:cardCornerRadius="@dimen/common_card_radius"
+            app:cardElevation="@dimen/common_card_elevation">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true">
+
+                <TextView
+                    android:id="@+id/wellnessLatestVitalTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/card_padding_half"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/wellness_latest_vital_txt_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="110/60" />
+
+                <TextView
+                    android:id="@+id/wellnessLatestVitalHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding_half"
+                    android:layout_marginBottom="@dimen/card_padding_half"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:textColor="@color/wellnessLatestVitalUnitTxtColor"
+                    android:textSize="@dimen/xx_small"
+                    app:layout_constraintBottom_toBottomOf="@id/wellnessLatestVitalTV"
+                    app:layout_constraintStart_toEndOf="@id/wellnessLatestVitalTV"
+                    tools:text="mmHg" />
+
+                <TextView
+                    android:id="@+id/wellnessLatestVitalDateTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                    android:layout_marginBottom="@dimen/card_padding_half"
+                    android:fontFamily="@font/open_sans"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/reference_range_txt"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/xx_small"
+                    app:layout_constraintStart_toStartOf="@id/wellnessLatestVitalTV"
+                    app:layout_constraintTop_toBottomOf="@id/wellnessLatestVitalTV"
+
+                    />
+
+
+                <!-- <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/wellnessHistoryTV"
+                     android:textSize="@dimen/xx_small"
+                     android:textColor="@color/colorPrimary"
+                     android:fontFamily="@font/open_sans_medium"
+                     android:text="@string/view_history"
+                     android:layout_marginEnd="@dimen/card_padding"
+                     android:layout_marginTop="@dimen/card_padding"
+                     app:layout_constraintTop_toTopOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     />-->
+
+
+                <com.charm.phr.mphr.ui.components.iconSwitch.IconSwitch
+                    android:id="@+id/wellnessListSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginEnd="@dimen/card_padding"
+                    app:layout_constraintBottom_toBottomOf="@id/wellnessLatestVitalTV"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/wellnessLatestVitalTV"
+                    app:md_active_tint_icon_left="@android:color/white"
+                    app:md_active_tint_icon_right="@android:color/white"
+                    app:md_background_color="@color/black30"
+                    app:md_icon_left="@drawable/ic_list_view"
+                    app:md_icon_right="@drawable/ic_plot"
+                    app:md_inactive_tint_icon_left="#a0a0a0"
+                    app:md_inactive_tint_icon_right="#a0a0a0"
+                    app:md_thumb_color_left="@color/colorPrimary"
+                    app:md_thumb_color_right="@color/colorPrimary" />
+
+                <View
+                    android:id="@+id/wellnessLatestVitalSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/edittext_padding"
+                    android:background="#1A707070"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/wellnessLatestVitalDateTV" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/wellnessChartLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/wellnessLatestVitalSeparator">
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/wellnessChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginStart="@dimen/card_padding"
+                        android:layout_marginTop="@dimen/edittext_padding"
+                        android:layout_marginEnd="@dimen/card_padding"
+                        android:layout_marginBottom="@dimen/edittext_padding"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        >
+
+
+                    </com.github.mikephil.charting.charts.LineChart>
+
+                    <!--   <com.charm.phr.mphr.ui.components.MDVerticalTextView
+                           android:id="@+id/wellnessChartYAxisNameTV"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:gravity="bottom|right"
+                           android:textColor="@color/black87"
+                           app:layout_constraintBottom_toBottomOf="@id/wellnessChart"
+                           app:layout_constraintEnd_toStartOf="@id/wellnessChart"
+                           app:layout_constraintTop_toTopOf="@id/wellnessChart"
+                           tools:text="mmHg" />-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/wellnessRVLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/wellnessLatestVitalSeparator">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/wellnessRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/card_margin_horizontal"
+                        android:layout_marginBottom="@dimen/card_margin_horizontal" />
+
+                    <TextView
+                        android:id="@+id/wellnessRVShowMoreTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/card_padding"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:paddingStart="@dimen/card_margin_horizontal"
+                        android:paddingEnd="@dimen/card_margin_horizontal"
+                        android:text="@string/show_more_txt"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/xx_small"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <!--
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/wellnessGridMainLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/card_margin_horizontal"
+                                    android:animateLayoutChanges="true"
+                                    android:visibility="gone"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/wellnessListSwitch">
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/wellnessDetailHeadingRV"
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <HorizontalScrollView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/wellnessDetailHeadingRV"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/wellnessDetailGridRV"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+
+                                        </androidx.recyclerview.widget.RecyclerView>
+                                    </HorizontalScrollView>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                -->
+
+
+                <!--
+                                  <com.charm.phr.mphr.ui.components.scaleView.ScaleValuePicker
+                                      android:id="@+id/wellnessScale"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="@dimen/wellness_scale_height"
+                                      android:layout_marginStart="@dimen/card_padding"
+                                      android:layout_marginEnd="@dimen/card_padding"
+                                      android:layout_marginBottom="@dimen/card_padding"
+                                      app:cardCornerRadius="@dimen/common_card_radius"
+                                      app:cardElevation="@dimen/common_card_elevation"
+                                      android:visibility="gone"
+                                      app:layout_constraintBottom_toBottomOf="parent"
+                                      app:indicator_color="@color/scaleViewIndicatorColor"
+                                      app:indicator_select_color="@color/scaleViewNotchColor"
+                                      app:indicator_interval="@dimen/scaleview_indicator_interval"
+                                      app:indicator_width="@dimen/scaleview_indicator_width"
+                                      app:max_value="120"
+                                      app:min_value="25"
+                                      app:label="Systol"
+                                      app:unit_text="mmHg"
+                                      app:ruler_text_color="@android:color/black"
+                                      app:ruler_text_size="6sp"
+                                      app:layout_constraintTop_toBottomOf="@id/wellnessChartLayout"/>
+                -->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <include
+        android:id="@+id/wellnessNoDataTV"
+        layout="@layout/layout_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wellnessTabLayout" />
+
+    <include
+        android:id="@+id/wellnessProgress"
+        layout="@layout/progress_bar_for_white_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wellnessTabLayout" />
+
+    <include
+        android:id="@+id/wellnessErrorPage"
+        layout="@layout/layout_error_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wellnessTabLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appTimeSlotContainer"
+    android:layout_height="42dp"
+    android:layout_width="100dp">
+
+    <Button
+        android:id="@+id/appointmentSlotTv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/slot_tv_margin_top"
+        android:layout_marginBottom="@dimen/slot_tv_margin_bottom"
+        android:background="@drawable/item_book_appointment_unselected_slot"
+        android:fontFamily="@font/open_sans_medium"
+        android:maxLines="1"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small"
+        tools:text="2:00 AM" />
+</LinearLayout>

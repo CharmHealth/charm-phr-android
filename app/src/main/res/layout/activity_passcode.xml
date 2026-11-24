@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.passcode.PasscodeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/passcodeMainConstrainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/systemLockMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:background="@drawable/ic_circle_bg"
+                android:layout_marginBottom="@dimen/add_new_contact_text_height"
+                app:civ_circle_background_color="@color/addFlowsheetETStroke"
+                app:layout_constraintBottom_toTopOf="@+id/systemLockHeadingTv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/max_image_width"
+                    android:layout_height="@dimen/max_image_width"
+                    android:src="@drawable/ic_lock_closed"/>
+
+            </FrameLayout>
+            <TextView
+                android:id="@+id/systemLockHeadingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/charm_mPHR_locked"
+                android:textColor="@color/black87"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/systemLockSubHeadingTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                 />
+
+
+            <TextView
+                android:id="@+id/systemLockSubHeadingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unlock_charm_mPHR_msg"
+                android:fontFamily="@font/open_sans"
+                android:letterSpacing="0.005"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/large"
+                app:layout_constraintBottom_toTopOf="@+id/localAuthLoginButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+
+            <Button
+                style="@style/mdButtonStyle"
+                android:id="@+id/localAuthLoginButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_marginStart="@dimen/button_margin"
+                android:layout_marginEnd="@dimen/button_margin"
+                android:layout_marginBottom="@dimen/button_margin"
+                android:background="@drawable/item_button_bg"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/unlock"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/passcodeCardView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/card_margin_horizontal"
+            android:layout_marginTop="@dimen/card_margin_vertical"
+            android:layout_marginEnd="@dimen/card_margin_horizontal"
+            android:layout_marginBottom="@dimen/card_margin_vertical"
+            android:elevation="1dp"
+            app:cardCornerRadius="@dimen/common_card_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/passcodeHeaderDisplayTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/passcode"
+                        android:textAlignment="center"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/passcodeSeparatorLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@color/separatorColor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/passcodeHeaderDisplayTV" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/invisible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="?attr/actionBarSize"
+                        android:layout_marginBottom="8dp"
+                        android:background="@android:color/transparent"
+                        android:cursorVisible="false"
+                        android:digits="1234567890"
+                        android:inputType="numberPassword"
+                        android:maxLength="5"
+                        android:textColor="@android:color/transparent"
+                        android:textSize="@dimen/xx_large"
+                        app:layout_constraintTop_toBottomOf="@id/passcodeSignOutTV">
+
+                        <requestFocus />
+
+                    </com.google.android.material.textfield.TextInputEditText>
+
+
+                    <RelativeLayout
+                        android:layout_width="105dp"
+                        android:layout_height="105dp"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintBottom_toTopOf="@+id/passCodeHint"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <!--Note: if you are changing height and width kindly change in activity too.
+                        at correctAnimation() passCodeTick  animation value - 105  method-->
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/passCodeTick"
+                            android:layout_width="105dp"
+                            android:layout_height="105dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_wellness_2"
+                            android:visibility="invisible" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/passCodeHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:lineSpacingExtra="7dp"
+                        android:paddingStart="@dimen/card_padding"
+                        android:paddingEnd="@dimen/card_padding"
+                        android:textAlignment="center"
+                        android:textColor="#000"
+                        android:textSize="@dimen/large"
+                        app:layout_constraintBottom_toTopOf="@+id/bulletins"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="@string/create_new_passcode" />
+
+                    <FrameLayout
+                        android:id="@+id/bulletins"
+                        android:layout_width="120dp"
+                        android:layout_height="18dp"
+                        android:layout_centerHorizontal="true"
+                        app:layout_constraintBottom_toTopOf="@+id/underLine"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <View
+                            android:id="@+id/cursor"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"
+                            android:visibility="invisible" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_psd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/underLine"
+                        android:layout_width="120dp"
+                        android:layout_height="18dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/error_hint_text_view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@color/passcodeSelectedDashColor" />
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@color/passcodeUnSelectedDashColor" />
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@color/passcodeUnSelectedDashColor" />
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@color/passcodeUnSelectedDashColor" />
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@color/passcodeUnSelectedDashColor" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/error_hint_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/passcodeIncorrectColor"
+                        android:textSize="@dimen/large"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="errorHint:Wrong passcode" />
+
+                    <TextView
+                        android:id="@+id/passcodeSignOutTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/log_out"
+                        android:textColor="@color/passcodeLogoutTxtColor"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toEndOf="@+id/passcodeVerticalDivider"
+                        app:layout_constraintTop_toBottomOf="@+id/error_hint_text_view" />
+
+                    <View
+                        android:id="@+id/passcodeVerticalDivider"
+                        android:layout_width="1dp"
+                        android:layout_height="551dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#00000000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>

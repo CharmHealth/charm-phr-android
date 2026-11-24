@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".ui.login.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/loginFailureLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/commonBgColor"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+        <!--        android:background="@drawable/bg"-->
+
+
+        <ImageView
+            android:id="@+id/loginNotSubscribedImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_not_subscribed"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/loginErrorMsgTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/loginErrorMsgTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/open_sans"
+            android:gravity="center"
+            android:lineSpacingExtra="8dp"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/x_medium"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".4"
+            tools:text="error messagesdklas asadskssssssssssssssssssssssssssssssss" />
+
+        <Button
+            style="@style/mdButtonStyle"
+            android:id="@+id/loginRetryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/add_button_height"
+            android:layout_margin="20dp"
+            android:paddingStart="42dp"
+            android:paddingEnd="42dp"
+            android:background="@drawable/item_button_bg"
+            android:elevation="2dp"
+            android:text="@string/retry_str"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginErrorMsgTV"
+            app:layout_constraintVertical_bias=".05" />
+        <!--            android:background="@drawable/pink_round_corner_button"/>-->
+    </LinearLayout>
+
+    <WebView
+
+        android:id="@+id/loginWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+    </WebView>
+
+    <include
+
+        android:id="@+id/loginProgressView"
+        layout="@layout/progress_bar_for_white_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".45" />
+
+
+    <include
+        android:id="@+id/loginErrorPage"
+        layout="@layout/layout_error_page"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

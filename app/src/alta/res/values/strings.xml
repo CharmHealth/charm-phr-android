@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">Alta Psychiatry</string>
+    <string name="tp_app_custom_icon_heading">Welcome to Patient Portal of Alta Psychiatry</string>
+    <string name="content_provider_authority">com.medicalmine.phr.customBrandedApp137.provider</string>
+
+</resources>
+
+

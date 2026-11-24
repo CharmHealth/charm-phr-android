@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/labResultItemSeperator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separatorColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/labResultItemSpace"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/labResultItemSeperator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </Space>
+
+    <TextView
+        android:id="@+id/labResultDetailParamNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans_medium"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:minHeight="@dimen/lab_result_detail_param_height"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:textColor="@color/labResultDetailParamNameTxtColor"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintEnd_toStartOf="@+id/labResultParamInterpretationTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labResultItemSpace"
+        tools:text="Haemoglobin" />
+
+    <ImageButton
+        android:id="@+id/labResultDetailPlottingIV"
+        android:layout_width="@dimen/toolBarBtnWd"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_ripple_white_bg"
+        android:paddingBottom="10dp"
+        android:src="@drawable/ic_plot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labResultDetailParamValueTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/lab_param_common_card_item_margin_vertical"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans_medium"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/lab_result_detail_param_value_height"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/x_medium"
+        app:layout_constraintEnd_toStartOf="@id/labResultParamInterpretationTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labResultDetailParamNameTV"
+        tools:text="12 g/dL" />
+
+    <TextView
+        android:id="@+id/labResultDetailParamReferenceTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/lab_param_common_card_item_margin_vertical"
+        android:layout_marginBottom="@dimen/card_padding"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/lab_result_detail_reference_height"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:textColor="@color/labResultDetailReferenceTxtColor"
+        android:textSize="@dimen/x_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/labResultParamInterpretationTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labResultDetailParamValueTV"
+        tools:text="Reference   4.40 - 6.00 M/uL" />
+
+    <TextView
+        android:id="@+id/labResultParamInterpretationTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/card_padding"
+        android:fontFamily="@font/open_sans_medium"
+        android:textAllCaps="true"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/x_small"
+        app:layout_constraintBottom_toBottomOf="@+id/labResultDetailParamNameTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labResultItemSpace"
+        tools:text="Normal" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reminderDayViewCL"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/common_margin_horizontal"
+    android:layout_marginEnd="@dimen/common_margin_horizontal"
+    android:layout_marginTop="@dimen/common_margin_vertical_half"
+    android:layout_marginBottom="@dimen/common_margin_vertical_half"
+    android:paddingStart="@dimen/card_padding"
+    android:paddingTop="@dimen/card_padding_half"
+    android:paddingBottom="@dimen/card_padding_half"
+    android:paddingEnd="@dimen/card_padding"
+    android:background="@drawable/round_corner_light_blue_drawable"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/reminderDayViewTV"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_medium"
+        android:lineSpacingExtra="@dimen/common_line_height"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Jan 04"/>
+    <LinearLayout
+        android:id="@+id/reminderDayViewLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+</LinearLayout>

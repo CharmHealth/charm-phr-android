@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_message_attachment_bg"
+    android:minHeight="20dp">
+
+    <ImageView
+        android:id="@+id/sharedDocumentIcon"
+        android:layout_width="@dimen/message_attachment_icon_size"
+        android:layout_height="@dimen/message_attachment_icon_size"
+        android:layout_marginStart="@dimen/card_padding"
+        android:src="@drawable/ic_image"
+        app:layout_constraintBottom_toBottomOf="@+id/sharedDocumentSizeTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sharedDocumentNameTV" />
+
+    <TextView
+        android:id="@+id/sharedDocumentNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_padding"
+        android:layout_marginBottom="0dp"
+        android:fontFamily="@font/open_sans_medium"
+        android:textColor="@color/messageDetailAttachmentNameColor"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintEnd_toStartOf="@id/sharedDocumentRemoveBtn"
+        app:layout_constraintStart_toEndOf="@id/sharedDocumentIcon"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:text="SampleDocument.doc" />
+    <TextView
+        android:id="@+id/sharedDocumentSizeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_margin="@dimen/card_padding"
+        android:fontFamily="@font/open_sans_medium"
+        android:textColor="@color/messageDetailAttachmentNameColor"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sharedDocumentRemoveBtn"
+        app:layout_constraintStart_toEndOf="@id/sharedDocumentIcon"
+        app:layout_constraintTop_toBottomOf="@+id/sharedDocumentNameTV"
+
+        tools:text="123 KB" />
+
+    <ImageButton
+        android:id="@+id/sharedDocumentRemoveBtn"
+        android:layout_width="@dimen/message_attachment_icon_size"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/card_padding"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_close_primary"
+        app:layout_constraintBottom_toBottomOf="@+id/sharedDocumentSizeTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sharedDocumentNameTV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_message_attachment_bg"
+    android:minHeight="40dp">
+
+    <ImageView
+        android:id="@+id/messageDetailAttachmentIcon"
+        android:layout_width="@dimen/message_attachment_icon_size"
+        android:layout_height="@dimen/message_attachment_icon_size"
+        android:layout_marginStart="@dimen/card_padding"
+        android:src="@drawable/ic_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/messageDetailAttachmentNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_padding"
+        android:fontFamily="@font/open_sans_medium"
+        android:textColor="@color/messageDetailAttachmentNameColor"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/messageDetailCloseBtn"
+        app:layout_constraintStart_toEndOf="@id/messageDetailAttachmentIcon"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:text="SKkskdsdnofnoi3niofnme3ionfeoics" />
+
+    <ImageButton
+        android:id="@+id/messageDetailCloseBtn"
+        android:layout_width="@dimen/message_attachment_icon_size"
+        android:layout_height="@dimen/message_attachment_icon_size"
+        android:layout_marginEnd="@dimen/card_padding"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_close_primary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

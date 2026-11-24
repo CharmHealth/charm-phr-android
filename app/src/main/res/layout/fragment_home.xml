@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.charm.phr.mphr.ui.components.MDNestedScrollView
+        android:id="@+id/homeScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dashboard_card_margin">
+
+            <LinearLayout
+                android:id="@+id/homeVitalsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                    android:id="@+id/homeVital1Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="@dimen/dashboard_card_margin"
+                    android:layout_marginTop="@dimen/dashboard_card_margin"
+                    android:layout_weight="1"
+                    app:mdStrokeColor="#4D00A284">
+
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_weight"
+                        app:layout_constraintBottom_toTopOf="@id/homeVital1LabelTV"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/homeVital1LabelTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dashboard_vitals_divider_vertical_margin"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Weight"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/x_small"
+                        app:layout_constraintBottom_toTopOf="@id/homeVital1Divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                    <View
+                        android:id="@+id/homeVital1Divider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/vitalDividerColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent=".6" />
+
+                    <LinearLayout
+                        android:id="@+id/homeVital1ValueLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dashboard_vitals_divider_vertical_margin"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeVital1Divider">
+
+                        <TextView
+                            android:id="@+id/homeVital1ValueTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="2.5dp"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/medium"
+                            tools:text="79"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/homeVital1UnitTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans"
+                            android:paddingStart="2.5dp"
+                            android:paddingEnd="0dp"
+                            android:text="kgs"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/x_small" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/homeVital1DateTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/open_sans"
+                        android:text="May 10, 2020"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeVital1ValueLayout"
+                        app:layout_constraintVertical_bias="1" />
+
+
+                </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+                <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                    android:id="@+id/homeVital2Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="@dimen/dashboard_card_margin"
+                    android:layout_weight="1"
+                    app:mdStrokeColor="#4DF57A3E">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_height"
+                        app:layout_constraintBottom_toTopOf="@id/homeVital2LabelTV"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/homeVital2LabelTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dashboard_vitals_divider_vertical_margin"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Height"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/x_small"
+                        app:layout_constraintBottom_toTopOf="@id/homeVital2Divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                    <View
+                        android:id="@+id/homeVital2Divider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/vitalDividerColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent=".6" />
+
+                    <LinearLayout
+                        android:id="@+id/homeVital2ValueLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dashboard_vitals_divider_vertical_margin"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeVital2Divider">
+
+                        <TextView
+                            android:id="@+id/homeVital2ValueTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="2.5dp"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/medium"
+                            tools:text="150" />
+
+                        <TextView
+                            android:id="@+id/homeVital2UnitTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans"
+                            android:paddingStart="2.5dp"
+                            android:paddingEnd="0dp"
+                            android:text="cms"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/x_small" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/homeVital2DateTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/open_sans"
+                        android:text="May 10, 2020"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeVital2ValueLayout"
+                        app:layout_constraintVertical_bias="1" />
+
+                </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+                <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                    android:id="@+id/homeVital3Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="96dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="@dimen/dashboard_card_margin"
+                    android:layout_marginEnd="@dimen/dashboard_card_margin"
+                    android:layout_weight="1"
+                    app:mdStrokeColor="#4DC02D29">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_blood_presuure"
+                        app:layout_constraintBottom_toTopOf="@id/homeVital3LabelTV"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/homeVital3LabelTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dashboard_vitals_divider_vertical_margin"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Blood Pressure"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/x_small"
+                        app:layout_constraintBottom_toTopOf="@id/homeVital3Divider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                    <View
+                        android:id="@+id/homeVital3Divider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/vitalDividerColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent=".6" />
+
+                    <LinearLayout
+                        android:id="@+id/homeVital3ValueLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dashboard_vitals_divider_vertical_margin"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeVital3Divider">
+
+                        <TextView
+                            android:id="@+id/homeVital3ValueTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="2.5dp"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/medium"
+                            tools:text="110/70" />
+
+                        <TextView
+                            android:id="@+id/homeVital3UnitTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans"
+                            android:paddingStart="2.5dp"
+                            android:paddingEnd="0dp"
+                            android:text="mmHg"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/x_small" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/homeVital3DateTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/open_sans"
+                        android:text="May 10, 2020"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeVital3ValueLayout"
+                        app:layout_constraintVertical_bias="1" />
+
+                </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            </LinearLayout>
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/homeTodayAppointmentCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/dashboard_card_margin"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                android:paddingTop="@dimen/dashboard_card_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homeThalassemiaLayout"
+                app:mdStrokeColor="@color/todayAppointmentCardBorderColor">
+
+                <TextView
+                    android:id="@+id/homeTodayAppointmentHeadingTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_padding"
+                    android:layout_marginEnd="@dimen/dashboard_card_padding"
+                    android:paddingBottom="@dimen/separator_padding"
+                    android:text="@string/dashboard_today_appointments_heading"
+                    android:textAppearance="@style/dashboardCardHeading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeTodayAppointmentRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeTodayAppointmentHeadingTV" />
+
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/homeUpcomingAppointmentCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/dashboard_card_margin"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                android:paddingTop="@dimen/dashboard_card_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homeTodayAppointmentCard"
+                app:mdStrokeColor="@color/upcomingAppointmentCardBorderColor">
+
+                <TextView
+                    android:id="@+id/homeUpcomingAppointmentHeadingTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_padding"
+                    android:layout_marginEnd="@dimen/dashboard_card_padding"
+                    android:text="@string/dashboard_upcoming_appointments_heading"
+                    android:textAppearance="@style/dashboardCardHeading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeUpcomingAppointmentRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeUpcomingAppointmentHeadingTV" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/homeUpcomingAppointmentNoDataLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/tab_indicator_height"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeUpcomingAppointmentHeadingTV">
+
+                    <ImageView
+                        android:id="@+id/homeUpcomingAppointmentNoDataImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_no_appointments"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/homeUpcomingAppointmentNoDataTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/appointment_no_data_txt_top_margin"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:gravity="center"
+                        android:text="@string/appointment_upcoming_no_data_str"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/x_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeUpcomingAppointmentNoDataImg" />
+
+                    <Button
+                        android:id="@+id/homeUpcomingAppointmentBookBtn"
+                        style="@style/mdButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_margin="@dimen/card_padding"
+                        android:background="@drawable/item_button_bg"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:paddingStart="32dp"
+                        android:paddingEnd="32dp"
+                        android:text="@string/home_book_appointment_btn_txt"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/homeUpcomingAppointmentNoDataTV"
+                        app:layout_constraintTop_toBottomOf="@+id/homeUpcomingAppointmentNoDataTV" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            <androidx.compose.ui.platform.ComposeView
+                android:id="@+id/appointmentCV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/homeRecentMessageCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/dashboard_card_margin"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                android:paddingTop="@dimen/dashboard_card_padding"
+                android:paddingBottom="@dimen/dashboard_card_padding"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homeUpcomingAppointmentCard"
+                app:mdStrokeColor="@color/recentMessageCardBorderColor">
+
+                <TextView
+                    android:id="@+id/homeRecentMessageHeadingTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_padding"
+                    android:layout_marginEnd="@dimen/dashboard_card_padding"
+                    android:text="@string/dashboard_message_heading"
+                    android:textAppearance="@style/dashboardCardHeading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRecentMessageRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeRecentMessageHeadingTV" />
+
+                <LinearLayout
+                    android:id="@+id/homeRecentMessageNoDataLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeRecentMessageHeadingTV">
+
+                    <ImageView
+                        android:id="@+id/homeRecentMessageNoDataImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_temp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/homeRecentMessageNoDataTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/appointment_no_data_txt_top_margin"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:gravity="center"
+                        android:text="@string/dashboard_active_medication_no_data_str"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeRecentMessageNoDataImg" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/homeRecentMessageShowMoreTV"
+                    style="@style/homePageShowMoreStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:gravity="center"
+                    android:text="@string/show_all"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeRecentMessageRV"
+                    tools:visibility="visible" />
+
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/homeQuestionnaireCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/dashboard_card_margin"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                android:paddingTop="@dimen/dashboard_card_padding"
+                android:paddingBottom="@dimen/dashboard_card_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homeRecentMessageCard"
+                app:mdStrokeColor="@color/questionnaireCardBorderColor">
+
+                <TextView
+                    android:id="@+id/homeQuestionnaireHeadingTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_padding"
+                    android:layout_marginEnd="@dimen/dashboard_card_padding"
+                    android:text="@string/dashboard_questionnaire_heading"
+                    android:textAppearance="@style/dashboardCardHeading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeQuestionnaireRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeQuestionnaireHeadingTV" />
+
+                <LinearLayout
+                    android:id="@+id/homeQuestionnaireNoDataLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeQuestionnaireHeadingTV"
+                    tools:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/homeQuestionnaireNoDataImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_temp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/homeQuestionnaireNoDataTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/appointment_no_data_txt_top_margin"
+                        android:text="@string/dashboard_active_medication_no_data_str"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/xx_small"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeQuestionnaireNoDataImg" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/homeQuestionnaireShowMoreTV"
+                    style="@style/homePageShowMoreStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:gravity="center"
+                    android:text="@string/show_all"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeQuestionnaireRV"
+                    tools:visibility="visible" />
+
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/homeInvoiceCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/dashboard_card_margin"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                android:paddingTop="@dimen/dashboard_card_padding"
+                android:paddingBottom="@dimen/dashboard_card_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homeQuestionnaireCard"
+                app:mdStrokeColor="@color/invoiceCardBorderColor">
+
+                <TextView
+                    android:id="@+id/homeInvoiceHeadingTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_padding"
+                    android:layout_marginEnd="@dimen/dashboard_card_padding"
+                    android:text="@string/dashboard_invoice_heading"
+                    android:textAppearance="@style/dashboardCardHeading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeInvoiceRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeInvoiceHeadingTV" />
+
+                <LinearLayout
+                    android:id="@+id/homeInvoiceNoDataLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeInvoiceHeadingTV"
+                    tools:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/homeInvoiceNoDataImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_temp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/homeInvoiceNoDataTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/appointment_no_data_txt_top_margin"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:gravity="center"
+                        android:text="@string/dashboard_active_medication_no_data_str"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeInvoiceNoDataImg" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/homeInvoiceShowMoreTV"
+                    style="@style/homePageShowMoreStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:gravity="center"
+                    android:text="@string/show_all"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeInvoiceRV"
+                    tools:visibility="visible" />
+
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/homeActiveMedicationsCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/dashboard_card_margin"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                android:paddingTop="@dimen/dashboard_card_padding"
+                android:paddingBottom="@dimen/dashboard_card_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homeInvoiceCard"
+                app:mdStrokeColor="@color/activeMedicationCardBorderColor">
+
+                <TextView
+                    android:id="@+id/homeActiveMedicationsHeadingTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_padding"
+                    android:layout_marginEnd="@dimen/dashboard_card_padding"
+                    android:text="@string/dashboard_active_medications_heading"
+                    android:textAppearance="@style/dashboardCardHeading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeActiveMedicationsRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeActiveMedicationsHeadingTV"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/homeActiveMedicationsNoDataLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeActiveMedicationsHeadingTV"
+                    tools:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/homeActiveMedicationNoDataImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_temp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/homeActiveMedicationNoDataTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/appointment_no_data_txt_top_margin"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:gravity="center"
+                        android:text="@string/dashboard_active_medication_no_data_str"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeActiveMedicationNoDataImg" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/homeActiveMedicationShowMoreTV"
+                    style="@style/homePageShowMoreStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:gravity="center"
+                    android:text="@string/show_all"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeActiveMedicationsRV"
+                    tools:visibility="visible" />
+
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/homeThalassemiaLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homeVitalsLayout">
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/homeTransfusionBannerWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/dashboard_card_margin"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                android:visibility="gone"
+                app:mdStrokeColor="@color/todayAppointmentCardBorderColor">
+
+                <androidx.compose.ui.platform.ComposeView
+                    android:id="@+id/homeTransfusionBannerCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/homeLabResultsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                    android:id="@+id/homeHbLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_margin"
+                    android:layout_marginTop="@dimen/dashboard_card_margin"
+                    android:layout_weight="1"
+                    app:mdStrokeColor="@color/todayAppointmentCardBorderColor">
+
+                    <TextView
+                        android:id="@+id/homeHbLabelTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/hb_label"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/x_small"
+                        app:layout_constraintBottom_toTopOf="@id/homeHbDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/homeHbDivider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/vitalDividerColor"
+                        app:layout_constraintBottom_toTopOf="@+id/homeHbValueLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toBottomOf="@+id/homeHbLabelTV"
+                        app:layout_constraintWidth_percent=".6" />
+
+                    <LinearLayout
+                        android:id="@+id/homeHbValueLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dashboard_vitals_divider_vertical_margin"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeHbDivider">
+
+                        <TextView
+                            android:id="@+id/homeHbValueTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="2.5dp"
+                            android:text="@string/no_data_available"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/medium" />
+
+                        <TextView
+                            android:id="@+id/homeHbUnitTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans"
+                            android:paddingStart="2.5dp"
+                            android:paddingEnd="0dp"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/x_small" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/homeHbDateTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/open_sans"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeHbValueLayout"
+                        app:layout_constraintVertical_bias="1" />
+
+                </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+                <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                    android:id="@+id/homeFerritinLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="@dimen/dashboard_card_margin"
+                    android:layout_marginEnd="@dimen/dashboard_card_margin"
+                    android:layout_weight="1"
+                    app:mdStrokeColor="@color/todayAppointmentCardBorderColor">
+
+                    <TextView
+                        android:id="@+id/homeFerritinLabelTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/ferritin_str"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/x_small"
+                        app:layout_constraintBottom_toTopOf="@id/homeFerritinDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/homeFerritinDivider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/vitalDividerColor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/homeFerritinValueLayout"
+                       app:layout_constraintTop_toBottomOf="@+id/homeFerritinLabelTV"
+                        app:layout_constraintWidth_percent=".6" />
+
+                    <LinearLayout
+                        android:id="@+id/homeFerritinValueLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dashboard_vitals_divider_vertical_margin"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeFerritinDivider">
+
+                        <TextView
+                            android:id="@+id/homeFerritinValueTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="2.5dp"
+                            android:text="@string/no_data_available"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/medium" />
+
+                        <TextView
+                            android:id="@+id/homeFerritinUnitTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:fontFamily="@font/open_sans"
+                            android:paddingStart="2.5dp"
+                            android:paddingEnd="0dp"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/x_small" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/homeFerritinDateTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/open_sans"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/homeFerritinValueLayout"
+                        app:layout_constraintVertical_bias="1" />
+
+                </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            </LinearLayout>
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/homeIronTrendCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/dashboard_card_margin"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                android:paddingTop="@dimen/dashboard_card_padding"
+                android:paddingBottom="@dimen/dashboard_card_padding"
+                android:visibility="gone"
+                app:mdStrokeColor="@color/activeMedicationCardBorderColor">
+
+                <TextView
+                    android:id="@+id/homeIronTrendHeadingTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dashboard_card_padding"
+                    android:layout_marginEnd="@dimen/dashboard_card_padding"
+                    android:text="@string/iron_trend_heading"
+                    android:textAppearance="@style/dashboardCardHeading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/homeIronTrendProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeIronTrendHeadingTV" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/homeIronTrendChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="@dimen/dashboard_card_padding"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/dashboard_card_padding"
+                    android:layout_marginBottom="@dimen/dashboard_card_padding"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeIronTrendHeadingTV" />
+
+                <TextView
+                    android:id="@+id/homeIronTrendEmptyTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:gravity="center"
+                    android:text="@string/iron_trend_no_data"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/xx_small"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/homeIronTrendHeadingTV" />
+
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/homeLastMriWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dashboard_card_margin"
+                android:layout_marginTop="@dimen/dashboard_card_margin"
+                android:layout_marginEnd="@dimen/dashboard_card_margin"
+                app:mdStrokeColor="@color/todayAppointmentCardBorderColor">
+
+                <androidx.compose.ui.platform.ComposeView
+                    android:id="@+id/homeLastMriCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.charm.phr.mphr.ui.components.MDNestedScrollView>
+
+    <include
+        android:id="@+id/homeProgress"
+        layout="@layout/layout_progress_bar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/homeErrorLayout"
+        layout="@layout/layout_error_page"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

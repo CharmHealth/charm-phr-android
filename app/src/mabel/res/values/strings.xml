@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">Mabel\'s Clinic</string>
+    <string name="tp_app_custom_icon_heading">Welcome to Patient Portal of Mabel\'s Clinic</string>
+    <string name="content_provider_authority">com.medicalmine.phr.customBrandedApp061.provider</string>
+
+</resources>
+
+

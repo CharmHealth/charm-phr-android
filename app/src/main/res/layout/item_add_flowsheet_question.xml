@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.charm.phr.mphr.ui.components.MDTextInputEdittext xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/flowsheet_add_card_margin_horizontal"
+    android:layout_marginTop="@dimen/flowsheet_add_card_margin_vertical"
+    android:layout_marginEnd="@dimen/flowsheet_add_card_margin_horizontal"
+    android:layout_marginBottom="@dimen/flowsheet_add_card_margin_vertical"
+    android:background="@drawable/item_add_flowsheet_et_bg"
+    android:fontFamily="@font/open_sans"
+    android:gravity="start|top"
+    android:inputType="text|textCapSentences|textNoSuggestions|textMultiLine"
+    android:minHeight="@dimen/flowsheet_add_ques_ans_value_min_height"
+    android:padding="@dimen/questionnaire_detail_ques_ans_value_padding"
+    android:textColor="@color/edittext_txt_color"
+    android:textSize="@dimen/medium"
+    app:setBgTransparent="false"
+    tools:text="10 times per month"
+
+    >
+
+</com.charm.phr.mphr.ui.components.MDTextInputEdittext>

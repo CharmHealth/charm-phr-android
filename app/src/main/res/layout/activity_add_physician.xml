@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addPhysicianRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.physician.add_physician.AddPhysicianActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/addPhysicianToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/addPhysicianBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/addPhysicianToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/physician_add_str"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/addPhysicianDeleteBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete_white"
+            android:visibility="gone" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/commonBgColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addPhysicianToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addPhysicianMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/addPhysicianBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addPhysicianPracticeLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addPhysicianPracticeET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/practice_name_str" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addPhysicianNameLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addPhysicianNameET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/physician_name_hint"
+                            android:maxLength="@integer/addPhysicianNameMaxLength"
+                            app:filterRegex="alphabetsNumbersAndSplChar" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addPhysicianMobileLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addPhysicianMobileET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/physician_mobile_hint"
+                            android:inputType="number"
+                            android:maxLength="@integer/addPhysicianMobileMaxLength"
+                            app:filterRegex="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                style="@style/mdButtonStyle"
+                android:id="@+id/addPhysicianBtn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/item_button_bg"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/physician_add_str"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+#Step to Integrate into Project
+1.Add local.properties file in root directory of charmVideoLib
+2.Add libs folder in root directory of charmVideoLib
+3.Add mobilertc.aar file in libs folder
+
+##Step for upgrade charmVideoLib
+1. Update the versions in build.gradle file
+2. Replace the mobilertc.aar file in libs folder with new one
+3. Delete the build folder
+4. Rebuild the project

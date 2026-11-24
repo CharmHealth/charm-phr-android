@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4074D9</color>
+    <color name="colorPrimaryDark">#4074D9</color>
+    <color name="colorAccent">#4074D9</color> <!-- Make Sure to change color in  -->
+
+
+    <color name="colorTourpage">#4074D9</color> <!-- Make Sure to change color in  -->
+    <color name="scaleViewIndicatorColor">#4A4074D9</color>
+    <color name="scaleViewNotchColor">#668FE0</color>
+
+    <color name="itemRippleForWhiteBg">#804074D9</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="black87">#de000000</color>
+    <color name="black80">#cc000000</color>
+    <color name="black78">#C7000000</color> <!--70%-->
+    <color name="black70">#b3000000</color> <!--70%-->
+    <color name="black60">#99000000</color> <!--70%-->
+    <color name="black56">#8F000000</color>
+    <color name="black38">#61000000</color>
+    <color name="black40">#A9000000</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="white70">#B3FFFFFF</color>
+    <color name="black30">#4D000000</color>
+    <color name="black10">#1A000000</color>
+    <color name="white75">#BFFFFFFF</color>
+
+    <!--Internet connectivity-->
+    <color name="onlineGreen">#45B44A</color>
+    <color name="offlineBlack">#2C2C2C</color>
+    <!--/-->
+
+    <color name="orangeishRed">#F25369</color>
+
+<!--    -->
+    <color name="mdDefaultStrokeColor">@android:color/transparent</color>
+
+    <color name="toolbarBg">@color/colorPrimary</color>
+
+    <color name="commonBgColor">#f6f6f8</color>
+
+    <color name="vitalDividerColor">#fafafa</color>
+
+    <color name="tabIndicator">@color/textColorForColorPrimaryBg</color>
+
+    <color name="tabTxtColor">#B3ffffff</color>
+    <color name="tabSelectedTxtColor">@color/textColorForColorPrimaryBg</color>
+
+
+    <color name="displayDateTxtColor">@color/black87</color>
+
+    <color name="separatorColor">#1A707070</color>
+    <color name="mandatoryColor">#FA0103</color>
+
+
+    <color name="textColorForColorPrimaryBg">@android:color/white</color>
+
+    <color name="fab_ripple">#11000000</color>
+
+    <color name="dashboardBottomSheetColor">#FAFAFA</color>
+    <color name="dashboardBookAppointmentFabColor">#7E57C2</color>
+    <color name="dashboardComposeMessageFabColor">#FF9700</color>
+
+    <color name="passcodeSelectedDashColor">@color/colorAccent</color>
+    <color name="passcodeUnSelectedDashColor">#1e000000</color>
+    <color name="passcodeIncorrectColor">#B50404</color>
+    <color name="passcodeBulletin">#bababa</color>
+    <color name="passcodeLogoutTxtColor">@color/darkRed</color>
+
+
+    <color name="upcomingAppointmentMonthTxtColor">@color/colorPrimary</color>
+    <color name="upcomingAppointmentDateAndDayLayoutBg">@color/colorPrimary</color>
+    <color name="upcomingAppointmentCardBorderColor">#4D4074D9</color>
+    <color name="upcomingAppointmentFacilityNameTxtColor">@color/black87</color>
+
+
+    <color name="activeMedicationCardBorderColor">#4D2A9F3F</color>
+    <color name="activeMedicationSeparatorColor">#18B434</color>
+    <color name="activeMedicationShowMoreTxtColor">#18B434</color>
+
+    <color name="invoiceCardBorderColor">@color/upcomingAppointmentCardBorderColor</color>
+    <color name="invoiceSeparatorColor">#5B2A9F</color>
+
+    <color name="recentMessageCardBorderColor">@color/upcomingAppointmentCardBorderColor</color>
+    <color name="recentMessageSeparatorColor">#E4C20E</color>
+
+    <color name="questionnaireCardBorderColor">@color/upcomingAppointmentCardBorderColor</color>
+    <color name="questionnaireSeparatorColor">#E91E63</color>
+
+    <color name="todayAppointmentCardBorderColor">@color/upcomingAppointmentCardBorderColor</color>
+    <color name="todayAppointmentSeparatorColor">#007AFF</color>
+
+
+    <color name="darkRed">#D60100</color>
+    <color name="invoiceDueAmtTxtColor">@color/darkRed</color>
+    <color name="receiptAmtPaidTxtColor">#0FBE2D</color>
+    <color name="messageListDateTxtColor">@color/displayDateTxtColor</color>
+    <color name="messageListFromOrToTxtColor">@color/black87</color>
+    <color name="messageListSubjectTxtColor">@color/black87</color>
+    <color name="cardSelectedBgColor">#334074D9</color>
+    <color name="messageDetailToNameTxtColor">@color/black70</color>
+    <color name="labResultShowMoreTxtColor">@color/colorPrimary</color>
+    <color name="labResultInterpretationAbnormalTxtColor">#D60100</color>
+    <color name="labResultInterpretationNormalTxtColor">#0FBE2D</color> <!--    158829-->
+    <color name="labResultInterpretationUnknownTxtColor">@color/black87</color>
+    <color name="itemEditTxtColor">@color/colorPrimary</color>
+    <color name="labResultViewFullReportTxtColor">@color/colorPrimary</color>
+    <color name="labResultDetailTestNameTxtColor">@color/black87</color>
+    <color name="labResultDetailParamNameTxtColor">@color/black87</color>
+    <color name="labResultDetailReferenceTxtColor">@color/black70</color>
+    <color name="dashboardNavigationPatListDetailTxtColor">@color/black70</color>
+    <color name="patientListDetailTxtColor">#8797AD</color>
+    <color name="allergyListNameAndTypeTxtColor">@color/black87</color>
+    <color name="allergyListSeveritySevereTxtColor">#D60100</color>
+    <color name="allergyListSeveritySevereBg">#1AD60100</color>
+    <color name="allergyListSeverityModerateTxtColor">#F68903</color>
+    <color name="allergyListSeverityModerateBg">#1AF68903</color>
+    <color name="allergyListSeverityMildTxtColor">#F6C001</color>
+    <color name="allergyListSeverityMildBg">#1AF6C001</color>
+    <color name="prescriptionListRefillTxtColor">#FFAA0D</color>
+    <color name="medicationListMoreTemplateLabelTxtColor">@color/black70</color>
+    <color name="medicationListMoreTemplateValueTxtColor">@color/black87</color>
+    <color name="appointmentSelectedTab">@color/colorPrimary</color>
+    <color name="appointmentUnSelectedTab">#deffffff</color>
+    <color name="appointmentSelectedTabTxtColor">@color/textColorForColorPrimaryBg</color>
+    <color name="appointmentUnSelectedTabTxtColor">@color/colorPrimary</color>
+
+    <!--Horizontal calendar-->
+    <color name="mti_lbl_day">#605E9A</color>
+    <color name="calItemTodayTvColor">#6A66C1</color>
+    <color name="mti_lbl_date">#272727</color>
+    <color name="calSelectedDateColor">#2D2B9E</color>
+    <color name="mti_lbl_label">#C8C8C8</color>
+    <color name="calendarDateUnselectedBackgroundColor">#E8E7FF </color>
+    <color name="calendarDateUnselectedBorderColor">#D1D0EF </color>
+    <!--/Horizontal calendar-->
+
+    <color name="messageComposeItemLabelTxtColor">@color/black87</color>
+    <color name="messageComposeItemValueTxtColor">@color/black87</color>
+    <color name="messageComposeSelectedMemberBg">#334074D9</color>
+    <color name="billingColorAmtTxtColor">#4E71DA</color>
+   <color name="iconLightBg">#e6effc</color> <!--  defafa-->
+
+    <color name="questionnaireListStatusNewTxtColor">#D60100</color>
+    <color name="questionnaireListStatusNewBg">#1FD60100</color>
+
+    <color name="questionnaireListStatusSubmittedTxtColor">#269B3C</color>
+    <color name="questionnaireListStatusSubmittedBg">#1A269B3C</color>
+
+    <color name="questionnaireListStatusDraftTxtColor">#FFA700</color>
+    <color name="questionnaireListStatusDraftBg">#FDF6EA</color>
+
+    <color name="questionnaireListStatusNotSubmittedTxtColor">#333333</color>
+    <color name="questionnaireListStatusNotSubmittedBg">#1F333333</color>
+
+    <color name="questionnaireUnSelectedTabTxtColor">@color/appointmentUnSelectedTabTxtColor</color>
+    <color name="questionnaireUnSelectedTab">@color/appointmentUnSelectedTab</color>
+
+    <color name="questionnaireSelectedTabTxtColor">@color/appointmentSelectedTabTxtColor</color>
+    <color name="questionnaireSelectedTab">@color/appointmentSelectedTab</color>
+    <color name="questionnaireDetailWidgetDividerColor">#8D8D8D</color>
+    <color name="messageDetailAttachmentNameColor">#3F4960</color>
+    <color name="questionnaireOtherOptionLabelTxtColor">#AD071F3D</color>
+
+    <color name="otPublisherBorderColor">@android:color/white</color>
+    <color name="otCutCallFabColor">#E61E44</color>
+    <color name="patDemoPatNameTxtColor">#071F3D</color>
+    <color name="patDemoPatGenderAndDOBTxtColor">#db071F3D</color>
+
+    <color name="patDemoPatGenderAndDOBSeparatorColor">#66071F3D</color>
+    <color name="patDemoLabelColor">#de094B9D</color>
+    <color name="patDemoLabelTV">#071F3D</color>
+    <color name="patDemoLabelNotAvailableTV">#4D071F3D</color>
+    <color name="patDemoBloodGrpColor">#F00000</color>
+    <color name="questionnairePermissionTxtColor">#7A4D05</color>
+
+    <color name="iconViewDefaultBg">#302F31</color>
+
+    <color name="graphGridColor">#bababa</color>
+    <color name="graphXAxisTxtColor">#7F87A3</color>
+
+
+    <color name="firstAxisColor">#1F78B4</color>
+    <color name="secondAxisColor">#FF7F00</color>
+    <color name="thirdAxisColor">#E31A1C</color>
+    <color name="fourthAxisColor">#6E493A</color>
+    <color name="fifthAxisColor">#6A3D9A</color>
+    <color name="sixthAxisColor">#33A02C</color>
+    <color name="seventhAxisColor">#4299D3</color>
+    <color name="eighthAxisColor">#FDBF6F</color>
+    <color name="ninthAxisColor">#EB7475</color>
+    <color name="tenthAxisColor">#BC8A76</color>
+    <color name="eleventhAxisColor">#CAB2D6</color>
+    <color name="twelfthAxisColor">#B2DF8A</color>
+
+    <color name="systolicAxisColor">#ED6644</color>
+    <color name="diastolicAxisColor">@color/firstAxisColor</color>
+
+    <color name="fastingAxisColor">#FF7F02</color>
+    <color name="postPrandialAxisColor">#6B4A3D</color>
+    <color name="randomAxisColor">#CC3340</color>
+
+    <color name="questionnaireDeleteTxtColor">#D60100</color>
+
+
+
+    <color name="wellnessLatestVitalUnitTxtColor">#909090</color>
+    <color name="hpURLBgColor">#F0F0F0</color>
+    <color name="practiceSeparator">#14707070</color>
+    <color name="addWellnessChipBgColor">#1F4074D9</color>
+    <color name="wellnessUnitSystemNormalBorder">#1f3C3C43</color>
+
+    <color name="pinColorError">#D5452D</color>
+
+    <color name="pinColorSelected">@color/colorPrimary</color>
+    <color name="pinColor">#614074D9</color>
+    <color name="darkNavyBlue">#374879</color> <!--card on file-->
+
+    <color name="flowsheetFrequencyColor">#C7D60100</color>
+    <color name="addFlowsheetETBg">#0DB2B2B2</color>
+    <color name="addFlowsheetETStroke">@color/separatorColor</color>
+    <color name="addFlowsheetVitalLabETStroke">#DEDEDE</color>
+    <color name="whiteRipple">#80ffffff</color>
+    <color name="darkGrey">#8A8A8E</color>
+    <color name="translucent">#6F000000</color>
+    <color name="ghostWhite">#F2F2F4</color>
+    <color name="darkBlue_trans06">#0F335DAE</color>
+    <color name="itemRippleForWhiteBgLight">#4D4074D9</color>
+    <color name="grey">#707070</color>
+    <color name="grey_trans30">#30707070</color>
+    <color name="milky_blue">#EBF1FB</color>
+    <color name="light_grey">#9e9e9e</color>
+
+    <color name="black5Trans">#0D0B4A68</color>
+    <color name="pompeiiBlue">#004C71</color>
+    <color name="black6Trans">#0D000000</color>
+    <color name="greyTrans70">#B36E6F6E</color>
+    <color name="white_blue">#E0E9F9</color>
+    <color name="milky_green">#CFEDC2</color>
+    <color name="card_bg">@color/milky_blue</color>
+    <color name="icon_bg">@color/white_blue</color>
+</resources>

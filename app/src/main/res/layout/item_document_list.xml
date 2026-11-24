@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/documentCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/card_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_margin_vertical"
+        android:animateLayoutChanges="true"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/documentConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_ripple_white_bg"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/documentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/documentDateTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/card_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:textAppearance="@style/dateDisplayTxtAppearance"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Jun 11, 2000" />
+
+                <TextView
+                    android:id="@+id/documentNameTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:paddingStart="@dimen/card_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/x_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/documentDateTV"
+                    tools:text="Tuesday, September 24" />
+
+                <View
+                    android:id="@+id/documentSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/card_padding_half"
+                    android:layout_marginEnd="@dimen/card_padding"
+                    android:background="@color/practiceSeparator"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/documentNameTV" />
+
+                <TextView
+                    android:id="@+id/documentSharedByLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/card_padding_half"
+                    android:fontFamily="@font/open_sans"
+                    android:lineSpacingExtra="@dimen/common_line_height"
+                    android:paddingStart="@dimen/card_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:text="@string/document_folder_shared_by_str"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/x_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/documentSeparator" />
+
+                <TextView
+                    android:id="@+id/documentSharedByTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                    android:layout_marginEnd="@dimen/card_padding"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:lineSpacingExtra="@dimen/common_line_height"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/x_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/documentSharedByLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Reason for problem" />
+
+                <TextView
+                    android:id="@+id/documentSharedToLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/card_padding_half"
+                    android:fontFamily="@font/open_sans"
+                    android:lineSpacingExtra="@dimen/common_line_height"
+                    android:paddingStart="@dimen/card_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:text="@string/document_folder_shared_to_str"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/x_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/documentSharedByTV" />
+
+                <TextView
+                    android:id="@+id/documentSharedToTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                    android:layout_marginEnd="@dimen/card_padding"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:lineSpacingExtra="@dimen/common_line_height"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/x_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/documentSharedToLabel"
+                    tools:text="Reason for problem" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/documentHPLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:id="@+id/documentHPNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/card_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:textAppearance="@style/nameHPDisplayTxtAppearance"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Hypertension" />
+
+                <TextView
+                    android:id="@+id/documentHPTypeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                    android:fontFamily="@font/open_sans"
+                    android:paddingStart="@dimen/card_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/xx_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/documentHPNameTV"
+                    tools:text="Active" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

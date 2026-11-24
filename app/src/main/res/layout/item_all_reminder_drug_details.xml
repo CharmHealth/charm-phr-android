@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/card_margin_horizontal"
+    android:layout_marginTop="@dimen/common_margin_vertical_half"
+    android:layout_marginEnd="@dimen/card_margin_horizontal"
+    android:layout_marginBottom="@dimen/common_margin_vertical_half">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/reminderDrugIcon"
+            android:layout_width="@dimen/item_start_icon_size"
+            android:layout_height="@dimen/item_start_icon_size"
+            android:layout_marginStart="@dimen/card_padding_half"
+            android:layout_marginTop="@dimen/card_padding"
+            android:src="@drawable/ic_tablet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/reminderModuleItemNameTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_padding"
+            android:paddingEnd="@dimen/card_margin_vertical"
+            android:fontFamily="@font/open_sans_medium"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/x_medium"
+            app:layout_constraintEnd_toStartOf="@+id/reminderStateTV"
+            app:layout_constraintStart_toEndOf="@+id/reminderDrugIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ranitidine 150mg" />
+
+        <TextView
+            android:id="@+id/reminderStateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_padding"
+            android:layout_marginEnd="@dimen/card_padding"
+            android:background="@drawable/round_corner_green_drawable"
+            android:fontFamily="@font/open_sans_medium"
+            android:paddingStart="@dimen/card_padding_half"
+            android:paddingTop="@dimen/card_margin_vertical"
+            android:paddingEnd="@dimen/card_padding_half"
+            android:paddingBottom="@dimen/card_margin_vertical"
+            android:textColor="@color/activeMedicationShowMoreTxtColor"
+            android:textSize="@dimen/small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Active" />
+
+        <TextView
+            android:id="@+id/reminderDrugDirectionTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans"
+            android:lineSpacingExtra="@dimen/common_line_height"
+            android:paddingEnd="@dimen/card_padding"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/reminderModuleItemNameTV"
+            app:layout_constraintTop_toBottomOf="@+id/reminderModuleItemNameTV"
+            tools:text="1 tablet(s) 3 times a day before a meal for Everyday, oral route" />
+
+        <TextView
+            android:id="@+id/reminderScheduledTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans_light"
+            android:lineSpacingExtra="@dimen/common_line_height"
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding"
+            android:text="@string/scheduled_str"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toStartOf="@+id/reminderModuleItemNameTV"
+            app:layout_constraintTop_toBottomOf="@+id/reminderDrugDirectionTV" />
+
+        <TextView
+            android:id="@+id/reminderStartDateTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans_bold"
+            android:lineSpacingExtra="@dimen/common_line_height"
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toEndOf="@+id/reminderScheduledTV"
+            app:layout_constraintTop_toBottomOf="@+id/reminderDrugDirectionTV"
+            tools:text="Jan 02,2023" />
+
+        <TextView
+            android:id="@+id/reminderToTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans_light"
+            android:lineSpacingExtra="@dimen/common_line_height"
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding"
+            android:text="@string/to_str"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toEndOf="@+id/reminderStartDateTV"
+            app:layout_constraintTop_toBottomOf="@+id/reminderDrugDirectionTV" />
+
+        <TextView
+            android:id="@+id/reminderEndDateTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:fontFamily="@font/open_sans_bold"
+            android:lineSpacingExtra="@dimen/common_line_height"
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintStart_toEndOf="@+id/reminderToTV"
+            app:layout_constraintTop_toBottomOf="@+id/reminderDrugDirectionTV"
+            tools:text="Jan 02,2023" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

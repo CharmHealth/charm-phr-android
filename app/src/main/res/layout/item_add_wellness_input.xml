@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/card_padding"
+    android:background="@color/commonBgColor">
+
+    <TextView
+        android:id="@+id/addWellnessInputLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+        android:layout_marginEnd="@dimen/card_padding_half"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/wellness_weight_txt"
+        android:textColor="@color/black87"
+
+        android:textSize="@dimen/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/addWellnessInputDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+        android:fontFamily="@font/open_sans_medium"
+        android:paddingBottom="@dimen/edittext_padding"
+        android:text="@string/delete_str"
+        android:textAllCaps="true"
+        android:textColor="@color/darkRed"
+        android:textSize="@dimen/medium"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+        android:id="@+id/addWellnessInputET"
+        style="@style/wellnessInput"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/item_wellness_input_height"
+        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+        android:layout_marginTop="@dimen/edittext_padding"
+        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+        android:layout_marginBottom="@dimen/edittext_padding"
+        android:background="@drawable/item_edittext_bg"
+        android:gravity="center_vertical"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/card_padding"
+        android:textColor="@color/edittext_txt_color"
+        android:textSize="@dimen/medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addWellnessInputLabel"
+        app:setBgTransparent="false"
+        tools:text="23" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

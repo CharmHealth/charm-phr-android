@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/card_margin_horizontal"
+    android:layout_marginEnd="@dimen/card_margin_horizontal"
+    android:layout_marginTop="@dimen/questionnaire_card_margin_vertical"
+    android:layout_marginBottom="@dimen/questionnaire_card_margin_vertical"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/item_questionnaire_bg"
+    android:elevation="1dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/questionnaireDetailItemAllergyHintTV"
+        style="@style/itemQuestionnaireWidgetNotes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Drug Allergy" />
+
+    <TextView
+        android:id="@+id/questionnaireDetailItemAllergyDeleteTV"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/open_sans_medium"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:paddingBottom="@dimen/card_padding"
+        android:text="@string/delete_str"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/medium"
+        app:layout_constraintBottom_toBottomOf="@id/questionnaireDetailItemAllergyHintTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/questionnaireDetailItemAllergyHintTV" />
+
+    <LinearLayout
+        android:id="@+id/questionnaireDetailItemAllergyMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionnaireDetailItemAllergyHintTV">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/questionnaireDetailItemAllergyNameLayout"
+            style="@style/itemQuestionnaireAllergyTextInputLayoutTheme"
+            android:layout_marginTop="@dimen/card_padding_half"
+            android:layout_marginBottom="0dp"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+
+            >
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/questionnaireDetailItemAllergyNameET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/allergy_add_allergen_hint"
+                android:maxLength="@integer/addAllergyNameMaxLength"
+                app:filterRegex="alphabets"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+            android:id="@+id/questionnaireDetailItemAllergySeverityLayout"
+            style="@style/itemQuestionnaireAllergyTextInputLayoutTheme"
+            android:layout_marginTop="@dimen/card_padding_half"
+            android:layout_marginBottom="0dp"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                android:id="@+id/questionnaireDetailItemAllergySeverityET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/allergy_add_severity_hint"
+                app:allowAutoSelect="true" />
+
+        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/questionnaireDetailItemAllergyReactionsLayout"
+            style="@style/itemQuestionnaireAllergyTextInputLayoutTheme"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_padding_half"
+            android:layout_marginBottom="@dimen/card_padding"
+            android:minHeight="@dimen/textinput_edittext_height"
+            app:helperTextTextAppearance="@style/itemEdittextHelperTxtAppearance"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+
+            >
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/questionnaireDetailItemAllergyReactionsET"
+                style="@style/itemTextInputEdittextMultiLineTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/allergy_add_reactions_hint"
+                android:maxLength="@integer/addAllergyReactionsMaxLength" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

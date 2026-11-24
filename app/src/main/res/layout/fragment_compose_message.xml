@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/composeMsgMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.message.compose.ComposeMessageActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/composeMsgToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/composeMsgBackBtn"
+                android:layout_width="@dimen/toolBarBtnWd"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/composeMsgToolbarText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/toolbar_text_left_margin"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:text="@string/message_compose_toolbar_txt"
+                android:textAppearance="@style/toolbarText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/composeMsgAttachmentBtn"
+                app:layout_constraintStart_toEndOf="@id/composeMsgBackBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/composeMsgAttachmentBtn"
+                android:layout_width="@dimen/toolBarBtnWd"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_attach_file_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/composeMsgSendBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/composeMsgSendBtn"
+                android:layout_width="@dimen/toolBarBtnWd"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_send_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/composeMsgScrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/composeMessageAttachmentRV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/composeMsgToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/composeMsgFromLabelTV"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/message_compose_item_height"
+                android:layout_marginTop="@dimen/message_compose_items_margin_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                android:paddingEnd="0dp"
+                android:text="@string/message_compose_from_label"
+                android:textAppearance="@style/composeMsgLabelTxtAppearance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/composeMsgFromValueTV"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/message_compose_item_height"
+                android:layout_marginTop="@dimen/message_compose_items_margin_vertical"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                android:paddingEnd="0dp"
+                android:textAppearance="@style/composeMsgValueTxtAppearance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/composeMsgPracticeLabelTV"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/message_compose_from_label" />
+
+            <View
+                android:id="@+id/composeMsgFromSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/separatorColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgFromValueTV"
+
+                />
+
+            <TextView
+                android:id="@+id/composeMsgPracticeLabelTV"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/message_compose_item_height"
+                android:layout_marginTop="@dimen/message_compose_items_margin_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                android:paddingEnd="0dp"
+                android:text="@string/practice_only_str"
+                android:textAppearance="@style/composeMsgLabelTxtAppearance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgFromSeparator" />
+
+            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                android:id="@+id/composeMsgPracticeValueET"
+                style="@style/itemEdittextTheme"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/message_compose_items_margin_vertical"
+                android:background="@color/transparent"
+                android:hint="@string/select_practice"
+                android:fontFamily="@font/open_sans_medium"
+                android:inputType="text|textNoSuggestions"
+                android:textAppearance="@style/composeMsgValueTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@+id/composeMsgPracticeSeparator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/composeMsgPracticeLabelTV"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgFromSeparator"
+                app:showIcon="true"
+                app:showSelectDivider="false"
+                tools:text="Dr Who nvsejknkoewfnkoewfnkonkonmewkomnkoewmnkoewfmokemnwo" />
+
+            <TextView
+                android:id="@+id/composeMsgPracticeValueTV"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/message_compose_item_height"
+                android:layout_marginTop="@dimen/message_compose_items_margin_vertical"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                android:paddingEnd="0dp"
+                android:singleLine="true"
+                android:textAppearance="@style/composeMsgValueTxtAppearance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/composeMsgPracticeLabelTV"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgFromSeparator"
+                tools:text="Dr Who nvsejknkoewfnkoewfnkonkonmewkomnkoewmnkoewfmokemnwo" />
+
+            <View
+                android:id="@+id/composeMsgPracticeSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/separatorColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgPracticeLabelTV"
+
+                />
+
+            <TextView
+                android:id="@+id/composeMsgToLabelTV"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/message_compose_item_height"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                android:paddingEnd="0dp"
+                android:text="@string/message_compose_to_label"
+                android:textAppearance="@style/composeMsgLabelTxtAppearance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgPracticeSeparator" />
+
+
+            <androidx.compose.ui.platform.ComposeView
+                android:id="@+id/composeMsgToCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/button_margin"
+                app:layout_constraintBottom_toTopOf="@+id/composeMsgToSeparator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/composeMsgPracticeLabelTV"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgPracticeSeparator" />
+
+            <View
+                android:id="@+id/composeMsgToSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/separatorColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgToCV"
+
+                />
+
+
+            <TextView
+                android:id="@+id/composeMsgSubjectLabelTV"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/message_compose_item_height"
+                android:layout_marginTop="@dimen/message_compose_items_margin_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                android:paddingEnd="0dp"
+                android:text="@string/message_compose_subject_label"
+                android:textAppearance="@style/composeMsgLabelTxtAppearance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgToSeparator" />
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/composeMsgSubjectValueTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/message_compose_items_margin_vertical"
+                android:background="@android:color/transparent"
+                android:gravity="top"
+                android:imeOptions="actionNext"
+                android:inputType="text|textNoSuggestions|textCapSentences"
+                android:maxLength="@integer/composeMsgSubjectMaxLength"
+                android:maxLines="1"
+                android:minHeight="@dimen/message_compose_item_height"
+                android:nextFocusDown="@id/composeMsgContentET"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                android:paddingTop="8dp"
+                android:paddingEnd="@dimen/message_compose_items_padding_horizontal"
+                android:textAppearance="@style/composeMsgValueTxtAppearance"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/composeMsgPracticeLabelTV"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgToSeparator"
+                tools:text="Hoioxnowec dnunfu8q ucuqwhfnu nufwqhjuvew" />
+
+            <View
+                android:id="@+id/messageComposeSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/separatorColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgSubjectValueTV"
+
+                />
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/composeMsgContentET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/message_compose_items_margin_vertical"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/open_sans"
+                android:gravity="start"
+                android:hint="@string/message_compose_content_hint"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minHeight="@dimen/message_compose_content_min_height"
+                android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                android:paddingEnd="@dimen/message_compose_items_padding_horizontal"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                app:layout_constraintBottom_toTopOf="@+id/composeMsgAlreadyAddedTxtWebview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/messageComposeSeparator" />
+
+            <WebView
+                android:id="@+id/composeMsgAlreadyAddedTxtWebview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                android:paddingEnd="@dimen/message_compose_items_padding_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/composeMsgContentET" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/composeMsgCharCountTV"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/composeMsgCharCountSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separatorColor"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/composeMsgCharCountTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/composeMessageAttachmentRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="@dimen/message_detail_attachment_rv_max_height"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/composeMsgCharCountSeparator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/composeMsgProgress"
+        layout="@layout/progress_bar_for_white_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/composeMsgToolbar" />
+
+    <include
+        android:id="@+id/composeMsgErrorPage"
+        layout="@layout/layout_error_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/composeMsgToolbar"
+        tools:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

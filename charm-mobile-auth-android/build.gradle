@@ -1,0 +1,91 @@
+// Android build of the CharmHealth sign-in SDK (git submodule ../charm-mobile-auth-sdk).
+//
+// The SDK's own Gradle build pins AGP 8.10, and Gradle refuses two AGP versions in one build, so it
+// can't be used as a composite build next to this app's AGP. This module compiles the submodule's
+// Android sources (commonMain + jcaMain + androidMain) with the app's AGP and Kotlin instead.
+// The code itself comes only from the submodule: update it there (git submodule), not here.
+// Keep the dependencies below in step with charm-mobile-auth-sdk/charm-mobile-auth/build.gradle.kts.
+
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.multiplatform'
+    id 'org.jetbrains.kotlin.plugin.serialization'
+}
+
+def sdkDir = rootProject.file('charm-mobile-auth-sdk/charm-mobile-auth')
+if (!new File(sdkDir, 'src/commonMain').exists()) {
+    throw new GradleException("charm-mobile-auth-sdk submodule is missing. Run: git submodule update --init --recursive")
+}
+
+def sdkVersion = '0.1.0'
+def ktor = '3.2.3'
+def coroutines = '1.10.2'
+def serialization = '1.9.0'
+
+// SDK_VERSION for the SDK's User-Agent (the SDK's build generates the same file).
+def generateBuildInfo = tasks.register('generateCharmAuthBuildInfo') {
+    def out = layout.buildDirectory.dir('generated/buildinfo/kotlin')
+    inputs.property('version', sdkVersion)
+    outputs.dir(out)
+    doLast {
+        def file = out.get().file('com/charmhealth/auth/BuildInfo.kt').asFile
+        file.parentFile.mkdirs()
+        file.text = "package com.charmhealth.auth\n\ninternal const val SDK_VERSION: String = \"$sdkVersion\"\n"
+    }
+}
+
+kotlin {
+    explicitApi()
+
+    androidTarget {
+        compilerOptions { jvmTarget.set(JvmTarget.JVM_17) }
+    }
+
+    compilerOptions {
+        optIn.addAll('kotlin.time.ExperimentalTime', 'kotlin.io.encoding.ExperimentalEncodingApi')
+        freeCompilerArgs.add('-Xexpect-actual-classes')
+    }
+
+    sourceSets {
+        commonMain {
+            kotlin.srcDir(new File(sdkDir, 'src/commonMain/kotlin'))
+            kotlin.srcDir(generateBuildInfo)
+            dependencies {
+                api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+                api "org.jetbrains.kotlinx:kotlinx-serialization-json:$serialization"
+                api "io.ktor:ktor-client-core:$ktor"
+            }
+        }
+        androidMain {
+            // jcaMain is shared by Android and the SDK's JVM test target; here it is Android only.
+            kotlin.srcDir(new File(sdkDir, 'src/jcaMain/kotlin'))
+            kotlin.srcDir(new File(sdkDir, 'src/androidMain/kotlin'))
+            dependencies {
+                implementation "io.ktor:ktor-client-okhttp:$ktor"
+                implementation 'androidx.browser:browser:1.9.0'
+                implementation 'androidx.core:core-ktx:1.13.1'
+                implementation 'androidx.biometric:biometric:1.1.0'
+                api 'androidx.fragment:fragment:1.8.9'
+                implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.9.4'
+            }
+        }
+    }
+}
+
+android {
+    namespace 'com.charmhealth.auth'
+    compileSdk 36
+    defaultConfig {
+        minSdk 23
+        consumerProguardFiles new File(sdkDir, 'consumer-rules.pro')
+    }
+    sourceSets {
+        main.manifest.srcFile new File(sdkDir, 'src/androidMain/AndroidManifest.xml')
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

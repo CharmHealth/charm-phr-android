@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemAppointmentListMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/card_padding"
+    android:paddingBottom="@dimen/card_padding">
+
+    <TextView
+        android:id="@+id/appointmentListMainTxtView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_medium"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintEnd_toStartOf="@id/appointmentListTimeTxtView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Tuesday, September 24" />
+
+    <TextView
+        android:id="@+id/appointmentListTimeTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_medium"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="5:00 PM" />
+
+    <LinearLayout
+        android:id="@+id/appointmentListBtnLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/card_padding"
+        android:layout_marginBottom="@dimen/card_padding_half"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/appointmentListSub3TxtView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/appointmentListSub1TxtView"
+        app:layout_constraintVertical_bias="1">
+
+
+        <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+            android:id="@+id/appointmentListVideoCamLayout"
+            android:layout_width="64dp"
+            android:layout_height="28dp"
+            android:paddingStart="@dimen/card_padding"
+            android:paddingTop="2dp"
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingBottom="2dp"
+            android:visibility="gone"
+            app:mdBackgroundColor="@color/colorPrimary"
+            app:mdCornerRadius="5dp"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/appointmentListVideoCamImg"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_videocam_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/open_sans_medium"
+                android:gravity="center_vertical"
+                android:text="@string/join_str"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorForColorPrimaryBg"
+                android:textSize="@dimen/small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/appointmentListVideoCamImg"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+        <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+            android:id="@+id/appointmentListQuestionnaireLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginStart="@dimen/card_padding"
+            android:paddingStart="@dimen/card_padding"
+            android:paddingTop="2dp"
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingBottom="2dp"
+            android:visibility="gone"
+            app:mdBackgroundColor="@color/colorPrimary"
+            app:mdCornerRadius="5dp"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/appointmentListQuestionnaireTV"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/open_sans_medium"
+                android:gravity="center_vertical"
+                android:text="@string/fill_questionnaire_txt"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/x_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/appointmentListVideoCamImg"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/appointmentListSub1TxtView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+        android:fontFamily="@font/open_sans"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/x_small"
+        app:layout_constraintEnd_toStartOf="@id/appointmentListBtnLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appointmentListMainTxtView"
+        tools:text="Dr.William Aberthnet - Malar Hospital" />
+
+    <TextView
+        android:id="@+id/appointmentListSub2TxtView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+        android:fontFamily="@font/open_sans"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/x_small"
+        app:layout_constraintEnd_toStartOf="@id/appointmentListBtnLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appointmentListSub1TxtView"
+        tools:text="Reason for appointment" />
+
+    <TextView
+        android:id="@+id/appointmentListSub3TxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+        android:fontFamily="@font/open_sans"
+        android:paddingStart="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appointmentListSub2TxtView"
+        tools:text="India/Kolkata" />
+</androidx.constraintlayout.widget.ConstraintLayout>

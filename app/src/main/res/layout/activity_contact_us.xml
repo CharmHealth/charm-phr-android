@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    android:id="@+id/contactUsMainLayout"
+    tools:context=".ui.contact_us.ContactUsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/contactUsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/contactUsBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/contactUsToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:text="@string/contact_us"
+            android:textAppearance="@style/toolbarText" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contactUsPracticeCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dashboard_card_margin"
+        android:layout_marginTop="@dimen/common_margin_vertical"
+        android:layout_marginEnd="@dimen/dashboard_card_margin"
+        android:layout_marginBottom="@dimen/common_margin_vertical_half"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation"
+        app:layout_constraintBottom_toTopOf="@+id/contactUsCharmCV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactUsToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/contactPracticeTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/card_padding"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/to_practice"
+                android:textColor="@color/allergyListNameAndTypeTxtColor"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/contactPracticeIB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingTop="@dimen/card_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:src="@drawable/ic_checked"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/practiceMsgTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/hp_url_bg_top_margin"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:layout_marginBottom="@dimen/card_padding"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/msg_to_practice_str"
+                android:textColor="@color/black60"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/contactPracticeIB"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactPracticeTV" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contactUsCharmCV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dashboard_card_margin"
+        android:layout_marginTop="@dimen/common_margin_vertical"
+        android:layout_marginEnd="@dimen/dashboard_card_margin"
+        android:layout_marginBottom="@dimen/common_margin_vertical"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactUsPracticeCV">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/contactCharmTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/card_padding"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/to_charm_mphr"
+                android:textColor="@color/allergyListNameAndTypeTxtColor"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/contactCharmIB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingTop="@dimen/card_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:clickable="false"
+                android:src="@drawable/ic_unchecked"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/charmMsgTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/hp_url_bg_top_margin"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:layout_marginBottom="@dimen/card_padding"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/msg_to_charm"
+                android:textColor="@color/black60"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/contactCharmIB"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactCharmTV" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        style="@style/mdButtonStyle"
+        android:id="@+id/proceedBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/add_button_height"
+        android:layout_margin="@dimen/button_margin"
+        android:background="@drawable/item_button_bg"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/proceed_str"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

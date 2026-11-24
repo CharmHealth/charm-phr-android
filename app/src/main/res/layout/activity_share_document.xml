@@ -1,0 +1,299 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/documentShareMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.document.share_document.ShareDocumentActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/documentShareToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/documentShareBackBtn"
+                android:layout_width="@dimen/toolBarBtnWd"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/documentShareToolbarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/toolbar_text_left_margin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/document_share_str"
+                android:textAppearance="@style/toolbarText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/documentShareBackBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/documentShareScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/documentShareToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                android:layout_marginTop="@dimen/edittext_margin_horizontal"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/document_share_to_str"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_large" />
+
+            <RadioGroup
+                android:id="@+id/shareDocumentTypeRadioGrp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+
+                >
+
+                <RadioButton
+                    android:id="@+id/shareDocumentTypeMember"
+                    android:layout_width="0dp"
+                    android:layout_height="57dp"
+                    android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                    android:layout_marginTop="@dimen/common_margin_vertical"
+                    android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                    android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/item_edittext_bg"
+                    android:buttonTint="@color/colorAccent"
+                    android:checked="true"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/practice_member_str"
+                    android:textSize="@dimen/medium"
+
+                    />
+
+                <RadioButton
+                    android:id="@+id/shareDocumentTypeOthers"
+                    android:layout_width="0dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="@dimen/common_margin_vertical"
+                    android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                    android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/item_edittext_bg"
+                    android:buttonTint="@color/colorAccent"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/Others_no_i18n"
+                    android:textSize="@dimen/medium" />
+
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/documentShareLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/otherMemberLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                    android:layout_marginTop="@dimen/edittext_margin_horizontal"
+                    android:fontFamily="@font/open_sans"
+                    android:visibility="gone"
+                    android:text="@string/document_share_others_label"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/xx_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/practiceMemberLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                    android:layout_marginTop="@dimen/edittext_margin_horizontal"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/doc_shared_to_parctice"
+                    android:textColor="@android:color/black"
+                    android:visibility="visible"
+                    android:textSize="@dimen/xx_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/otherMemberLabel"/>
+
+                <com.charm.phr.mphr.ui.components.MDChipsMultiSelctAutoCompleteEdittext
+                    android:id="@+id/documentShareToValueTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_margin_vertical"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="textAutoComplete|textNoSuggestions|textMultiLine"
+                    android:minHeight="@dimen/message_compose_item_height"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                    android:paddingEnd="0dp"
+                    android:textAppearance="@style/composeMsgValueTxtAppearance"
+                    app:chipBackground="@android:color/transparent"
+                    android:visibility="visible"
+                    app:chipHeight="25dp"
+                    android:hint="@string/message_compose_to_label"
+                    app:chipPadding="8dp"
+                    app:chipSelBackground="@color/messageComposeSelectedMemberBg"
+                    app:chipSelIconBackground="@android:color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/practiceMemberLabel" />
+                <com.charm.phr.mphr.ui.components.MDChipsMultiSelctAutoCompleteEdittext
+                    android:id="@+id/documentShareToContactValueTV"
+                    android:layout_width="0dp"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_margin_vertical"
+                    android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="textAutoComplete|textNoSuggestions|textMultiLine"
+                    android:minHeight="@dimen/message_compose_item_height"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/message_compose_items_padding_horizontal"
+                    android:paddingEnd="0dp"
+                    android:textAppearance="@style/composeMsgValueTxtAppearance"
+                    app:chipBackground="@android:color/transparent"
+                    app:chipHeight="25dp"
+                    app:chipPadding="8dp"
+                    android:hint="@string/message_compose_to_label"
+                    app:chipSelBackground="@color/messageComposeSelectedMemberBg"
+                    app:chipSelIconBackground="@android:color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/documentShareToValueTV"
+                    tools:text="@string/message_compose_to_label" />
+                <View
+                    android:id="@+id/shareDocumentToSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                    android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                    android:background="@color/toolbarBg"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@+id/documentShareToContactValueTV"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/documentShareExpiryTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/itemEdittextLabelTheme"
+                    android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                    android:layout_marginTop="@dimen/common_margin_horizontal"
+                    android:text="@string/expiry_str"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/shareDocumentToSeparator"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                    android:id="@+id/documentShareExpiryET"
+                    style="@style/itemEdittextTheme"
+                    android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                    android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                    android:inputType="textCapWords"
+                    android:visibility="visible"
+                    android:layout_marginTop="@dimen/common_margin_vertical"
+                    app:showIcon="true"
+                    android:layout_marginBottom="0dp"
+                    android:hint="@string/select_str"
+                    app:layout_constraintTop_toBottomOf="@+id/documentShareExpiryTV"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/documentShareRV"
+                android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/documentShareNoPractice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintTop_toBottomOf="@+id/documentShareScroll"
+        app:layout_constraintBottom_toTopOf="@+id/documentShareBtn"
+        android:visibility="gone">
+
+        <include
+            android:id="@+id/docNoDataRoot"
+            layout="@layout/layout_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <Button
+        style="@style/mdButtonStyle"
+        android:id="@+id/documentShareBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/add_button_height"
+        android:layout_margin="@dimen/button_margin"
+        android:background="@drawable/item_button_bg"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/document_share_str"
+        android:textColor="@color/textColorForColorPrimaryBg"
+        android:textSize="@dimen/large"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <include
+        android:id="@+id/documentShareProgress"
+        layout="@layout/progress_bar_for_white_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/documentShareToolbar" />
+
+    <include
+        android:id="@+id/documentShareErrorPage"
+        layout="@layout/layout_error_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/documentShareToolbar"
+        tools:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

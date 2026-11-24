@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.prescription.add_medication.AddMedicationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/addMedicationToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/addMedicationBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/addMedicationToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/medications_add_str"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/addMedicationDeleteBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete_white"
+            android:visibility="gone" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addMedicationToolbar">
+
+
+        <include
+            android:id="@+id/addMedicationProgress"
+            layout="@layout/progress_bar_for_white_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/addMedicationErrorPage"
+            layout="@layout/layout_error_page"
+            android:visibility="gone" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addMedicationMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:id="@+id/addMedicationScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/button_margin"
+                app:layout_constraintBottom_toTopOf="@id/addMedicationBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addMedicationPracticeLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addMedicationPracticeET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/practice_name_str" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addMedicationNameLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        android:layout_height="56dp"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+
+                            android:id="@+id/addMedicationNameET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:completionThreshold="1"
+                            android:dropDownAnchor="@id/addMedicationNameLayout"
+                            android:hint="@string/medication_drug_name_str"
+                            android:maxLength="@integer/addMedicationDrugNameMaxLength"
+
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/addMedicationGuideLine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent=".5" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/addMedicationNoOfIntakeLayout"
+                            style="@style/itemTextInputLayoutTheme"
+                            android:layout_width="0dp"
+                            android:layout_marginEnd="@dimen/edittext_margin_horizontal_half"
+                            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                            app:layout_constraintBottom_toTopOf="@id/addMedicationDosageLayout"
+                            app:layout_constraintEnd_toStartOf="@id/addMedicationGuideLine"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+
+                            >
+
+                            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                android:id="@+id/addMedicationNoOfIntakeET"
+                                style="@style/itemTextInputEdittextTheme"
+                                android:hint="@string/medication_no_of_intake_string"
+                                android:inputType="number"
+                                android:maxLength="35"
+                                app:filterRegex="number" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                            android:id="@+id/addMedicationIntakeUnitLayout"
+                            style="@style/itemTextInputLayoutTheme"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="@dimen/edittext_margin_horizontal_half"
+                            android:layout_marginTop="0dp"
+                            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                            app:layout_constraintBottom_toTopOf="@id/addMedicationDosageLayout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/addMedicationGuideLine"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                                android:id="@+id/addMedicationIntakeUnitET"
+                                style="@style/itemTextInputEdittextTheme"
+                                android:hint="@string/medication_no_of_intake_unit_string"
+                                app:allowAutoSelect="true" />
+
+                        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/addMedicationDosageLayout"
+                            style="@style/itemTextInputLayoutTheme"
+                            android:layout_width="0dp"
+                            android:layout_marginEnd="@dimen/edittext_margin_horizontal_half"
+                            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/addMedicationGuideLine"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/addMedicationNoOfIntakeLayout"
+
+                            >
+
+                            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                android:id="@+id/addMedicationDosageET"
+                                style="@style/itemTextInputEdittextTheme"
+                                android:hint="@string/medication_dosage_string"
+                                android:inputType="numberDecimal"
+                                android:maxLength="35"
+                                app:filterRegex="numberDecimal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                            android:id="@+id/addMedicationDosageUnitLayout"
+                            style="@style/itemTextInputLayoutTheme"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="@dimen/edittext_margin_horizontal_half"
+                            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/addMedicationGuideLine"
+                            app:layout_constraintTop_toBottomOf="@id/addMedicationNoOfIntakeLayout">
+
+                            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                                android:id="@+id/addMedicationDosageUnitET"
+                                style="@style/itemTextInputEdittextTheme"
+                                android:hint="@string/medication_dosage_unit_string"
+                                app:allowAutoSelect="true" />
+
+                        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addMedicationIntakeLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addMedicationIntakeET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/medication_intake_string"
+                            app:allowAutoSelect="true" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addMedicationIntakeWhenLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addMedicationIntakeWhenET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/medication_intake_when_string"
+                            app:allowAutoSelect="true" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addMedicationIntakeRouteLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addMedicationIntakeRouteET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/medication_intake_route_string"
+                            app:allowAutoSelect="true" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addMedicationStartDateLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:mdShowDropdown="false">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addMedicationStartDateET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:drawableEnd="@drawable/ic_calander"
+                            android:hint="@string/medication_start_date_string" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addMedicationEndDateLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:mdShowDropdown="false">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addMedicationEndDateET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:drawableEnd="@drawable/ic_calander"
+                            android:hint="@string/medication_end_date_string" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+
+                        android:id="@+id/addMedicationMedConditionLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addMedicationMedConditionET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/medication_med_condition_string"
+
+                            />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+
+                        android:id="@+id/addMedicationMemberNameLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addMedicationMemberNameET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/medication_provider_string" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addMedicationRefillsLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addMedicationRefillsET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/medication_refills_string"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:filterRegex="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addMedicationCommentsLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/textinput_edittext_height"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addMedicationCommentsET"
+                            style="@style/itemTextInputEdittextMultiLineTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:hint="@string/vaccine_comments_str"
+                            android:maxLength="@integer/addMedicationCommentMaxLength" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/addMedicationBtn"
+                style="@style/mdButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/item_button_bg"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/medications_add_str"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

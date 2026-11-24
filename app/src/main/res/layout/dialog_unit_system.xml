@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/wellnessUnitSystemCardLayout"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/wellnessUnitSystemHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/vital_unit_system_dialog_margin"
+            android:layout_marginTop="@dimen/vital_unit_system_dialog_margin"
+            android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/vital_unit_system_update_heading"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/x_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/wellnessUnitSystemSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/vital_unit_system_dialog_margin"
+            android:background="#1A707070"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wellnessUnitSystemHeading" />
+
+        <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+            android:id="@+id/wellnessUnitSystemStandardLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/vital_unit_system_dialog_margin"
+            android:layout_marginTop="@dimen/vital_unit_system_dialog_margin"
+            android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wellnessUnitSystemSeparator"
+
+            app:mdBackgroundColor="@android:color/white"
+            app:mdCornerRadius="@dimen/common_card_radius"
+            app:mdStrokeColor="@color/wellnessUnitSystemNormalBorder">
+
+            <TextView
+                android:id="@+id/wellnessUnitSystemStandardTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vital_unit_system_text_padding"
+                android:layout_marginTop="@dimen/vital_unit_system_text_padding"
+                android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/standard_txt"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toStartOf="@id/wellnessUnitSystemStandardCheckImg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/wellnessUnitSystemStandardInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vital_unit_system_text_padding"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+                android:layout_marginBottom="@dimen/vital_unit_system_text_padding"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/wellness_standard_units"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintEnd_toStartOf="@id/wellnessUnitSystemStandardCheckImg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wellnessUnitSystemStandardTV" />
+            <TextView
+                android:id="@+id/wellnessUnitSystemStandardExample"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vital_unit_system_text_padding"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+                android:layout_marginBottom="@dimen/vital_unit_system_text_padding"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/wellness_standard_units_eg"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/wellnessUnitSystemStandardCheckImg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wellnessUnitSystemStandardInfo" />
+
+            <ImageView
+                android:id="@+id/wellnessUnitSystemStandardCheckImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+                android:src="@drawable/ic_chip_tick"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+        <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+            android:id="@+id/wellnessUnitSystemMetricLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/vital_unit_system_dialog_margin"
+            android:layout_marginTop="@dimen/vital_unit_system_text_padding"
+            android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wellnessUnitSystemStandardLayout"
+
+            app:mdBackgroundColor="@android:color/white"
+            app:mdCornerRadius="@dimen/common_card_radius"
+            app:mdStrokeColor="@color/wellnessUnitSystemNormalBorder">
+
+            <TextView
+                android:id="@+id/wellnessUnitSystemMetricTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vital_unit_system_text_padding"
+                android:layout_marginTop="@dimen/vital_unit_system_text_padding"
+                android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/metric_txt"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toStartOf="@id/wellnessUnitSystemMetricCheckImg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/wellnessUnitSystemMetricInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vital_unit_system_text_padding"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+                android:layout_marginBottom="@dimen/vital_unit_system_text_padding"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/wellness_metric_units"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintEnd_toStartOf="@id/wellnessUnitSystemMetricCheckImg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wellnessUnitSystemMetricTV" />
+
+            <TextView
+                android:id="@+id/wellnessUnitSystemMetricExample"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vital_unit_system_text_padding"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+                android:layout_marginBottom="@dimen/vital_unit_system_text_padding"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/wellness_metric_units_eg"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/wellnessUnitSystemMetricCheckImg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wellnessUnitSystemMetricInfo" />
+
+            <ImageView
+                android:id="@+id/wellnessUnitSystemMetricCheckImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/vital_unit_system_dialog_margin"
+                android:src="@drawable/ic_chip_tick"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+        <Button
+            style="@style/mdButtonStyle"
+            android:id="@+id/wellnessUnitSystemSubmitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/add_button_height"
+            android:layout_margin="@dimen/vital_unit_system_dialog_margin"
+            android:background="@drawable/item_button_bg"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/questionnaire_detail_submit_btn_txt"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/x_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wellnessUnitSystemMetricLayout"
+            app:layout_constraintVertical_bias="1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/questionnaire_card_margin_vertical"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/addInsuranceMainLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_padding_half"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/add_insurance_details_txt"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/medium"
+        android:visibility="gone" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/addInsuranceHasInsuranceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/edittext_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/edittext_margin_vertical"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_padding"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/add_insurance_has_insurance_txt"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/medium" />
+
+            <View
+                android:id="@+id/addInsuranceHasInsuranceSepView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separatorColor" />
+
+            <RadioGroup
+                android:id="@+id/addInsuranceHasInsuranceRadioGrp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/addInsuranceHasInsuranceYesRadioBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding_half"
+                    android:layout_marginTop="@dimen/item_questionnaire_option_bottom_margin"
+                    android:layout_marginEnd="@dimen/card_padding_half"
+                    android:layout_marginBottom="@dimen/item_questionnaire_option_bottom_margin"
+                    android:cursorVisible="false"
+                    android:fontFamily="@font/open_sans"
+                    android:minHeight="35dp"
+                    android:paddingStart="@dimen/card_padding_half"
+                    android:paddingEnd="0dp"
+                    android:text="@string/yes_str"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/medium" />
+
+                <RadioButton
+                    android:id="@+id/addInsuranceHasInsuranceNoRadioBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/item_questionnaire_option_bottom_margin"
+                    android:layout_marginEnd="@dimen/card_padding_half"
+                    android:layout_marginBottom="@dimen/item_questionnaire_option_bottom_margin"
+                    android:cursorVisible="false"
+                    android:fontFamily="@font/open_sans"
+                    android:minHeight="35dp"
+                    android:paddingStart="@dimen/card_padding_half"
+                    android:paddingEnd="0dp"
+                    android:text="@string/no_str"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/medium" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/addInsurancePracticeLayout"
+        style="@style/itemTextInputLayoutTheme"
+        android:visibility="gone"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+            android:id="@+id/addInsurancePracticeET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/practice_name_str" />
+
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/addInsurancePracticeMSgLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+        android:layout_marginTop="@dimen/edittext_margin_vertical"
+        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+        android:layout_marginBottom="@dimen/edittext_margin_vertical"
+        android:minHeight="60dp"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="1dp">
+
+        <TextView
+            android:id="@+id/bookAppointmentErrorMsgTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/open_sans_medium"
+            android:gravity="center_horizontal"
+            android:paddingStart="@dimen/edittext_margin_horizontal"
+            android:paddingTop="@dimen/book_appointment_slot_top_padding"
+            android:paddingEnd="@dimen/edittext_margin_horizontal"
+            android:paddingBottom="@dimen/book_appointment_slot_top_padding"
+            android:text="@string/book_appointment_practice_select_info"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addInsuranceDataMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+            android:id="@+id/addInsuranceTypeUSLayout"
+            style="@style/itemTextInputLayoutTheme"
+            android:visibility="gone"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceTypeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                android:id="@+id/addInsuranceTypeUSET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_type_label" />
+
+        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceTypeLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePlanLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceTypeUSLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceTypeET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_type_label"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsurancePlanLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceMemberIdLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceTypeLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsurancePlanET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/insurance_list_plan_label"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceMemberIdLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePayerNameLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePlanLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceMemberIdET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_id_label"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsurancePayerNameLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePayerNameSelectableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceMemberIdLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+
+                android:id="@+id/addInsurancePayerNameET"
+                style="@style/itemTextInputEdittextTheme"
+                android:completionThreshold="1"
+                android:dropDownAnchor="@id/addInsurancePayerNameLayout"
+                android:hint="@string/add_insurance_payer_name_label"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+            android:id="@+id/addInsurancePayerNameSelectableLayout"
+            style="@style/itemTextInputLayoutTheme"
+            android:visibility="gone"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePayerIdLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePayerNameLayout">
+
+            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                android:id="@+id/addInsurancePayerNameSelector"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_payer_name_label" />
+        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsurancePayerIdLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceInsuranceTypeLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePayerNameSelectableLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsurancePayerIdET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_payer_id_label"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/addInsuranceInsuranceTypeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/edittext_margin_horizontal"
+            android:layout_marginTop="@dimen/card_padding_half"
+            android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+            android:layout_marginBottom="@dimen/card_padding_half"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/add_insurance_category_label"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/medium"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceTypeRadioGrp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePayerIdLayout" />
+
+        <RadioGroup
+            android:id="@+id/addInsuranceTypeRadioGrp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceEndDateLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceInsuranceTypeLabel"
+
+            >
+
+            <RadioButton
+                android:id="@+id/addInsuranceTypePrimary"
+                android:layout_width="0dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                android:layout_marginTop="@dimen/edittext_margin_vertical"
+                android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/item_edittext_bg"
+                android:buttonTint="@color/colorAccent"
+                android:elevation="1dp"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/insurance_type_primary"
+                android:textSize="@dimen/medium"
+
+                />
+
+            <RadioButton
+                android:id="@+id/addInsuranceTypeSecondary"
+                android:layout_width="0dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="@dimen/edittext_margin_vertical"
+                android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/item_edittext_bg"
+                android:buttonTint="@color/colorAccent"
+                android:elevation="1dp"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/insurance_type_secondary"
+                android:textSize="@dimen/medium" />
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceStartDateLayout"
+            style="@style/itemTextInputLayoutTheme"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/textinput_edittext_height"
+            android:layout_marginEnd="@dimen/card_padding_half"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toBottomOf="@id/addInsuranceEndDateLayout"
+            app:layout_constraintEnd_toStartOf="@id/addInsuranceGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/addInsuranceEndDateLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceStartDateET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_valid_from_label"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceEndDateLayout"
+            style="@style/itemTextInputLayoutTheme"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/textinput_edittext_height"
+            android:layout_marginStart="@dimen/card_padding_half"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePolicyGrpLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/addInsuranceGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceTypeRadioGrp">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceEndDateET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_valid_to_label"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsurancePolicyGrpLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceCopayLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceEndDateLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsurancePolicyGrpET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/insurance_list_policy_grp_num_label"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceCopayLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceDeductableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePolicyGrpLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceCopayET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_copay_label"
+                android:inputType="numberDecimal"
+                android:maxLength="10"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceDeductableLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceEmpNameLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceCopayLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceDeductableET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_deductable_label"
+                android:inputType="numberDecimal"
+                android:maxLength="10"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceEmpNameLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePayerAddressLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceDeductableLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceEmpNameET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/insurance_list_emp_name_label"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/addInsurancePayerAddressLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/edittext_margin_horizontal"
+            android:layout_marginTop="@dimen/card_padding_half"
+            android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+            android:layout_marginBottom="@dimen/card_padding_half"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/add_insurance_payer_address_label"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/medium"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePayerLine1Layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceEmpNameLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsurancePayerLine1Layout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePayerCityLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePayerAddressLabel">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsurancePayerLine1ET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_address_line_1"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsurancePayerCityLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePayerCountryLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePayerLine1Layout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsurancePayerCityET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_city_str"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+            android:id="@+id/addInsurancePayerCountryLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePayerStateLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePayerCityLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+                android:id="@+id/addInsurancePayerCountryET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_country_str"
+                app:filterRegex="alphabetsNumbersAndSplChar" />
+
+        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+            android:id="@+id/addInsurancePayerStateLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePayerPinCodeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePayerCountryLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+                android:id="@+id/addInsurancePayerStateET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_state_str"
+                app:filterRegex="alphabetsNumbersAndSplChar" />
+
+        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsurancePayerPinCodeLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceInsurancePersonDetLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePayerStateLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsurancePayerPinCodeET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_zip_code_str"
+                android:inputType="number"
+                android:maxLength="10"
+                app:filterRegex="number"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/addInsuranceInsurancePersonDetLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/edittext_margin_horizontal"
+            android:layout_marginTop="@dimen/card_padding_half"
+            android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+            android:layout_marginBottom="@dimen/card_padding_half"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/add_insurance_person_details_label"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/medium"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceRelationshipLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePayerPinCodeLayout" />
+
+        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+            android:id="@+id/addInsuranceRelationshipLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceFirstNameLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceInsurancePersonDetLabel">
+
+            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                android:id="@+id/addInsuranceRelationshipET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/add_insurance_relationship_label" />
+
+        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceFirstNameLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceLastNameLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceRelationshipLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceFirstNameET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_first_name_str"
+                android:maxLength="@integer/savePatientNameMaxLength"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceLastNameLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceDOBLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceFirstNameLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceLastNameET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_last_name_str"
+                android:maxLength="@integer/savePatientNameMaxLength"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/addInsuranceGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceDOBLayout"
+            style="@style/itemTextInputLayoutTheme"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/textinput_edittext_height"
+            android:layout_marginEnd="@dimen/card_padding_half"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceAddressCheckbox"
+            app:layout_constraintEnd_toStartOf="@id/addInsuranceGuideLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceLastNameLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceDOBET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_dob_str"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceGenderLayout"
+            style="@style/itemTextInputLayoutTheme"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/textinput_edittext_height"
+            android:layout_marginStart="@dimen/card_padding_half"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceAddressCheckbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/addInsuranceGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceLastNameLayout">
+
+            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                android:id="@+id/addInsuranceGenderET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_gender_str"
+                app:allowAutoSelect="true"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/addInsuranceAddressCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_padding"
+            android:layout_marginTop="@dimen/card_padding_half"
+            android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+            android:layout_marginBottom="@dimen/card_padding_half"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/add_insuranc_same_as_account_s_address"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/medium"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceLine1Layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceDOBLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceLine1Layout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceLine2Layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceAddressCheckbox">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceLine1ET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_address_line_1"
+                android:maxLength="@integer/savePatientAddressMaxLength"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceLine2Layout"
+            style="@style/itemTextInputLayoutTheme"
+            android:maxLength="@integer/savePatientAddressMaxLength"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceCityLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceLine1Layout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceLine2ET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_address_line_2"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceCityLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceCountryLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceLine2Layout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceCityET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_city_str"
+                android:maxLength="@integer/savePatientCityMaxLength"
+                app:filterRegex="alphabetsNumbersAndSplChar"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+            android:id="@+id/addInsuranceCountryLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceStateLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceCityLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+                android:id="@+id/addInsuranceCountryET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_country_str"
+                app:filterRegex="alphabetsNumbersAndSplChar" />
+
+        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+            android:id="@+id/addInsuranceStateLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsurancePinCodeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceCountryLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+                android:id="@+id/addInsuranceStateET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_state_str"
+                app:filterRegex="alphabetsNumbersAndSplChar" />
+
+        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsurancePinCodeLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceHomePhoneLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceStateLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsurancePinCodeET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_zip_code_str"
+                android:inputType="number"
+                android:maxLength="10"
+                app:filterRegex="number"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceHomePhoneLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceMobilePhoneLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsurancePinCodeLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceHomePhoneET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_home_no_str"
+                android:inputType="number"
+                android:maxLength="@integer/savePatientNumberMaxLength"
+                app:filterRegex="number"
+                tools:text="Demo"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceMobilePhoneLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/addInsuranceCommentLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceHomePhoneLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceMobilePhoneET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/save_pat_demo_mobile_no_str"
+                android:inputType="number"
+                android:maxLength="@integer/savePatientNumberMaxLength"
+                app:filterRegex="number"
+                tools:text="Demo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addInsuranceCommentLayout"
+            style="@style/itemTextInputLayoutTheme"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/button_margin"
+            android:minHeight="@dimen/textinput_edittext_height"
+            app:helperTextTextAppearance="@style/itemEdittextHelperTxtAppearance"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addInsuranceMobilePhoneLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/addInsuranceCommentET"
+                style="@style/itemTextInputEdittextMultiLineTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/vaccine_comments_str"
+                android:maxLength="@integer/addAllergyReactionsMaxLength" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

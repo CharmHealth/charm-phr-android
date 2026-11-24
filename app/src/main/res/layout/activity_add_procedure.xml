@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addProcedureRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.procedure.add_procedure.AddProcedureActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/addProcedureToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/addProcedureBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/addProcedureToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/procedure_add_str"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/addProcedureDeleteBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete_white"
+            android:visibility="gone" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/commonBgColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addProcedureToolbar">
+
+        <include
+            android:id="@+id/addProcedureProgress"
+            layout="@layout/progress_bar_for_white_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/addProcedureErrorPage"
+            layout="@layout/layout_error_page"
+            android:visibility="gone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addProcedureMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:id="@+id/addProcedureScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/addProcedureBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addProcedurePracticeLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addProcedurePracticeET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/practice_name_str" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addProcedureNameLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addProcedureNameET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/procedure_name_hint"
+                            android:maxLength="@integer/addProcedureNameMaxLength"
+                            app:filterRegex="alphabets" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addProcedureTypeLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addProcedureTypeET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/procedure_type_hint"
+                            app:allowAutoSelect="true" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addProcedureOtherTypeLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        android:visibility="gone"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addProcedureOtherTypeET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/procedure_other_type_hint" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addProcedureDateLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:mdShowDropdown="false">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addProcedureDateET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:drawableEnd="@drawable/ic_calander"
+                            android:hint="@string/procedure_date_hint" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addProcedureNotesLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/textinput_edittext_height"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addProcedureNotesET"
+                            style="@style/itemTextInputEdittextMultiLineTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:hint="@string/procedure_notes_hint"
+                            android:maxLines="@integer/addProcedureNoteMaxLength" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                style="@style/mdButtonStyle"
+                android:id="@+id/addProcedureBtn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/item_button_bg"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/procedure_add_str"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

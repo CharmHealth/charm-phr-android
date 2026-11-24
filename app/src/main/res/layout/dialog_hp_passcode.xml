@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/patDemographicsPasscodeCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/card_margin_horizontal"
+    android:layout_marginTop="@dimen/pat_demo_margin_top"
+    android:layout_marginEnd="@dimen/card_margin_horizontal"
+    android:layout_marginBottom="@dimen/dashboard_health_vertical_margin"
+    app:cardCornerRadius="@dimen/pat_demo_card_radius"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/patDemographicsPasscodeHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_margin_horizontal"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="@dimen/card_margin_horizontal"
+            android:ellipsize="end"
+            android:fontFamily="@font/open_sans_bold"
+            android:maxLines="1"
+            android:text="@string/health_card_str"
+            android:textColor="@color/patDemoPatNameTxtColor"
+            android:textSize="@dimen/x_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/patDemographicsPasscodeInfo"
+            style="@style/patDemoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_margin_horizontal"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:layout_marginEnd="@dimen/card_margin_horizontal"
+            android:text="@string/pat_demo_card_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/patDemographicsPasscodeHeading" />
+
+        <com.charm.phr.mphr.ui.components.CircleView
+            android:id="@+id/patDemographicsPasscodeContent1Img"
+            android:layout_width="@dimen/pat_demo_passcode_content_img_size"
+            android:layout_height="@dimen/pat_demo_passcode_content_img_size"
+            android:layout_marginStart="@dimen/card_margin_horizontal"
+            app:circleViewBgColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/patDemographicsPasscodeContent1TV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/patDemographicsPasscodeContent1TV"
+            app:layout_constraintVertical_bias=".6" />
+
+        <TextView
+            android:id="@+id/patDemographicsPasscodeContent1TV"
+            style="@style/patDemoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pat_demo_content_margin_start"
+            android:layout_marginTop="@dimen/pat_demo_content1_margin_vertical"
+            android:layout_marginEnd="@dimen/card_margin_horizontal"
+            android:text="@string/pat_demo_card_content1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/patDemographicsPasscodeContent1Img"
+            app:layout_constraintTop_toBottomOf="@+id/patDemographicsPasscodeInfo" />
+
+        <com.charm.phr.mphr.ui.components.CircleView
+            android:id="@+id/patDemographicsPasscodeContent2Img"
+            android:layout_width="@dimen/pat_demo_passcode_content_img_size"
+            android:layout_height="@dimen/pat_demo_passcode_content_img_size"
+            android:layout_marginStart="@dimen/card_margin_horizontal"
+            app:circleViewBgColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/patDemographicsPasscodeContent2TV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/patDemographicsPasscodeContent2TV"
+            app:layout_constraintVertical_bias=".6" />
+
+        <TextView
+            android:id="@+id/patDemographicsPasscodeContent2TV"
+            style="@style/patDemoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pat_demo_content_margin_start"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:layout_marginEnd="@dimen/card_margin_horizontal"
+            android:text="@string/pat_demo_card_content2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/patDemographicsPasscodeContent2Img"
+            app:layout_constraintTop_toBottomOf="@+id/patDemographicsPasscodeContent1TV" />
+
+        <com.charm.phr.mphr.ui.components.CircleView
+            android:id="@+id/patDemographicsPasscodeContent3Img"
+            android:layout_width="@dimen/pat_demo_passcode_content_img_size"
+            android:layout_height="@dimen/pat_demo_passcode_content_img_size"
+            android:layout_marginStart="@dimen/card_margin_horizontal"
+            app:circleViewBgColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/patDemographicsPasscodeContent3TV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/patDemographicsPasscodeContent3TV"
+            app:layout_constraintVertical_bias=".6" />
+
+        <TextView
+            android:id="@+id/patDemographicsPasscodeContent3TV"
+            style="@style/patDemoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pat_demo_content_margin_start"
+            android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+            android:layout_marginEnd="@dimen/card_margin_horizontal"
+            android:text="@string/pat_demo_card_content3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/patDemographicsPasscodeContent3Img"
+            app:layout_constraintTop_toBottomOf="@+id/patDemographicsPasscodeContent2TV" />
+
+
+        <LinearLayout
+            android:id="@+id/patDemographicsPasscodeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hp_passcode_dialog_margin"
+            android:layout_marginBottom="@dimen/hp_passcode_dialog_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/patDemographicsPasscodeContent3TV">
+
+            <TextView
+                android:id="@+id/patDemographicsPasscodeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_medium"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/xx_large"
+                tools:text="98766558" />
+
+            <TextView
+                android:id="@+id/patDemographicsPasscodeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/pass_code_str"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/small" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/patDemographicsPasscodeIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="@dimen/hp_passcode_dialog_margin"
+            android:src="@drawable/ic_content_copy_24"
+            app:layout_constraintTop_toBottomOf="@id/patDemographicsPasscodeContent3TV"
+            app:layout_constraintStart_toEndOf="@+id/patDemographicsPasscodeLayout"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/questionnaireListRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.questionnaire.questionnaire_detail.QuestionnaireDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/questionnaireDetailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/questionnaireDetailBackBtn"
+                android:layout_width="@dimen/toolBarBtnWd"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/questionnaireDetailToolbarText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/toolbar_text_left_margin"
+                android:layout_marginEnd="@dimen/card_margin_patient_list_horizontal"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/questionnaire_str"
+                android:textAppearance="@style/toolbarText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/questionnaireDetailBackBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/questionnaireDetailScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/questionnaireDetailBtnLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionnaireDetailToolbar">
+
+        <LinearLayout
+            android:id="@+id/questionnaireDetailMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/card_padding_half"
+            android:paddingBottom="@dimen/card_padding_half"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/questionnaireDetailProgress"
+        layout="@layout/layout_progress_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionnaireDetailToolbar" />
+
+    <include
+        android:id="@+id/questionnaireDetailNoDataTV"
+        layout="@layout/layout_no_data"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionnaireDetailToolbar" />
+
+    <include
+        android:id="@+id/questionnaireDetailErrorLayout"
+        layout="@layout/layout_error_page"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionnaireDetailToolbar" />
+      <LinearLayout
+        android:id="@+id/questionnaireDetailBtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+          android:background="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:weightSum="2">
+        <Button
+            style="@style/mdButtonOutlineStyle"
+            android:id="@+id/questionnaireDetailSaveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/add_button_height"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/flowsheet_add_card_margin_horizontal"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_marginEnd="@dimen/flowsheet_add_card_margin_horizontal"
+            android:layout_marginBottom="@dimen/button_margin"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/questionniare_detail_save_str"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <Button
+            style="@style/mdButtonStyle"
+            android:layout_weight="1"
+            android:id="@+id/questionnaireDetailSubmitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/add_button_height"
+            android:layout_marginStart="@dimen/flowsheet_add_card_margin_horizontal"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_marginEnd="@dimen/flowsheet_add_card_margin_horizontal"
+            android:layout_marginBottom="@dimen/button_margin"
+            android:background="@drawable/item_button_bg"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/questionnaire_detail_submit_btn_txt"
+            android:textColor="@color/textColorForColorPrimaryBg"
+            android:textSize="@dimen/large" />
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/card_padding"
+    android:background="@color/commonBgColor">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addWellnessGeneralGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addWellnessGeneralHeightCentreGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".75" />
+
+    <TextView
+        android:id="@+id/addWellnessGeneralHeightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_padding_half"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/wellness_height_txt"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/addWellnessGeneralGuideLine"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+        android:id="@+id/addWellnessGeneralHeightPrimaryET"
+        style="@style/wellnessInput"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/item_wellness_input_height"
+        android:layout_marginStart="@dimen/card_padding_half"
+        android:layout_marginTop="@dimen/edittext_padding"
+        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+        android:background="@drawable/item_edittext_bg"
+        android:gravity="center_vertical"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/card_padding"
+        android:textColor="@color/edittext_txt_color"
+        android:textSize="@dimen/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/addWellnessGeneralGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/addWellnessGeneralHeightLabel"
+        app:setBgTransparent="false"
+        tools:text="23" />
+
+    <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+        android:id="@+id/addWellnessGeneralHeightSecondaryET"
+        style="@style/wellnessInput"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/item_wellness_input_height"
+        android:layout_marginStart="@dimen/card_padding_half"
+        android:layout_marginTop="@dimen/edittext_padding"
+        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+        android:background="@drawable/item_edittext_bg"
+        android:gravity="center_vertical"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/card_padding"
+        android:textColor="@color/edittext_txt_color"
+        android:textSize="@dimen/medium"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/addWellnessGeneralHeightCentreGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/addWellnessGeneralHeightLabel"
+        app:setBgTransparent="false"
+        tools:text="23" />
+
+    <TextView
+        android:id="@+id/addWellnessGeneralWeightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+        android:layout_marginEnd="@dimen/card_padding_half"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/wellness_weight_txt"
+        android:textColor="@color/black87"
+
+        android:textSize="@dimen/medium"
+        app:layout_constraintEnd_toStartOf="@id/addWellnessGeneralGuideLine"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+        android:id="@+id/addWellnessGeneralWeightET"
+        style="@style/wellnessInput"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/item_wellness_input_height"
+        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+        android:layout_marginTop="@dimen/edittext_padding"
+        android:layout_marginEnd="@dimen/card_padding_half"
+        android:background="@drawable/item_edittext_bg"
+        android:gravity="center_vertical"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/card_padding"
+        android:textColor="@color/edittext_txt_color"
+        android:textSize="@dimen/medium"
+        app:layout_constraintEnd_toStartOf="@id/addWellnessGeneralGuideLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addWellnessGeneralHeightLabel"
+        app:setBgTransparent="false"
+        tools:text="23" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addWellnessGeneralBMILayout"
+        style="@style/itemTextInputLayoutTheme"
+        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+        android:layout_marginTop="@dimen/card_padding"
+        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_padding"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addWellnessGeneralWeightET">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/addWellnessGeneralBMIET"
+            style="@style/itemTextInputEdittextTheme"
+            android:enabled="false"
+            android:hint="@string/bmi"
+            android:maxLength="@integer/addAllergyNameMaxLength"
+            android:textColor="@color/edittext_bmi_color" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

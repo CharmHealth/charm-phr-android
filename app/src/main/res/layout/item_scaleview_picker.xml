@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/scaleViewPickerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edittext_padding"
+        android:layout_marginTop="@dimen/edittext_padding"
+        android:layout_marginEnd="@dimen/edittext_padding"
+        android:fontFamily="@font/open_sans_medium"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Sh ewehf " />
+
+    <TextView
+        android:id="@+id/scaleViewPickerDeleteTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edittext_padding"
+        android:layout_marginEnd="@dimen/edittext_padding"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/delete_str"
+        android:textAllCaps="true"
+        android:textColor="@color/darkRed"
+        android:textSize="@dimen/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/scaleViewPickerSelectedLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_chat_bubble_primary"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="@dimen/card_padding_half"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scaleViewPickerLabel">
+
+        <TextView
+            android:id="@+id/scaleViewPickerSelectedTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/card_padding_half"
+            android:fontFamily="@font/open_sans_medium"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/scaleview_picker_value_txt_size"
+            tools:text="233" />
+
+        <TextView
+            android:id="@+id/scaleViewPickerSelectedHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_medium"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/small"
+            tools:text="cms" />
+
+    </LinearLayout>
+
+    <com.charm.phr.mphr.ui.components.scaleView.ScaleView
+        android:id="@+id/scaleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/scaleViewPickerSelectedLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

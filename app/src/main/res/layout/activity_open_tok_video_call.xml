@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.videocall.opentok.OpenTokVideoCallActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/otSubscriberContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/otPublisherContainer"
+            android:layout_width="@dimen/ot_publisher_width"
+            android:layout_height="@dimen/ot_publisher_height"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="@dimen/ot_publisher_bottom_margin"
+            android:layout_marginEnd="@dimen/ot_publisher_end_margin"
+            android:background="@drawable/item_opentok_publisher_bg"
+            android:padding="@dimen/ot_publisher_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/otToolsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+<!--        <com.github.clans.fab.FloatingActionButton-->
+<!--            android:id="@+id/otCutCallFab"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="@dimen/ot_cut_call_margin_bottom"-->
+<!--            android:src="@drawable/ic_call_white"-->
+<!--            app:fab_colorNormal="@color/otCutCallFabColor"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/otMicImg"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <ImageView
+            android:id="@+id/otMicImg"
+            android:layout_width="@dimen/ot_bottom_btn_size"
+            android:layout_height="@dimen/ot_bottom_btn_size"
+            android:layout_marginBottom="@dimen/ot_mic_bottom_margin"
+            android:padding="@dimen/ot_bottom_btn_padding"
+            android:src="@drawable/ic_mic_on"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/otVideoImg"
+            android:layout_width="@dimen/ot_bottom_btn_size"
+            android:layout_height="@dimen/ot_bottom_btn_size"
+            android:layout_marginBottom="@dimen/ot_mic_bottom_margin"
+            android:padding="@dimen/ot_bottom_btn_padding"
+            android:src="@drawable/ic_videocam_on"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/otMicImg" />
+
+        <ImageView
+            android:id="@+id/otCamImg"
+            android:layout_width="@dimen/ot_bottom_btn_size"
+            android:layout_height="@dimen/ot_bottom_btn_size"
+            android:layout_marginBottom="@dimen/ot_mic_bottom_margin"
+            android:padding="@dimen/ot_bottom_btn_padding"
+            android:src="@drawable/ic_flip_camera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/otMicImg"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/otProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/commonBgColor">
+
+        <include
+            layout="@layout/layout_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

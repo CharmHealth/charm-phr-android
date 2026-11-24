@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/messageDetailMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.message.messageDetail.MessageDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/messageDetailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/messageDetailBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white"
+            android:transitionName="@string/message_transition_back_btn" />
+
+
+        <ImageButton
+            android:id="@+id/messageDetailDeleteBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete_white" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!-- <androidx.core.widget.NestedScrollView
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:id="@+id/messageDetailScrollView"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/messageDetailToolbar"
+         app:layout_constraintBottom_toTopOf="@id/messageDetailAttachmentRV">
+ -->
+    <LinearLayout
+        android:id="@+id/messageDetailScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/messageDetailAttachmentRV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/messageDetailToolbar">
+
+        <TextView
+            android:id="@+id/messageDetailSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_margin_horizontal"
+            android:layout_marginTop="@dimen/common_margin_vertical"
+            android:layout_marginEnd="@dimen/common_margin_horizontal"
+            android:layout_marginBottom="@dimen/common_margin_vertical"
+            android:ellipsize="end"
+            android:fontFamily="@font/open_sans_medium"
+            android:maxLines="3"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_large"
+            android:transitionName="@string/message_transition_subject"
+            tools:text="Invoice from Charm Multispeciality" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_margin_horizontal"
+            android:layout_marginEnd="@dimen/card_margin_horizontal"
+            android:layout_marginBottom="@dimen/card_margin_vertical"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="@dimen/common_card_radius"
+            app:cardElevation="@dimen/common_card_elevation">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/messageDetailProfilePic"
+                    android:layout_width="@dimen/message_detail_sent_member_image_size"
+                    android:layout_height="@dimen/message_detail_sent_member_image_size"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:src="@drawable/ic_patient_male_dummy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/messageDetailProfileDummyTV"
+                    style="@style/genderOtherTxtStyle"
+                    android:layout_width="@dimen/message_detail_sent_member_image_size"
+                    android:layout_height="@dimen/message_detail_sent_member_image_size"
+                    android:layout_marginStart="@dimen/card_padding"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/messageDetailFromName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/common_margin_vertical_half"
+                    android:layout_marginEnd="@dimen/card_padding"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/x_medium"
+                    app:layout_constraintEnd_toStartOf="@id/messageDetailReplyBtn"
+                    app:layout_constraintStart_toEndOf="@id/messageDetailProfilePic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Dr. William Aberthnet" />
+
+                <TextView
+                    android:id="@+id/messageDetailToName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/message_detail_txt_margin_top"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="@color/messageDetailToNameTxtColor"
+                    android:textSize="@dimen/xx_small"
+                    app:layout_constraintEnd_toEndOf="@id/messageDetailFromName"
+                    app:layout_constraintStart_toEndOf="@id/messageDetailProfilePic"
+                    app:layout_constraintTop_toBottomOf="@id/messageDetailFromName"
+                    tools:text="To Adam Colon" />
+
+                <TextView
+                    android:id="@+id/messageDetailDateTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/message_detail_txt_margin_top"
+                    android:layout_marginBottom="@dimen/common_margin_vertical_half"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="@color/messageDetailToNameTxtColor"
+                    android:textSize="@dimen/small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/messageDetailFromName"
+                    app:layout_constraintStart_toEndOf="@id/messageDetailProfilePic"
+                    app:layout_constraintTop_toBottomOf="@id/messageDetailToName"
+                    tools:text="10:00 AM" />
+
+                <ImageButton
+                    android:id="@+id/messageDetailMoreBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/card_padding_half"
+                    android:layout_marginEnd="@dimen/card_padding_half"
+                    android:background="@drawable/item_ripple_white_corner_bg"
+                    android:padding="@dimen/card_padding_half"
+                    android:src="@drawable/ic_more_vert_black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/messageDetailMoreBtnAnchor"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="@id/messageDetailMoreBtn"
+                    app:layout_constraintTop_toTopOf="@id/messageDetailMoreBtn" />
+
+                <ImageButton
+                    android:id="@+id/messageDetailReplyBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/card_padding"
+                    android:background="@drawable/item_ripple_white_corner_bg"
+                    android:padding="@dimen/card_padding_half"
+                    android:src="@drawable/ic_reply_black"
+                    app:layout_constraintEnd_toStartOf="@id/messageDetailMoreBtn"
+                    app:layout_constraintTop_toTopOf="@id/messageDetailMoreBtn" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/messageDetailContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_margin_horizontal"
+            android:layout_marginTop="@dimen/common_margin_vertical"
+            android:layout_marginEnd="@dimen/common_margin_horizontal"
+            android:layout_marginBottom="@dimen/common_margin_vertical"
+            android:fontFamily="@font/open_sans"
+            android:textColor="@color/black87"
+            android:visibility="gone" />
+
+        <WebView
+            android:id="@+id/messageDetailWebview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/common_margin_horizontal"
+            android:layout_marginTop="@dimen/common_margin_vertical"
+            android:layout_marginEnd="@dimen/common_margin_horizontal"
+            android:layout_marginBottom="@dimen/common_margin_vertical" />
+
+    </LinearLayout>
+
+    <!--
+        </androidx.core.widget.NestedScrollView>
+    -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messageDetailAttachmentRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="@dimen/message_detail_attachment_rv_max_height"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/messageDetailProgress"
+        layout="@layout/layout_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/messageDetailToolbar"
+        tools:visibility="gone" />
+
+    <include
+        android:id="@+id/messageDetailErrorPage"
+        layout="@layout/layout_error_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/messageDetailToolbar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,141 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+    id 'com.android.library'
+//    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+}
+
+apply from: 'versions.gradle'
+
+android {
+    namespace 'com.charm.videocall'
+    compileSdk 36
+
+    defaultConfig {
+    //   applicationId "com.charm.videocall"
+        minSdk 23
+        targetSdk 35
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+        compose true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    sourceSets {
+
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java/modal']
+            res {
+                srcDirs 'src/main/res', 'src/main/res/zoom'
+            }
+        }
+        androidTest.assets.srcDirs +=
+                files("$projectDir/schemas".toString())
+
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //Current zoom version 6.7.5
+    implementation files('libs/mobilertc.aar')
+
+    // Core Android & Security
+    implementation libraries.securityCrypto
+    implementation libraries.cryptoTink
+    implementation libraries.exoplayerCore
+    implementation libraries.exoplayerUI
+    implementation libraries.swiperefreshlayout
+
+    // Material Design & Layout
+    implementation libraries.supportAppcompat
+    implementation libraries.constraintlayout
+    implementation libraries.supportDesign
+    implementation libraries.multidex
+    implementation libraries.gson
+    implementation libraries.glideAnnotations
+    implementation libraries.glideGlide
+
+    // UI Components
+    implementation libraries.recyclerview
+    implementation libraries.lottie
+
+    // Window & Layout
+    implementation libraries.supportWindow
+    implementation libraries.windowJava
+
+    // Kotlin & Coroutines
+    implementation libraries.jetbrainskotlin
+    implementation libraries.kotlinStdlibJdk
+    implementation libraries.kotlinxCoroutinesAndroid
+    implementation libraries.kotlinxCoroutinesCore
+    implementation libraries.androidxCoreKtx
+    implementation libraries.androidxCore
+
+    // Lifecycle & ViewModel
+    implementation libraries.viewmodelKtx
+    implementation libraries.lifecycleKtx
+    implementation libraries.lifecycleService
+    implementation libraries.workerManager
+
+    // Fragment & Utility
+    implementation libraries.fragmentKtx
+    implementation libraries.scaleImageView
+    implementation libraries.splashScreenLib
+    implementation libraries.livedataKtx
+    implementation libraries.rxAndroid
+
+    // Compose Material 3
+    implementation libraries.composeMaterial3
+    implementation libraries.composeMaterial3WindowSize
+    implementation libraries.composeUIToolingPreview
+    implementation libraries.composeConstraintlayout
+    implementation libraries.composeActivity
+    implementation libraries.composeLifecycle
+    implementation libraries.composeNavigation
+
+    // Image Loading
+    implementation libraries.coil
+    implementation libraries.coilGif
+
+    // WebKit & Annotations
+    implementation libraries.androidxWebkitKtx
+    implementation libraries.jetbrainsAnnotations
+
+    // Additional Coroutines
+    implementation libraries.kotlinxCoroutinesCoreJvm
+    implementation libraries.kotlinxCoroutinesSwing
+
+    // CameraX
+    implementation libraries.cameraXCore
+    implementation libraries.cameraXCamera2
+    implementation libraries.cameraXLifecycle
+    implementation libraries.cameraXView
+
+    // ML Kit & Profiling
+    // mlkitTextRecognition removed — unused dependency (no code references it); saves ~12 MB on-device
+    implementation libraries.blueparrottsdk
+    implementation libraries.composeLifecycleViewmodel
+    implementation libraries.profileinstaller
+}

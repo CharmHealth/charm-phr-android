@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/labResultMainLayout"
+    android:layout_width="match_parent"
+    android:background="@color/commonBgColor"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/labResultDetailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/labResultDetailBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/labResultDetailToolbarTxtTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:maxLines="1"
+            android:text="@string/lab_result_full_str"
+            android:textAppearance="@style/toolbarText" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/labDetailScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labResultDetailToolbar">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/labResultDetailCV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/card_margin_horizontal"
+            android:layout_marginTop="@dimen/card_margin_horizontal"
+            android:layout_marginEnd="@dimen/card_margin_horizontal"
+            android:layout_marginBottom="@dimen/card_margin_horizontal"
+            app:cardCornerRadius="@dimen/common_card_radius"
+            app:cardElevation="@dimen/common_card_elevation">
+
+            <LinearLayout
+                android:id="@+id/labResultDetailLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labResultDetailTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/card_padding_half"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/large"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="110/60" />
+
+                <TextView
+                    android:id="@+id/labResultDetailReferenceTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                    android:layout_marginBottom="@dimen/card_padding_half"
+                    android:fontFamily="@font/open_sans"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="0dp"
+                    android:visibility="gone"
+                    android:text="@string/reference_range_txt"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/xx_small"
+                    app:layout_constraintStart_toStartOf="@id/labResultDetailTV"
+                    app:layout_constraintTop_toBottomOf="@id/labResultDetailTV"
+
+                    />
+
+                <View
+                    android:id="@+id/labResultDetailSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/edittext_padding"
+                    android:background="#1A707070"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/labResultDetailReferenceTV" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/labResultDetailChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/edittext_padding"
+                    android:layout_marginEnd="@dimen/card_padding"
+                    android:layout_marginBottom="@dimen/edittext_padding"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <include
+        android:id="@+id/labResultDetailNoDataTV"
+        layout="@layout/layout_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labResultDetailToolbar" />
+
+    <include
+        android:id="@+id/labResultDetailProgress"
+        layout="@layout/progress_bar_for_white_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labResultDetailToolbar" />
+
+    <include
+        android:id="@+id/labResultDetailErrorPage"
+        layout="@layout/layout_error_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labResultDetailToolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

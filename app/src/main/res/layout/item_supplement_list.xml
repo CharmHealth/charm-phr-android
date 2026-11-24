@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/card_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_margin_vertical"
+        android:animateLayoutChanges="true"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/supplementListConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_ripple_white_bg"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding">
+
+            <ImageView
+                android:id="@+id/supplementListIcon"
+                android:layout_width="@dimen/item_start_icon_size"
+                android:layout_height="@dimen/item_start_icon_size"
+                android:layout_marginStart="@dimen/card_inner_icon_horizontal_margin"
+                android:src="@drawable/ic_supplements"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <TextView
+                android:id="@+id/supplementListDateTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_inner_icon_horizontal_margin"
+                android:layout_marginTop="@dimen/common_side_date_top_margin"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:textAppearance="@style/dateDisplayTxtAppearance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="02 May ,2002" />
+
+            <TextView
+                android:id="@+id/supplementListNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_inner_icon_horizontal_margin"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_medium"
+                android:maxLines="2"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toStartOf="@id/supplementListDateTV"
+                app:layout_constraintStart_toEndOf="@id/supplementListIcon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Milk and Egg - Food Allergy" />
+
+            <TextView
+                android:id="@+id/supplementListDirectionTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintEnd_toStartOf="@id/supplementListDateTV"
+                app:layout_constraintStart_toStartOf="@id/supplementListNameTV"
+                app:layout_constraintTop_toBottomOf="@id/supplementListNameTV"
+                tools:text="1 tablet(s) 3 times a day before a meal for Everyday, oral route"
+                tools:visibility="gone"
+
+                />
+
+            <LinearLayout
+                android:id="@+id/supplementListRefillAndEditLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/supplementListDateTV"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="1">
+
+                <TextView
+                    android:id="@+id/supplementListRefillBtn"
+                    android:layout_width="@dimen/prescription_refill_width"
+                    android:layout_height="@dimen/prescription_refill_height"
+                    android:layout_marginEnd="@dimen/card_padding"
+                    android:background="@drawable/item_refill_bg"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/card_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:text="@string/prescription_refill_label"
+                    android:textAllCaps="true"
+                    android:textColor="@color/prescriptionListRefillTxtColor"
+                    android:textSize="@dimen/x_small"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/supplementListEditBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/common_edit_btn_start_padding"
+                    android:paddingTop="@dimen/common_edit_btn_top_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:src="@drawable/ic_edit"
+                    tools:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/supplementListShowMore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/more_str"
+                android:textColor="@color/labResultShowMoreTxtColor"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/supplementListNameTV"
+                app:layout_constraintTop_toBottomOf="@id/supplementListDirectionTV" />
+
+
+            <LinearLayout
+                android:id="@+id/supplementListMoreLayout1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:layout_marginEnd="@dimen/card_inner_icon_horizontal_margin"
+                app:layout_constraintEnd_toStartOf="@id/supplementListRefillAndEditLayout"
+                app:layout_constraintStart_toStartOf="@id/supplementListNameTV"
+                app:layout_constraintTop_toBottomOf="@id/supplementListShowMore"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/supplementListMoreLabel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/prescriptionListMoreLabelTxtAppearance"
+                    tools:text="Prescribed by" />
+
+                <TextView
+                    android:id="@+id/supplementListMoreValue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/prescription_list_more_value_start_margin"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/prescriptionListMoreValueTxtAppearance"
+                    tools:text="Dr.Mary James fsdf  dfsdf sdfsdf dsfds" />
+
+            </LinearLayout>
+
+
+            <include
+                android:id="@+id/supplementListPracticeLayout"
+                layout="@layout/item_practice_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_padding"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/supplementListNameTV"
+                app:layout_constraintTop_toBottomOf="@id/supplementListMoreLayout1"
+                tools:visibility="gone" />
+
+            <!-- <LinearLayout
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/supplementListMoreLayout2"
+                 app:layout_constraintStart_toStartOf="@id/supplementListNameTV"
+                 app:layout_constraintTop_toBottomOf="@id/supplementListMoreLayout1"
+                 app:layout_constraintEnd_toStartOf="@id/supplementListRefillAndEditLayout"
+                 android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                 android:visibility="gone">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/supplementListMoreLabel2"
+                     android:textAppearance="@style/prescriptionListMoreLabelTxtAppearance"
+                     android:text="@string/practice_str"
+                     />
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/supplementListMoreValue2"
+                     android:maxLines="2"
+                     android:ellipsize="end"
+                     android:textAppearance="@style/prescriptionListMoreValueTxtAppearance"
+                     android:layout_marginStart="@dimen/prescription_list_more_value_start_margin"
+                     tools:text="10 Jan, 1998"
+                     />
+
+             </LinearLayout>
+             <LinearLayout
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/supplementListMoreLayout3"
+                 app:layout_constraintStart_toStartOf="@id/supplementListNameTV"
+                 app:layout_constraintTop_toBottomOf="@id/supplementListMoreLayout2"
+                 app:layout_constraintEnd_toStartOf="@id/supplementListRefillAndEditLayout"
+                 android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                 android:visibility="gone">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/supplementListMoreLabel3"
+                     android:textAppearance="@style/prescriptionListMoreLabelTxtAppearance"
+                     tools:text="start date"
+                     />
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/supplementListMoreValue3"
+                     android:maxLines="1"
+                     android:ellipsize="end"
+                     android:textAppearance="@style/prescriptionListMoreValueTxtAppearance"
+                     android:layout_marginStart="@dimen/prescription_list_more_value_start_margin"
+                     tools:text="10 Jan, 1998"
+                     />
+
+             </LinearLayout>-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

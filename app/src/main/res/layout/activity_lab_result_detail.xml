@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/labResultDetailMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.lab.resultDetail.LabResultDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/labResultDetailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/labResultDetailBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/labResultDetailToolbarTxtTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:maxLines="1"
+            android:text="@string/lab_result_full_str"
+            android:textAppearance="@style/toolbarText" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/labResultDetailScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labResultDetailToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_margin_horizontal"
+                android:layout_marginTop="@dimen/card_margin_horizontal"
+                android:layout_marginEnd="@dimen/card_margin_horizontal"
+                app:cardCornerRadius="@dimen/common_card_radius"
+                app:cardElevation="@dimen/common_card_elevation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_padding"
+                    android:layout_marginBottom="@dimen/card_padding"
+                    android:layout_marginEnd="@dimen/card_padding">
+
+                    <View
+                        android:id="@+id/lrVerticalDivider"
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="120dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lrReviewedByLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans"
+                        android:layout_marginTop="@dimen/card_padding"
+                        android:text="Reviewed By"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lrReviewedByValueTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintBottom_toBottomOf="@id/lrReviewedByLabelTv"
+                        app:layout_constraintStart_toEndOf="@+id/lrVerticalDivider"
+                        app:layout_constraintTop_toTopOf="@id/lrReviewedByLabelTv"
+                        tools:text="Dr.Danielle Miller" />
+
+                    <TextView
+                        android:id="@+id/lrInterpretationLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/card_padding"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Interpretation"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lrReviewedByLabelTv" />
+
+                    <TextView
+                        android:id="@+id/lrInterpretationValueTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintBottom_toBottomOf="@id/lrInterpretationLabelTv"
+                        app:layout_constraintStart_toEndOf="@+id/lrVerticalDivider"
+                        app:layout_constraintTop_toTopOf="@id/lrInterpretationLabelTv"
+                        tools:text="Normal" />
+
+                    <TextView
+                        android:id="@+id/lrResultStatusLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/card_padding"
+                        android:fontFamily="@font/open_sans"
+                        android:text="Result Status"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lrInterpretationLabelTv" />
+
+                    <TextView
+                        android:id="@+id/lrResultStatusValueTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintBottom_toBottomOf="@id/lrResultStatusLabelTv"
+                        app:layout_constraintStart_toEndOf="@+id/lrVerticalDivider"
+                        app:layout_constraintTop_toTopOf="@id/lrResultStatusLabelTv"
+                        tools:text="Final" />
+
+                    <TextView
+                        android:id="@+id/lrDateLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/card_padding"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/date_str"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lrResultStatusLabelTv" />
+
+                    <TextView
+                        android:id="@+id/lrDateValueTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintBottom_toBottomOf="@id/lrDateLabelTv"
+                        app:layout_constraintStart_toEndOf="@+id/lrVerticalDivider"
+                        app:layout_constraintTop_toTopOf="@id/lrDateLabelTv"
+                        tools:text="Aug 07, 2024" />
+
+                    <TextView
+                        android:id="@+id/lrPhysicianAdviceLabelTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/card_padding"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/lab_result_message_to_patient_label"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lrDateLabelTv" />
+
+                    <TextView
+                        android:id="@+id/lrPhysicianAdviceValueTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/card_padding_half"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:textColor="@color/labResultDetailParamNameTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lrPhysicianAdviceLabelTv"
+                        tools:text="Your BP reading of 145/95 mmHg is high. Please schedule a follow-up soon." />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/labResultDetailRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/card_margin_vertical"
+                android:paddingBottom="@dimen/card_margin_vertical" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/labResultMessageToPatientCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_margin_horizontal"
+                android:layout_marginEnd="@dimen/card_margin_horizontal"
+                android:layout_marginBottom="@dimen/card_padding"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="@dimen/common_card_radius"
+                app:cardElevation="@dimen/common_card_elevation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/labResultMessageToPatientLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:paddingStart="@dimen/card_padding"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingEnd="@dimen/card_padding"
+                        android:text="@string/lab_result_message_to_patient_label"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/x_medium"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/labResultMessageToPatientTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/card_padding"
+                        android:fontFamily="@font/open_sans"
+                        android:paddingStart="@dimen/card_padding"
+                        android:paddingEnd="@dimen/card_padding"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/xx_small"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/labResultMessageToPatientLabel"
+                        tools:text="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type" />
+
+                    <TextView
+                        android:id="@+id/labResultViewFullReportBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/item_ripple_white_bg"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/card_padding"
+                        android:text="@string/lab_result_view_full_report_txt"
+                        android:textColor="@color/labResultViewFullReportTxtColor"
+                        android:textSize="@dimen/xx_small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/labResultMessageToPatientTV" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/labResultDetailProgress"
+        layout="@layout/progress_bar_for_white_bg" />
+
+    <include
+        android:id="@+id/labResultDetailErrorPage"
+        layout="@layout/layout_error_page"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labResultDetailToolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

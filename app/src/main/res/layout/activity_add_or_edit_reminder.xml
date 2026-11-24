@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MaterialAppTheme"
+    android:id="@+id/addOrEditReminderMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/adReminderToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/addReminderBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/addReminderToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:text="@string/add_reminder"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/addReminderDeleteBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete_white"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/addReminderScrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/button_margin"
+        app:layout_constraintBottom_toTopOf="@id/reminderAddButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adReminderToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addReminderContentConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addReminderModuleItemCV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_margin_horizontal"
+                android:layout_marginTop="@dimen/common_margin_vertical"
+                android:layout_marginEnd="@dimen/card_margin_horizontal"
+                android:layout_marginBottom="@dimen/common_margin_vertical"
+                android:animateLayoutChanges="true"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingTop="@dimen/card_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:paddingBottom="@dimen/card_padding"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="@dimen/common_card_radius"
+                app:cardElevation="@dimen/common_card_elevation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/addReminderModuleItemDetailsCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/item_ripple_white_bg"
+                    android:paddingStart="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:paddingBottom="@dimen/card_padding">
+
+                    <TextView
+                        android:id="@+id/addReminderModuleItemNameTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:paddingBottom="@dimen/card_padding_half"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/x_medium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Ranitidine 150mg" />
+
+                    <TextView
+                        android:id="@+id/addReminderModuleItemDirectionsTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="@dimen/card_padding_half"
+                        android:textAppearance="@style/mediumTxtAppearance"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addReminderModuleItemNameTV"
+                        tools:text="1 Tablet" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/addReminderScheduleTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_margin_horizontal"
+                android:layout_marginTop="@dimen/common_margin_vertical"
+                android:layout_marginEnd="@dimen/card_margin_horizontal"
+                android:fontFamily="@font/open_sans_medium"
+                android:paddingStart="@dimen/card_padding_half"
+                android:paddingEnd="@dimen/card_padding"
+                android:text="@string/schedule_str"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addReminderModuleItemCV" />
+
+            <LinearLayout
+                android:id="@+id/addReminderScheduleLL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addReminderScheduleTV">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                    android:id="@+id/addReminderStartDateLayout"
+                    style="@style/itemTextInputLayoutTheme"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                    app:mdShowDropdown="false">
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                        android:id="@+id/addReminderStartDateET"
+                        style="@style/itemTextInputEdittextTheme"
+                        android:drawableEnd="@drawable/ic_calander"
+                        android:hint="@string/medication_start_date_string" />
+
+                </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                    android:id="@+id/addReminderEndDateLayout"
+                    style="@style/itemTextInputLayoutTheme"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                    app:mdShowDropdown="false">
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                        android:id="@+id/addReminderEndDateET"
+                        style="@style/itemTextInputEdittextTheme"
+                        android:drawableEnd="@drawable/ic_calander"
+                        android:hint="@string/medication_end_date_string" />
+
+                </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addReminderIntakeCV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_margin_horizontal"
+                android:layout_marginTop="@dimen/common_margin_vertical_half"
+                android:layout_marginEnd="@dimen/card_margin_horizontal"
+                android:layout_marginBottom="@dimen/common_margin_vertical"
+                android:animateLayoutChanges="true"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="@dimen/common_card_radius"
+                app:cardElevation="@dimen/common_card_elevation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addReminderScheduleLL">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addReminderIntakeLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@color/transparent"
+                        android:paddingTop="@dimen/card_padding"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addReminderIntakeET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/medication_intake_string"
+                            android:paddingTop="@dimen/edittext_margin_vertical"
+                            app:allowAutoSelect="true"
+                            tools:text="@string/weekly_str" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    <LinearLayout
+                        android:id="@+id/addReminderFrequencyUnitLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addReminderIntakeLayout">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/practiceSeparator">
+
+                        </View>
+
+                        <RadioGroup
+                            android:id="@+id/addReminderFrequencyGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/addReminderOneTimeFrequency"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/card_padding"
+                                android:layout_marginTop="@dimen/card_padding"
+                                android:layout_marginEnd="@dimen/card_padding"
+                                android:layout_marginBottom="@dimen/card_padding_half"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/one_time"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/medium" />
+
+                            <RadioButton
+                                android:id="@+id/addReminderDailyFrequency"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/card_padding"
+                                android:layout_marginEnd="@dimen/card_padding"
+                                android:layout_marginBottom="@dimen/card_padding_half"
+                                android:background="?attr/selectableItemBackground"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/daily_str"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/medium" />
+
+                            <RadioButton
+                                android:id="@+id/addReminderWeeklyFrequency"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/card_padding"
+                                android:layout_marginEnd="@dimen/card_padding"
+                                android:layout_marginBottom="@dimen/card_padding"
+                                android:background="?attr/selectableItemBackground"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/weekly_str"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/medium" />
+                        </RadioGroup>
+
+                        <!--                        <HorizontalScrollView-->
+                        <!--                            android:id="@+id/addReminderWeeklyHSV"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginStart="@dimen/card_padding"-->
+                        <!--                            android:layout_marginEnd="@dimen/card_padding"-->
+                        <!--                            android:layout_marginBottom="@dimen/card_margin_horizontal"-->
+                        <!--                            android:scrollbars="none"-->
+                        <!--                            android:visibility="visible">-->
+
+                        <com.google.android.flexbox.FlexboxLayout
+                            android:id="@+id/addReminderWeeklyHSV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/card_padding"
+                            android:layout_marginEnd="@dimen/card_padding"
+                            android:layout_marginBottom="@dimen/card_margin_horizontal"
+                            android:visibility="gone"
+                            app:flexWrap="wrap">
+
+                            <TextView
+                                android:id="@+id/addReminderSunBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/common_margin_vertical"
+                                android:layout_marginTop="@dimen/flowsheet_card_margin_vertical"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/open_sans"
+                                android:minWidth="@dimen/max_image_width"
+                                android:paddingStart="@dimen/card_padding"
+                                android:paddingTop="@dimen/common_margin_vertical_half"
+                                android:paddingEnd="@dimen/card_padding"
+                                android:paddingBottom="@dimen/common_margin_vertical_half"
+                                android:text="@string/sun"
+                                android:textAlignment="center"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/x_medium" />
+
+                            <TextView
+                                android:id="@+id/addReminderMonBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/common_margin_vertical"
+                                android:layout_marginTop="@dimen/flowsheet_card_margin_vertical"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/open_sans"
+                                android:minWidth="@dimen/max_image_width"
+                                android:paddingStart="@dimen/card_padding"
+                                android:paddingTop="@dimen/common_margin_vertical_half"
+                                android:paddingEnd="@dimen/card_padding"
+                                android:paddingBottom="@dimen/common_margin_vertical_half"
+                                android:text="@string/mon"
+                                android:textAlignment="center"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/x_medium" />
+
+                            <TextView
+                                android:id="@+id/addReminderTueBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/common_margin_vertical"
+                                android:layout_marginTop="@dimen/flowsheet_card_margin_vertical"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/open_sans"
+                                android:minWidth="@dimen/max_image_width"
+                                android:paddingStart="@dimen/card_padding"
+                                android:paddingTop="@dimen/common_margin_vertical_half"
+                                android:paddingEnd="@dimen/card_padding"
+                                android:paddingBottom="@dimen/common_margin_vertical_half"
+                                android:text="@string/tue"
+                                android:textAlignment="center"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/x_medium" />
+
+                            <TextView
+                                android:id="@+id/addReminderWedBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/common_margin_vertical"
+                                android:layout_marginTop="@dimen/flowsheet_card_margin_vertical"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/open_sans"
+                                android:minWidth="@dimen/max_image_width"
+                                android:paddingStart="@dimen/card_padding"
+                                android:paddingTop="@dimen/common_margin_vertical_half"
+                                android:paddingEnd="@dimen/card_padding"
+                                android:paddingBottom="@dimen/common_margin_vertical_half"
+                                android:text="@string/wed"
+                                android:textAlignment="center"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/x_medium" />
+
+                            <TextView
+                                android:id="@+id/addReminderThuBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/common_margin_vertical"
+                                android:layout_marginTop="@dimen/flowsheet_card_margin_vertical"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/open_sans"
+                                android:minWidth="@dimen/max_image_width"
+                                android:paddingStart="@dimen/card_padding"
+                                android:paddingTop="@dimen/common_margin_vertical_half"
+                                android:paddingEnd="@dimen/card_padding"
+                                android:paddingBottom="@dimen/common_margin_vertical_half"
+                                android:text="@string/thu"
+                                android:textAlignment="center"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/x_medium" />
+
+                            <TextView
+                                android:id="@+id/addReminderFriBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/common_margin_vertical"
+                                android:layout_marginTop="@dimen/flowsheet_card_margin_vertical"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/open_sans"
+                                android:minWidth="@dimen/max_image_width"
+                                android:paddingStart="@dimen/card_padding"
+                                android:paddingTop="@dimen/common_margin_vertical_half"
+                                android:paddingEnd="@dimen/card_padding"
+                                android:paddingBottom="@dimen/common_margin_vertical_half"
+                                android:text="@string/fri"
+                                android:textAlignment="center"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/x_medium" />
+
+                            <TextView
+                                android:id="@+id/addReminderSatBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/common_margin_vertical"
+                                android:layout_marginTop="@dimen/flowsheet_card_margin_vertical"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/open_sans"
+                                android:minWidth="@dimen/max_image_width"
+                                android:paddingStart="@dimen/card_padding"
+                                android:paddingTop="@dimen/common_margin_vertical_half"
+                                android:paddingEnd="@dimen/card_padding"
+                                android:paddingBottom="@dimen/common_margin_vertical_half"
+                                android:text="@string/sat"
+                                android:textAlignment="center"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/x_medium" />
+                        </com.google.android.flexbox.FlexboxLayout>
+                        <!--                        </HorizontalScrollView>-->
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addReminderTimingCV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_margin_horizontal"
+                android:layout_marginTop="@dimen/common_margin_vertical"
+                android:layout_marginEnd="@dimen/card_margin_horizontal"
+                android:layout_marginBottom="@dimen/common_margin_vertical"
+                android:animateLayoutChanges="true"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="@dimen/common_card_radius"
+                app:cardElevation="@dimen/common_card_elevation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addReminderIntakeCV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding">
+
+                    <TextView
+                        android:id="@+id/addReminderTimingTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/open_sans"
+                        android:paddingStart="@dimen/card_padding"
+                        android:paddingEnd="@dimen/card_padding"
+                        android:text="@string/reminder_timing"
+                        android:textColor="@color/black87"
+                        android:textSize="@dimen/medium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/addReminderAddTimingLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/card_padding"
+                        android:paddingEnd="@dimen/card_padding"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addReminderTimingTV" />
+
+                    <View
+                        android:id="@+id/addReminderAddTimingSeparator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/practiceSeparator"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addReminderAddTimingLL" />
+
+                    <LinearLayout
+                        android:id="@+id/addReminderAddTimeLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/card_padding"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingEnd="@dimen/card_padding"
+                        android:paddingBottom="@dimen/card_padding"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addReminderAddTimingSeparator">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_add_clock" />
+
+                        <TextView
+                            android:id="@+id/addReminderTimeTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/card_padding_half"
+                            android:text="@string/add_reminder_time"
+                            android:textColor="@color/itemEditTxtColor"
+                            android:textSize="@dimen/x_medium"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/reminderAddButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/add_button_height"
+        android:layout_margin="@dimen/button_margin"
+        android:background="@drawable/item_button_bg"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/add_str"
+        android:textAllCaps="false"
+        android:textColor="@color/textColorForColorPrimaryBg"
+        android:textSize="@dimen/xx_large"
+        app:layout_constraintBottom_toTopOf="@+id/reminderEditButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/reminderEditButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/add_button_height"
+        android:layout_margin="@dimen/button_margin"
+        android:background="@drawable/item_button_bg"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/update_str"
+        android:textAllCaps="false"
+        android:textColor="@color/textColorForColorPrimaryBg"
+        android:textSize="@dimen/xx_large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

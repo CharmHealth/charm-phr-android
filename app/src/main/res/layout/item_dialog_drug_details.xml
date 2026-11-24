@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/dialogDrugIcon"
+        android:layout_width="@dimen/item_start_icon_size"
+        android:layout_height="@dimen/item_start_icon_size"
+        android:layout_marginStart="@dimen/card_padding_half"
+        android:layout_marginTop="@dimen/card_padding"
+        android:src="@drawable/ic_tablet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialogModuleItemNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/card_padding"
+        android:paddingEnd="@dimen/card_padding"
+        android:fontFamily="@font/open_sans_medium"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/x_medium"
+        app:layout_constraintEnd_toStartOf="@+id/dialogReminderStatusLL"
+        app:layout_constraintStart_toEndOf="@+id/dialogDrugIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Ranitidine 150mg" />
+
+    <TextView
+        android:id="@+id/dialogDrugDirectionTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+        android:fontFamily="@font/open_sans"
+        android:lineSpacingExtra="@dimen/common_line_height"
+        android:paddingEnd="@dimen/card_padding"
+        android:layout_marginBottom="@dimen/card_padding"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/xx_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dialogReminderStatusLL"
+        app:layout_constraintStart_toStartOf="@+id/dialogModuleItemNameTV"
+        app:layout_constraintTop_toBottomOf="@+id/dialogModuleItemNameTV"
+        tools:text="1 tablet(s) 3 times a day before a meal for Everyday, oral route" />
+
+    <LinearLayout
+        android:id="@id/dialogReminderStatusLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dialogModuleItemNameTV"
+        app:layout_constraintTop_toTopOf="@+id/dialogModuleItemNameTV"
+        app:layout_constraintBottom_toBottomOf="@+id/dialogDrugDirectionTV"
+        >
+        <CheckBox
+            android:id="@+id/dialogReminderSelectCB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_marginStart="@dimen/card_padding"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dialogModuleItemNameTV"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/dialogReminderStatusIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="@dimen/card_padding"
+            android:src="@drawable/ic_taken"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/dialogReminderSelectCB"
+            app:layout_constraintBottom_toBottomOf="@+id/dialogDrugDirectionTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dialogModuleItemNameTV" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/questionnaire_card_margin_vertical">
+
+    <TextView
+        android:id="@+id/patContactHeadingTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_padding_half"
+        android:fontFamily="@font/open_sans_medium"
+        android:text="@string/add_insurance_primary_contact_txt"
+        android:textColor="@color/black87"
+        android:textSize="@dimen/medium"
+        app:layout_constraintBottom_toTopOf="@id/patContactHomePhoneLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactHomePhoneLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactMobilePhoneLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactHeadingTV">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactHomePhoneET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_home_no_str"
+            android:inputType="number"
+            android:maxLength="@integer/savePatientNumberInsuranceMaxLength"
+            app:filterRegex="number"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactMobilePhoneLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactWorkPhoneLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactHomePhoneLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactMobilePhoneET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_mobile_no_str"
+            android:inputType="number"
+            android:maxLength="@integer/savePatientNumberInsuranceMaxLength"
+            app:filterRegex="number"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactWorkPhoneLayout"
+        style="@style/itemTextInputLayoutTheme"
+        android:layout_width="0dp"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactFaxLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactMobilePhoneLayout"
+        app:layout_constraintWidth_percent=".45">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactWorkPhoneET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_contact_work_phone"
+            android:inputType="number"
+            android:maxLength="@integer/savePatientNumberInsuranceMaxLength"
+            app:filterRegex="number"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactWorkPhoneExtLayout"
+        style="@style/itemTextInputLayoutTheme"
+        android:layout_width="0dp"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toBottomOf="@id/patContactWorkPhoneLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/patContactWorkPhoneLayout"
+        app:layout_constraintWidth_percent=".45">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactWorkPhoneExtET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_contact_extn"
+            android:inputType="number"
+            android:maxLength="4"
+            app:filterRegex="number"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactFaxLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactEmailLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactWorkPhoneLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactFaxET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_contact_fax"
+            android:inputType="number"
+            android:maxLength="@integer/savePatientNumberInsuranceMaxLength"
+            app:filterRegex="number"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactEmailLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactPrimaryPhLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactFaxLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactEmailET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_email_address_str"
+            app:filterRegex="alphabetsNumbersAndSplChar"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patContactPrimaryPhLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactLine1Layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactEmailLayout">
+
+        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+            android:id="@+id/patContactPrimaryPhET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_primary_phone_hint"
+            app:allowAutoSelect="true"
+            app:showEmptyField="true" />
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactLine1Layout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactLine2Layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactPrimaryPhLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactLine1ET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_address_line_1"
+            android:maxLength="@integer/savePatientAddressMaxLength"
+            app:filterRegex="alphabetsNumbersAndSplChar"
+            tools:text="Demo" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactLine2Layout"
+        style="@style/itemTextInputLayoutTheme"
+        android:maxLength="@integer/savePatientAddressMaxLength"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactCityLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactLine1Layout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactLine2ET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_address_line_2"
+            app:filterRegex="alphabetsNumbersAndSplChar"
+            tools:text="Demo" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactCityLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactCountryLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactLine2Layout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactCityET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_city_str"
+            android:maxLength="@integer/savePatientCityMaxLength"
+            app:filterRegex="alphabetsNumbersAndSplChar"
+            tools:text="Demo" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patContactCountryLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactStateLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactCityLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+            android:id="@+id/patContactCountryET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_country_str"
+            app:filterRegex="alphabetsNumbersAndSplChar" />
+
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+        android:id="@+id/patContactStateLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactPinCodeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactCountryLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+            android:id="@+id/patContactStateET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_state_str"
+            app:filterRegex="alphabetsNumbersAndSplChar" />
+
+    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactPinCodeLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactPostBoxLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactStateLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactPinCodeET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_postal_code_str"
+            android:inputType="number"
+            android:maxLength="10"
+            app:filterRegex="number"
+            tools:text="Demo" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactPostBoxLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactEmgContactNameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactPinCodeLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactPostBoxET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_post_box_hint"
+            android:inputType="number"
+            android:maxLength="4"
+            app:filterRegex="number"
+            tools:text="Demo" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactEmgContactNameLayout"
+        style="@style/itemTextInputLayoutTheme"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toTopOf="@id/patContactEmgContactNumLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactPostBoxLayout">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactEmgContactNameET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_emg_contact_name_str"
+            android:maxLength="@integer/savePatientNameMaxLength"
+            app:filterRegex="alphabetsNumbersAndSplChar"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactEmgContactNumLayout"
+        style="@style/itemTextInputLayoutTheme"
+        android:layout_width="0dp"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patContactEmgContactNameLayout"
+        app:layout_constraintWidth_percent=".45">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactEmgContactNumET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/save_pat_demo_emg_contact_num_str"
+            android:inputType="number"
+            android:maxLength="@integer/savePatientNumberInsuranceMaxLength"
+            app:filterRegex="number"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/patContactEmgContactExtLayout"
+        style="@style/itemTextInputLayoutTheme"
+        android:layout_width="0dp"
+        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+        app:layout_constraintBottom_toBottomOf="@id/patContactEmgContactNumLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/patContactEmgContactNumLayout"
+        app:layout_constraintWidth_percent=".45">
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/patContactEmgContactExtET"
+            style="@style/itemTextInputEdittextTheme"
+            android:hint="@string/add_insurance_contact_extn"
+            android:inputType="number"
+            android:maxLength="4"
+            app:filterRegex="number"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

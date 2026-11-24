@@ -1,0 +1,743 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MaterialAppTheme"
+    android:id="@+id/appointmentMainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.appointment.AppointmentActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/appointmentToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/appointmentBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/appointmentToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:text="@string/appointments_str"
+            android:textAppearance="@style/toolbarText" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/commonBgColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appointmentToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/appointmentBgLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/appointmentListHPBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_hp_bg_empty"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/hp_bg_img_margin_start"
+                android:src="@drawable/ic_appointment_bg"
+                app:layout_constraintBottom_toBottomOf="@id/appointmentListHPBg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/appointmentListHPBg"
+                app:layout_constraintVertical_bias="0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/appointmentCLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/commonBgColor"
+                    app:contentInsetStart="0dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_collapseMode="pin"
+                    app:layout_scrollFlags="scroll|enterAlways|snap">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <HorizontalScrollView
+                            android:id="@+id/appointmentTabLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/appointment_list_tab_layout_height"
+                            android:elevation="0dp"
+                            android:paddingStart="@dimen/card_margin_horizontal"
+                            android:paddingEnd="@dimen/card_margin_horizontal"
+                            android:scrollbars="none"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                app:chipSpacingHorizontal="@dimen/appointment_list_tab_txt_side_margin"
+                                app:singleLine="true">
+
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/appointmentListAppointmentTabBtn"
+                                    style="@style/MaterialComponentsChipUnSelectStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/appointment_list_tab_height"
+                                    android:text="@string/appointments_str"
+                                    app:checkedIconEnabled="false"
+                                    app:chipIconEnabled="false"
+
+
+                                    />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/appointmentListRequestedTabBtn"
+                                    style="@style/MaterialComponentsChipUnSelectStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/appointment_list_tab_height"
+                                    android:text="@string/appointment_requested_str"
+                                    app:checkedIconEnabled="false"
+                                    app:chipIconEnabled="false"
+
+
+                                    />
+
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/appointmentListWaitingListTabBtn"
+                                    style="@style/MaterialComponentsChipUnSelectStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/appointment_list_tab_height"
+                                    android:text="@string/appointment_waiting_list_str"
+                                    app:checkedIconEnabled="false"
+                                    app:chipIconEnabled="false"
+
+                                    />
+
+                                <com.google.android.material.chip.Chip
+                                    android:id="@+id/appointmentListDeniedTabBtn"
+                                    style="@style/MaterialComponentsChipUnSelectStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/appointment_list_tab_height"
+                                    android:text="@string/appointment_denied_str"
+                                    app:checkedIconEnabled="false"
+                                    app:chipIconEnabled="false"
+
+
+                                    />
+                            </com.google.android.material.chip.ChipGroup>
+                            <!--
+                                                        <LinearLayout
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="match_parent"
+                                                            android:visibility="gone"
+                                                            android:layout_gravity="center_vertical">
+
+                                                            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="@dimen/appointment_list_tab_height"
+                                                                android:id="@+id/appointmentListAppointmentTabBtn"
+                                                                android:layout_gravity="center_vertical"
+                                                                app:mdBackgroundColor="@color/appointmentSelectedTab"
+                                                                app:mdCornerRadius="@dimen/appointment_list_tab_corner_radius">
+
+                                                                <TextView
+                                                                    android:layout_width="wrap_content"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:fontFamily="@font/open_sans_medium"
+                                                                    android:id="@+id/appointmentListAppointmentTabTV"
+                                                                    android:paddingStart="@dimen/appointment_list_tab_txt_side_padding"
+                                                                    android:paddingEnd="@dimen/appointment_list_tab_txt_side_padding"
+                                                                    android:text="@string/appointments_str"
+                                                                    android:textColor="@color/appointmentSelectedTabTxtColor"
+                                                                    android:textSize="@dimen/xx_small"
+                                                                    app:layout_constraintBottom_toBottomOf="parent"
+                                                                    app:layout_constraintStart_toStartOf="parent"
+                                                                    app:layout_constraintTop_toTopOf="parent" />
+                                                            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+                                                            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="@dimen/appointment_list_tab_height"
+                                                                android:layout_gravity="center_vertical"
+                                                                android:id="@+id/appointmentListRequestedTabBtn"
+                                                                android:layout_marginStart="@dimen/appointment_list_tab_txt_side_margin"
+                                                                app:mdBackgroundColor="@color/appointmentUnSelectedTab"
+                                                                app:mdCornerRadius="@dimen/appointment_list_tab_corner_radius">
+
+                                                                <TextView
+                                                                    android:layout_width="wrap_content"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:id="@+id/appointmentListRequestedTabTV"
+                                                                    android:fontFamily="@font/open_sans_medium"
+                                                                    android:paddingStart="@dimen/appointment_list_tab_txt_side_padding"
+                                                                    android:paddingEnd="@dimen/appointment_list_tab_txt_side_padding"
+                                                                    android:text="@string/appointment_requested_str"
+                                                                    android:textColor="@color/appointmentUnSelectedTabTxtColor"
+                                                                    android:textSize="@dimen/xx_small"
+                                                                    app:layout_constraintBottom_toBottomOf="parent"
+                                                                    app:layout_constraintStart_toStartOf="parent"
+                                                                    app:layout_constraintTop_toTopOf="parent" />
+                                                            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+                                                            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="@dimen/appointment_list_tab_height"
+                                                                android:id="@+id/appointmentListDeniedTabBtn"
+                                                                android:layout_gravity="center_vertical"
+                                                                android:layout_marginStart="@dimen/appointment_list_tab_txt_side_margin"
+                                                                app:mdBackgroundColor="@color/appointmentUnSelectedTab"
+                                                                app:mdCornerRadius="@dimen/appointment_list_tab_corner_radius">
+
+                                                                <TextView
+                                                                    android:layout_width="wrap_content"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:id="@+id/appointmentListDeniedTabTV"
+                                                                    android:fontFamily="@font/open_sans_medium"
+                                                                    android:paddingStart="@dimen/appointment_list_tab_txt_side_padding"
+                                                                    android:paddingEnd="@dimen/appointment_list_tab_txt_side_padding"
+                                                                    android:text="@string/appointment_denied_str"
+                                                                    android:textColor="@color/appointmentUnSelectedTabTxtColor"
+                                                                    android:textSize="@dimen/xx_small"
+                                                                    app:layout_constraintBottom_toBottomOf="parent"
+                                                                    app:layout_constraintStart_toStartOf="parent"
+                                                                    app:layout_constraintTop_toTopOf="parent" />
+                                                            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+                                                            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="@dimen/appointment_list_tab_height"
+                                                                android:id="@+id/appointmentListWaitingListTabBtn"
+                                                                android:layout_gravity="center_vertical"
+                                                                android:layout_marginStart="@dimen/appointment_list_tab_txt_side_margin"
+                                                                app:mdBackgroundColor="@color/appointmentUnSelectedTab"
+                                                                app:mdCornerRadius="@dimen/appointment_list_tab_corner_radius">
+
+                                                                <TextView
+                                                                    android:layout_width="wrap_content"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:id="@+id/appointmentListWaitingListTabTV"
+                                                                    android:fontFamily="@font/open_sans_medium"
+                                                                    android:paddingStart="@dimen/appointment_list_tab_txt_side_padding"
+                                                                    android:paddingEnd="@dimen/appointment_list_tab_txt_side_padding"
+                                                                    android:text="@string/appointment_waiting_list_str"
+                                                                    android:textColor="@color/appointmentUnSelectedTabTxtColor"
+                                                                    android:textSize="@dimen/xx_small"
+                                                                    app:layout_constraintBottom_toBottomOf="parent"
+                                                                    app:layout_constraintStart_toStartOf="parent"
+                                                                    app:layout_constraintTop_toTopOf="parent" />
+                                                            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+                                                        </LinearLayout>
+                            -->
+
+                        </HorizontalScrollView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+            <LinearLayout
+                android:id="@+id/appointmentCardMainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/appointmentListAppointmentTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/appointmentListUpcomingAppointmentHeadingTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_card_margin"
+                        android:layout_marginTop="@dimen/dashboard_card_margin"
+                        android:layout_marginEnd="@dimen/dashboard_card_margin"
+                        android:layout_marginBottom="@dimen/dashboard_health_rv_vertical_padding"
+                        android:text="@string/dashboard_upcoming_appointments_heading"
+                        android:textAppearance="@style/appointmentCardHeading"
+
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/appointmentListUpcomingAppointmentRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dashboard_health_rv_vertical_padding"
+                        android:scrollbars="vertical"
+                        android:fadeScrollbars="false"
+                        tools:visibility="gone" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_card_margin"
+                        android:layout_marginTop="@dimen/dashboard_health_rv_vertical_padding"
+                        app:cardCornerRadius="@dimen/common_card_radius"
+                        android:layout_marginEnd="@dimen/dashboard_card_margin"
+                        android:layout_marginBottom="@dimen/dashboard_health_rv_vertical_padding">
+                        <LinearLayout
+                            android:id="@+id/appointmentListAppointmentNoDataLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/appointmentListNoDataLayoutHeight"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <!--               <androidx.cardview.widget.CardView
+                                           android:layout_width="wrap_content"
+                                           android:layout_height="wrap_content"
+                                           android:id="@+id/appointmentListAppointmentNoDataImgCard"
+                                           app:cardBackgroundColor="@android:color/transparent"
+                                           app:layout_constraintEnd_toEndOf="parent"
+                                           app:layout_constraintStart_toStartOf="parent"
+                                           app:layout_constraintTop_toTopOf="parent"
+                                           >
+                                       app:cardElevation="@dimen/appointment_no_data_img_elevation"
+
+                                       </androidx.cardview.widget.CardView>-->
+
+                            <ImageView
+                                android:id="@+id/appointmentListAppointmentNoDataImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_no_appointments"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/appointmentListAppointmentNoDataTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/appointment_no_data_txt_top_margin"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:gravity="center"
+                                android:text="@string/appointment_upcoming_no_data_str"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/xx_small"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/appointmentListAppointmentNoDataImg" />
+
+                            <TextView
+                                android:id="@+id/appointmentListAppointmentNoDataInfoTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                                android:fontFamily="@font/open_sans"
+                                android:gravity="center"
+                                android:text="@string/appointment_add_hint"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/small"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/appointmentListAppointmentNoDataTV" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/pastAppointmentHeadingTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_card_margin"
+                        android:layout_marginEnd="@dimen/dashboard_card_margin"
+                        android:layout_marginTop="@dimen/dashboard_health_rv_vertical_padding"
+                        android:text="@string/appointment_past_str"
+                        android:textAppearance="@style/appointmentCardHeading"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/appointmentListPastAppointmentRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="vertical"
+                        android:fadeScrollbars="false"
+                        android:layout_marginTop="@dimen/card_padding"
+                        android:layout_marginBottom="@dimen/card_padding" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/appointmentListRequestedTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/appointmentListRequestedAppointmentHeadingTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_card_margin"
+                        android:layout_marginTop="@dimen/dashboard_card_margin"
+                        android:layout_marginEnd="@dimen/dashboard_card_margin"
+                        android:layout_marginBottom="@dimen/dashboard_health_rv_vertical_padding"
+                        android:text="@string/appointment_requested_appointment_str"
+                        android:textAppearance="@style/appointmentCardHeading"
+
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/appointmentListRequestedAppointmentRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dashboard_health_rv_vertical_padding"
+                        android:layout_marginBottom="@dimen/card_padding"
+                        tools:visibility="gone" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_card_margin"
+                        android:layout_marginTop="@dimen/dashboard_health_rv_vertical_padding"
+                        android:layout_marginEnd="@dimen/dashboard_card_margin"
+                        android:layout_marginBottom="@dimen/dashboard_card_margin">
+
+
+                        <LinearLayout
+                            android:id="@+id/appointmentListRequestedNoDataLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/appointmentListNoDataLayoutHeight"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <!--        <androidx.cardview.widget.CardView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/appointmentListRequestedNoDataImgCard"
+                                        app:cardBackgroundColor="@android:color/transparent"
+                                        android:layout_marginTop="@dimen/appointment_no_data_img_top_margin"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:cardElevation="@dimen/appointment_no_data_img_elevation"
+                                        >
+                                    </androidx.cardview.widget.CardView>-->
+
+                            <ImageView
+                                android:id="@+id/appointmentListRequestedNoDataImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_no_appointments"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:id="@+id/appointmentListRequestedNoDataTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/appointment_no_data_txt_top_margin"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:gravity="center"
+                                android:text="@string/appointment_requested_no_data_str"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/xx_small"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/appointmentListRequestedNoDataImg" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/appointmentListDeniedTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/appointmentListDeniedAppointmentHeadingTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_card_margin"
+                        android:layout_marginTop="@dimen/dashboard_card_margin"
+                        android:layout_marginEnd="@dimen/dashboard_card_margin"
+                        android:layout_marginBottom="@dimen/dashboard_health_rv_vertical_padding"
+                        android:text="@string/appointment_denied_appointment_str"
+                        android:textAppearance="@style/appointmentCardHeading"
+
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/appointmentListDeniedAppointmentRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dashboard_health_rv_vertical_padding"
+                        android:layout_marginBottom="@dimen/card_padding"
+                        tools:visibility="gone" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_card_margin"
+                        android:layout_marginTop="@dimen/dashboard_health_rv_vertical_padding"
+                        android:layout_marginEnd="@dimen/dashboard_card_margin"
+                        android:layout_marginBottom="@dimen/card_padding">
+
+
+                        <LinearLayout
+                            android:id="@+id/appointmentListDeniedNoDataLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/appointmentListNoDataLayoutHeight"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <!-- <androidx.cardview.widget.CardView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+
+                                 android:id="@+id/appointmentListDeniedNoDataImgCard"
+                                 app:cardBackgroundColor="@android:color/transparent"
+                                 app:cardElevation="@dimen/appointment_no_data_img_elevation"
+                                 app:layout_constraintEnd_toEndOf="parent"
+                                 app:layout_constraintStart_toStartOf="parent"
+                                 app:layout_constraintTop_toTopOf="parent">
+
+                             </androidx.cardview.widget.CardView>-->
+
+
+                            <ImageView
+                                android:id="@+id/appointmentListDeniedNoDataImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_no_appointments"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+
+                                />
+                            <!--app:compatEvelation="@dimen/appointment_no_data_img_elevation"
+                            app:forceClip="true"
+                            app:isTranslucent="true"-->
+
+
+                            <TextView
+                                android:id="@+id/appointmentListDeniedNoDataTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/appointment_no_data_txt_top_margin"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:gravity="center"
+                                android:text="@string/appointment_denied_no_dat_str"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/xx_small"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/appointmentListDeniedNoDataImg"
+                                app:layout_constraintVertical_bias="0" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/appointmentListWaitingListTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/appointmentListWaitingListAppointmentHeadingTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_card_margin"
+                        android:layout_marginTop="@dimen/dashboard_card_margin"
+                        android:layout_marginEnd="@dimen/dashboard_card_margin"
+                        android:layout_marginBottom="@dimen/dashboard_health_rv_vertical_padding"
+                        android:text="@string/appointment_waiting_list_str"
+                        android:textAppearance="@style/appointmentCardHeading"
+
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/appointmentListWaitingListAppointmentRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dashboard_health_rv_vertical_padding"
+                        android:layout_marginBottom="@dimen/card_padding" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dashboard_card_margin"
+                        android:layout_marginTop="@dimen/dashboard_health_rv_vertical_padding"
+                        android:layout_marginEnd="@dimen/dashboard_card_margin"
+                        android:layout_marginBottom="@dimen/card_padding">
+
+
+                        <LinearLayout
+                            android:id="@+id/appointmentListWaitingListNoDataLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/appointmentListNoDataLayoutHeight"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <!--<androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/appointmentListWaitingListNoDataImgCard"
+                                app:cardBackgroundColor="@android:color/transparent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:cardElevation="@dimen/appointment_no_data_img_elevation"
+                                >
+                            </androidx.cardview.widget.CardView>-->
+
+                            <ImageView
+                                android:id="@+id/appointmentListWaitingListNoDataImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_no_appointments"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/appointmentListWaitingListNoDataTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/appointment_no_data_txt_top_margin"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:gravity="center"
+                                android:text="@string/appointment_waiting_no_dat_list_str"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/xx_small"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/appointmentListWaitingListNoDataImg" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:id="@+id/appointmentMainLayout"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+            <!--                <androidx.core.widget.NestedScrollView-->
+            <!--                    android:id="@+id/appointmentScrollView"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="0dp"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--                   -->
+            <!--                </androidx.core.widget.NestedScrollView>-->
+
+            <include
+                android:id="@+id/appointmentProgress"
+                layout="@layout/layout_progress_bar"
+                android:visibility="gone" />
+
+
+            <include
+                android:id="@+id/appointmentErrorPage"
+                style="@style/AppTheme"
+                layout="@layout/layout_error_page"
+                android:visibility="gone" />
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/appointmentBookFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:src="@drawable/ic_add_white_24dp"
+                app:backgroundTint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:rippleColor="@android:color/white"
+                app:tint="@color/textColorForColorPrimaryBg"
+                app:layout_anchor="@id/appointmentCardMainLayout"
+                app:layout_anchorGravity="bottom|end" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/appointment_composeview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

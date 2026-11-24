@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/card_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_margin_vertical"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inactiveAllergyListConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_ripple_white_bg"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding">
+
+            <TextView
+                android:id="@+id/inactiveAllergyListDateTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:textAppearance="@style/dateDisplayTxtAppearance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="02 May ,2002" />
+
+            <TextView
+                android:id="@+id/inactiveAllergyListNameAndTypeTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_medium"
+                android:maxLines="1"
+                android:textColor="@color/allergyListNameAndTypeTxtColor"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inactiveAllergyListDateTV"
+                tools:text="Milk and Egg - Food Allergy" />
+
+            <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                android:id="@+id/inactiveAllergyListSeverityLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginEnd="@dimen/card_padding"
+                app:layout_constraintBottom_toBottomOf="@id/inactiveAllergyListSeverityLabel"
+                app:layout_constraintEnd_toStartOf="@id/inactiveAllergyListEditBtn"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/inactiveAllergyListSeverityLabel"
+                app:layout_constraintTop_toTopOf="@id/inactiveAllergyListSeverityLabel"
+                app:mdBackgroundColor="@color/allergyListSeverityMildBg"
+                app:mdCornerRadius="3dp">
+
+                <TextView
+                    android:id="@+id/inactiveAllergyListSeverityTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:padding="5dp"
+                    android:textColor="@color/allergyListSeverityMildTxtColor"
+                    android:textSize="@dimen/small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/allergy_severity_mild_str" />
+            </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+            <TextView
+                android:id="@+id/inactiveAllergyListSeverityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/allergy_previous_severity_label"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintStart_toStartOf="@id/inactiveAllergyListNameAndTypeTV"
+                app:layout_constraintTop_toBottomOf="@id/inactiveAllergyListNameAndTypeTV" />
+
+            <ImageView
+                android:id="@+id/inactiveAllergyListEditBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/common_edit_btn_start_padding"
+                android:paddingTop="@dimen/common_edit_btn_top_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:src="@drawable/ic_edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

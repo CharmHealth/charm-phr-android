@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bookAppointmentRootLayout"
+    tools:context=".ui.appointment.book_appointment.BookAppointmentActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bookAppointmentToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/bookAppointmentBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/bookAppointmentToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:text="@string/book_appointment_str"
+            android:textAppearance="@style/toolbarText" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bookAppointmentToolbar">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bookAppointmentMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.charm.phr.mphr.ui.components.MDScrollView
+                android:id="@+id/bookAppointmentScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/bookAppointmentBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/edittext_margin_vertical"
+                    android:paddingBottom="@dimen/edittext_margin_vertical">
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentPracticeNameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/practice_name_str" />
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/bookAppointmentPracticeNameET"
+                            style="@style/itemEdittextTheme"
+                            android:hint="@string/select_str"
+                            android:inputType="text|textNoSuggestions"
+                            app:showIcon="true"
+                            tools:text="Dr Who nvsejknkoewfnkoewfnkonkonmewkomnkoewmnkoewfmokemnwo" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentFacilityNameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/facility_str" />
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/bookAppointmentFacilityNameET"
+                            style="@style/itemEdittextTheme"
+                            android:hint="@string/select_str"
+                            android:inputType="text|textNoSuggestions"
+                            app:showIcon="true"
+                            tools:text="Dr Who" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentMemberNameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/bookAppointmentMemberNameTV"
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/member_name_str" />
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/bookAppointmentMemberNameET"
+                            style="@style/itemEdittextTheme"
+                            android:hint="@string/select_str"
+                            android:inputType="text|textNoSuggestions"
+                            app:showIcon="true" />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/bookAppointmentErrorMsgLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                        android:layout_marginTop="@dimen/edittext_margin_vertical"
+                        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                        android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                        android:minHeight="60dp"
+                        android:visibility="visible"
+                        app:cardCornerRadius="@dimen/common_card_radius"
+                        app:cardElevation="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@android:color/white"
+                            android:orientation="vertical"
+
+                            >
+
+                            <TextView
+                                android:id="@+id/bookAppointmentErrorMsgTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:gravity="center_horizontal"
+                                android:paddingStart="@dimen/edittext_margin_horizontal"
+                                android:paddingTop="@dimen/book_appointment_slot_top_padding"
+                                android:paddingEnd="@dimen/edittext_margin_horizontal"
+                                android:paddingBottom="@dimen/book_appointment_slot_top_padding"
+                                android:text="@string/book_appointment_provider_select_info"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/xx_small" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentVisitTypeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/bookAppointmentVisitTypeTV"
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/book_appointment_visittype_str" />
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/bookAppointmentVisitTypeET"
+                            style="@style/itemEdittextTheme"
+                            android:hint="@string/select_str"
+                            app:showIcon="true"
+
+                            />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/bookAppointmentTimeZoneTV"
+                        style="@style/itemEdittextHeadingTheme"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/open_sans_medium"
+                        android:textColor="@color/black87"
+                        android:visibility="gone"
+                        tools:text="hello" />
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentSlotLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/book_appointment_slot_str_heading" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                            android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                            android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                            app:cardCornerRadius="@dimen/common_card_radius"
+                            app:cardElevation="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/white"
+                                android:orientation="vertical"
+
+                                >
+
+                                <TextView
+                                    android:id="@+id/bookAppointmentVisitTypeSelectInfoTV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/open_sans_medium"
+                                    android:gravity="center_horizontal"
+                                    android:paddingStart="@dimen/edittext_margin_horizontal"
+                                    android:paddingTop="@dimen/book_appointment_slot_top_padding"
+                                    android:paddingEnd="@dimen/edittext_margin_horizontal"
+                                    android:paddingBottom="@dimen/book_appointment_slot_top_padding"
+                                    android:text="@string/book_appointment_visittype_select_info"
+                                    android:textColor="@color/black87"
+                                    android:textSize="@dimen/xx_small"
+                                    android:visibility="gone" />
+
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/bookAppointmentNavLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:id="@+id/bookAppointmentCalendarMonthTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/card_padding"
+                                        android:fontFamily="@font/open_sans_medium"
+                                        android:includeFontPadding="false"
+                                        android:padding="4dp"
+                                        android:textColor="@color/black87"
+                                        android:textSize="@dimen/medium"
+                                        app:layout_constraintBottom_toBottomOf="@+id/bkAppPreviousMonth"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="@+id/bkAppPreviousMonth"
+                                        tools:text="Mar 2021" />
+
+                                    <Button
+                                        android:id="@+id/bkAppNextMonth"
+                                        style="@style/rippleButtonStyle"
+                                        android:layout_width="@dimen/calendar_next_bt_width"
+                                        android:layout_height="@dimen/calendar_next_bt_height"
+                                        android:layout_marginEnd="@dimen/card_padding"
+                                        android:drawableEnd="@drawable/ic_arrow_back_accent"
+                                        android:padding="@dimen/card_padding_half"
+                                        android:rotation="180"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <Button
+                                        android:id="@+id/bkAppPreviousMonth"
+                                        style="@style/rippleButtonStyle"
+                                        android:layout_width="@dimen/calendar_next_bt_width"
+                                        android:layout_height="@dimen/calendar_next_bt_height"
+                                        android:drawableEnd="@drawable/ic_arrow_back_accent"
+                                        android:padding="@dimen/card_padding_half"
+                                        android:paddingTop="@dimen/card_padding_half"
+                                        android:paddingBottom="@dimen/card_padding_half"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toStartOf="@id/bkAppNextMonth"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <com.kizitonwose.calendarview.CalendarView
+                                    android:id="@+id/bookAppointmentCalendarView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/card_padding"
+                                    app:cv_dayViewResource="@layout/item_md_calendar"
+                                    app:cv_monthHeaderResource="@layout/item_calendar_week_heading"
+                                    app:cv_orientation="horizontal"
+                                    app:cv_scrollMode="paged" />
+
+                                <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/bookAppointmentSlotViewLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingBottom="@dimen/book_appointment_slot_top_padding">
+
+                                    <LinearLayout
+                                        android:id="@+id/bookAppointmentSlotButtonLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingTop="@dimen/card_padding"
+                                        android:weightSum="3"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <Button
+                                            android:id="@+id/bookAppointmentSlotMorningButton"
+                                            android:layout_width="0dp"
+                                            android:layout_height="36dp"
+                                            android:layout_marginStart="@dimen/book_appointment_slot_heading_button_horizontal_margin"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/item_book_appointment_slot_selected_button"
+                                            android:fontFamily="@font/open_sans_medium"
+                                            android:text="@string/book_appointment_slot_morning_str"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="@dimen/xx_small" />
+
+                                        <Button
+                                            android:id="@+id/bookAppointmentSlotNoonButton"
+                                            android:layout_width="0dp"
+                                            android:layout_height="36dp"
+                                            android:layout_marginStart="@dimen/book_appointment_slot_heading_button_horizontal_margin"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/item_book_appointment_slot_unselected_button"
+                                            android:fontFamily="@font/open_sans_medium"
+                                            android:text="@string/book_appointment_slot_noon_str"
+                                            android:textColor="@color/colorAccent"
+                                            android:textSize="@dimen/xx_small" />
+
+                                        <Button
+                                            android:id="@+id/bookAppointmentSlotEveningButton"
+                                            android:layout_width="0dp"
+                                            android:layout_height="36dp"
+                                            android:layout_marginStart="@dimen/book_appointment_slot_heading_button_horizontal_margin"
+                                            android:layout_marginEnd="@dimen/book_appointment_slot_heading_button_horizontal_margin"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/item_book_appointment_slot_unselected_button"
+                                            android:fontFamily="@font/open_sans_medium"
+                                            android:text="@string/book_appointment_slot_evening_str"
+                                            android:textColor="@color/colorAccent"
+                                            android:textSize="@dimen/xx_small" />
+                                    </LinearLayout>
+
+                                    <com.nex3z.flowlayout.FlowLayout
+                                        android:id="@+id/bookAppointmentSlotMorningLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/book_appointment_slot_spacing"
+                                        android:layout_marginTop="@dimen/card_padding_half"
+                                        android:layout_marginEnd="@dimen/book_appointment_slot_spacing"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/bookAppointmentSlotButtonLayout" />
+
+                                    <com.nex3z.flowlayout.FlowLayout
+                                        android:id="@+id/bookAppointmentSlotNoonLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/book_appointment_slot_spacing"
+                                        android:layout_marginTop="@dimen/card_padding_half"
+                                        android:layout_marginEnd="@dimen/book_appointment_slot_spacing"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/bookAppointmentSlotButtonLayout" />
+
+                                    <com.nex3z.flowlayout.FlowLayout
+                                        android:id="@+id/bookAppointmentSlotEveningLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/book_appointment_slot_spacing"
+                                        android:layout_marginTop="@dimen/card_padding_half"
+                                        android:layout_marginEnd="@dimen/book_appointment_slot_spacing"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/bookAppointmentSlotButtonLayout" />
+
+                                    <TextView
+                                        android:id="@+id/bookAppointmentSlotNoDataTV"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="70dp"
+                                        android:fontFamily="@font/open_sans"
+                                        android:gravity="center"
+                                        android:text="@string/no_slots_available"
+                                        android:textColor="@color/black87"
+                                        android:textSize="@dimen/xx_small"
+                                        app:layout_constraintTop_toBottomOf="@+id/bookAppointmentSlotButtonLayout"
+                                        tools:visibility="gone" />
+
+                                    <LinearLayout
+                                        android:id="@+id/bookAppointmentSlotWaitingListLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="90dp"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        app:layout_constraintTop_toBottomOf="@+id/bookAppointmentSlotButtonLayout">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/open_sans"
+                                            android:gravity="center"
+                                            android:text="@string/no_slots_available"
+                                            android:textColor="@color/black87"
+                                            android:textSize="@dimen/xx_small" />
+
+                                        <CheckBox
+                                            android:id="@+id/bookAppointmentSlotWaitingLisCheckbox"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="-4dp"
+                                            android:layout_marginTop="@dimen/card_padding_half"
+                                            android:gravity="center"
+                                            android:paddingStart="0dp"
+                                            android:paddingEnd="0dp"
+                                            android:text="@string/book_appointment_add_wait_list_info_txt"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/bookAppointmentSlotButtonLayout" />
+                                    </LinearLayout>
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <!--
+                                                Select a visittype in above selection box to book a slot
+                        -->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentDateTimeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/bookAppointmentDatePreferenceLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/itemEdittextHeadingTheme"
+                                android:text="@string/book_appointment_date_preference_str_heading" />
+
+                            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                                android:id="@+id/bookAppointmentDatePreferenceET"
+                                style="@style/itemEdittextTheme"
+                                android:hint="@string/book_appointment_date_preference_str"
+                                android:text="@string/book_appointment_date_pref_any_str"
+                                app:showIcon="true" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/bookAppointmentDateLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/itemEdittextHeadingTheme"
+                                android:text="@string/book_appointment_date_select_str" />
+
+                            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                android:id="@+id/bookAppointmentDateET"
+                                style="@style/itemEdittextTheme"
+                                android:drawableEnd="@drawable/ic_calander"
+                                android:hint="@string/select_str"
+                                app:setBgTransparent="false" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/bookAppointmentTimePreferenceLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/itemEdittextHeadingTheme"
+                                android:text="@string/book_appointment_time_str" />
+
+                            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                                android:id="@+id/bookAppointmentTimePreferenceET"
+                                style="@style/itemEdittextTheme"
+                                android:hint="@string/book_appointment_time_preference_str"
+                                android:text="@string/book_appointment_time_pref_any_str"
+                                app:showIcon="true" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/bookAppointmentStartTimeLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/itemEdittextHeadingTheme"
+                                android:text="@string/book_appointment_time_pref_range_start_time_str" />
+
+                            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                android:id="@+id/bookAppointmentStartTimeET"
+                                style="@style/itemEdittextTheme"
+                                android:drawableEnd="@drawable/ic_clock"
+                                android:hint="@string/book_appointment_time_select_str"
+                                app:setBgTransparent="false" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/bookAppointmentEndTimeLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/itemEdittextHeadingTheme"
+                                android:text="@string/book_appointment_time_pref_range_end_time_str" />
+
+                            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                android:id="@+id/bookAppointmentEndTimeET"
+                                style="@style/itemEdittextTheme"
+                                android:drawableEnd="@drawable/ic_clock"
+                                android:hint="@string/book_appointment_time_select_str"
+                                app:setBgTransparent="false" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentTypeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/bookAppointmentTypeTV"
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/book_appointment_type_str" />
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/bookAppointmentTypeET"
+                            style="@style/itemEdittextTheme"
+                            android:hint="@string/select_str"
+                            android:inputType="textCapWords"
+                            app:showIcon="true" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentReasonLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/bookAppointmentReasonTV"
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/book_appointment_reason_for_appointment_str" />
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/bookAppointmentReasonET"
+                            style="@style/itemEdittextMultiLineTheme"
+                            android:layout_height="wrap_content"
+                            android:maxLength="@integer/bookAppointmentReasonMaxLength"
+                            android:minHeight="@dimen/edittext_height"
+                            app:setBgTransparent="false" />
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/bookAppointmentSelectedSlotDateCV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                        android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                        android:visibility="gone"
+                        app:cardCornerRadius="@dimen/common_card_radius"
+                        app:cardElevation="1dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/card_padding"
+                            android:layout_marginTop="@dimen/card_padding"
+                            android:layout_marginBottom="@dimen/card_padding">
+
+                            <ImageView
+                                android:id="@+id/bookAppointmentSelectedSlotIV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:paddingRight="@dimen/card_padding_half"
+                                android:src="@drawable/ic_book_appointment_tick"
+                                android:textAlignment="center"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/bookAppointmentSelectedSlotTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/selected_slot"
+                                android:theme="@style/selectedSlotTextViewStyle"
+                                app:layout_constraintStart_toEndOf="@+id/bookAppointmentSelectedSlotIV"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/bookAppointmentSelectedSlotDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Wednesday, May 11, 2022 11:00 AM"
+                                android:textColor="#DB1A1918"
+                                android:theme="@style/calendarTextViewStyle"
+                                app:layout_constraintStart_toEndOf="@+id/bookAppointmentSelectedSlotIV"
+                                app:layout_constraintTop_toBottomOf="@+id/bookAppointmentSelectedSlotTV">
+
+                            </TextView>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentPaymentAmtLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/bookAppointmentPaymentAmtLabel"
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/book_appointment_payment_amt_str" />
+
+                        <TextView
+                            android:id="@+id/bookAppointmentPaymentAmtTV"
+                            style="@style/itemEdittextTheme"
+                            android:background="@drawable/item_edittext_disable_bg"
+                            android:gravity="center_vertical"
+                            tools:text="Rs 500" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/bookAppointmentCardSelectionToggle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                        android:layout_marginTop="@dimen/edittext_margin_horizontal"
+                        android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                        android:layout_marginBottom="@dimen/edittext_margin_horizontal"
+                        android:theme="@style/MaterialAppTheme"
+                        android:visibility="gone"
+                        app:selectionRequired="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/bookAppointmentCardOnFile"
+                            style="@style/ToggleButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/saved_card" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/bookAppointmentNewCard"
+                            style="@style/ToggleButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/card_add_str" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentChooseCardLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/bookAppointmentChooseCardTV"
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/choose_card" />
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/bookAppointmentChooseCardET"
+                            style="@style/itemEdittextTheme"
+                            android:hint="@string/select_str"
+                            android:inputType="text|textNoSuggestions"
+                            app:showIcon="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bookAppointmentCardLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/edittext_margin_vertical"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/bookAppointmentCardTV"
+                            style="@style/itemEdittextHeadingTheme"
+                            android:text="@string/book_appointment_card_detail_str" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/edittext_margin_horizontal"
+                            android:layout_marginEnd="@dimen/edittext_margin_horizontal"
+                            android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                            android:paddingTop="@dimen/book_appointment_slot_top_padding"
+                            android:paddingBottom="@dimen/book_appointment_slot_top_padding"
+                            app:cardCornerRadius="@dimen/common_card_radius"
+                            app:cardElevation="@dimen/common_card_elevation">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                    android:id="@+id/bookAppointmentCardNameET"
+                                    style="@style/itemCardDetailEdittextTheme"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/book_appointment_card_details_height"
+                                    android:layout_marginStart="@dimen/card_padding"
+                                    android:layout_marginTop="@dimen/card_padding"
+                                    android:layout_marginEnd="@dimen/card_padding"
+                                    android:hint="@string/payment_card_name_hint"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textCapWords|text|textNoSuggestions"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:setBgTransparent="false" />
+
+                                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                    android:id="@+id/bookAppointmentCardNumberET"
+                                    style="@style/itemCardDetailEdittextTheme"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/book_appointment_card_details_height"
+                                    android:layout_marginStart="@dimen/card_padding"
+                                    android:layout_marginTop="@dimen/card_padding"
+                                    android:layout_marginEnd="@dimen/card_padding"
+                                    android:hint="@string/payment_card_number_hint"
+                                    android:inputType="number"
+                                    android:maxLength="19"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/bookAppointmentCardNameET"
+                                    app:setBgTransparent="false" />
+
+                                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                    android:id="@+id/bookAppointmentCardNickNameET"
+                                    style="@style/itemCardDetailEdittextTheme"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/book_appointment_card_details_height"
+                                    android:layout_marginStart="@dimen/card_padding"
+                                    android:layout_marginTop="@dimen/card_padding_half"
+                                    android:layout_marginEnd="@dimen/card_padding"
+                                    android:layout_marginBottom="@dimen/card_padding_half"
+                                    android:hint="@string/card_nick_name"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="text|textNoSuggestions|textCapWords"
+                                    android:maxLines="1"
+                                    app:layout_constraintBottom_toTopOf="@+id/bookAppointmentCardExpiryLayout"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/bookAppointmentCardNumberET"
+                                    app:setBgTransparent="false" />
+
+                                <LinearLayout
+                                    android:id="@+id/bookAppointmentCardExpiryLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="@dimen/card_padding"
+                                    android:weightSum="2"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/bookAppointmentCardNickNameET">
+
+                                    <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                                        android:id="@+id/bookAppointmentCardExpMonthET"
+                                        style="@style/itemCardDetailEdittextTheme"
+                                        android:layout_width="0dp"
+                                        android:layout_height="@dimen/book_appointment_card_details_height"
+                                        android:layout_marginStart="@dimen/card_padding"
+                                        android:layout_marginEnd="@dimen/card_padding"
+                                        android:layout_weight="1"
+                                        android:hint="@string/payment_card_expiry_month_hint"
+                                        android:inputType="number"
+                                        app:setBgTransparent="false" />
+
+                                    <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                                        android:id="@+id/bookAppointmentCardExpYearET"
+                                        style="@style/itemCardDetailEdittextTheme"
+                                        android:layout_width="0dp"
+                                        android:layout_height="@dimen/book_appointment_card_details_height"
+                                        android:layout_marginEnd="@dimen/card_padding"
+                                        android:layout_weight="1"
+                                        android:hint="@string/payment_card_expiry_year_hint"
+                                        android:inputType="number"
+                                        app:setBgTransparent="false" />
+                                </LinearLayout>
+
+                                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                    android:id="@+id/bookAppointmentCardCvvET"
+                                    style="@style/itemCardDetailEdittextTheme"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/book_appointment_card_details_height"
+                                    android:layout_margin="@dimen/card_padding"
+                                    android:hint="@string/payment_card_cvv_hint"
+                                    android:inputType="number"
+                                    android:maxLength="4"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/bookAppointmentCardExpiryLayout"
+                                    app:layout_constraintWidth_percent=".464"
+                                    app:setBgTransparent="false" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp" />
+                </LinearLayout>
+            </com.charm.phr.mphr.ui.components.MDScrollView>
+
+            <Button
+                android:id="@+id/bookAppointmentBtn"
+                style="@style/mdButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/item_button_bg"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/book_appointment_request_str"
+                android:textColor="@color/textColorForColorPrimaryBg"
+                android:textSize="@dimen/large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bookAppointmentScrollView"
+                tools:text="Pay $ 22" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/bookAppointmentProgress"
+            layout="@layout/progress_bar_for_white_bg" />
+
+        <include
+            android:id="@+id/bookAppointmentErrorPage"
+            layout="@layout/layout_error_page"
+            android:visibility="gone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

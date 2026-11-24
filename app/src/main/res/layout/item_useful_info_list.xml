@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/card_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_margin_vertical"
+        android:animateLayoutChanges="true"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/usefulInfoListConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_ripple_white_bg"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding">
+
+
+            <TextView
+                android:id="@+id/usefulInfoListDateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:textAppearance="@style/dateDisplayTxtAppearance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Jun 11, 2000" />
+
+            <TextView
+                android:id="@+id/usefulInfoListCategoryTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans_medium"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/usefulInfoListDateTV"
+                tools:text="Tuesday, September 24" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/usefulInfoListPracticeLayout"
+                app:layout_constraintStart_toStartOf="@id/usefulInfoListCategoryTV"
+                app:layout_constraintTop_toBottomOf="@id/usefulInfoListCategoryTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="@dimen/card_padding"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/usefulInfoListPracticeLabel"
+                    android:textAppearance="@style/prescriptionListMoreLabelTxtAppearance"
+                    android:text="@string/practice_str"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/usefulInfoListPracticeValue"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textAppearance="@style/prescriptionListMoreValueTxtAppearance"
+                    android:layout_marginStart="@dimen/prescription_list_more_value_start_margin"
+                    tools:text="10 Jan, 1998"
+                    />
+
+            </LinearLayout>
+
+
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/usefulInfoListReasonTV"
+                android:textColor="@color/black87"
+                android:fontFamily="@font/open_sans"
+                android:textSize="@dimen/xx_small"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/usefulInfoListSubjectTV"
+                tools:text="Reason for usefulInfo"/>-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

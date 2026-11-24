@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reminderHistoryMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.reminder.reminder_history.ReminderHistoryActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/reminderHistoryToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/reminderHistoryBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/reminderHistoryToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:text="@string/reminder_str"
+            android:textAppearance="@style/toolbarText" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/reminderHistoryDrugDetailCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/common_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/common_margin_vertical"
+        app:cardCornerRadius="@dimen/half_card_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reminderHistoryToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/reminderHistoryModuleItemNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/card_padding"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:fontFamily="@font/open_sans_medium"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Ranitidine 150mg" />
+
+
+            <TextView
+                android:id="@+id/reminderHistoryDrugDirectionTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:paddingEnd="@dimen/card_padding"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/reminderHistoryModuleItemNameTV"
+                app:layout_constraintTop_toBottomOf="@+id/reminderHistoryModuleItemNameTV"
+                tools:text="1 tablet(s) 3 times a day before a meal for Everyday, oral route" />
+
+            <TextView
+                android:id="@+id/reminderHistoryScheduledTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans_light"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:paddingEnd="@dimen/card_padding"
+                android:paddingBottom="@dimen/card_padding"
+                android:text="@string/scheduled_str"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintStart_toStartOf="@+id/reminderHistoryModuleItemNameTV"
+                app:layout_constraintTop_toBottomOf="@+id/reminderHistoryDrugDirectionTV" />
+
+            <TextView
+                android:id="@+id/reminderHistoryStartDateTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans_bold"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:paddingEnd="@dimen/card_padding"
+                android:paddingBottom="@dimen/card_padding"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintStart_toEndOf="@+id/reminderHistoryScheduledTV"
+                app:layout_constraintTop_toBottomOf="@+id/reminderHistoryDrugDirectionTV"
+                tools:text="Jan 02,2023" />
+
+            <TextView
+                android:id="@+id/reminderHistoryToTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans_light"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:paddingEnd="@dimen/card_padding"
+                android:paddingBottom="@dimen/card_padding"
+                android:text="@string/to_str"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintStart_toEndOf="@+id/reminderHistoryStartDateTV"
+                app:layout_constraintTop_toBottomOf="@+id/reminderHistoryDrugDirectionTV" />
+
+            <TextView
+                android:id="@+id/reminderEndDateTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans_bold"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:paddingEnd="@dimen/card_padding"
+                android:paddingBottom="@dimen/card_padding"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintStart_toEndOf="@+id/reminderHistoryToTV"
+                app:layout_constraintTop_toBottomOf="@+id/reminderHistoryDrugDirectionTV"
+                tools:text="Jan 02,2023" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/reminderHistoryDetailCV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/common_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/common_margin_vertical"
+        app:cardCornerRadius="@dimen/half_card_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reminderHistoryDrugDetailCV">
+
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:fillViewport="true">-->
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+               >
+
+                <LinearLayout
+                    android:id="@+id/reminderHistoryDayLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/reminderHistoryTimeLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/common_margin_horizontal"
+                        android:layout_marginTop="@dimen/common_margin_vertical_half"
+                        android:layout_marginEnd="@dimen/common_margin_horizontal"
+                        android:layout_marginBottom="@dimen/common_margin_vertical_half"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="60dp"
+                            android:layout_height="20dp"/>
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/reminderHistoryDayRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </HorizontalScrollView>
+<!--        </ScrollView>-->
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

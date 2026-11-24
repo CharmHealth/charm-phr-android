@@ -1,0 +1,15 @@
+# Template for secure.properties
+# Copy this file to secure.properties and fill in the values for your environment.
+# secure.properties is gitignored and must NEVER be committed.
+
+# CharmAuth sign-in (charm-mobile-auth-sdk). None of these is a secret; they differ per environment.
+# CHIS's native-app issuer, its https origin exactly as CHIS's metadata states it (no trailing slash).
+charmAuth.issuer=
+# The app's client id, registered in CHIS's app registry (chis_apps).
+charmAuth.clientId=
+# The API identifier the access token is for.
+charmAuth.audience=
+# Extra scopes, space-separated, added to: openid profile email offline_access.
+charmAuth.additionalScopes=
+# Comma-separated API origins the token may be sent to (default: https://phr2.charmtracker.com).
+charmAuth.apiOrigins=

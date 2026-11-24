@@ -1,0 +1,486 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.plugin.compose'
+    id 'apptics-plugin'
+    id 'project-report'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+}
+
+android {
+
+    namespace 'com.charm.phr.mphr'
+    compileSdk 37
+
+    defaultConfig {
+        applicationId "com.charm.phr"
+        minSdkVersion 24
+        targetSdkVersion 37
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        ndk.abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86', 'x86_64'
+
+        resourceConfigurations += ['en']
+
+        // CharmAuth (charm-mobile-auth-sdk) settings. Per environment and not secret; set them in
+        // secure.properties (or gradle.properties / -P). See docs/setup.md.
+        def charmAuth = { String key, String fallback = "" ->
+            (rootProject.ext.secrets["charmAuth.$key"] ?: project.findProperty("charmAuth.$key") ?: fallback).toString()
+        }
+        buildConfigField "String", "CHARM_AUTH_ISSUER", "\"${charmAuth('issuer')}\""
+        buildConfigField "String", "CHARM_AUTH_CLIENT_ID", "\"${charmAuth('clientId')}\""
+        buildConfigField "String", "CHARM_AUTH_AUDIENCE", "\"${charmAuth('audience')}\""
+        // Space-separated scopes added to openid profile email offline_access.
+        buildConfigField "String", "CHARM_AUTH_ADDITIONAL_SCOPES", "\"${charmAuth('additionalScopes')}\""
+        // Comma-separated origins (scheme://host[:port]) the access token may be sent to.
+        buildConfigField "String", "CHARM_AUTH_API_ORIGINS", "\"${charmAuth('apiOrigins', 'https://phr2.charmtracker.com')}\""
+    }
+
+    signingConfigs {
+        config {
+            storeFile file("charm-mehr-android-release-key.jks")
+            storePassword System.getenv("CHARM_KSTOREPWD")
+            keyPassword System.getenv("CHARM_KEYPWD")
+            keyAlias System.getenv("CHARM_RELKEY")
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            // applicationIdSuffix ".development"
+            versionNameSuffix "-DEBUG"
+            ndk {
+                // Overriding abiFilters for debug build type
+                abiFilters "arm64-v8a"
+            }
+        }
+    }
+
+
+    flavorDimensions "version"
+
+    productFlavors {
+
+        ext.version_code = 10121
+        ext.version_name = '1.6.6'
+
+
+        common {
+            dimension "version"
+            applicationIdSuffix = ".mphr"
+            versionCode = version_code
+            versionName = "$version_name"
+            buildConfigField "boolean", "IS_CUSTOM_APP", "false"
+            buildConfigField "boolean", "IS_THALASSEMIA", "false"
+            buildConfigField "boolean", "IS_VIDEO_CALL_ENABLED", "true"
+            buildConfigField "boolean", "IS_PUSH_NOTIFICATION_ENABLED", "true"
+            buildConfigField "boolean", "IS_IN_APP_RATINGS_ENABLED", "true"
+            buildConfigField "boolean", "IS_OAUTH_ENABLED", "true"
+        }
+
+        dev {
+            dimension "version"
+            applicationId = "com.charm.phr.mphr.development"
+            versionCode = version_code
+            versionName = "$version_name"
+            buildConfigField "boolean", "IS_CUSTOM_APP", "false"
+            buildConfigField "boolean", "IS_THALASSEMIA", "false"
+            buildConfigField "boolean", "IS_VIDEO_CALL_ENABLED", "true"
+            buildConfigField "boolean", "IS_PUSH_NOTIFICATION_ENABLED", "true"
+            buildConfigField "boolean", "IS_IN_APP_RATINGS_ENABLED", "true"
+            buildConfigField "boolean", "IS_OAUTH_ENABLED", "true"
+        }
+
+        // Place thalassemia-specific google-services.json in app/src/thalassemia/google-services.json
+        thalassemia {
+            dimension "version"
+            applicationId = "com.vtitan.thalassure"
+            versionCode = 10000
+            versionName = "0.0.1"
+            buildConfigField "boolean", "IS_CUSTOM_APP", "false"
+            buildConfigField "boolean", "IS_THALASSEMIA", "true"
+            buildConfigField "boolean", "IS_VIDEO_CALL_ENABLED", "false"
+            buildConfigField "boolean", "IS_PUSH_NOTIFICATION_ENABLED", "false"
+            buildConfigField "boolean", "IS_IN_APP_RATINGS_ENABLED", "false"
+            buildConfigField "boolean", "IS_OAUTH_ENABLED", "true"
+        }
+
+//        ayusurance {
+//            dimension "version"
+//            applicationId = "com.medicalmine.phr.customBrandedApp059"
+//            versionCode = version_code
+//            versionName = "$version_name"
+//        }
+//
+//        mabel {
+//            dimension "version"
+//            applicationId = "com.medicalmine.phr.customBrandedApp061"
+//            versionCode = version_code
+//            versionName = "$version_name"
+//        }
+//
+//        emaruthuvam {
+//            dimension "version"
+//            applicationId = "com.medicalmine.phr.customBrandedApp094"
+//            versionCode = version_code
+//            versionName = "$version_name"
+//        }
+//
+        neuroConnect {
+            dimension "version"
+            applicationId = "com.medicalmine.phr.customBrandedApp111"
+            versionCode = version_code
+            versionName = "$version_name"
+            buildConfigField "boolean", "IS_CUSTOM_APP", "true"
+            buildConfigField "boolean", "IS_THALASSEMIA", "false"
+            buildConfigField "boolean", "IS_VIDEO_CALL_ENABLED", "true"
+            buildConfigField "boolean", "IS_PUSH_NOTIFICATION_ENABLED", "true"
+            buildConfigField "boolean", "IS_IN_APP_RATINGS_ENABLED", "true"
+            buildConfigField "boolean", "IS_OAUTH_ENABLED", "true"
+        }
+//
+//        alta {
+//            dimension "version"
+//            applicationId = "com.medicalmine.phr.customBrandedApp137"
+//            versionCode = version_code
+//            versionName = "$version_name"
+//        }
+//
+//        arisePortal {
+//            dimension "version"
+//            applicationId = "com.medicalmine.phr.customBrandedApp128"
+//            versionCode = version_code
+//            versionName = "$version_name"
+//        }
+    }
+
+    sourceSets {
+
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java/modal', 'src/main/libs']
+            res { srcDirs 'src/main/res', 'src/main/res/zoom' }
+        }
+
+        thalassemia { res.srcDirs = ['src/thalassemia/res', 'src/thalassemia/res/'] }
+
+//        ayusurance { res.srcDirs = ['src/ayusurance/res', 'src/ayusurance/res/'] }
+//
+//        mabel { res.srcDirs = ['src/mabel/res', 'src/mabel/res/'] }
+//
+//        emaruthuvam { res.srcDirs = ['src/emaruthuvam/res', 'src/emaruthuvam/res/'] }
+//
+        neuroConnect { res.srcDirs = ['src/neuroConnect/res', 'src/neuroConnect/res/'] }
+//
+//        alta { res.srcDirs = ['src/alta/res', 'src/alta/res/'] }
+//
+//        arisePortal { res.srcDirs = ['src/arisePortal/res', 'src/arisePortal/res/'] }
+//
+
+        androidTest.assets.srcDirs +=
+                files("$projectDir/schemas".toString())
+
+    }
+
+    bundle {
+        abi { enableSplit = true }
+        density { enableSplit = true }
+        language { enableSplit = true }
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+        compose true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    // composeOptions removed — Kotlin 2.x uses org.jetbrains.kotlin.plugin.compose instead
+    packagingOptions {
+        jniLibs {
+            pickFirsts += ['**/*.so']
+        }
+        resources {
+            excludes += ['**/*.md']
+        }
+    }
+
+
+}
+
+// CharmAuth redirect: <applicationId>:/oauth2/callback, so every flavor gets its own scheme.
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        variant.manifestPlaceholders.put("charmAuthRedirectScheme", variant.applicationId)
+    }
+}
+
+// Warn (the app reports the details at launch) when CharmAuth isn't configured.
+['issuer', 'clientId'].each { key ->
+    if (!(rootProject.ext.secrets["charmAuth.$key"] ?: project.findProperty("charmAuth.$key"))) {
+        logger.warn("charmAuth.$key is not set (secure.properties): sign-in will report the missing setting.")
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+    }
+}
+
+afterEvaluate {
+    tasks.matching {
+        (it.name.contains("Thalassemia") || it.name.contains("NeuroConnect")) && it.name.contains("GoogleServices")
+    }.configureEach {
+        enabled = false
+    }
+}
+
+
+dependencies {
+
+
+    //Added while creating project
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //Zoom libs
+    implementation project(':charmVideoLib')
+    // CharmHealth sign-in (git submodule charm-mobile-auth-sdk, built by :charm-mobile-auth)
+    implementation project(':charm-mobile-auth')
+    // CharmAuthInterceptor is an OkHttp interceptor; the app brings OkHttp for its API client.
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+//    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10'
+    // kotlin-stdlib is auto-added by the Kotlin 2.x Gradle plugin
+
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.1'
+    implementation 'com.google.android.play:review-ktx:2.0.1'
+    implementation 'androidx.test:core-ktx:1.5.0'
+    implementation 'com.google.firebase:firebase-messaging:25.0.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    testImplementation 'junit:junit:4.13.2'
+
+    //Test case
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+    androidTestImplementation 'androidx.test:core:1.5.0'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-web:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-idling-resource:3.5.1'
+    testImplementation 'org.mockito:mockito-core:4.3.1'
+    testImplementation 'com.google.truth:truth:1.1.3'
+    //
+
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.percentlayout:percentlayout:1.0.0' // ViewModel and LiveData
+    kapt 'androidx.lifecycle:lifecycle-compiler:2.9.1'
+    implementation 'androidx.preference:preference:1.1.0'
+
+    //CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    //Room
+    implementation 'androidx.room:room-runtime:2.5.2'
+    kapt 'androidx.room:room-compiler:2.5.2'
+
+    //KTX
+    implementation 'androidx.core:core-ktx:1.8.0'
+
+    //Dagger
+    def dagger = "2.56.2"
+    implementation "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+//    implementation 'com.google.dagger:dagger-android:2.15'
+    kapt "com.google.dagger:dagger-android-processor:$dagger"
+    implementation "com.google.dagger:dagger-android-support:$dagger"
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //google-gson for Retrofit
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Joda date-time
+    implementation 'net.danlew:android.joda:2.9.9.2'
+
+    //Picasso - Image loader
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+    //Pdf viewer
+//    implementation 'com.github.barteksc:android-pdf-viewer:2.8.1'
+
+    //Flow Layout
+    implementation 'com.nex3z:flow-layout:1.1.0'
+
+
+//    implementation 'com.airbnb.android:lottie:3.3.1'
+
+    implementation("com.github.gcacace:signature-pad:1.2.1")
+
+
+    //Razorpay payment
+    implementation 'com.razorpay:checkout:1.6.39'
+
+    implementation 'androidx.work:work-runtime:2.9.0'
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'
+
+    // no need to mention the versions of apptics modules.
+    implementation 'com.zoho.apptics:apptics-analytics'
+    implementation 'com.zoho.apptics:apptics-crash-tracker'
+    implementation 'com.zoho.apptics:apptics-appupdates'
+    implementation 'com.zoho.apptics:apptics-ratings'
+
+/*
+    implementation 'com.opentok.android:opentok-android-sdk:2.16.6'
+*/
+
+    //Crop and rotate image(if we want to use version 2.8, then we need update our project to Android X)
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
+
+    //MPAndroidChart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'com.android.installreferrer:installreferrer:2.1'
+
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+    implementation 'com.github.kizitonwose:CalendarView:1.0.4'
+
+    implementation("org.greenrobot:eventbus:3.1.1")
+
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
+
+    implementation("androidx.databinding:viewbinding:7.1.2")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.1") {
+        exclude group: 'org.jetbrains.kotlin'
+    }
+
+    //region zoom dependencies (might also contains common android dependencies
+    implementation "androidx.security:security-crypto:1.1.0-alpha03"
+    implementation "com.google.crypto.tink:tink-android:1.5.0"
+    implementation "com.google.android.exoplayer:exoplayer-core:2.17.1"
+    implementation "com.google.android.exoplayer:exoplayer-ui:2.17.1"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation "androidx.appcompat:appcompat:1.3.1"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.0"
+    implementation "com.google.android.material:material:1.4.0"
+    implementation "com.google.android:flexbox:2.0.1"
+    implementation "androidx.multidex:multidex:2.0.0"
+    implementation "com.google.code.gson:gson:2.9.1"
+    implementation "com.github.bumptech.glide:annotations:4.11.0"
+    implementation "com.github.bumptech.glide:glide:4.11.0"
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "com.airbnb.android:lottie:4.0.0"
+    implementation "androidx.window:window:1.0.0"
+    implementation "androidx.window:window-java:1.0.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.7.20"
+    implementation "androidx.core:core-ktx:1.7.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
+    //endregion
+
+    //Coroutines
+
+    implementation 'jp.wasabeef:richeditor-android:2.0.0'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0'
+
+    implementation files('libs/zoho_android_applock.aar')
+//    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+    implementation platform('com.zoho.apptics:apptics-bom:0.3.6.2') {
+        exclude group: 'android.arch.work', module: 'work-runtime'
+    }
+
+    implementation 'androidx.biometric:biometric:1.2.0-alpha05'
+
+    implementation 'com.zoho.apptics:apptics-logger'
+
+    def composeBom = platform('androidx.compose:compose-bom:2025.10.01')
+    implementation composeBom
+    // Material Design 3
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.material:material-icons-core'
+
+
+    implementation 'androidx.activity:activity-compose:1.10.1'
+    implementation 'androidx.activity:activity-ktx:1.6.1'
+
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+
+    //for db encryption
+    implementation 'net.zetetic:sqlcipher-android:4.7.2@aar'
+    implementation 'androidx.sqlite:sqlite:2.2.0'
+
+    implementation "io.coil-kt:coil-compose:2.3.0"
+    implementation "io.coil-kt:coil-gif:2.3.0"
+
+    implementation "androidx.compose.runtime:runtime-livedata:1.0.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+
+    implementation 'com.google.android:flexbox:2.0.1'
+    implementation 'com.airbnb.android:lottie:4.0.0'
+
+    implementation 'androidx.browser:browser:1.6.0'
+
+    implementation 'io.github.afreakyelf:Pdf-Viewer:2.1.1'
+
+}
+
+
+/**
+ * Run this task for only for local build "Do Not Uncomment and check-in"
+ */
+
+//def downloadFile(String fileUrl, String destinationPath) {
+//    def file = new File(destinationPath)
+//    if (!file.exists()) {
+//        println "Downloading ${fileUrl} to ${destinationPath}"
+//        file.withOutputStream { out ->
+//            new URL(fileUrl).withInputStream { from -> out << from }
+//        }
+//        println "Downloaded ${fileUrl} successfully."
+//    } else {
+//        println "File already exists at ${destinationPath}."
+//    }
+//}
+//
+//task downloadZoomDependencies {
+//    doLast {
+//        def url = "https://cm-server.csez.zohocorpin.com/internal_downloads/medicalmine/Sep_06_2024/mobilertc/mobilertc.aar"
+//        def destination = "${projectDir.parentFile}/mobilertc/mobilertc.aar"
+//        downloadFile(url, destination)
+//    }
+//}
+//
+//preBuild.dependsOn downloadZoomDependencies

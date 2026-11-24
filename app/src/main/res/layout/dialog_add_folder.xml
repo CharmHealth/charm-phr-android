@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addDocumentFolderDialogLayout"
+    android:layout_width="500dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/addDocumentFolderDialogHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medication_refill_margins"
+            android:layout_marginTop="@dimen/medication_refill_margins"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/document_new_folder_txt"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+            android:id="@+id/addDocumentFolderDialogNameET"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="@dimen/medication_refill_margins"
+            android:layout_marginTop="@dimen/medication_refill_margins"
+            android:layout_marginEnd="@dimen/medication_refill_margins"
+            android:background="@drawable/item_medication_refill_reason_et_bg"
+            android:fontFamily="@font/open_sans"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addDocumentFolderDialogHeading"
+            app:setBgTransparent="false" />
+
+
+        <TextView
+            android:id="@+id/addDocumentFolderCreateBtn"
+            android:layout_width="93dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="@dimen/medication_refill_margins"
+            android:layout_marginBottom="@dimen/medication_refill_margins"
+            android:background="@drawable/item_ripple_refill_buttons"
+            android:fontFamily="@font/open_sans_medium"
+            android:gravity="center"
+            android:text="@string/document_create_txt"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/addDocumentFolderDialogNameET"
+            app:layout_constraintTop_toBottomOf="@id/addDocumentFolderDialogNameET" />
+
+        <TextView
+            android:id="@+id/addDocumentFolderCancelBtn"
+            android:layout_width="93dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="@dimen/medication_refill_margins"
+            android:layout_marginBottom="@dimen/medication_refill_margins"
+            android:background="@drawable/item_ripple_refill_buttons"
+            android:fontFamily="@font/open_sans_medium"
+            android:gravity="center"
+            android:text="@string/cancel_str"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/addDocumentFolderCreateBtn"
+            app:layout_constraintTop_toBottomOf="@id/addDocumentFolderDialogNameET" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

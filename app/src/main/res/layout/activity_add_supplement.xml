@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addSupplementRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.prescription.add_supplement.AddSupplementActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/addSupplementToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/addSupplementBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/addSupplementToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/supplement_add_str"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/addSupplementDeleteBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete_white"
+            android:visibility="gone" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addSupplementToolbar">
+
+
+        <include
+            android:id="@+id/addSupplementProgress"
+            layout="@layout/progress_bar_for_white_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/addSupplementErrorPage"
+            layout="@layout/layout_error_page"
+            android:visibility="gone" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addSupplementMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:id="@+id/addSupplementScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/button_margin"
+                app:layout_constraintBottom_toTopOf="@id/addSupplementBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addSupplementPracticeLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addSupplementPracticeET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/practice_name_str" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addSupplementNameLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+
+                            android:id="@+id/addSupplementNameET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:completionThreshold="1"
+                            android:dropDownAnchor="@id/addSupplementNameLayout"
+                            android:hint="@string/supplement_name_str"
+                            android:maxLength="@integer/addSupplementNameMaxLength"
+
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/addSupplementGuideLine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent=".5" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/addSupplementNoOfIntakeLayout"
+                            style="@style/itemTextInputLayoutTheme"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/textinput_edittext_height"
+                            android:layout_marginTop="@dimen/prescription_margin_top"
+                            android:layout_marginEnd="@dimen/edittext_margin_horizontal_half"
+                            android:layout_marginBottom="@dimen/prescription_margin_bottom"
+                            android:layout_weight="1"
+                            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                            app:layout_constraintBottom_toTopOf="@id/addSupplementManufacturerLayout"
+                            app:layout_constraintEnd_toStartOf="@id/addSupplementGuideLine"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+
+                            >
+
+                            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                android:id="@+id/addSupplementNoOfIntakeET"
+                                style="@style/itemTextInputEdittextTheme"
+                                android:hint="@string/medication_no_of_intake_string"
+                                android:inputType="number"
+                                android:maxLength="35"
+                                app:filterRegex="number" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                            android:id="@+id/addSupplementIntakeUnitLayout"
+                            style="@style/itemTextInputLayoutTheme"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/textinput_edittext_height"
+                            android:layout_marginStart="@dimen/edittext_margin_horizontal_half"
+                            android:layout_marginTop="@dimen/edittext_margin_vertical"
+                            android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                            android:layout_weight="1"
+                            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                            app:layout_constraintBottom_toTopOf="@id/addSupplementManufacturerLayout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/addSupplementGuideLine"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                                android:id="@+id/addSupplementIntakeUnitET"
+                                style="@style/itemTextInputEdittextTheme"
+                                android:hint="@string/medication_no_of_intake_unit_string"
+                                app:allowAutoSelect="true" />
+
+                        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/addSupplementManufacturerLayout"
+                            style="@style/itemTextInputLayoutTheme"
+                            android:layout_marginTop="@dimen/edittext_margin_vertical"
+                            android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                            app:layout_constraintBottom_toTopOf="@id/addSupplementDosageLayout"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/addSupplementIntakeUnitLayout">
+
+                            <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+
+                                android:id="@+id/addSupplementManufacturerET"
+                                style="@style/itemTextInputEdittextTheme"
+                                android:completionThreshold="1"
+                                android:dropDownAnchor="@id/addSupplementNameLayout"
+                                android:hint="@string/supplement_manufacturer_str"
+                                android:maxLength="@integer/addSupplementManufacturerMaxLength"
+
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/addSupplementDosageLayout"
+                            style="@style/itemTextInputLayoutTheme"
+                            android:layout_width="0dp"
+                            android:layout_marginTop="@dimen/prescription_margin_top"
+                            android:layout_marginEnd="@dimen/edittext_margin_horizontal_half"
+                            android:layout_marginBottom="@dimen/prescription_margin_bottom"
+                            android:layout_weight="1"
+                            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/addSupplementGuideLine"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/addSupplementManufacturerLayout">
+
+                            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                                android:id="@+id/addSupplementDosageET"
+                                style="@style/itemTextInputEdittextTheme"
+                                android:hint="@string/medication_dosage_string"
+                                android:inputType="number"
+                                android:maxLength="35"
+                                app:filterRegex="number" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                            android:id="@+id/addSupplementDosageUnitLayout"
+                            style="@style/itemTextInputLayoutTheme"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="@dimen/edittext_margin_horizontal_half"
+                            android:layout_marginTop="@dimen/edittext_margin_vertical"
+                            android:layout_marginBottom="@dimen/edittext_margin_vertical"
+                            android:layout_weight="1"
+                            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/addSupplementGuideLine"
+                            app:layout_constraintTop_toBottomOf="@id/addSupplementManufacturerLayout">
+
+                            <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                                android:id="@+id/addSupplementDosageUnitET"
+                                style="@style/itemTextInputEdittextTheme"
+                                android:hint="@string/medication_dosage_unit_string"
+                                app:allowAutoSelect="true" />
+
+                        </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addSupplementIntakeLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addSupplementIntakeET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/medication_intake_string"
+                            app:allowAutoSelect="true" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addSupplementIntakeWhenLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                            android:id="@+id/addSupplementIntakeWhenET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:hint="@string/medication_intake_when_string"
+                            app:allowAutoSelect="true" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addSupplementStartDateLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:mdShowDropdown="false">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addSupplementStartDateET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:drawableEnd="@drawable/ic_calander"
+                            android:hint="@string/medication_start_date_string" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                    <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                        android:id="@+id/addSupplementEndDateLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                        app:mdShowDropdown="false">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addSupplementEndDateET"
+                            style="@style/itemTextInputEdittextTheme"
+                            android:drawableEnd="@drawable/ic_calander"
+                            android:hint="@string/medication_end_date_string" />
+
+                    </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addSupplementCommentsLayout"
+                        style="@style/itemTextInputLayoutTheme"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/textinput_edittext_height"
+                        app:hintTextAppearance="@style/itemEdittextHintTxtAppearance">
+
+                        <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                            android:id="@+id/addSupplementCommentsET"
+                            style="@style/itemTextInputEdittextMultiLineTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:hint="@string/vaccine_comments_str"
+                            android:maxLength="@integer/addSupplementCommentMaxLength" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                style="@style/mdButtonStyle"
+                android:id="@+id/addSupplementBtn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/item_button_bg"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/supplement_add_str"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

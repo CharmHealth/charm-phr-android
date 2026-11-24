@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swaasaRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.swaasa.SwaasaActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/swaasaToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/swaasaBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/swaasaToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/swaasa_api_str"
+            android:textAppearance="@style/toolbarText" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/swaasaMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swaasaToolbar"
+        tools:visibility="gone">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/swaasaToolbarScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/button_margin"
+            app:layout_constraintBottom_toTopOf="@id/swaasaBtn"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/swaasaSelectParamLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_margin_horizontal"
+                    android:layout_marginTop="@dimen/card_padding"
+
+                    android:layout_marginEnd="@dimen/xx_small"
+                    app:cardCornerRadius="@dimen/common_card_radius"
+                    app:cardElevation="@dimen/common_card_elevation">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/swaasaSelectParamHeadingTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/edittext_padding"
+                            android:layout_marginTop="@dimen/edittext_padding"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:text="@string/symptoms_heading"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/xx_small"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/swaasaSelectParamSeparator"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/edittext_padding"
+                            android:background="#1A707070"
+                            app:layout_constraintTop_toBottomOf="@id/swaasaSelectParamHeadingTV" />
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/swaasaChipSelectGrp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/edittext_padding"
+
+                            android:paddingEnd="@dimen/edittext_padding"
+                            app:layout_constraintTop_toBottomOf="@id/swaasaSelectParamSeparator"
+
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/swaasaRecordAudioLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_margin_horizontal"
+                    android:layout_marginTop="@dimen/card_padding"
+                    android:layout_marginEnd="@dimen/xx_small"
+                    android:layout_marginBottom="@dimen/card_padding"
+                    app:cardCornerRadius="@dimen/common_card_radius"
+                    app:cardElevation="@dimen/common_card_elevation">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/swaasaRecordHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_padding"
+                            android:fontFamily="@font/open_sans_medium"
+                            android:text="@string/record_your_cough"
+                            android:textColor="@color/black87"
+                            android:textSize="@dimen/xx_small"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/swaasaRecordSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_padding_half"
+                            android:fontFamily="@font/open_sans"
+                            android:text="@string/record_desc"
+                            android:textColor="@color/black70"
+                            android:textSize="@dimen/xx_small"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/swaasaRecordHeading" />
+
+                        <ImageView
+                            android:id="@+id/swaasaRecordBtn"
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="24dp"
+                            android:background="@drawable/item_record_bg"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_mic"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/swaasaRecordSubtitle" />
+
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/swaasaRecordLoading"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginTop="24dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/swaasaRecordSubtitle"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/recording"
+                            app:lottie_repeatMode="restart" />
+
+
+                        <TextView
+                            android:id="@+id/swaasaRecordLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_padding_half"
+                            android:layout_marginBottom="@dimen/card_padding"
+                            android:fontFamily="@font/open_sans"
+                            android:text="@string/tap_the_icon_to_record"
+                            android:textColor="@color/black70"
+                            android:textSize="@dimen/xx_small"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/swaasaRecordBtn" />
+
+                        <View
+                            android:id="@+id/swaasaRecordAudioSeparator"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/edittext_padding"
+                            android:background="#1A707070"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@id/swaasaRecordSubtitle" />
+
+                        <com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout
+                            android:id="@+id/swaasaRecordAudioPausePlayLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/card_padding"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/swaasaRecordAudioSeparator"
+                            app:mdBackgroundColor="#F0F0F0">
+
+                            <ImageView
+                                android:id="@+id/swaasaPausePlayBtn"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="@dimen/card_padding"
+                                android:layout_marginTop="@dimen/card_padding"
+                                android:layout_marginBottom="@dimen/card_padding"
+                                android:src="@drawable/ic_play"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/swaasaRecordName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/card_padding"
+                                android:fontFamily="@font/open_sans_medium"
+                                android:text="@string/new_recording_txt"
+                                android:textColor="@color/black87"
+                                android:textSize="@dimen/xx_small"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/swaasaDeleteBtn"
+                                app:layout_constraintStart_toEndOf="@id/swaasaPausePlayBtn"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <ImageView
+                                android:id="@+id/swaasaDeleteBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/card_padding"
+                                android:layout_marginEnd="@dimen/card_padding"
+                                android:layout_marginBottom="@dimen/card_padding"
+                                android:src="@drawable/ic_delete_black"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </com.charm.phr.mphr.ui.components.MDmPHRConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            style="@style/mdButtonStyle"
+            android:id="@+id/swaasaBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/add_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/item_button_bg"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/submit_str"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/swaasaOtpScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swaasaToolbar">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/swaasa_otp_padding"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="@dimen/common_card_radius"
+            app:cardElevation="@dimen/common_card_elevation">
+
+
+            <LinearLayout
+                android:id="@+id/swaasaOtpMainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/swaasaOTPImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/swaasa_otp_padding"
+                    android:layout_marginTop="@dimen/swaasa_otp_padding"
+                    android:layout_marginEnd="@dimen/swaasa_otp_padding"
+                    android:src="@drawable/ic_mobile_otp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/patientOTPHeadingTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/swaasa_otp_padding"
+                    android:layout_marginTop="@dimen/swaasa_otp_padding"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="@string/verify_otp"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/large" />
+
+                <TextView
+                    android:id="@+id/patientLoginInfoTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/swaasa_otp_padding"
+                    android:layout_marginTop="@dimen/swaasa_otp_padding"
+                    android:layout_marginEnd="@dimen/swaasa_otp_padding"
+                    android:fontFamily="@font/open_sans"
+                    android:gravity="center_horizontal"
+                    android:text="@string/please_enter_the_otp_sent_to_your_registered_mobile_number"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/x_medium" />
+
+                <TextView
+                    android:id="@+id/swaasaOTPLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/swaasa_otp_padding"
+                    android:layout_marginTop="@dimen/swaasa_otp_padding"
+                    android:layout_marginEnd="@dimen/swaasa_otp_padding"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/otp_label"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/small" />
+
+
+                <com.charm.phr.mphr.ui.components.MDPinEntryEditText
+                    android:id="@+id/swaasaOtpPinET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/swaasa_otp_padding"
+                    android:layout_marginEnd="@dimen/swaasa_otp_padding"
+                    android:cursorVisible="false"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:imeOptions="actionDone"
+                    android:textSize="24sp"
+                    tools:text="3" />
+
+
+                <TextView
+                    android:id="@+id/swaasaOTPErrorTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/swaasa_otp_padding"
+                    android:layout_marginEnd="@dimen/swaasa_otp_padding"
+                    android:drawablePadding="@dimen/swaasa_otp_half_padding"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:text="@string/swaasa_passcode_invalid_error"
+                    android:textColor="@color/pinColorError"
+                    android:visibility="gone"
+                    app:drawableStartCompat="@drawable/ic_swaasa_error" />
+
+                <Button
+                    style="@style/mdButtonStyle"
+                    android:id="@+id/swaasaOTPVerifyBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/swaasa_otp_verify_btn_height"
+                    android:layout_margin="@dimen/swaasa_otp_padding"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/item_button_bg"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:text="@string/verify_and_proceed_txt"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/xx_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/swaasaSuccessLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_swaasa_success" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/thank_you_str"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_large" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/swaasa_otp_padding"
+            android:fontFamily="@font/open_sans"
+            android:text="@string/swaasa_success_msg"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/x_medium" />
+
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/swaasaEmptyTV"
+        layout="@layout/layout_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swaasaToolbar"
+        tools:visibility="gone" />
+
+    <include
+        android:id="@+id/swaasaProgress"
+        layout="@layout/layout_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swaasaToolbar" />
+    <!-- <TextView
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:id="@+id/swaasaEmptyTV"
+         android:background="@android:color/white"
+         android:text="@string/error_empty_id"
+         android:gravity="center"
+         android:fontFamily="@font/open_sans_medium"
+         android:textSize="@dimen/large"
+         android:textColor="@color/black87"
+         app:layout_constraintTop_toBottomOf="@id/swaasaToolbar"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"/>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

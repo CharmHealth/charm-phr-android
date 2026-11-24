@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/card_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_margin_vertical"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vaccineListConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_ripple_white_bg"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding">
+
+            <TextView
+                android:id="@+id/vaccineListDateTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="0dp"
+                android:textAppearance="@style/dateDisplayTxtAppearance"
+                app:layout_constraintEnd_toStartOf="@id/vaccineListEditBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Jun 11, 2000" />
+
+            <TextView
+                android:id="@+id/vaccineListNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans_medium"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="0dp"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toStartOf="@id/vaccineListEditBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vaccineListDateTV" />
+
+            <TextView
+                android:id="@+id/vaccineListDetailTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="0dp"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintEnd_toStartOf="@id/vaccineListEditBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vaccineListNameTV" />
+
+            <LinearLayout
+                android:id="@+id/vaccineListProviderNameLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                app:layout_constraintEnd_toStartOf="@id/vaccineListEditBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vaccineListDetailTV"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/vaccineListProviderNameLabelTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="@dimen/vaccine_detail_txt_spacing"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/vaccine_provider_label"
+                    android:textColor="@color/black70"
+                    android:textSize="@dimen/xx_small" />
+
+                <TextView
+                    android:id="@+id/vaccineListProviderNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/xx_small"
+                    tools:text="@string/vaccine_provider_label" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/vaccineListShowMore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/more_str"
+                android:textColor="@color/labResultShowMoreTxtColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vaccineListProviderNameLayout" />
+
+            <LinearLayout
+                android:id="@+id/vaccineListMoreLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="0dp"
+                app:layout_constraintEnd_toStartOf="@id/vaccineListEditBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vaccineListShowMore"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/vaccineListMoreLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="@dimen/vaccine_detail_txt_spacing"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/vaccine_manufacturer_label"
+                    android:textColor="@color/black70"
+                    android:textSize="@dimen/xx_small" />
+
+                <TextView
+                    android:id="@+id/vaccineListMoreTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/xx_small"
+                    tools:text="@string/vaccine_manufacturer_label" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/vaccineListNotesTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans"
+                android:lineSpacingExtra="@dimen/common_line_height"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="0dp"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintEnd_toStartOf="@id/vaccineListEditBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vaccineListMoreLayout"
+                tools:text="GUYXGEWUYBCIEHWBICYBCBWIYCEIYCECGEFYCGFY"
+                tools:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/vaccineListEditBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/common_edit_btn_start_padding"
+                android:paddingTop="@dimen/common_edit_btn_top_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:src="@drawable/ic_edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

@@ -1,0 +1,38 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://maven.zohodl.com/" } // apptics
+    }
+
+    // Apptics is a Zoho proprietary plugin that likely lacks a Gradle Plugin Marker artifact.
+    // This maps the plugin ID to its Maven coordinates so pluginManagement can resolve it.
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == 'apptics-plugin') {
+                useModule("com.zoho.apptics:apptics-plugin:${requested.version}")
+            }
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://maven.zohodl.com/' }  // apptics
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+include ':app', ':charmVideoLib'
+
+
+// CharmHealth sign-in SDK: git submodule charm-mobile-auth-sdk (branch ch1575-chis-mode),
+// compiled for Android by :charm-mobile-auth (see charm-mobile-auth-android/build.gradle for why it
+// isn't an includeBuild). After cloning: git submodule update --init --recursive
+include ':charm-mobile-auth'
+project(':charm-mobile-auth').projectDir = file('charm-mobile-auth-android')

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="size_video_item_margin">5dp</dimen>
+    <dimen name="size_video_item">100dp</dimen>
+    <dimen name="video_bottom_margin">17dp</dimen>
+    <dimen name="chat_bottom_margin">13dp</dimen>
+    <dimen name="toolbar_bottom_margin">148dp</dimen>
+
+    <dimen name="cvl_size_video_item_margin">5dp</dimen>
+    <dimen name="cvl_size_video_item">100dp</dimen>
+    <dimen name="cvl_video_bottom_margin">17dp</dimen>
+    <dimen name="cvl_chat_bottom_margin">13dp</dimen>
+    <dimen name="cvl_toolbar_bottom_margin">148dp</dimen>
+
+    <dimen name="cvl_fab_elevation">6dp</dimen>
+    <dimen name="cvl_mdCameraFlashIconSize">30dp</dimen>
+    <dimen name="cvl_buttonActionButtonHeight">56dp</dimen>
+    <dimen name="cvl_videoCallTopAndBottomMargin">80dp</dimen>
+    <dimen name="cvl_videoCallFloatSideMargin">20dp</dimen>
+    <dimen name="cvl_videoCallFloatTopMargin">76dp</dimen>
+    <dimen name="cvl_billingListFabMargin">16dp</dimen>
+    <dimen name="cvl_commonToastBottomMargin">100dp</dimen>
+
+    <dimen name="cvl_xx_large">20sp</dimen>
+
+</resources>

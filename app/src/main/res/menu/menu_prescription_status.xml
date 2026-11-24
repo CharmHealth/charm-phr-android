@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/prescriptionStatusActive"
+        android:title="@string/prescription_status_active" />
+
+    <item
+        android:id="@+id/prescriptionStatusInActive"
+        android:title="@string/prescription_status_inactive" />
+
+    <item
+        android:id="@+id/prescriptionStatusAll"
+        android:title="@string/prescription_status_all"/>
+</menu>

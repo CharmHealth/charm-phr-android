@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dashboard_card_margin"
+        android:layout_marginTop="@dimen/dashboard_health_vertical_margin"
+        android:layout_marginEnd="@dimen/dashboard_card_margin"
+        android:layout_marginBottom="@dimen/dashboard_health_vertical_margin"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/healthListConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/item_ripple_white_bg">
+
+            <ImageView
+                android:id="@+id/healthListIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_appointment_" />
+
+            <TextView
+                android:id="@+id/healthListName"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dashboard_card_padding"
+                android:layout_marginEnd="@dimen/dashboard_card_padding"
+                android:fontFamily="@font/open_sans_medium"
+                android:gravity="center_vertical"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/healthListNotificationTV"
+                app:layout_constraintStart_toEndOf="@id/healthListIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+
+                android:id="@+id/healthListNotificationTV"
+                style="@style/notificationItem"
+                android:layout_marginEnd="@dimen/card_padding_half"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/healthListNxtBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="123" />
+
+            <ImageView
+                android:id="@+id/healthListNxtBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dashboard_card_padding"
+                android:src="@drawable/ic_hp_nav_next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

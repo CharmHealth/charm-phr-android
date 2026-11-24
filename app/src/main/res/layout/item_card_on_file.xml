@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cofMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/card_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_margin_vertical"
+        app:cardBackgroundColor="@color/darkNavyBlue"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/item_ripple_white_bg">
+
+            <ImageView
+                android:id="@+id/cofBackGroundImgTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_card_on_file_bg_top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cofBackGroundImgBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_card_on_file_bg_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/cofDeleteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small"
+                android:src="@drawable/ic_delete_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cofEditBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small"
+                android:src="@drawable/ic_edit_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cofExpiresValueTv" />
+
+            <TextView
+                android:id="@+id/cofCardTypeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/xx_large"
+                android:layout_marginTop="@dimen/xx_large"
+                android:fontFamily="@font/open_sans_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="VISA" />
+
+            <TextView
+                android:id="@+id/cofCardNumberTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/xx_large"
+                android:layout_marginTop="@dimen/card_on_file_between_space"
+                android:textColor="@color/white"
+                android:textSize="@dimen/xx_large"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cofCardTypeTv"
+                tools:text="xxxx xxxx xxxx 346" />
+
+            <TextView
+                android:id="@+id/cofCardNickNameLableTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/xx_large"
+                android:layout_marginTop="@dimen/card_on_file_between_space"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/card_nick_name"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cofCardNumberTv" />
+
+            <TextView
+                android:id="@+id/cofCardNickNameValueTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/xx_large"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/small"
+                android:fontFamily="@font/open_sans_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/xx_large"
+                android:textAllCaps="true"
+                android:maxLines="2"
+                app:layout_constraintEnd_toStartOf="@+id/cofExpiresValueTv"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cofCardNickNameLableTv"
+                tools:text="Mary taylor" />
+
+            <TextView
+                android:id="@+id/cofExpiresLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/xx_large"
+                android:fontFamily="@font/open_sans"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintBottom_toBottomOf="@+id/cofCardNickNameLableTv"
+                app:layout_constraintEnd_toStartOf="@+id/cofEditBtn"
+                app:layout_constraintTop_toTopOf="@+id/cofCardNickNameLableTv"
+                android:text="@string/expires" />
+
+            <TextView
+                android:id="@+id/cofExpiresValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/xx_large"
+                app:layout_constraintBottom_toBottomOf="@+id/cofCardNickNameValueTv"
+                app:layout_constraintEnd_toEndOf="@+id/cofExpiresLabelTv"
+                app:layout_constraintTop_toTopOf="@+id/cofCardNickNameValueTv"
+                tools:text="07/25" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

@@ -1,0 +1,4 @@
+[submodule "charm-mobile-auth-sdk"]
+	path = charm-mobile-auth-sdk
+	url = https://github.com/CharmHealth/charm-mobile-auth-sdk.git
+	branch = ch1575-chis-mode

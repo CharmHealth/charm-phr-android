@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Thalassemia flavor manifest overlay.
+    Removes Firebase auto-init and the FCM messaging service so that Firebase
+    is never initialized at runtime for this flavor.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+
+        <!-- Prevent Firebase from auto-initializing via its ContentProvider -->
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="${applicationId}.firebaseinitprovider"
+            android:exported="false"
+            tools:node="remove" />
+
+        <!-- Remove the FCM messaging service — not needed for this flavor -->
+        <service
+            android:name="com.charm.phr.mphr.service.notification.MdNotificationService"
+            android:exported="false"
+            tools:node="remove" />
+
+    </application>
+
+</manifest>

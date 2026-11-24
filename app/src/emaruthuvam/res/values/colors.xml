@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#00dee6</color>
+    <color name="colorPrimaryDark">#00dee6</color>
+    <color name="colorAccent">#00dee6</color>
+
+    <color name="textColorForColorPrimaryBg">@android:color/black</color>
+
+    <color name="tabTxtColor">#B3000000</color>
+    <color name="tabSelectedTxtColor">@color/textColorForColorPrimaryBg</color>
+
+    <color name="iconLightBg">#e6effc</color> <!--  defafa-->
+    <color name="cardSelectedBgColor">@color/iconLightBg</color>
+    <color name="itemRippleForWhiteBg">#8000dee6</color>
+
+</resources>

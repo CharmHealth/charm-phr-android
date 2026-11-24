@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/upcomingAppointmentItemHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dashboard_card_padding"
+        android:layout_marginTop="@dimen/card_padding_half"
+        android:layout_marginEnd="@dimen/dashboard_card_padding"
+        android:layout_marginBottom="@dimen/card_padding_half"
+        android:fontFamily="@font/open_sans_medium"
+        android:paddingTop="@dimen/dashboard_upcoming_appointment_item_vertical_margin"
+        android:paddingBottom="@dimen/dashboard_upcoming_appointment_item_vertical_margin"
+        android:textColor="@color/upcomingAppointmentMonthTxtColor"
+        android:textSize="@dimen/x_medium"
+        tools:text="@string/dashboard_upcoming_appointments_heading" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/upcomingAppointmentRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

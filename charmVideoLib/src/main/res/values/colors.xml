@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="cvl_endCallColor">#de1e42</color>
+    <color name="cvl_purple_200">#FFBB86FC</color>
+    <color name="cvl_purple_500">#FF6200EE</color>
+    <color name="cvl_purple_700">#FF3700B3</color>
+    <color name="cvl_teal_200">#FF03DAC5</color>
+    <color name="cvl_teal_700">#FF018786</color>
+    <color name="cvl_black">#FF000000</color>
+    <color name="cvl_black87">#de000000</color>
+    <color name="cvl_white">#FFFFFFFF</color>
+
+    <color name="cvl_dark_blue">#4074D9</color>
+
+    <color name="cvl_white_pure">@android:color/white</color>
+    <color name="cvl_white70">#B3FFFFFF</color>
+</resources>

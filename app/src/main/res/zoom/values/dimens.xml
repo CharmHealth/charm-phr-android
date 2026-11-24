@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="size_video_item_margin">5dp</dimen>
+    <dimen name="size_video_item">100dp</dimen>
+    <dimen name="video_bottom_margin">17dp</dimen>
+    <dimen name="chat_bottom_margin">13dp</dimen>
+    <dimen name="toolbar_bottom_margin">148dp</dimen>
+    <dimen name="zm_camera_flash_icon_size">30dp</dimen>
+    <dimen name="zm_fab_elevation">6dp</dimen>
+    <dimen name="zm_fab_margin">16dp</dimen>
+    <dimen name="zm_action_button_height">56dp</dimen>
+    <dimen name="zm_video_call_float_side_margin">20dp</dimen>
+    <dimen name="zm_video_call_float_top_margin">76dp</dimen>
+    <dimen name="zm_pwd_heading_margin_top">24dp</dimen>
+    <dimen name="zm_pwd_side_margin_top">16dp</dimen>
+    <dimen name="zm_pwd_edittext_side_margin_top">13dp</dimen>
+
+    <dimen name="zm_pwd_edittext_margin_top">20dp</dimen>
+    <dimen name="zm_common_card_item_margin_vertical">4dp</dimen>
+    <dimen name="zm_button_height">46dp</dimen>
+    <dimen name="zm_common_card_padding">8dp</dimen>
+
+</resources>

@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"
+        tools:replace="required" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- <uses-permission android:name="android.permission.RECORD_AUDIO" /> -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <application
+        android:name=".MPHRApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="LockedOrientationActivity"
+        tools:replace="android:allowBackup,android:name,android:networkSecurityConfig"
+        tools:targetApi="n">
+
+        <activity
+            android:name=".ui.dashboard.user_profile.UserProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.reminder.update_reminder.UpdateReminderHistoryActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.lab.plotDetailGraph.LabDetailsGraphActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.appointment.book_appointment.easytelecare.EasyTeleBookAppointmentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.localauth.AppLockTypeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.localauth.app_lock.AppLockActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.contact_us.ContactUsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.reminder.reminder_history.ReminderHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.reminder.add_reminder.AddOrEditReminderActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+<!--        <activity-->
+<!--            android:name=".ui.wellness.GoogleFitIntegration.GoogleFitSyncActivity"-->
+<!--            android:exported="false"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:windowSoftInputMode="adjustPan" />-->
+        <activity
+            android:name=".ui.reminder.ReminderActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.cardonfile.addOrEditCof.AddOrEditCardOnFileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.cardonfile.CardOnFileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.contact.add_contact.AddContactActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.support.SupportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".ui.insurance.add.AddInsuranceActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <receiver
+            android:name=".service.reminders.NotificationBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.insurance.InsuranceListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.flowsheet.add.AddFlowsheetDataActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.flowsheet.entry.FlowsheetDataActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.flowsheet.FlowsheetListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.swaasa.SwaasaActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.wellness.wellnessList.WellnessListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.wellness.addWellness.AddWellnessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.wellness.wellnessDetail.WellnessDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.document.share_document.ShareDocumentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.document.document_list_with_folder.DocumentListForFolderActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.document.preview_document.PreviewDocumentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.demographics.demographics_pdf.PatDemoPDFActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.questionnaire.health_passport.QuestionnaireListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.demographics.save_pat_demo.SavePatDemographicsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.demographics.PatientDemographicsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.document.DocumentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.health_passport.HealthPassportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.physician.PhysicianActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.problem_list.ProblemListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.document.add_document.AddDocumentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.physician.add_physician.AddPhysicianActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.problem_list.add_problem_list.AddProblemListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.videocall.opentok.OpenTokVideoCallActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.tourpage.TourPageActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="phr.charmtracker.com"
+                    android:pathPrefix="/mphr/video.sas"
+                    android:scheme="https" />
+                <data
+                    android:host="phr.charmtracker.com"
+                    android:pathPrefix="/swaasa.sas"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".ui.questionnaire.questionnaire_detail.QuestionnaireDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.questionnaire.QuestionnaireActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.about.AboutActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.videocall.VideoCallMeetingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.videocall.MyMeetingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.videocall.VideoCallActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.announcement.AnnouncementDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.announcement.AnnouncementListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.lab.detail_pdf.LabDetailPDFActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.prescription.add_supplement.AddSupplementActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.prescription.add_medication.AddMedicationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.vaccine.add_vaccine.AddVaccineActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.vaccine.VaccineActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.visitSummary.visitSummaryDetail.VisitSummaryDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.procedure.add_procedure.AddProcedureActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.message.compose.ComposeMessageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.appointment.book_appointment.BookAppointmentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.passcode.PasscodeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.procedure.ProcedureActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.visitSummary.VisitSummaryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.appointment.AppointmentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialAppTheme" />
+        <activity
+            android:name=".ui.prescription.PrescriptionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.allergy.addAllergy.AddAllergyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.allergy.AllergyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.lab.resultDetail.LabResultDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.lab.LabActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.message.messageDetail.MessageDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.message.MessageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.billing.billingDetail.BillingDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.billing.BillingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.dashboard.DashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.patientList.PatientListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.useful_info.UsefulInfoDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.useful_info.UsefulInfoListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.components.mdCamera.MdCameraActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="@string/content_provider_authority"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_path"
+                tools:replace="android:resource" />
+        </provider>
+
+        <service
+            android:name=".service.appointmentReminder.AppointmentReminderJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- overriding third party libs for android:exported -->
+        <activity
+            android:name="com.zipow.videobox.IntegrationActivity"
+            android:exported="false"
+            tools:node="merge"
+            tools:overrideLibrary="com.zipow.videobox.IntegrationActivity"
+            tools:replace="android:exported" />
+        <activity
+            android:name="com.zipow.videobox.conference.ui.ZmConfPipActivity"
+            android:exported="false"
+            tools:node="merge"
+            tools:overrideLibrary="com.zipow.videobox.conference.ui.ZmConfPipActivity"
+            tools:replace="android:exported" />
+        <activity
+            android:name="us.zoom.feature.qa.ZmQAActivity"
+            android:exported="false"
+            tools:node="merge"
+            tools:overrideLibrary="us.zoom.feature.qa.ZmQAActivity"
+            tools:replace="android:exported" />
+        <activity
+            android:name="com.zoho.applock.PasscodeSettingsActivity"
+            android:exported="false"
+            tools:node="merge"
+            tools:overrideLibrary="com.zoho.applock.PasscodeSettingsActivity"
+            tools:replace="android:exported" />
+        <activity
+            android:name="com.zoho.applock.PasscodeLockActivity"
+            android:exported="false"
+            tools:node="merge"
+            tools:overrideLibrary="com.zoho.applock.PasscodeLockActivity"
+            tools:replace="android:exported" />
+        <activity
+            android:name="com.razorpay.CheckoutActivity"
+            android:exported="false"
+            tools:node="merge"
+            tools:overrideLibrary="com.razorpay.CheckoutActivity"
+            tools:replace="android:exported" />
+
+        <receiver
+            android:name="com.razorpay.RzpTokenReceiver"
+            android:exported="true"
+            tools:node="merge"
+            tools:overrideLibrary="com.razorpay.RzpTokenReceiver"
+            tools:replace="android:exported" />
+        <receiver
+            android:name="com.zoho.applock.BootReceiver"
+            android:exported="true"
+            tools:node="merge"
+            tools:overrideLibrary="com.zoho.applock.BootReceiver"
+            tools:replace="android:exported" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            tools:node="remove" />
+
+        <service
+            android:name="androidx.work.impl.foreground.SystemForegroundService"
+            android:foregroundServiceType="dataSync"
+            tools:node="merge" />
+
+        <service
+            android:name=".service.notification.MdNotificationService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+
+    </application>
+
+</manifest>

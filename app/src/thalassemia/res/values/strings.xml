@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Thalassure</string>
+
+    <string name="tp_app_custom_icon_heading">Welcome to Thalassure</string>
+
+
+
+    <string name="content_provider_authority">com.vtitan.thalassure.provider</string>
+
+</resources>
+

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/savePatDemoLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor"
+    tools:context=".ui.demographics.save_pat_demo.SavePatDemographicsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/savePatDemoToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/savePatDemoBackBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:id="@+id/savePatDemoToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/demographics"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/savePatDemoEditBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_edit_white"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/savePatDemoSaveBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:text="@string/save_str"
+            android:textAllCaps="true"
+            android:textAppearance="@style/toolbarText"
+            android:textSize="@dimen/xx_small"
+            android:visibility="gone" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/savePatDemoMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/savePatDemoToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/savePatDemoImg"
+                android:layout_width="@dimen/save_pat_demo_img_size"
+                android:layout_height="@dimen/save_pat_demo_img_size"
+                android:layout_marginTop="@dimen/save_pat_demo_img_margin_top"
+                android:layout_marginBottom="10dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoFirstNameLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/savePatDemoDummyTV"
+                style="@style/genderOtherTxtStyle"
+                android:layout_width="@dimen/save_pat_demo_img_size"
+                android:layout_height="@dimen/save_pat_demo_img_size"
+                android:layout_marginTop="@dimen/save_pat_demo_img_margin_top"
+                android:background="@drawable/item_save_pat_demo_img_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/savePatDemoChoosePic"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="56dp"
+                android:background="@drawable/item_save_pat_demo_camera_bg"
+                android:padding="9dp"
+                android:src="@drawable/ic_camera"
+                app:layout_constraintBottom_toBottomOf="@id/savePatDemoImg"
+                app:layout_constraintStart_toStartOf="@id/savePatDemoImg" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoFirstNameLayout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoLastNameLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoImg">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoFirstNameET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_first_name_str"
+                    android:maxLength="@integer/savePatientNameMaxLength"
+                    app:filterRegex="alphabetsNumbersAndSplChar" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoLastNameLayout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoDOBLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoFirstNameLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoLastNameET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_last_name_str"
+                    android:maxLength="@integer/savePatientNameMaxLength"
+                    app:filterRegex="alphabetsNumbersAndSplChar" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoDOBLayout"
+                style="@style/itemTextInputLayoutTheme"
+                android:layout_width="0dp"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoLine1Layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoLastNameLayout"
+                app:layout_constraintWidth_percent=".34">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoDOBET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:drawableEnd="@drawable/ic_calander"
+                    android:hint="@string/save_pat_demo_dob_str"
+                    tools:text="14 , Jun 2020" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                android:id="@+id/savePatDemoGenderLayout"
+                style="@style/itemTextInputLayoutTheme"
+                android:layout_width="0dp"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toBottomOf="@id/savePatDemoDOBLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/savePatDemoDOBLayout"
+                app:layout_constraintWidth_percent=".28"
+                app:mdEndSpacing="70"
+                app:mdVerticalSpacing="49"
+
+                >
+
+                <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                    android:id="@+id/savePatDemoGenderET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_gender_str"
+                    app:filterRegex="alphabets" />
+            </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+            <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                android:id="@+id/savePatDemoBloodGroupLayout"
+                style="@style/itemTextInputLayoutTheme"
+                android:layout_width="0dp"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toBottomOf="@id/savePatDemoDOBLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/savePatDemoDOBLayout"
+                app:layout_constraintWidth_percent=".28"
+                app:mdEndSpacing="70"
+                app:mdVerticalSpacing="49">
+
+                <com.charm.phr.mphr.ui.components.MDClickToSelectEdittext
+                    android:id="@+id/savePatDemoBloodGroupET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_blood_grp_str"
+                    app:filterRegex="alphabets"
+                    tools:text="B+" />
+            </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoLine1Layout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoLine2Layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoDOBLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoLine1ET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_address_line_1"
+                    android:maxLength="@integer/savePatientAddressMaxLength"
+                    app:filterRegex="alphabetsNumbersAndSplChar" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoLine2Layout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoCountryLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoLine1Layout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoLine2ET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_address_line_2"
+                    android:maxLength="@integer/savePatientAddressMaxLength"
+                    app:filterRegex="alphabetsNumbersAndSplChar" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                android:id="@+id/savePatDemoCountryLayout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:mdShowDropdown="false"
+                app:mdShowLine="false"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoStateLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoLine2Layout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+                    android:id="@+id/savePatDemoCountryET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:layout_height="27dp"
+                    android:hint="@string/save_pat_demo_country_str"
+                    app:filterRegex="alphabetsNumbersAndSplChar" />
+            </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+            <com.charm.phr.mphr.ui.components.MDTextInputLayout
+                android:id="@+id/savePatDemoStateLayout"
+                style="@style/itemTextInputLayoutTheme"
+                android:layout_width="0dp"
+                android:layout_marginEnd="8dp"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:mdShowDropdown="false"
+                app:mdShowLine="false"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoHomePhoneLayout"
+                app:layout_constraintEnd_toStartOf="@id/savePatDemoCityLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoCountryLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputAutoCompleteTextView
+                    android:id="@+id/savePatDemoStateET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_state_str"
+                    app:filterRegex="alphabetsNumbersAndSplChar" />
+            </com.charm.phr.mphr.ui.components.MDTextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoCityLayout"
+                style="@style/itemTextInputLayoutTheme"
+                android:layout_width="0dp"
+                android:layout_marginStart="0dp"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoHomePhoneLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/savePatDemoStateLayout"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoCountryLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoCityET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_city_str"
+                    android:maxLength="@integer/savePatientCityMaxLength"
+                    app:filterRegex="alphabetsNumbersAndSplChar" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoHomePhoneLayout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoMobilePhoneLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoStateLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoHomePhoneET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_home_no_str"
+                    android:inputType="number"
+                    android:maxLength="@integer/savePatientNumberMaxLength"
+                    app:filterRegex="number"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoMobilePhoneLayout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoCaregiverNameLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoHomePhoneLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoMobilePhoneET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_mobile_no_str"
+                    android:inputType="number"
+                    android:maxLength="@integer/savePatientNumberMaxLength"
+                    app:filterRegex="number"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoCaregiverNameLayout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoCaregiverNumLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoMobilePhoneLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoCaregiverNameET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_caregiver_name_str"
+                    android:maxLength="@integer/savePatientNameMaxLength"
+                    app:filterRegex="alphabetsNumbersAndSplChar"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoCaregiverNumLayout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoEmgContactNameLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoCaregiverNameLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoCaregiverNumET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_caregiver_num_str"
+                    android:inputType="number"
+                    android:maxLength="@integer/savePatientNumberMaxLength"
+                    app:filterRegex="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoEmgContactNameLayout"
+                style="@style/itemTextInputLayoutTheme"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toTopOf="@id/savePatDemoEmgContactNumLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoCaregiverNumLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoEmgContactNameET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_emg_contact_name_str"
+                    android:maxLength="@integer/savePatientNameMaxLength"
+                    app:filterRegex="alphabetsNumbersAndSplChar"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/savePatDemoEmgContactNumLayout"
+                style="@style/itemTextInputLayoutTheme"
+                android:layout_marginBottom="@dimen/common_margin_vertical"
+                app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/savePatDemoEmgContactNameLayout">
+
+                <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                    android:id="@+id/savePatDemoEmgContactNumET"
+                    style="@style/itemTextInputEdittextTheme"
+                    android:hint="@string/save_pat_demo_emg_contact_num_str"
+                    android:inputType="number"
+                    android:maxLength="@integer/savePatientNumberMaxLength"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/savePatDemoProgress"
+        layout="@layout/layout_progress_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/savePatDemoToolbar" />
+
+
+    <include
+        android:id="@+id/savePatDemoErrorPage"
+        layout="@layout/layout_error_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/savePatDemoToolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

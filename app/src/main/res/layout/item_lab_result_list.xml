@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_margin_horizontal"
+        android:layout_marginTop="@dimen/card_margin_vertical"
+        android:layout_marginEnd="@dimen/card_margin_horizontal"
+        android:layout_marginBottom="@dimen/card_margin_vertical"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/common_card_radius"
+        app:cardElevation="@dimen/common_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_ripple_white_bg"
+            android:paddingBottom="@dimen/card_padding">
+
+            <TextView
+                android:id="@+id/labResultDateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingTop="@dimen/card_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:textAppearance="@style/dateDisplayTxtAppearance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Jun 10, 2000" />
+
+            <TextView
+                android:id="@+id/labResultLabNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_medium"
+                android:maxLines="2"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="@dimen/card_padding"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/x_medium"
+                app:layout_constraintEnd_toStartOf="@id/labResultInterpretationAndEditLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labResultDateTV"
+                tools:text="Quest Diagnostics" />
+
+            <TextView
+                android:id="@+id/labResultTestNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans"
+                android:lineSpacingExtra="@dimen/common_card_item_margin_vertical"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="0dp"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/xx_small"
+                app:layout_constraintEnd_toStartOf="@id/labResultInterpretationAndEditLayout"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labResultLabNameTV"
+                tools:text="Complete Blood Test\nLiquid Profile " />
+
+            <TextView
+                android:id="@+id/labResultShowMore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:fontFamily="@font/open_sans_medium"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="0dp"
+                android:text="@string/more_str"
+                android:textColor="@color/labResultShowMoreTxtColor"
+                android:textSize="@dimen/xx_small"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/labResultInterpretationAndEditLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labResultTestNameTV"
+
+                />
+
+            <LinearLayout
+                android:id="@+id/labResultStatusLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_card_item_margin_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/card_padding"
+                android:paddingEnd="0dp"
+                app:layout_constraintEnd_toStartOf="@id/labResultInterpretationAndEditLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labResultTestNameTV">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/card_padding"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/lab_result_status_label"
+                    android:textColor="@color/black70"
+                    android:textSize="@dimen/xx_small" />
+
+                <TextView
+                    android:id="@+id/labResultStatusTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/xx_small"
+                    tools:text="Corrected" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/labResultInterpretationAndEditLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/labResultLabNameTV"
+
+                >
+
+                <TextView
+                    android:id="@+id/labResultInterpretationTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:paddingStart="@dimen/card_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    tools:text="@string/lab_result_interpretation_abnormal"
+                    tools:textColor="@color/labResultInterpretationAbnormalTxtColor"
+                    android:textSize="@dimen/xx_small" />
+
+                <ImageView
+                    android:id="@+id/labResultEditBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/common_edit_btn_start_padding"
+                    android:paddingTop="@dimen/common_edit_btn_top_padding"
+                    android:paddingEnd="@dimen/card_padding"
+                    android:src="@drawable/ic_edit"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/raceListCardView"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/common_card_radius"
+    app:cardElevation="@dimen/common_card_elevation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/raceListHeadingTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/race_list_horizontal_margin"
+            android:layout_marginTop="@dimen/race_list_vertical_margin"
+            android:layout_marginEnd="@dimen/race_list_horizontal_margin"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/select_race_heading"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/xx_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/raceListScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxHeight="180dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/raceListHeadingTV">
+
+            <LinearLayout
+                android:id="@+id/raceListMainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </ScrollView>
+
+        <View
+            android:id="@+id/raceListScrollSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separatorColor"
+            app:layout_constraintTop_toBottomOf="@id/raceListScroll" />
+
+        <CheckBox
+            android:id="@+id/raceListDTSCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/race_list_checkbox_start_margin"
+            android:layout_marginEnd="@dimen/card_padding_half"
+            android:layout_marginBottom="@dimen/item_questionnaire_option_bottom_margin"
+            android:cursorVisible="false"
+            android:fontFamily="@font/open_sans"
+            android:minHeight="@dimen/race_checkbox_height"
+            android:paddingStart="@dimen/card_padding_half"
+            android:paddingEnd="@dimen/card_padding_half"
+            android:text="@string/decline_to_specify"
+            android:textColor="@color/edittext_txt_color"
+            android:textSize="@dimen/medium"
+            app:layout_constraintTop_toBottomOf="@id/raceListScrollSeparator" />
+
+        <View
+            android:id="@+id/raceListDTSSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separatorColor"
+            app:layout_constraintTop_toBottomOf="@id/raceListDTSCheckbox" />
+
+        <LinearLayout
+            android:id="@+id/raceListActionBtnLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_padding_half"
+            android:layout_marginBottom="@dimen/card_padding_half"
+            android:gravity="end"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/raceListDTSSeparator">
+
+            <Button
+                android:id="@+id/raceListCancelBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/race_list_action_btn_height"
+
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/cancel_str"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/xx_small" />
+
+            <Button
+                android:id="@+id/raceListOkBtn"
+                android:layout_width="@dimen/race_list_action_btn_width"
+                android:layout_height="@dimen/race_list_action_btn_height"
+
+                android:layout_marginEnd="8dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/ok_str"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/xx_small" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

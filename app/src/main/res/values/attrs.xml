@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="showIcon" format="boolean" />
+    <attr name="showSelectDivider" format="boolean" />
+
+    <declare-styleable name="MDmPHRConstraintLayout">
+        <attr name="mdStrokeColor" format="color" />
+        <attr name="mdBackgroundColor" format="color" />
+        <attr name="mdCornerRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MDTextInputEdittext">
+
+        <attr name="filterRegex" format="enum">
+            <enum name="alphabets" value="1" />
+            <enum name="alphabetsNumbers" value="2" />
+            <enum name="alphabetsNumbersAndSplChar" value="3" />
+            <enum name="number" value="4" />
+            <enum name="passport" value="5" />
+            <enum name="address" value="6" />
+            <enum name="numberDecimal" value="7" />
+        </attr>
+        <attr name="setBgTransparent" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MDTextInputLayout">
+        <attr name="mdShowDropdown" format="boolean" />
+        <attr name="mdShowLine" format="boolean" />
+
+        <attr name="mdVerticalSpacing" format="float" />
+        <attr name="mdEndSpacing" format="float" />
+
+    </declare-styleable>
+
+    <declare-styleable name="IconSwitch">
+        <attr name="md_icon_left" format="reference" />
+        <attr name="md_icon_right" format="reference" />
+        <attr name="md_icon_size" format="dimension" />
+        <attr name="md_background_color" format="color" />
+        <attr name="md_thumb_color_left" format="color" />
+        <attr name="md_thumb_color_right" format="color" />
+        <attr name="md_inactive_tint_icon_left" format="color" />
+        <attr name="md_inactive_tint_icon_right" format="color" />
+        <attr name="md_active_tint_icon_left" format="color" />
+        <attr name="md_active_tint_icon_right" format="color" />
+        <attr name="md_default_selection" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="MDImageView">
+        <attr name="mdImageViewRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleView">
+        <attr name="circleViewBgColor" format="color" />
+        <attr name="isColorVisible" format="boolean" />
+        <attr name="text" format="string" />
+        <attr name="textViewColor" format="color" />
+        <attr name="textViewSize" format="dimension" />
+        <attr name="textFamily" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="MDClickToSelectEdittext">
+        <attr name="allowAutoSelect" format="boolean" />
+        <attr name="showEmptyField" format="boolean" />
+        <attr name="showSelectDivider"/>
+        <attr name="showIcon" />
+    </declare-styleable>
+    <declare-styleable name="MDMultiClickToSelectEdittext">
+        <attr name="showIcon" />
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalCalendarLayout">
+
+        <attr name="mti_bgTimelineColor" format="color" />
+        <attr name="mti_lblDayColor" format="color" />
+        <attr name="mti_lblDateColor" format="color" />
+        <attr name="mti_lblDateSelectedColor" format="color" />
+        <attr name="mti_bgLblDateSelectedColor" format="color" />
+        <attr name="mti_ringLblDateSelectedColor" format="color" />
+        <attr name="mti_bgLblTodayColor" format="color" />
+        <attr name="mti_lblLabelColor" format="color" />
+
+        <attr name="mti_followScroll" format="boolean" />
+
+    </declare-styleable>
+    <integer name="mdCompletionThreshold">3</integer>
+
+    <attr name="fontName" format="string" />
+    <attr name="fontType" format="string" />
+    <attr name="chipErrorBackground" format="reference" />
+    <attr name="chipErrorBorderColor" format="reference" />
+    <attr name="chipBackground" format="reference" />
+    <attr name="chipBorderColor" format="reference" />
+    <attr name="chipBorder" format="dimension" />
+    <attr name="chipPadding" format="dimension" />
+    <attr name="chipHeight" format="dimension" />
+    <attr name="chipFontSize" format="reference" />
+    <attr name="chipSelBackground" format="reference" />
+    <attr name="chipSelIconBackground" format="reference" />
+    <attr name="iconToLeft" format="boolean" />
+
+    <declare-styleable name="MDChipsMultiSelctAutoCompleteEdittext">
+        <attr name="chipErrorBackground" />
+        <attr name="chipErrorBorderColor" />
+        <attr name="chipBackground" />
+        <attr name="chipBorderColor" />
+        <attr name="chipBorder" />
+        <attr name="chipPadding" />
+        <attr name="chipHeight" />
+        <attr name="chipFontSize" />
+        <attr name="iconToLeft" />
+        <attr name="chipSelBackground" />
+        <attr name="chipSelIconBackground" />
+        <attr name="fontType" />
+    </declare-styleable>
+
+    <declare-styleable name="MDElevatedImageView">
+        <attr name="compatEvelation" format="dimension" />
+        <attr name="clipShadow" format="boolean" />
+        <attr name="isTranslucent" format="boolean" />
+        <attr name="forceClip" format="boolean" />
+    </declare-styleable>
+
+
+    <integer name="composeMsgSubjectMaxLength">255</integer>
+    <integer name="bookAppointmentReasonMaxLength">400</integer>
+    <integer name="addAllergyNameMaxLength">50</integer>
+    <integer name="addAllergyReactionsMaxLength">255</integer>
+    <integer name="addMedicationDrugNameMaxLength">255</integer>
+    <integer name="addMedicationCommentMaxLength">255</integer>
+    <integer name="addVaccineNameMaxLength">50</integer>
+    <integer name="addVaccineManufacturerMaxLength">50</integer>
+    <integer name="addVaccineMemberNameMaxLength">50</integer>
+    <integer name="addVaccineCommentsMaxLength">500</integer>
+    <integer name="addSupplementNameMaxLength">255</integer>
+    <integer name="addSupplementManufacturerMaxLength">50</integer>
+    <integer name="addSupplementCommentMaxLength">255</integer>
+    <integer name="addProcedureNameMaxLength">50</integer>
+    <integer name="addProcedureNoteMaxLength">500</integer>
+    <integer name="addProblemListNoteMaxLength">500</integer>
+    <integer name="addPhysicianMobileMaxLength">13</integer>
+    <integer name="addPhysicianNameMaxLength">50</integer>
+
+    <integer name="savePatientNameMaxLength">50</integer>
+
+    <integer name="savePatientAddressMaxLength">35</integer>
+    <integer name="savePatientCityMaxLength">35</integer>
+    <integer name="savePatientNumberMaxLength">15</integer>
+    <integer name="savePatientNumberInsuranceMaxLength">10</integer>
+
+    <integer name="anim_length">1000</integer>
+    <integer name="anim_length_half">500</integer>
+
+    <!--MDDotsIndicator-->
+
+    <attr name="dotsColor" format="color" />
+    <attr name="selectedDotColor" format="color" />
+    <attr name="dotsStrokeColor" format="color" />
+    <attr name="dotsSize" format="dimension" />
+    <attr name="dotsWidthFactor" format="float" />
+    <attr name="dotsSpacing" format="dimension" />
+    <attr name="dotsCornerRadius" format="dimension" />
+    <attr name="dotsStrokeWidth" format="dimension" />
+    <attr name="stiffness" format="float" />
+    <attr name="dampingRatio" format="float" />
+    <attr name="progressMode" format="boolean" />
+
+    <declare-styleable name="MDDotsIndicator">
+        <attr name="dotsColor" />
+        <attr name="selectedDotColor" />
+        <attr name="dotsSize" />
+        <attr name="dotsWidthFactor" />
+        <attr name="dotsSpacing" />
+        <attr name="dotsCornerRadius" />
+        <attr name="progressMode" />
+    </declare-styleable>
+
+    <declare-styleable name="SpringDotsIndicator">
+        <attr name="dotsColor" />
+        <attr name="dotsSize" />
+        <attr name="dotsSpacing" />
+        <attr name="dotsCornerRadius" />
+        <attr name="dotsStrokeWidth" />
+        <attr name="dotsStrokeColor" />
+        <attr name="stiffness" />
+        <attr name="dampingRatio" />
+    </declare-styleable>
+
+    <declare-styleable name="WormDotsIndicator">
+        <attr name="dotsColor" />
+        <attr name="dotsSize" />
+        <attr name="dotsSpacing" />
+        <attr name="dotsCornerRadius" />
+        <attr name="dotsStrokeWidth" />
+        <attr name="dotsStrokeColor" />
+    </declare-styleable>
+
+
+    <attr name="min_value" format="integer" />
+    <attr name="max_value" format="integer" />
+
+    <attr name="long_height_height_ratio" format="fraction" />
+    <attr name="short_height_height_ratio" format="fraction" />
+
+    <attr name="ruler_text_color" format="color" />
+    <attr name="ruler_text_size" format="dimension" />
+
+    <attr name="indicator_interval" format="dimension" />
+    <attr name="indicator_color" format="color" />
+    <attr name="indicator_select_color" format="color" />
+    <attr name="indicator_width" format="dimension" />
+
+    <attr name="notch_color" format="color" />
+    <attr name="label" format="string" />
+
+    <attr name="unit_text" format="string" />
+
+    <declare-styleable name="ScaleView">
+        <attr name="min_value" />
+        <attr name="max_value" />
+
+
+        <attr name="long_height_height_ratio" />
+        <attr name="short_height_height_ratio" />
+
+        <attr name="ruler_text_color" />
+        <attr name="ruler_text_size" />
+
+        <attr name="indicator_select_color" />
+        <attr name="indicator_interval" />
+        <attr name="indicator_color" />
+        <attr name="indicator_width" />
+    </declare-styleable>
+
+    <declare-styleable name="ScaleValuePicker">
+
+        <attr name="min_value" />
+        <attr name="max_value" />
+
+        <attr name="unit_text" />
+        <attr name="long_height_height_ratio" />
+        <attr name="short_height_height_ratio" />
+
+        <attr name="ruler_text_color" />
+        <attr name="ruler_text_size" />
+
+        <attr name="indicator_select_color" />
+        <attr name="indicator_interval" />
+        <attr name="indicator_color" />
+        <attr name="indicator_width" />
+        <attr name="label" />
+
+        <!-- Color of the top notch -->
+        <attr name="notch_color" />
+    </declare-styleable>
+    <!---->
+
+</resources>

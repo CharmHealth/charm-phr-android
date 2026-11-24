@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#791813</color>
+    <color name="colorPrimaryDark">#791813</color>
+    <color name="colorAccent">#791813</color>
+    <color name="iconLightBg">#F6E7E9</color> <!--  defafa-->
+    <color name="cardSelectedBgColor">@color/iconLightBg</color>
+    <color name="itemRippleForWhiteBg">#80791813</color>
+
+</resources>

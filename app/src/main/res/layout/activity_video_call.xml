@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/commonBgColor">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/videoCallToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbarBg"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/videoCallToolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/toolbar_text_left_margin_without_icon"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/video_call_toobar_txt"
+            android:textAppearance="@style/toolbarText" />
+
+        <ImageButton
+            android:id="@+id/videoCallCloseBtn"
+            android:layout_width="@dimen/toolBarBtnWd"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close_white" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/videoCallToolbar">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/videoCallMeetingIdLayout"
+            style="@style/itemTextInputLayoutTheme"
+            android:layout_marginTop="8dp"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/videoCallMeetingPwdLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/videoCallMeetingIdET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/video_call_meeting_id_hint"
+                android:inputType="number"
+                android:maxLength="13" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/videoCallMeetingPwdLayout"
+            style="@style/itemTextInputLayoutTheme"
+            android:visibility="gone"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/videoCallMeetingNameLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/videoCallMeetingIdLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/videoCallMeetingPwdET"
+                style="@style/itemTextInputEdittextTheme"
+                android:drawableEnd="@drawable/ic_password_visibility_off"
+                android:hint="@string/video_call_meeting_pwd_hint"
+                android:inputType="numberPassword"
+                android:maxLength="12"
+                app:filterRegex="alphabetsNumbersAndSplChar" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/videoCallMeetingNameLayout"
+            style="@style/itemTextInputLayoutTheme"
+            app:hintTextAppearance="@style/itemEdittextHintTxtAppearance"
+            app:layout_constraintBottom_toTopOf="@id/videoCallJoinBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/videoCallMeetingPwdLayout">
+
+            <com.charm.phr.mphr.ui.components.MDTextInputEdittext
+                android:id="@+id/videoCallMeetingNameET"
+                style="@style/itemTextInputEdittextTheme"
+                android:hint="@string/video_call_meeting_user_name_hint"
+                android:inputType="textCapWords"
+                android:maxLength="12"
+                app:filterRegex="alphabetsNumbersAndSplChar" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            style="@style/mdButtonStyle"
+            android:id="@+id/videoCallJoinBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/add_button_height"
+            android:layout_marginStart="@dimen/button_margin"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/button_margin"
+            android:background="@drawable/item_button_bg"
+            android:fontFamily="@font/open_sans_medium"
+            android:text="@string/video_call_join_btn_str"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/videoCallMeetingNameLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/inAppRatingDialogLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/inAppRatingIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/race_list_horizontal_margin"
+            android:layout_marginBottom="@dimen/race_list_horizontal_margin"
+            android:src="@drawable/ic_in_app_rating_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/inAppRatingHeading"
+            style="@style/RatingHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dialog_heading_margin"
+            android:layout_marginTop="@dimen/dialog_heading_margin"
+            android:layout_marginEnd="@dimen/dialog_heading_margin"
+            android:gravity="center"
+            android:text="@string/can_provide_feedback"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inAppRatingIV" />
+
+        <TextView
+            android:id="@+id/inAppRatingText"
+            style="@style/invoiceAmtTxtAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dialog_heading_margin"
+            android:layout_marginTop="@dimen/common_margin_vertical"
+            android:layout_marginEnd="@dimen/dialog_heading_margin"
+            android:gravity="center"
+            android:text="@string/feel_about_str"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inAppRatingHeading" />
+
+        <LinearLayout
+            android:id="@+id/inAppRatingLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/common_margin_vertical"
+            android:layout_marginBottom="@dimen/common_margin_vertical"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inAppRatingText">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/inAppRatingNoBtn"
+                style="@style/mdDialogButtonOutlineStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_marginStart="@dimen/button_margin"
+                android:layout_marginTop="@dimen/button_margin"
+                android:layout_marginBottom="@dimen/button_margin"
+                android:layout_weight=".6"
+                android:textSize="@dimen/large"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/no_str"
+                android:theme="@style/Theme.MaterialComponents"
+                app:rippleColor="#80ffffff" />
+
+            <Button
+                android:id="@+id/inAppRatingYesBtn"
+                style="@style/mdDialogButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/add_button_height"
+                android:layout_marginStart="@dimen/button_margin"
+                android:layout_marginTop="@dimen/button_margin"
+                android:layout_marginEnd="@dimen/button_margin"
+                android:layout_marginBottom="@dimen/button_margin"
+                android:layout_weight=".6"
+                android:background="@drawable/item_dialog_button_bg"
+                android:fontFamily="@font/open_sans_medium"
+                android:text="@string/yes_str"
+                android:textColor="@color/textColorForColorPrimaryBg"
+                android:textSize="@dimen/large" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
